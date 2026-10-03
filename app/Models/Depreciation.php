@@ -78,7 +78,6 @@ class Depreciation extends SnipeModel
     /**
      * Establishes the depreciation -> models relationship
      *
-     * @author A. Gianotto <snipe@snipe.net>
      *
      * @since  [v5.0]
      *
@@ -92,7 +91,6 @@ class Depreciation extends SnipeModel
     /**
      * Establishes the depreciation -> licenses relationship
      *
-     * @author A. Gianotto <snipe@snipe.net>
      *
      * @since  [v5.0]
      *
@@ -106,7 +104,6 @@ class Depreciation extends SnipeModel
     /**
      * Establishes the depreciation -> assets relationship
      *
-     * @author A. Gianotto <snipe@snipe.net>
      *
      * @since  [v5.0]
      *
@@ -120,7 +117,6 @@ class Depreciation extends SnipeModel
     /**
      * Get the user that created the depreciation
      *
-     * @author A. Gianotto <snipe@snipe.net>
      *
      * @since  [v7.0.13]
      *

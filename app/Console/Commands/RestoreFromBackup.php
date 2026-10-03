@@ -177,7 +177,7 @@ class RestoreFromBackup extends Command
      * @var string
      */
     // FIXME - , stripping prefixes and nonstandard SQL statements. Without --prefix, guess and return the correct prefix to strip
-    protected $signature = 'snipeit:restore 
+    protected $signature = 'assetsecure:restore 
                                             {--force : Skip the danger prompt; assuming you enter "y"} 
                                             {filename : The zip file to be migrated}
                                             {--no-progress : Don\'t show a progress bar}
@@ -190,7 +190,7 @@ class RestoreFromBackup extends Command
      *
      * @var string
      */
-    protected $description = 'Restore from a previously created Snipe-IT backup file';
+    protected $description = 'Restore from a previously created AssetSecure backup file';
 
     /**
      * File-path patterns under public/uploads that the restore should extract
@@ -459,8 +459,8 @@ class RestoreFromBackup extends Command
 
         if (strpos($sqlfiles[0], 'db-dumps') === false) {
             // return $this->error("SQL backup file is missing 'db-dumps' component of full pathname: ".$sqlfiles[0]);
-            // older Snipe-IT installs don't have the db-dumps subdirectory component
-            $this->warn("Did not find the 'db-dumps' directory - is this really a Snipe-IT backup file? Continuing anyways...");
+            // older AssetSecure installs don't have the db-dumps subdirectory component
+            $this->warn("Did not find the 'db-dumps' directory - is this really a AssetSecure backup file? Continuing anyways...");
         }
 
         $sql_stat = $za->statIndex($sqlfile_indices[0]);

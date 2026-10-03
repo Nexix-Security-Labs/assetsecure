@@ -13,11 +13,10 @@ use Illuminate\Http\RedirectResponse;
 
 /**
  * This class controls all actions related to Categories for
- * the Snipe-IT Asset Management application.
+ * the AssetSecure Asset Management application.
  *
  * @version    v1.0
  *
- * @author [A. Gianotto] [<snipe@snipe.net>]
  */
 class CategoriesController extends Controller
 {
@@ -25,7 +24,6 @@ class CategoriesController extends Controller
      * Returns a view that invokes the ajax tables which actually contains
      * the content for the categories listing, which is generated in getDatatable.
      *
-     * @author [A. Gianotto] [<snipe@snipe.net>]
      *
      * @see CategoriesController::getDatatable() method that generates the JSON response
      * @since [v1.0]
@@ -41,7 +39,6 @@ class CategoriesController extends Controller
     /**
      * Returns a form view to create a new category.
      *
-     * @author [A. Gianotto] [<snipe@snipe.net>]
      *
      * @see CategoriesController::store() method that stores the data
      * @since [v1.0]
@@ -58,7 +55,6 @@ class CategoriesController extends Controller
     /**
      * Validates and stores the new category data.
      *
-     * @author [A. Gianotto] [<snipe@snipe.net>]
      *
      * @see CategoriesController::create() method that makes the form.
      * @since [v1.0]
@@ -89,7 +85,6 @@ class CategoriesController extends Controller
     /**
      * Returns a view that makes a form to update a category.
      *
-     * @author [A. Gianotto] [<snipe@snipe.net>]
      *
      * @see CategoriesController::postEdit() method saves the data
      *
@@ -108,7 +103,6 @@ class CategoriesController extends Controller
     /**
      * Validates and stores the updated category data.
      *
-     * @author [A. Gianotto] [<snipe@snipe.net>]
      *
      * @see CategoriesController::getEdit() method that makes the form.
      *
@@ -152,7 +146,6 @@ class CategoriesController extends Controller
     /**
      * Validates and marks a category as deleted.
      *
-     * @author [A. Gianotto] [<snipe@snipe.net>]
      *
      * @since [v1.0]
      *
@@ -178,7 +171,6 @@ class CategoriesController extends Controller
      * Returns a view that invokes the ajax tables which actually contains
      * the content for the categories detail view, which is generated in getDataView.
      *
-     * @author [A. Gianotto] [<snipe@snipe.net>]
      *
      * @see CategoriesController::getDataView() method that generates the JSON response
      *

@@ -28,7 +28,7 @@ use Tests\TestCase;
  *   - Strict mode: empty pivot sees only null-company items (nothing,
  *     effectively, since production items usually have a company_id).
  *   - Floater mode: empty pivot is treated as "floater" and sees all
- *     items (documented behavior at snipe-it.readme.io/docs/multi-tenancy-ish).
+ *     items (documented behavior at the multi-tenancy documentation).
  *
  * The fix aligns isCurrentUserHasAccess() branch-for-branch with the
  * query scope for companyable items, so per-target policy checks match
@@ -167,7 +167,7 @@ class EmptyPivotAccessTest extends TestCase
     //
     // In floater mode empty-pivot actors ARE unrestricted for items
     // (mirrors `return $query` in the query scope). This is documented
-    // behavior at snipe-it.readme.io/docs/multi-tenancy-ish — a "floater"
+    // behavior at the multi-tenancy documentation — a "floater"
     // actor is intentionally not company-scoped.
     // -----------------------------------------------------------------
 

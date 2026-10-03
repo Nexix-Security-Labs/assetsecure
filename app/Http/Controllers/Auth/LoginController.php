@@ -24,7 +24,6 @@ use Redirect;
  * This controller handles authentication for the user, including local
  * database users and LDAP users.
  *
- * @author [A. Gianotto] [<snipe@snipe.net>]
  *
  * @version    v1.0
  */
@@ -216,7 +215,7 @@ class LoginController extends Controller
 
             // Refresh every mapped field from the LDAP payload. Shared
             // with Ldap::createUserFromLdap so the field list lives in
-            // one place. Bulk sync via snipe-it:ldap-sync remains the
+            // one place. Bulk sync via assetsecure:ldap-sync remains the
             // canonical path for the fields that need a re-bind
             // (manager, active_flag, etc.).
             Ldap::applyLdapAttributesToUser($user, $ldap_attr);
@@ -239,7 +238,6 @@ class LoginController extends Controller
 
             $strip_prefixes = [
                 // IIS/AD
-                // https://github.com/grokability/snipe-it/pull/5862
                 '\\',
 
                 // Google Cloud IAP
@@ -395,7 +393,7 @@ class LoginController extends Controller
             $barcode->getBarcodeObj(
                 'QRCODE',
                 sprintf(
-                    'otpauth://totp/%s:%s?secret=%s&issuer=Snipe-IT&period=30',
+                    'otpauth://totp/%s:%s?secret=%s&issuer=AssetSecure&period=30',
                     urlencode($settings->site_name),
                     urlencode($user->username),
                     urlencode($secret)

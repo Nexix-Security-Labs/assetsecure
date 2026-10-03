@@ -21,7 +21,7 @@ use Illuminate\Support\Facades\URL;
 
 /**
  * This controller handles all actions related to Settings for
- * the Snipe-IT Asset Management application.
+ * the AssetSecure Asset Management application.
  *
  * @version    v1.0
  */
@@ -31,7 +31,6 @@ class SetupController extends Controller
      * Checks to see whether or not the database has a migrations table
      * and a user, otherwise display the setup view.
      *
-     * @author [A. Gianotto] [<snipe@snipe.net>]
      *
      * @since [v3.0]
      *
@@ -142,7 +141,6 @@ class SetupController extends Controller
     /**
      * Save the first admin user from Setup.
      *
-     * @author [A. Gianotto] [<snipe@snipe.net>]
      *
      * @since [v3.0]
      */
@@ -214,7 +212,6 @@ class SetupController extends Controller
     /**
      * Return the admin user creation form in Setup.
      *
-     * @author [A. Gianotto] [<snipe@snipe.net>]
      *
      * @since [v3.0]
      */
@@ -229,7 +226,6 @@ class SetupController extends Controller
     /**
      * Return the view that tells the user that the Setup is done.
      *
-     * @author [A. Gianotto] [<snipe@snipe.net>]
      *
      * @since [v3.0]
      */
@@ -246,7 +242,6 @@ class SetupController extends Controller
      * Migrate the database tables, and return the output
      * to a view for Setup.
      *
-     * @author [A. Gianotto] [<snipe@snipe.net>]
      *
      * @since [v3.0]
      */

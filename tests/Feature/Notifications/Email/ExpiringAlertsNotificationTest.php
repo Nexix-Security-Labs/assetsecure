@@ -52,7 +52,7 @@ class ExpiringAlertsNotificationTest extends TestCase
         $notExpiringAsset->asset_eol_date = null;
         $expiringEOLAsset->save();
 
-        $this->artisan('snipeit:expiring-alerts')->assertExitCode(0);
+        $this->artisan('assetsecure:expiring-alerts')->assertExitCode(0);
 
         Mail::assertSent(ExpiringAssetsMail::class, function ($mail) use ($alert_email, $expiringWarrantyAsset, $expiringEOLAsset) {
             return $mail->hasTo($alert_email) && ($mail->assets->contains($expiringEOLAsset) || $mail->assets->contains($expiringWarrantyAsset));
@@ -97,7 +97,7 @@ class ExpiringAlertsNotificationTest extends TestCase
             'deleted_at' => now()->subDays(10)->format('Y-m-d'),
         ]);
 
-        $this->artisan('snipeit:expiring-alerts')->assertExitCode(0);
+        $this->artisan('assetsecure:expiring-alerts')->assertExitCode(0);
 
         Mail::assertSent(ExpiringLicenseMail::class, function ($mail) use ($alert_email, $expiringLicense) {
             return $mail->hasTo($alert_email) && $mail->licenses->contains($expiringLicense);
@@ -144,7 +144,7 @@ class ExpiringAlertsNotificationTest extends TestCase
             'deleted_at' => null,
         ]);
 
-        $this->artisan('snipeit:upcoming-audits')->assertExitCode(0);
+        $this->artisan('assetsecure:upcoming-audits')->assertExitCode(0);
 
         Mail::assertSent(SendUpcomingAuditMail::class, function ($mail) use ($alert_email, $upcomingAuditableAsset, $overDueForAuditableAsset) {
             return $mail->hasTo($alert_email) && ($mail->assets->contains($upcomingAuditableAsset) && $mail->assets->contains($overDueForAuditableAsset));

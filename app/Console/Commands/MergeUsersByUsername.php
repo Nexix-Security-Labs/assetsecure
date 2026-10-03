@@ -14,7 +14,7 @@ class MergeUsersByUsername extends Command
      *
      * @var string
      */
-    protected $signature = 'snipeit:merge-users';
+    protected $signature = 'assetsecure:merge-users';
 
     /**
      * The console command description.

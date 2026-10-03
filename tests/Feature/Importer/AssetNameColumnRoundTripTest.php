@@ -11,7 +11,7 @@ use Tests\TestCase;
 
 /**
  * Regression coverage for the export -> import round-trip on the asset
- * Name column. Snipe-IT's asset export sites and the import wizard used
+ * Name column. AssetSecure's asset export sites and the import wizard used
  * different translation keys for the same conceptual column, so under
  * non-English locales the exact-label auto-map on the mapping-step
  * silently missed the Name column and the user's import ran without
@@ -35,7 +35,7 @@ class AssetNameColumnRoundTripTest extends TestCase
     /**
      * Locales with non-trivial word-order differences from English where
      * item_name_var and the previous admin/hardware/form.name key
-     * definitely diverge. Not exhaustive across every Snipe-IT locale
+     * definitely diverge. Not exhaustive across every AssetSecure locale
      * because the point of the round-trip is a single equality check,
      * not per-locale linguistic verification.
      */
@@ -90,7 +90,7 @@ class AssetNameColumnRoundTripTest extends TestCase
     // End-to-end auto-map: seed a wizard CSV whose header uses the
     // export site's translation of the Name column, kick off the
     // wizard's auto-map, and confirm it binds to item_name. This
-    // exercises the actual mapping step Snipe-IT ships, so it catches
+    // exercises the actual mapping step AssetSecure ships, so it catches
     // any future auto-map regression in addition to the export/import
     // string equality above.
     // -----------------------------------------------------------------

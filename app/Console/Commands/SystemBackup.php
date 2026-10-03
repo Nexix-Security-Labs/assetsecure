@@ -15,7 +15,7 @@ class SystemBackup extends Command
     // it (migrate, db:seed, etc.); it doesn't gate anything here but external
     // automations were passing it and crashing on the "option does not exist"
     // error.
-    protected $signature = 'snipeit:backup {--filename=} {--force}';
+    protected $signature = 'assetsecure:backup {--filename=} {--force}';
 
     /**
      * The console command description.

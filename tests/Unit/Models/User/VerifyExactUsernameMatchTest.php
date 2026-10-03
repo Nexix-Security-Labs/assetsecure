@@ -57,7 +57,7 @@ class VerifyExactUsernameMatchTest extends TestCase
     /**
      * Deliberate compromise: most IdPs treat usernames case-insensitively,
      * and admins were locking themselves out when the case in their IdP
-     * didn't match the case in their Snipe-IT user row. The helper now
+     * didn't match the case in their AssetSecure user row. The helper now
      * lowercases both sides before comparing, so `Admin` and `ADMIN` from
      * a SAML/LDAP assertion resolve to the local `admin` row. Accent-,
      * whitespace-, and lookalike-character folding are still rejected

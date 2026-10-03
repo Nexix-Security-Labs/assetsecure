@@ -76,7 +76,7 @@ return [
         'file_delete_error' => 'Filen kunde inte raderas',
         'file_missing' => 'Den valda filen saknas',
         'file_already_deleted' => 'Den valda filen har redan tagits bort',
-        'file_missing_on_disk' => 'Filen för denna import finns inte längre på disken. Den kan ha raderats utanför Snipe-IT. Radera detta inlägg och ladda upp filen igen för att försöka på nytt.',
+        'file_missing_on_disk' => 'Filen för denna import finns inte längre på disken. Den kan ha raderats utanför AssetSecure. Radera detta inlägg och ladda upp filen igen för att försöka på nytt.',
         'file_empty' => 'Denna fil har inga datarader. Ingenting kan importeras från den.',
         'already_processing' => 'Denna import bearbetas för närvarande av en annan användare. Vänta tills den är klar innan du försöker igen.',
         'header_row_missing' => 'Denna fil har ingenigenkänd rubrikrad. Radera detta inlägg och ladda upp filen igen för att försöka på nytt.',

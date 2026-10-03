@@ -9,7 +9,7 @@
  *   node .screenshotter/src/screenshotter.mjs
  *
  * Env overrides:
- *   BASE_URL         (default: https://snipe-it.test)
+ *   BASE_URL         (default: https://assetsecure.test)
  *   USERNAME         (default: admin)
  *   PASSWORD         (default: password)
  *   OUT              (default: .screenshotter/screenshots, gitignored)
@@ -58,7 +58,7 @@ import {dirname, resolve} from 'node:path';
 import {spawnSync} from 'node:child_process';
 import {parseArgs} from 'node:util';
 
-const BASE_URL = process.env.BASE_URL ?? 'https://snipe-it.test';
+const BASE_URL = process.env.BASE_URL ?? 'https://assetsecure.test';
 const USERNAME = process.env.USERNAME ?? 'admin';
 const PASSWORD = process.env.PASSWORD ?? 'password';
 const OUT = resolve(process.env.OUT ?? '.screenshotter/screenshots');
@@ -85,7 +85,7 @@ const SUBMIT_FORMS = process.env.SUBMIT_FORMS !== 'false';
 const TABS = process.env.TABS === 'true';
 // Color scheme: "light" (default), "dark", or "no-preference". Passed
 // through to Playwright's emulateMedia which sets prefers-color-scheme.
-// Snipe-IT honors the OS preference for dark mode when the user's
+// AssetSecure honors the OS preference for dark mode when the user's
 // account preference is set to "system".
 const COLOR_SCHEME = process.env.COLOR_SCHEME ?? 'light';
 
@@ -151,7 +151,7 @@ const context = await browser.newContext({
     viewport: VIEWPORT,
     // Herd's local .test domains use self-signed certs.
     ignoreHTTPSErrors: true,
-    // Set prefers-color-scheme so apps that honor it (Snipe-IT, when
+    // Set prefers-color-scheme so apps that honor it (AssetSecure, when
     // the user's theme preference is "system") render in the requested
     // scheme without needing to click any in-app toggle.
     colorScheme: COLOR_SCHEME,
@@ -160,7 +160,7 @@ const context = await browser.newContext({
 // Block debugbar / telescope / clockwork asset requests at the network
 // level. If their JS never loads, their overlays can never render, and
 // we don't have to fight CSS specificity to hide them (which was the
-// approach in an earlier version and broke on Snipe-IT error pages
+// approach in an earlier version and broke on AssetSecure error pages
 // where debugbar rendered visible JSON collector panels that our
 // CSS selectors couldn't reach). Belt-and-suspenders: we also inject
 // the hiding CSS via addInitScript below for any dev-tool asset paths
@@ -533,7 +533,7 @@ async function walkTabs(basename) {
 async function submitEditForm(outName) {
     if (!SUBMIT_FORMS) return;
     // Force redirect_option=index so the post-submit destination is
-    // always the section's index page. Without this, Snipe-IT's
+    // always the section's index page. Without this, AssetSecure's
     // Helper::getRedirectOption reads redirect_option=back (the form
     // default) and uses session's url.intended, which for pages whose
     // view template embeds a `<img src=".../qr_code">` gets set to the
@@ -551,7 +551,7 @@ async function submitEditForm(outName) {
     //     naively clicked.
     //   - Exclude the hidden logout form's submit that also lives in the
     //     header.
-    //   - Prefer `.last()`: on Snipe-IT edit forms the Save button is
+    //   - Prefer `.last()`: on AssetSecure edit forms the Save button is
     //     rendered at the bottom of the form, after any inline widget
     //     submit buttons the form might contain.
     // Refactored forms wrap up with `<x-box.footer />` which always
@@ -562,7 +562,7 @@ async function submitEditForm(outName) {
     if (!(await submit.count().catch(() => 0))) {
         // Legacy forms that haven't been refactored to <x-box.footer />
         // fall back to a visible, non-topbar submit button. `.last()`
-        // because Snipe-IT edit forms put Save at the bottom of the
+        // because AssetSecure edit forms put Save at the bottom of the
         // form, after any inline widget submits.
         submit = page
             .locator('form button[type="submit"]:visible, form input[type="submit"]:visible')

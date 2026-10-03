@@ -95,7 +95,7 @@ class CustomFieldSetDefaultValuesLineEndingsTest extends TestCase
 
     public function test_listbox_key_label_split_uses_key_for_value_and_label_for_display()
     {
-        // The listbox convention (matching Snipe-IT's x-input.select on the
+        // The listbox convention (matching AssetSecure's x-input.select on the
         // asset-edit form) is: option value = key, option text = label. So a
         // stored default of "red" gets the "Bright Red" option pre-selected.
         $this->renderComponentWithField('listbox', "red|Bright Red\ngreen|Forest Green")

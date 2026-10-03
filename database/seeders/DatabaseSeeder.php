@@ -107,7 +107,7 @@ class DatabaseSeeder extends Seeder
         $this->call(MaintenanceSeeder::class);
         $this->reportMemory('after MaintenanceSeeder');
 
-        // snipeit:sync-asset-locations used to run here to backfill location_id
+        // assetsecure:sync-asset-locations used to run here to backfill location_id
         // on seeded assets. AssetFactory::configure() now sets location_id at
         // make-time based on the assignment state, so post-seed sync is
         // redundant. The command remains available as a manual maintenance

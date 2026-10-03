@@ -1,8 +1,8 @@
 ### Contributing
 
-Please see the documentation on [contributing and developing for Snipe-IT](https://snipe-it.readme.io/docs/contributing-overview).
+Please see the documentation on [contributing and developing for AssetSecure](https://github.com/Nexix-Security-Labs/assetsecure/wiki/contributing-overview).
 
-> Please read the [AI Usage Policy](https://snipe-it.readme.io/docs/contributing-overview#ai-usage-policy) if you are
+> Please read the [AI Usage Policy](https://github.com/Nexix-Security-Labs/assetsecure/wiki/contributing-overview#ai-usage-policy) if you are
 > using AI.
 >
 > Additionally, if you are using an AI coding assistant, this repository ships with generated

@@ -60,7 +60,6 @@ class CategoryImporter extends ItemImporter
      *
      * @todo Investigate how this should interact with Importer::createCategoryIfNotExists
      *
-     * @author A. Gianotto
      *
      * @since 6.1.0
      */

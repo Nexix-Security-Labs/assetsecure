@@ -23,7 +23,6 @@ class ComponentCheckoutController extends Controller
     /**
      * Returns a view that allows the checkout of a component to an asset.
      *
-     * @author [A. Gianotto] [<snipe@snipe.net>]
      *
      * @see ComponentCheckoutController::store() method that stores the data.
      * @since [v3.0]
@@ -87,7 +86,6 @@ class ComponentCheckoutController extends Controller
     /**
      * Validate and store checkout data.
      *
-     * @author [A. Gianotto] [<snipe@snipe.net>]
      *
      * @see ComponentCheckoutController::create() method that returns the form.
      * @since [v3.0]

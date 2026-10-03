@@ -143,9 +143,6 @@ class AuditAssetTest extends TestCase
         $this->assertEquals($future, $asset->next_audit_date);
     }
 
-    /**
-     * @link https://github.com/grokability/snipe-it/issues/18495
-     */
     public function test_audit_does_not_set_next_audit_date_if_given_null()
     {
         $this->settings->setAuditInterval(null);

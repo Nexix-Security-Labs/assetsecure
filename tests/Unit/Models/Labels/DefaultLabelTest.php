@@ -8,9 +8,6 @@ use Tests\TestCase;
 
 class DefaultLabelTest extends TestCase
 {
-    /**
-     * @link https://app.shortcut.com/grokability/story/29281
-     */
     public function test_handles_zero_values_for_columns_gracefully()
     {
         $this->settings->set([
@@ -22,9 +19,6 @@ class DefaultLabelTest extends TestCase
         $this->assertInstanceOf(DefaultLabel::class, new DefaultLabel);
     }
 
-    /**
-     * @link https://app.shortcut.com/grokability/story/29281
-     */
     public function test_handles_zero_values_for_rows_gracefully()
     {
         $this->settings->set([

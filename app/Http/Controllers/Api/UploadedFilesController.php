@@ -25,7 +25,6 @@ class UploadedFilesController extends Controller
      *
      * @since  [v8.1.17]
      *
-     * @author [A. Gianotto <snipe@snipe.net>]
      */
     public function index(Request $request, $object_type, $id): JsonResponse|array
     {
@@ -91,7 +90,6 @@ class UploadedFilesController extends Controller
      *
      * @since  [v8.1.17]
      *
-     * @author [A. Gianotto <snipe@snipe.net>]
      */
     public function store(UploadFileRequest $request, $object_type, $id): JsonResponse
     {
@@ -145,7 +143,6 @@ class UploadedFilesController extends Controller
      *
      * @since  [v8.1.17]
      *
-     * @author [A. Gianotto <snipe@snipe.net>]
      */
     public function show($object_type, $id, $file_id): JsonResponse|StreamedResponse|Storage|StorageHelper|BinaryFileResponse
     {
@@ -197,7 +194,6 @@ class UploadedFilesController extends Controller
      *
      * @since  [v8.1.17]
      *
-     * @author [A. Gianotto <snipe@snipe.net>]
      */
     public function destroy($object_type, $id, $file_id): JsonResponse
     {

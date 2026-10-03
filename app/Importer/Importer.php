@@ -43,7 +43,7 @@ abstract class Importer
     protected $send_welcome = false;
 
     /**
-     * Send the "welcome to Snipe-IT" email to a user that was JUST
+     * Send the "welcome to AssetSecure" email to a user that was JUST
      * created as a checkout target in this row, if the operator opted
      * in on the wizard. wasRecentlyCreated is only true on the model
      * instance that a save() call minted, so matched existing users
@@ -547,7 +547,6 @@ abstract class Importer
     /**
      * Figure out the fieldname of the custom field
      *
-     * @author A. Gianotto <snipe@snipe.net>
      *
      * @since 3.0
      *
@@ -883,7 +882,6 @@ abstract class Importer
     /**
      * Fetch an existing department, or create new if it doesn't exist
      *
-     * @author A. Gianotto
      *
      * @since 4.6.5
      *
@@ -927,7 +925,6 @@ abstract class Importer
     /**
      * Fetch an existing manager
      *
-     * @author A. Gianotto
      *
      * @since 4.6.5
      *
@@ -951,7 +948,6 @@ abstract class Importer
     /**
      * Parse a date or return null
      *
-     * @author A. Gianotto
      *
      * @since 7.0.0
      *

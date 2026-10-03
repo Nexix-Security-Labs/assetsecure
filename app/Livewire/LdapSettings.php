@@ -128,7 +128,7 @@ class LdapSettings extends Component
 
     public string $ldap_auth_filter_query = '';
 
-    // Step 3: Attribute mapping. LDAP attribute names Snipe-IT reads
+    // Step 3: Attribute mapping. LDAP attribute names AssetSecure reads
     // from each entry. Only ldap_username_field + ldap_fname_field are
     // required per the legacy StoreLdapSettings rules.
     public string $ldap_username_field = '';
@@ -1054,7 +1054,7 @@ class LdapSettings extends Component
         $attributes = array_change_key_case((array) ldap_get_attributes($conn, $entry));
         @ldap_unbind($conn);
 
-        // Build the preview table: for each Snipe-IT field, resolve the
+        // Build the preview table: for each AssetSecure field, resolve the
         // configured LDAP attribute name to its actual value (or a
         // "not mapped" / "not present" marker for blade to render
         // muted). Attribute names are compared lowercase. LDAP is
@@ -1403,7 +1403,7 @@ class LdapSettings extends Component
         // completion summary (step 5) instead of redirecting away.
         // The summary lists sync-scheduling options. The wizard only
         // enabled login, not the recurring user sync, so pointing the
-        // admin at cron / Task Scheduler / manual `snipeit:ldap-sync`
+        // admin at cron / Task Scheduler / manual `assetsecure:ldap-sync`
         // right after enable is the useful hand-off.
         if ($this->currentStep === 4) {
             $this->highestStepReached = 5;

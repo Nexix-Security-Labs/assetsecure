@@ -79,20 +79,20 @@ for dir in \
   'dumps' \
   'keys'
 do
-  [ ! -d "/var/lib/snipeit/$dir" ] && mkdir -p "/var/lib/snipeit/$dir"
+  [ ! -d "/var/lib/assetsecure/$dir" ] && mkdir -p "/var/lib/assetsecure/$dir"
 done
 
-# Sync /var/lib/snipeit (docker volume) with /var/www/html directory
+# Sync /var/lib/assetsecure (docker volume) with /var/www/html directory
 ln -fs \
-  "/var/lib/snipeit/data/private_uploads" "/var/www/html/storage/private_uploads"
+  "/var/lib/assetsecure/data/private_uploads" "/var/www/html/storage/private_uploads"
 ln -fs \
-  "/var/lib/snipeit/data/uploads" "/var/www/html/public/uploads"
+  "/var/lib/assetsecure/data/uploads" "/var/www/html/public/uploads"
 ln -fs \
-  "/var/lib/snipeit/dumps" "/var/www/html/storage/app/backups"
+  "/var/lib/assetsecure/dumps" "/var/www/html/storage/app/backups"
 ln -fs \
-  "/var/lib/snipeit/keys/oauth-public.key" "/var/www/html/storage/oauth-public.key"
+  "/var/lib/assetsecure/keys/oauth-public.key" "/var/www/html/storage/oauth-public.key"
 ln -fs \
-  "/var/lib/snipeit/keys/oauth-private.key" "/var/www/html/storage/oauth-private.key"
+  "/var/lib/assetsecure/keys/oauth-private.key" "/var/www/html/storage/oauth-private.key"
 
 # If the Oauth DB files are not present copy the vendor files over to the db migrations
 if [ ! -f "/var/www/html/database/migrations/*create_oauth*" ]
@@ -102,9 +102,9 @@ fi
 
 # Add correct permissions for files and directories
 chown -R www-data:www-data \
-  /var/lib/snipeit/data \
-  /var/lib/snipeit/dumps \
-  /var/lib/snipeit/keys
+  /var/lib/assetsecure/data \
+  /var/lib/assetsecure/dumps \
+  /var/lib/assetsecure/keys
 
 # Migrate/create database
 php artisan migrate --force

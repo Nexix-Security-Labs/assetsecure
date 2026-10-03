@@ -9,7 +9,7 @@ return [
     'api_base_url' => 'API\'nizin temel URL\'si şurada bulunur:',
     'api_base_url_endpoint' => '/&lt;uçnokta&gt;',
     'api_token_expiration_time' => 'API jetonlarınız şu süre içinde sona erecek şekilde ayarlanmıştır:',
-    'api_reference' => 'Belirli API uç noktalarını ve ek API belgelerini bulmak için lütfen <a href="https://snipe-it.readme.io/reference" target="_blank">API referansını</a> inceleyin.',
+    'api_reference' => 'Belirli API uç noktalarını ve ek API belgelerini bulmak için lütfen <a href="https://github.com/Nexix-Security-Labs/assetsecure/wiki" target="_blank">API referansını</a> inceleyin.',
     'profile_updated' => 'Hesap başarıyla güncellendi',
     'no_tokens' => 'Henüz herhangi bir kişisel erişim belirteci oluşturmadınız',
     'enable_sounds' => 'Ses efektlerini etkinleştir',

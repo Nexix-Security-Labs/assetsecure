@@ -39,7 +39,7 @@ class NinjaOnePushTest extends TestCase
         $instance = SyncAdapterInstance::where('slug', 'ninjaone')->firstOrFail();
         SyncAdapterConfig::put($instance->id, 'direction.asset_tag', 'push');
 
-        $asset = Asset::factory()->create(['asset_tag' => 'SNIPE-NIN-1234']);
+        $asset = Asset::factory()->create(['asset_tag' => 'AS-NIN-1234']);
         AssetExternalSource::create([
             'asset_id' => $asset->id,
             'source' => $adapter->name(),
@@ -62,7 +62,7 @@ class NinjaOnePushTest extends TestCase
         Http::assertSent(function ($request) {
             return $request->method() === 'PATCH'
                 && str_contains($request->url(), '/v2/device/42/custom-fields')
-                && ($request->data()['snipeAssetTag'] ?? null) === 'SNIPE-NIN-1234';
+                && ($request->data()['snipeAssetTag'] ?? null) === 'AS-NIN-1234';
         });
     }
 
@@ -75,7 +75,7 @@ class NinjaOnePushTest extends TestCase
         $instance = SyncAdapterInstance::where('slug', 'ninjaone')->firstOrFail();
         SyncAdapterConfig::put($instance->id, 'direction.asset_tag', 'push');
 
-        $asset = Asset::factory()->create(['asset_tag' => 'SNIPE-NIN-NO-FIELD']);
+        $asset = Asset::factory()->create(['asset_tag' => 'AS-NIN-NO-FIELD']);
         AssetExternalSource::create([
             'asset_id' => $asset->id,
             'source' => $adapter->name(),

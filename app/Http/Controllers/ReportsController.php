@@ -41,7 +41,7 @@ use Symfony\Component\HttpFoundation\StreamedResponse;
 
 /**
  * This controller handles all actions related to Reports for
- * the Snipe-IT Asset Management application.
+ * the AssetSecure Asset Management application.
  *
  * @version    v1.0
  */
@@ -83,7 +83,6 @@ class ReportsController extends Controller
     /**
      * Returns a view that displays the accessories report.
      *
-     * @author [A. Gianotto] [<snipe@snipe.net>]
      *
      * @since [v1.0]
      */
@@ -99,7 +98,6 @@ class ReportsController extends Controller
      *
      * @deprecated Server-side exports have been replaced by datatables export since v2.
      *
-     * @author [A. Gianotto] [<snipe@snipe.net>]
      *
      * @see ManufacturersController::getDatatable() method that generates the JSON response
      * @since [v1.0]
@@ -151,7 +149,6 @@ class ReportsController extends Controller
     /**
      * Show depreciation report for assets.
      *
-     * @author [A. Gianotto] [<snipe@snipe.net>]
      *
      * @since [v1.0]
      */
@@ -168,7 +165,6 @@ class ReportsController extends Controller
      *
      * @deprecated Server-side exports have been replaced by datatables export since v2.
      *
-     * @author [A. Gianotto] [<snipe@snipe.net>]
      *
      * @since [v1.0]
      */
@@ -251,7 +247,6 @@ class ReportsController extends Controller
     /**
      * Displays audit report.
      *
-     * @author [A. Gianotto] [<snipe@snipe.net>]
      *
      * @since [v4.0]
      */
@@ -265,7 +260,6 @@ class ReportsController extends Controller
     /**
      * Displays activity report.
      *
-     * @author [A. Gianotto] [<snipe@snipe.net>]
      *
      * @since [v1.0]
      */
@@ -289,7 +283,6 @@ class ReportsController extends Controller
     /**
      * Exports the activity report to CSV
      *
-     * @author [A. Gianotto] [<snipe@snipe.net>]
      *
      * @since [v5.0.7]
      */
@@ -439,7 +432,6 @@ class ReportsController extends Controller
     /**
      * Displays license report
      *
-     * @author [A. Gianotto] [<snipe@snipe.net>]
      *
      * @since [v1.0]
      */
@@ -458,7 +450,6 @@ class ReportsController extends Controller
      *
      * @deprecated Server-side exports have been replaced by datatables export since v2.
      *
-     * @author [A. Gianotto] [<snipe@snipe.net>]
      *
      * @since [v1.0]
      */
@@ -523,7 +514,6 @@ class ReportsController extends Controller
     /**
      * Returns a form that allows the user to generate a custom CSV report.
      *
-     * @author [A. Gianotto] [<snipe@snipe.net>]
      *
      * @see ReportsController::postCustomReport() method that generates the CSV
      * @since [v1.0]
@@ -554,7 +544,6 @@ class ReportsController extends Controller
     /**
      * Exports the custom report to CSV
      *
-     * @author [A. Gianotto] [<snipe@snipe.net>]
      *
      * @see ReportsController::getCustomReport() method that generates form view
      * @since [v1.0]

@@ -22,7 +22,6 @@ class ValidationServiceProvider extends ServiceProvider
     /**
      * Custom email array validation
      *
-     * @author [A. Gianotto] [<snipe@snipe.net>]
      *
      * @since [v3.0]
      *
@@ -575,7 +574,7 @@ class ValidationServiceProvider extends ServiceProvider
             // own, it inherits its effective company_id from the parent
             // location chain via Location::effectiveFmcsCompanyId. Nested
             // locations where only the top-level ancestor carries a
-            // company_id are an intended Snipe-IT hierarchy pattern
+            // company_id are an intended AssetSecure hierarchy pattern
             // (e.g. "Acme Corp HQ" -> "Building 3" -> "Server Room" with
             // the company_id set only on "Acme Corp HQ"), so this rule
             // must not reject a null company_id on the location being

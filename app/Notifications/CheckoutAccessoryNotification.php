@@ -100,7 +100,7 @@ class CheckoutAccessoryNotification extends Notification implements ShouldQueue
         $admin = $this->admin;
         $item = $this->item;
         $note = $this->note;
-        $botname = (Setting::getSettings()->webhook_botname) ? Setting::getSettings()->webhook_botname : 'Snipe-Bot';
+        $botname = (Setting::getSettings()->webhook_botname) ? Setting::getSettings()->webhook_botname : 'AssetSecure Bot';
         $channel = (Setting::getSettings()->webhook_channel) ? Setting::getSettings()->webhook_channel : '';
 
         $fields = [
@@ -219,7 +219,7 @@ class CheckoutAccessoryNotification extends Notification implements ShouldQueue
             ->subject(trans('mail.Confirm_accessory_delivery'))
             ->withSymfonyMessage(function (Email $message) {
                 $message->getHeaders()->addTextHeader(
-                    'X-System-Sender', 'Snipe-IT'
+                    'X-System-Sender', 'AssetSecure'
                 );
             });
     }

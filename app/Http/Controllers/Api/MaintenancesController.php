@@ -21,7 +21,7 @@ use Illuminate\Http\Request;
 
 /**
  * This controller handles all actions related to Asset Maintenance for
- * the Snipe-IT Asset Management application.
+ * the AssetSecure Asset Management application.
  *
  * @version    v2.0
  */
@@ -282,7 +282,6 @@ class MaintenancesController extends Controller
     /**
      *  Validates and stores an update to an asset maintenance
      *
-     * @author  A. Gianotto <snipe@snipe.net>
      *
      * @param  int  $id
      * @param  int  $request
@@ -357,7 +356,6 @@ class MaintenancesController extends Controller
     /**
      *  Delete an asset maintenance
      *
-     * @author  A. Gianotto <snipe@snipe.net>
      *
      * @param  int  $maintenanceId
      *
@@ -381,7 +379,6 @@ class MaintenancesController extends Controller
     /**
      *  View an asset maintenance
      *
-     * @author  A. Gianotto <snipe@snipe.net>
      *
      * @param  int  $maintenanceId
      *

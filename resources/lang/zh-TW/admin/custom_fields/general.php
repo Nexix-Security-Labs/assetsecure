@@ -89,5 +89,5 @@ return [
         'date_picker' => 'Date Picker',
         'datetime_picker' => 'Datetime Picker',
     ],
-    'general_help_text' => '自訂欄位儲存預設資產欄位未涵蓋的附加資訊。<a href="https://snipe-it.readme.io/docs/custom-fields#/"><i class="fa fa-external-link"></i></a>。',
+    'general_help_text' => '自訂欄位儲存預設資產欄位未涵蓋的附加資訊。<a href="https://github.com/Nexix-Security-Labs/assetsecure/wiki/custom-fields#/"><i class="fa fa-external-link"></i></a>。',
 ];

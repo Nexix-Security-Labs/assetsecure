@@ -1,1 +1,1 @@
-See https://snipe-it.readme.io/docs/docker for Docker information
+See https://github.com/Nexix-Security-Labs/assetsecure/wiki/docker for Docker information

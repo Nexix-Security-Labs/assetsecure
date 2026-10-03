@@ -89,5 +89,5 @@ return [
         'date_picker' => 'Selettore Data',
         'datetime_picker' => 'Selettore Data/Ora',
     ],
-    'general_help_text' => 'I campi personalizzati memorizzano informazioni aggiuntive non coperte dai campi predefiniti del Bene. <a href="https://snipe-it.readme.io/docs/custom-fields#/"><i class="fa fa-external-link"></i></a>.',
+    'general_help_text' => 'I campi personalizzati memorizzano informazioni aggiuntive non coperte dai campi predefiniti del Bene. <a href="https://github.com/Nexix-Security-Labs/assetsecure/wiki/custom-fields#/"><i class="fa fa-external-link"></i></a>.',
 ];

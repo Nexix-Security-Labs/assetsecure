@@ -65,7 +65,7 @@ class AuditNotification extends Notification implements ShouldQueue
         return (new SlackMessage)
             ->success()
             ->content(class_basename(get_class($this->params['item'])).' '.trans('general.audited'))
-            ->from((Setting::getSettings()->webhook_botname) ? Setting::getSettings()->webhook_botname : 'Snipe-Bot')
+            ->from((Setting::getSettings()->webhook_botname) ? Setting::getSettings()->webhook_botname : 'AssetSecure Bot')
             ->to($channel)
             ->attachment(function ($attachment) {
                 $item = $this->params['item'] ?? null;

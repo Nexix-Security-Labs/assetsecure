@@ -14,7 +14,7 @@ use Symfony\Component\HttpFoundation\StreamedResponse;
 
 /**
  * This controller provide the health route  for
- * the Snipe-IT Asset Management application.
+ * the AssetSecure Asset Management application.
  *
  * @version   v1.0
  *
@@ -30,7 +30,6 @@ class UploadedFilesController extends Controller
      *
      * @since  [v8.2.2]
      *
-     * @author [A. Gianotto <snipe@snipe.net>]
      */
     public function store(UploadFileRequest $request, $object_type, $id): RedirectResponse
     {
@@ -82,7 +81,6 @@ class UploadedFilesController extends Controller
      *
      * @since  [v8.2.2]
      *
-     * @author [A. Gianotto <snipe@snipe.net>]
      */
     public function show($object_type, $id, $file_id): RedirectResponse|StreamedResponse|Storage|StorageHelper|BinaryFileResponse
     {
@@ -127,7 +125,6 @@ class UploadedFilesController extends Controller
      *
      * @since  [v8.2.2]
      *
-     * @author [A. Gianotto <snipe@snipe.net>]
      */
     public function destroy($object_type, $id, $file_id): RedirectResponse
     {

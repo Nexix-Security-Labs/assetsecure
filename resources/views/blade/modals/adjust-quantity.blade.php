@@ -87,7 +87,7 @@
          handle a form-control addon cleanly (the addon slot expects a span,
          not a second input), so this uses a plain row / col split instead.
          Currency is editable and left blank on open: pre-filling with the
-         system default would assert info we don't have per event (Snipe-IT's
+         system default would assert info we don't have per event (AssetSecure's
          historical currency handling is squishy already). Placeholder hints
          at the system default without stamping it. --}}
     <div class="row" id="adjustQuantityCostRow">

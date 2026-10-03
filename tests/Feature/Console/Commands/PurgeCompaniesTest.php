@@ -14,7 +14,7 @@ class PurgeCompaniesTest extends TestCase
 
         $this->assertSoftDeleted($company);
 
-        $this->artisan('snipeit:purge', ['--force' => 'true'])
+        $this->artisan('assetsecure:purge', ['--force' => 'true'])
             ->assertExitCode(0);
 
         $this->assertDatabaseMissing('companies', ['id' => $company->id]);
@@ -24,7 +24,7 @@ class PurgeCompaniesTest extends TestCase
     {
         $company = Company::factory()->create();
 
-        $this->artisan('snipeit:purge', ['--force' => 'true'])
+        $this->artisan('assetsecure:purge', ['--force' => 'true'])
             ->assertExitCode(0);
 
         $this->assertDatabaseHas('companies', ['id' => $company->id, 'deleted_at' => null]);

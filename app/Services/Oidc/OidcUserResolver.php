@@ -6,13 +6,13 @@ use App\Models\User;
 use Illuminate\Support\Facades\Log;
 
 /**
- * Maps a validated OIDC token's claims to an existing Snipe-IT user. The
+ * Maps a validated OIDC token's claims to an existing AssetSecure user. The
  * matched user's own permissions then apply unchanged -- this class grants no
  * privileges of its own.
  *
  * Lookup mirrors the SAML path (by username, active + not soft-deleted). A token
  * that resolves to no existing user is rejected -- there is no just-in-time
- * provisioning, so the IdP cannot conjure Snipe-IT accounts.
+ * provisioning, so the IdP cannot conjure AssetSecure accounts.
  */
 class OidcUserResolver
 {
@@ -34,7 +34,7 @@ class OidcUserResolver
             return $user;
         }
 
-        Log::warning('[OIDC] No active Snipe-IT user for token', ['username' => $username]);
+        Log::warning('[OIDC] No active AssetSecure user for token', ['username' => $username]);
 
         return null;
     }

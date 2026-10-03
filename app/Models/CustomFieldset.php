@@ -52,7 +52,6 @@ class CustomFieldset extends SnipeModel
     /**
      * Establishes the fieldset -> field relationship
      *
-     * @author [Brady Wetherington] [<uberbrady@gmail.com>]
      *
      * @since  [v3.0]
      *
@@ -66,7 +65,6 @@ class CustomFieldset extends SnipeModel
     /**
      * Establishes the fieldset -> models relationship
      *
-     * @author [Brady Wetherington] [<uberbrady@gmail.com>]
      *
      * @since  [v3.0]
      *
@@ -80,7 +78,6 @@ class CustomFieldset extends SnipeModel
     /**
      * Establishes the fieldset -> admin user relationship
      *
-     * @author [Brady Wetherington] [<uberbrady@gmail.com>]
      *
      * @since  [v3.0]
      *
@@ -114,7 +111,6 @@ class CustomFieldset extends SnipeModel
      * Determine the validation rules we should apply based on the
      * custom field format
      *
-     * @author [A. Gianotto] [<snipe@snipe.net>]
      *
      * @since  [v3.0]
      */

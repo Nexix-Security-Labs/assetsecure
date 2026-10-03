@@ -5,11 +5,11 @@
 | OIDC API bearer authentication
 |--------------------------------------------------------------------------
 |
-| Lets the Snipe-IT API accept a short-lived JWT issued by an external OpenID
+| Lets the AssetSecure API accept a short-lived JWT issued by an external OpenID
 | Connect provider (Microsoft Entra, Okta, Auth0, Keycloak, Google, ...) as a
 | `Authorization: Bearer` credential, in addition to Passport tokens. The token
 | is validated against the configured issuer(s)/audience/JWKS and mapped to an
-| existing Snipe-IT user, whose own permissions then apply unchanged.
+| existing AssetSecure user, whose own permissions then apply unchanged.
 |
 | Provider-agnostic and inert until configured: with OIDC_API_ENABLED unset (or
 | no issuers/audience), the guard authenticates nothing and Passport keeps
@@ -48,7 +48,7 @@ return [
         explode(',', (string) env('OIDC_API_ALGORITHMS', 'RS256,RS384,RS512,ES256'))
     ))),
 
-    // Token claim used to match a Snipe-IT user by username. Entra: the UPN
+    // Token claim used to match a AssetSecure user by username. Entra: the UPN
     // arrives in `preferred_username`.
     'username_claim' => env('OIDC_API_USERNAME_CLAIM', 'preferred_username'),
 

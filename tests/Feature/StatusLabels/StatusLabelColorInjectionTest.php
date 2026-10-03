@@ -59,7 +59,7 @@ class StatusLabelColorInjectionTest extends TestCase
         $actor = User::factory()->createStatusLabels()->create();
         $payload = 'red;position:fixed;background:url(//attacker.example/p.png)';
 
-        // Snipe-IT's Api handler catches ValidationException and
+        // AssetSecure's Api handler catches ValidationException and
         // returns HTTP 200 with an error-shaped body (see
         // app/Exceptions/Handler.php:174-177), so the "rejected"
         // signal here is `status: error` + a color error message,

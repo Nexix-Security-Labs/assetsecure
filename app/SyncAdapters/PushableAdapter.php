@@ -5,9 +5,9 @@ namespace App\SyncAdapters;
 use App\Models\Asset;
 
 /**
- * Marker + contract for adapters that support pushing Snipe-IT-owned
- * field values back to the vendor (Snipe-IT asset_tag -> vendor
- * asset_tag, Snipe-IT notes -> vendor notes, etc.). Kept separate
+ * Marker + contract for adapters that support pushing AssetSecure-owned
+ * field values back to the vendor (AssetSecure asset_tag -> vendor
+ * asset_tag, AssetSecure notes -> vendor notes, etc.). Kept separate
  * from SyncAdapter so pull-only vendors (osctrl, Zentral,
  * UniFi) don't have to stub anything.
  *

@@ -22,7 +22,6 @@ class DepartmentsController extends Controller
      * Returns a view that invokes the ajax tables which actually contains
      * the content for the assets listing, which is generated in getDatatable.
      *
-     * @author [A. Gianotto] [<snipe@snipe.net>]
      *
      * @see AssetController::getDatatable() method that generates the JSON response
      * @since [v4.0]
@@ -41,7 +40,6 @@ class DepartmentsController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @author [A. Gianotto] [<snipe@snipe.net>]
      *
      * @since [v4.0]
      */
@@ -69,7 +67,6 @@ class DepartmentsController extends Controller
      * Returns a view that invokes the ajax tables which actually contains
      * the content for the department detail page.
      *
-     * @author [A. Gianotto] [<snipe@snipe.net>]
      *
      * @param  int  $id
      *
@@ -85,7 +82,6 @@ class DepartmentsController extends Controller
     /**
      * Returns a form view used to create a new department.
      *
-     * @author [A. Gianotto] [<snipe@snipe.net>]
      *
      * @see DepartmentsController::postCreate() method that validates and stores the data
      * @since [v4.0]
@@ -100,7 +96,6 @@ class DepartmentsController extends Controller
     /**
      * Validates and deletes selected department.
      *
-     * @author [A. Gianotto] [<snipe@snipe.net>]
      *
      * @param  int  $locationId
      *
@@ -115,7 +110,7 @@ class DepartmentsController extends Controller
         }
 
         // Note: the image file is deliberately preserved across this
-        // soft-delete. Snipe-IT's `snipeit:purge` command permanently
+        // soft-delete. AssetSecure's `assetsecure:purge` command permanently
         // removes it later when the row is force-deleted. Keeping the
         // file here means a restored soft-deleted row still has its
         // image.
@@ -127,7 +122,6 @@ class DepartmentsController extends Controller
     /**
      * Makes a form view to edit Department information.
      *
-     * @author [A. Gianotto] [<snipe@snipe.net>]
      *
      * @see LocationsController::postCreate() method that validates and stores
      *
@@ -145,7 +139,6 @@ class DepartmentsController extends Controller
     /**
      * Save updated Department information.
      *
-     * @author [A. Gianotto] [<snipe@snipe.net>]
      *
      * @see LocationsController::postCreate() method that validates and stores
      *

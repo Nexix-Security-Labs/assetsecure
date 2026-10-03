@@ -38,7 +38,7 @@ class CleanIncorrectCheckoutAcceptancesTest extends TestCase
             'created_at' => $now,
         ]);
 
-        $this->artisan('snipeit:clean-checkout-acceptances')->assertExitCode(0);
+        $this->artisan('assetsecure:clean-checkout-acceptances')->assertExitCode(0);
 
         $this->assertDatabaseMissing('checkout_acceptances', ['id' => $badAcceptance->id]);
     }
@@ -48,7 +48,7 @@ class CleanIncorrectCheckoutAcceptancesTest extends TestCase
         // The factory creates a matching action_log with target_type = User::class by default
         $goodAcceptance = CheckoutAcceptance::factory()->create();
 
-        $this->artisan('snipeit:clean-checkout-acceptances')->assertExitCode(0);
+        $this->artisan('assetsecure:clean-checkout-acceptances')->assertExitCode(0);
 
         $this->assertDatabaseHas('checkout_acceptances', ['id' => $goodAcceptance->id]);
     }
@@ -78,7 +78,7 @@ class CleanIncorrectCheckoutAcceptancesTest extends TestCase
             'created_at' => $now->copy()->addSeconds(10),
         ]);
 
-        $this->artisan('snipeit:clean-checkout-acceptances')->assertExitCode(0);
+        $this->artisan('assetsecure:clean-checkout-acceptances')->assertExitCode(0);
 
         $this->assertDatabaseHas('checkout_acceptances', ['id' => $acceptance->id]);
     }
@@ -88,7 +88,7 @@ class CleanIncorrectCheckoutAcceptancesTest extends TestCase
         $acceptance = CheckoutAcceptance::factory()->withoutActionLog()->create();
         Model::withoutEvents(fn () => $acceptance->checkoutable->delete());
 
-        $this->artisan('snipeit:clean-checkout-acceptances')->assertExitCode(0);
+        $this->artisan('assetsecure:clean-checkout-acceptances')->assertExitCode(0);
 
         $this->assertDatabaseHas('checkout_acceptances', ['id' => $acceptance->id]);
     }
@@ -97,7 +97,7 @@ class CleanIncorrectCheckoutAcceptancesTest extends TestCase
     {
         $acceptance = CheckoutAcceptance::factory()->withoutActionLog()->create(['created_at' => null]);
 
-        $this->artisan('snipeit:clean-checkout-acceptances')->assertExitCode(0);
+        $this->artisan('assetsecure:clean-checkout-acceptances')->assertExitCode(0);
 
         $this->assertDatabaseHas('checkout_acceptances', ['id' => $acceptance->id]);
     }
@@ -128,7 +128,7 @@ class CleanIncorrectCheckoutAcceptancesTest extends TestCase
             'created_at' => $now,
         ]);
 
-        $this->artisan('snipeit:clean-checkout-acceptances')->assertExitCode(0);
+        $this->artisan('assetsecure:clean-checkout-acceptances')->assertExitCode(0);
 
         $this->assertDatabaseMissing('checkout_acceptances', ['id' => $badAcceptance->id]);
     }

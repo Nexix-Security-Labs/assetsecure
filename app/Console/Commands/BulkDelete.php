@@ -39,7 +39,7 @@ use function Laravel\Prompts\warning;
 
 class BulkDelete extends Command
 {
-    protected $signature = 'snipeit:checkin-delete-items';
+    protected $signature = 'assetsecure:checkin-delete-items';
 
     protected $description = 'Interactively check in and/or delete items by company and type';
 
@@ -305,7 +305,7 @@ class BulkDelete extends Command
         if ($doBackup && ! $dryRun) {
             $backupFilename = 'backup-before-bulk-delete-cli-'.now()->format('Y-m-d-H-i-s');
             info("Running backup ({$backupFilename}.zip)...");
-            $result = $this->callSilently('snipeit:backup', ['--filename' => $backupFilename]);
+            $result = $this->callSilently('assetsecure:backup', ['--filename' => $backupFilename]);
             if ($result === 0) {
                 info("Backup completed: {$backupFilename}.zip");
             } else {

@@ -19,7 +19,7 @@ use Illuminate\Support\Facades\Log;
  * has a CategoryName plus a CategoryData map whose keys are
  * human-readable strings ("Serial Number" with a space, "Number of
  * Cores", etc). normalize() walks the array by category and extracts
- * the fields Snipe-IT cares about.
+ * the fields AssetSecure cares about.
  *
  * Base URL is customer-specific: each VSA tenant has its own server
  * hostname (no shared regional endpoints like Workspace ONE or
@@ -87,7 +87,7 @@ class KaseyaVsa10Adapter extends SyncAdapter
 
         // Merge in any tenant-defined VSA custom fields the admin
         // captured via the "Refresh custom fields" button. Type is
-        // translated to Snipe-IT's extras type vocabulary so booleans
+        // translated to AssetSecure's extras type vocabulary so booleans
         // land on checkbox custom fields and everything else stays
         // free-text. admin_defined restricts the target pool to
         // custom-only in the mapping UI (native:asset_tag / notes
@@ -124,7 +124,7 @@ class KaseyaVsa10Adapter extends SyncAdapter
 
     /**
      * Translate a VSA field Type ("Text", "Number", "Date",
-     * "Boolean", "Dropdown") to the Snipe-IT extras type vocabulary
+     * "Boolean", "Dropdown") to the AssetSecure extras type vocabulary
      * ('text', 'boolean'). Unknown types fall through to 'text' so
      * the value still lands in a free-text custom field.
      */
@@ -205,7 +205,7 @@ class KaseyaVsa10Adapter extends SyncAdapter
 
         // Only enrich records with per-device custom-field values
         // when the admin has both refreshed the custom-field list AND
-        // mapped at least one to a Snipe-IT target. Skipping the
+        // mapped at least one to a AssetSecure target. Skipping the
         // /devices/{id}/customfields call when nothing is mapped
         // saves ~one API call per asset (VSA rate limit is
         // 3600/hour) and matches admin intent (no mapping = no

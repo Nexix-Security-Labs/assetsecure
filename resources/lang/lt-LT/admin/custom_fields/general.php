@@ -89,5 +89,5 @@ return [
         'date_picker' => 'Datos parinkiklis',
         'datetime_picker' => 'Datos ir laiko parinkiklis',
     ],
-    'general_help_text' => 'Pritaikytuose laukuose saugoma papildoma informacija, kurios neapima standartiniai turto laukai. <a href="https://snipe-it.readme.io/docs/custom-fields#/"><i class="fa fa-external-link"></i></a>.',
+    'general_help_text' => 'Pritaikytuose laukuose saugoma papildoma informacija, kurios neapima standartiniai turto laukai. <a href="https://github.com/Nexix-Security-Labs/assetsecure/wiki/custom-fields#/"><i class="fa fa-external-link"></i></a>.',
 ];

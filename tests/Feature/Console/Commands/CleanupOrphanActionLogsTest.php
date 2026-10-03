@@ -27,7 +27,7 @@ class CleanupOrphanActionLogsTest extends TestCase
             'action_type' => 'checkout',
         ]);
 
-        $this->artisan('snipeit:orphan-action-logs')->assertExitCode(0);
+        $this->artisan('assetsecure:orphan-action-logs')->assertExitCode(0);
 
         // Nothing deleted in dry-run.
         $this->assertDatabaseHas('action_logs', ['id' => $liveLog->id]);
@@ -49,7 +49,7 @@ class CleanupOrphanActionLogsTest extends TestCase
             'action_type' => 'checkout',
         ]);
 
-        $this->artisan('snipeit:orphan-action-logs', ['--delete' => true])
+        $this->artisan('assetsecure:orphan-action-logs', ['--delete' => true])
             ->expectsConfirmation('Proceed with deletion?', 'yes')
             ->assertExitCode(0);
 
@@ -77,7 +77,7 @@ class CleanupOrphanActionLogsTest extends TestCase
             'action_type' => 'update',
         ]);
 
-        $this->artisan('snipeit:orphan-action-logs', ['--delete' => true])
+        $this->artisan('assetsecure:orphan-action-logs', ['--delete' => true])
             ->assertExitCode(0);
 
         $this->assertDatabaseHas('action_logs', ['id' => $assetLog->id]);
@@ -94,7 +94,7 @@ class CleanupOrphanActionLogsTest extends TestCase
 
         $orphanCountBefore = DB::table('action_logs')->count();
 
-        $this->artisan('snipeit:orphan-action-logs', ['--delete' => true])
+        $this->artisan('assetsecure:orphan-action-logs', ['--delete' => true])
             ->expectsConfirmation('Proceed with deletion?', 'no')
             ->assertExitCode(0);
 
@@ -113,7 +113,7 @@ class CleanupOrphanActionLogsTest extends TestCase
             'action_type' => 'update',
         ]);
 
-        $this->artisan('snipeit:orphan-action-logs', ['--delete' => true])
+        $this->artisan('assetsecure:orphan-action-logs', ['--delete' => true])
             ->assertExitCode(0);
 
         $this->assertDatabaseHas('action_logs', ['id' => $ghostLog->id]);
@@ -127,7 +127,7 @@ class CleanupOrphanActionLogsTest extends TestCase
             'action_type' => 'update',
         ]);
 
-        $this->artisan('snipeit:orphan-action-logs', [
+        $this->artisan('assetsecure:orphan-action-logs', [
             '--delete' => true,
             '--include-unresolvable' => true,
         ])
@@ -155,7 +155,7 @@ class CleanupOrphanActionLogsTest extends TestCase
             'action_type' => 'update',
         ]);
 
-        $this->artisan('snipeit:orphan-action-logs', ['--delete' => true])
+        $this->artisan('assetsecure:orphan-action-logs', ['--delete' => true])
             ->expectsConfirmation('Proceed with deletion?', 'yes')
             ->assertExitCode(0);
 
@@ -171,7 +171,7 @@ class CleanupOrphanActionLogsTest extends TestCase
             'action_type' => 'checkout',
         ]);
 
-        $this->artisan('snipeit:orphan-action-logs')
+        $this->artisan('assetsecure:orphan-action-logs')
             ->expectsOutputToContain('Table is clean')
             ->assertExitCode(0);
     }

@@ -202,7 +202,7 @@ class LandscapeAdapterTest extends TestCase
 
     public function test_adopts_existing_asset_by_serial_when_toggle_is_on()
     {
-        // Migration scenario: customer already has assets in Snipe-IT
+        // Migration scenario: customer already has assets in AssetSecure
         // (from a homegrown script that populated `serial`) but no
         // asset_external_sources rows for this adapter. With
         // adopt_by_serial turned on, the first sync should adopt the

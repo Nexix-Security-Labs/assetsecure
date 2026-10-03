@@ -14,7 +14,6 @@ use Illuminate\Support\Str;
  * 2017_01_25_063357_fix_utf8_custom_field_column_names.php migration
  * as a one-time fix.
  *
- * @author [A. Gianotto] [<snipe@snipe.net>]
  *
  * @since [v4.0]
  *

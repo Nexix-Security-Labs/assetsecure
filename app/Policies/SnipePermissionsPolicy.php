@@ -9,7 +9,7 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Gate;
 
 /**
- * SnipePermissionsPolicy provides methods for handling the granular permissions used throughout Snipe-IT.
+ * SnipePermissionsPolicy provides methods for handling the granular permissions used throughout AssetSecure.
  * Each "area" of a permission (which is usually a model, like Assets, Departments, etc), has a setting
  * in config/permissions.php like view/create/edit/delete (and sometimes some extra stuff like
  * checkout/checkin, etc.)
@@ -47,7 +47,7 @@ abstract class SnipePermissionsPolicy
          *
          * The *superuser* global permission gets handled in the AuthServiceProvider before() method.
          *
-         * @see https://snipe-it.readme.io/docs/permissions
+         * @see https://github.com/Nexix-Security-Labs/assetsecure/wiki/permissions
          */
         if ($user->hasAccess('admin')) {
             return true;

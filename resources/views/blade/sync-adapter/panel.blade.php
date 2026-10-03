@@ -84,12 +84,12 @@
                      on. --}}
                 @if ($adapter instanceof \App\SyncAdapters\PushableAdapter && $adapter->canPush())
                     {!! trans('admin/settings/sync_adapters.large_fleet_note', [
-                        'pull_command' => '<code>php artisan snipeit:pull-inventory '.e($slug).'</code>',
-                        'push_command' => '<code>php artisan snipeit:push-inventory '.e($slug).'</code>',
+                        'pull_command' => '<code>php artisan assetsecure:pull-inventory '.e($slug).'</code>',
+                        'push_command' => '<code>php artisan assetsecure:push-inventory '.e($slug).'</code>',
                     ]) !!}
                 @else
                     {!! trans('admin/settings/sync_adapters.large_fleet_note_pull_only', [
-                        'pull_command' => '<code>php artisan snipeit:pull-inventory '.e($slug).'</code>',
+                        'pull_command' => '<code>php artisan assetsecure:pull-inventory '.e($slug).'</code>',
                     ]) !!}
                 @endif
             </p>

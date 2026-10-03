@@ -5,7 +5,7 @@ vulnerabilities as quickly as possible.
 
 ## Supported Versions
 
-We try to make a reasonable effort to support older versions of Snipe-IT, 
+We try to make a reasonable effort to support older versions of AssetSecure, 
 however there are times when library dependencies and/or PHP/MySQL dependencies 
 make it impossible to backport security fixes on older versions. 
 
@@ -21,7 +21,7 @@ make it impossible to backport security fixes on older versions.
 
 ## Reporting a Vulnerability
 
-Security vulnerabilities should be sent to security@snipeitapp.com. You can typically expect a 
+Security vulnerabilities should be sent to security@nexixsecuritylabs.com. You can typically expect a 
 response within two business days, and we typically have fixes out in under a week from the initial disclosure.
 
 This obviously varies based on the severity of the security issue and the difficulty in remediation, but those have
@@ -38,4 +38,4 @@ For responsible disclosure, we ask that you give us at least __90 days__ to addr
 publicly,
 but we will work with you if you need to disclose it sooner than that.
 
-For a full breakdown of our security policies, please see https://snipeitapp.com/security.
+For questions about this policy, contact security@nexixsecuritylabs.com.

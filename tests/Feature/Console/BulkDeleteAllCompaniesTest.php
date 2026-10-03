@@ -25,7 +25,7 @@ class BulkDeleteAllCompaniesTest extends TestCase
 
         $hasNotifiable = ! empty(array_intersect($types, ['assets', 'licenses', 'accessories', 'components']));
 
-        $cmd = $this->artisan('snipeit:checkin-delete-items')
+        $cmd = $this->artisan('assetsecure:checkin-delete-items')
             ->expectsConfirmation('Is this a dry run?', 'no')
             ->expectsQuestion($searchLabel, $admin->username)
             ->expectsQuestion($searchLabel, (string) $admin->id)

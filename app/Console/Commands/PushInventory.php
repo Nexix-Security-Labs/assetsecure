@@ -10,9 +10,9 @@ use Throwable;
 
 class PushInventory extends Command
 {
-    protected $signature = 'snipeit:push-inventory {adapter? : The adapter instance slug. Omit to push every enabled instance that supports push.}';
+    protected $signature = 'assetsecure:push-inventory {adapter? : The adapter instance slug. Omit to push every enabled instance that supports push.}';
 
-    protected $description = 'Push Snipe-IT-authoritative field values to configured sync-adapter instances that support pushing.';
+    protected $description = 'Push AssetSecure-authoritative field values to configured sync-adapter instances that support pushing.';
 
     private const TABLE_HEADERS = ['Adapter', 'Status', 'Pushed', 'Errors', 'Elapsed'];
 

@@ -54,7 +54,7 @@ class FleetClient
 
     /**
      * List every Fleet Team on the instance. Used by the adapter's
-     * fetchGroups() so admins can map Fleet Teams to Snipe-IT
+     * fetchGroups() so admins can map Fleet Teams to AssetSecure
      * companies. Teams endpoint returns the full list in one call.
      *
      * @return array<int, array<string, mixed>>

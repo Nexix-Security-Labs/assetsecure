@@ -22,7 +22,6 @@ class LicensePolicy extends CheckoutablePermissionsPolicy
      * something (maybe I got the product key wrong), and now I can never
      * see/edit that product key.
      *
-     * @see https://github.com/grokability/snipe-it/issues/6956
      *
      * @return mixed
      */

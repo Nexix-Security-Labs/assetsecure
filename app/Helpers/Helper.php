@@ -87,7 +87,6 @@ class Helper
     /**
      * Simple helper to invoke the markdown parser
      *
-     * @author [A. Gianotto] [<snipe@snipe.net>]
      *
      * @since [v2.0]
      *
@@ -141,7 +140,6 @@ class Helper
      * so the value might be a string, or an integer.
      * If it's a number, format it as a string.
      *
-     * @author [A. Gianotto] [<snipe@snipe.net>]
      *
      * @since [v2.0]
      *
@@ -165,7 +163,6 @@ class Helper
     /**
      * Static colors for pie charts.
      *
-     * @author [A. Gianotto] [<snipe@snipe.net>]
      *
      * @since [v3.3]
      *
@@ -531,7 +528,6 @@ class Helper
      * Static background (highlight) colors for pie charts
      * This is inelegant, and could be refactored later.
      *
-     * @author [A. Gianotto] [<snipe@snipe.net>]
      *
      * @since [v3.2]
      *
@@ -558,7 +554,6 @@ class Helper
     /**
      * Format currency using comma for thousands until local info is property used.
      *
-     * @author [A. Gianotto] [<snipe@snipe.net>]
      *
      * @since [v2.7]
      *
@@ -570,7 +565,7 @@ class Helper
          *
          * WARNING: This does conversions based on *locale* - a Unix-ey-like thing.
          *
-         * Everything else in the system tends to convert based on the Snipe-IT settings
+         * Everything else in the system tends to convert based on the AssetSecure settings
          *
          * So it's very likely this is *not* what you want - instead look for the new
          *
@@ -597,7 +592,6 @@ class Helper
     /**
      * Format currency using comma or period for thousands, and period or comma for decimal, based on settings.
      *
-     * @author [B. Wetherington] [<bwetherington@grokability.com>]
      *
      * @since [v5.2]
      *
@@ -621,7 +615,6 @@ class Helper
     /**
      * Get the list of status labels in an array to make a dropdown menu
      *
-     * @author [A. Gianotto] [<snipe@snipe.net>]
      *
      * @since [v2.5]
      *
@@ -642,7 +635,6 @@ class Helper
      * and we should probably add to the API controllers to make sure that
      * the status_id submitted is actually really deployable.
      *
-     * @author [A. Gianotto] [<snipe@snipe.net>]
      *
      * @since [v5.1.0]
      *
@@ -661,7 +653,6 @@ class Helper
     /**
      * Get the list of status label types in an array to make a dropdown menu
      *
-     * @author [A. Gianotto] [<snipe@snipe.net>]
      *
      * @since [v2.5]
      *
@@ -682,7 +673,6 @@ class Helper
     /**
      * Get the list of depreciations in an array to make a dropdown menu
      *
-     * @author [A. Gianotto] [<snipe@snipe.net>]
      *
      * @since [v2.5]
      *
@@ -699,7 +689,6 @@ class Helper
     /**
      * Get the list of category types in an array to make a dropdown menu
      *
-     * @author [A. Gianotto] [<snipe@snipe.net>]
      *
      * @since [v2.5]
      *
@@ -726,7 +715,6 @@ class Helper
     /**
      * Get the list of custom fields in an array to make a dropdown menu
      *
-     * @author [A. Gianotto] [<snipe@snipe.net>]
      *
      * @since [v2.5]
      *
@@ -742,7 +730,6 @@ class Helper
     /**
      * Get the list of custom field formats in an array to make a dropdown menu
      *
-     * @author [A. Gianotto] [<snipe@snipe.net>]
      *
      * @since [v3.4]
      *
@@ -767,7 +754,6 @@ class Helper
     /**
      * Get the list of barcode dimensions
      *
-     * @author [A. Gianotto] [<snipe@snipe.net>]
      *
      * @since [v3.3]
      *
@@ -792,7 +778,6 @@ class Helper
     /**
      * Generates a random string
      *
-     * @author [A. Gianotto] [<snipe@snipe.net>]
      *
      * @since [v3.0]
      *
@@ -839,7 +824,6 @@ class Helper
      * This nasty little method gets the low inventory info for the
      * alert dropdown
      *
-     * @author [A. Gianotto] [<snipe@snipe.net>]
      *
      * @since [v3.0]
      *
@@ -1004,7 +988,6 @@ class Helper
     /**
      * Check if the file is an image, so we can show a preview
      *
-     * @author [A. Gianotto] [<snipe@snipe.net>]
      *
      * @since [v3.0]
      *
@@ -1030,7 +1013,6 @@ class Helper
      * @param  File  $file
      * @return string | bool
      *
-     * @author [B. Wetherington] [<bwetherington@grokability.com>]
      *
      * @since [v8.1.18]
      */
@@ -1053,7 +1035,6 @@ class Helper
      * @param  File  $file
      * @return string | bool
      *
-     * @author [A. Gianotto] [<snipe@snipe.net>]
      *
      * @since [v3.0]
      */
@@ -1081,7 +1062,6 @@ class Helper
      * corresponding permission name and a true or false boolean to determine
      * if that group/user has been granted that permission.
      *
-     * @author [A. Gianotto] [<snipe@snipe.net]
      *
      * @param  array  $permissions
      * @param  array  $selected_arr
@@ -1132,7 +1112,6 @@ class Helper
      *
      * This does not currently handle form request validation requiredness :(
      *
-     * @author [A. Gianotto] [<snipe@snipe.net>]
      *
      * @since [v3.0]
      *
@@ -1256,7 +1235,6 @@ class Helper
      *
      * @todo allow this to handle more than just strings (arrays, etc)
      *
-     * @author A. Gianotto
      *
      * @since 3.6
      *
@@ -1582,7 +1560,6 @@ class Helper
     /**
      * Universal helper to show file size in human-readable formats
      *
-     * @author A. Gianotto <snipe@snipe.net>
      *
      * @since 5.0
      *
@@ -1610,7 +1587,6 @@ class Helper
     /**
      * This is weird but used by the side nav to determine which URL to point the user to
      *
-     * @author A. Gianotto <snipe@snipe.net>
      *
      * @since 5.0
      *
@@ -1661,7 +1637,6 @@ class Helper
     /**
      * Conversion between units of measurement
      *
-     * @author Grant Le Roux <grant.leroux+snipe-it@gmail.com>
      *
      * @since 5.0
      *
@@ -1683,7 +1658,6 @@ class Helper
     /**
      * Get conversion factor from unit of measurement to mm
      *
-     * @author Grant Le Roux <grant.leroux+snipe-it@gmail.com>
      *
      * @since 5.0
      *
@@ -1734,7 +1708,6 @@ class Helper
      *
      * @see public static $language_map in this file
      *
-     * @author A. Gianotto <snipe@snipe.net>
      *
      * @since 6.3.0
      *

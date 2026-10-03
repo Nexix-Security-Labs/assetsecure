@@ -76,7 +76,7 @@ return [
         'file_delete_error' => 'Šio failo ištrinti nepavyko',
         'file_missing' => 'Pažymėtas failas nerastas',
         'file_already_deleted' => 'Pasirinktas failas jau buvo panaikintas',
-        'file_missing_on_disk' => 'Šio importo failo diske nebėra. Jis galėjo būti ištrintas ne „Snipe-IT“ programoje. Ištrinkite šį įrašą ir iš naujo įkelkite failą, kad galėtumėte pabandyti dar kartą.',
+        'file_missing_on_disk' => 'Šio importo failo diske nebėra. Jis galėjo būti ištrintas ne „AssetSecure“ programoje. Ištrinkite šį įrašą ir iš naujo įkelkite failą, kad galėtumėte pabandyti dar kartą.',
         'file_empty' => 'Šiame faile nėra duomenų eilučių. Iš jo negalima nieko importuoti.',
         'already_processing' => 'Šį importavimą šiuo metu apdoroja kitas naudotojas. Palaukite, kol jis bus baigtas, ir tada bandykite dar kartą.',
         'header_row_missing' => 'Šiame faile nėra atpažįstamos antraštės eilutės. Ištrinkite šį įrašą ir vėl įkelkite failą, kad pabandytumėte dar kartą.',

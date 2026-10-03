@@ -49,7 +49,7 @@ use Tabuna\Breadcrumbs\Trail;
 
 /*
  * Gate Passport's default personal-access-token routes
- * behind the same self.api permission that protects Snipe-IT's own
+ * behind the same self.api permission that protects AssetSecure's own
  * /account/api and /api/v1/account/personal-access-tokens surfaces.
  *
  * These three routes are auto-registered by PassportServiceProvider
@@ -57,7 +57,7 @@ use Tabuna\Breadcrumbs\Trail;
  * valid session cookie could POST here and mint a long-lived bearer
  * token even if an admin had revoked their self.api permission.
  *
- * Snipe-IT's routes/web.php loads before Passport's package service
+ * AssetSecure's routes/web.php loads before Passport's package service
  * provider boots, so these registrations win route resolution over
  * the Passport originals (FIFO). Requests are forwarded to the same
  * PersonalAccessTokenController Passport would have used, so token
@@ -74,7 +74,7 @@ Route::middleware(['web', 'auth', 'can:self.api'])->prefix('oauth')->group(funct
 
 /*
  * Gate Passport's default OAuth-client management routes behind the
- * superuser check that already protects Snipe-IT's own
+ * superuser check that already protects AssetSecure's own
  * /admin/oauth surfaces (see the /admin group below,
  * middleware ['auth', 'authorize:superuser']).
  *

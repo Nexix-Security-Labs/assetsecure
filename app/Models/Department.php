@@ -104,7 +104,6 @@ class Department extends SnipeModel
     /**
      * Establishes the department -> company relationship
      *
-     * @author A. Gianotto <snipe@snipe.net>
      *
      * @since  [v4.0]
      *
@@ -118,7 +117,6 @@ class Department extends SnipeModel
     /**
      * Establishes the department -> users relationship
      *
-     * @author A. Gianotto <snipe@snipe.net>
      *
      * @since  [v4.0]
      *
@@ -132,7 +130,6 @@ class Department extends SnipeModel
     /**
      * Establishes the department -> manager relationship
      *
-     * @author A. Gianotto <snipe@snipe.net>
      *
      * @since  [v4.0]
      *
@@ -146,7 +143,6 @@ class Department extends SnipeModel
     /**
      * Establishes the department -> location relationship
      *
-     * @author A. Gianotto <snipe@snipe.net>
      *
      * @since  [v4.0]
      *

@@ -34,7 +34,7 @@ class SendExpirationAlertsTest extends TestCase
 
         Log::spy();
 
-        $this->artisan('snipeit:expiring-alerts')->assertExitCode(0);
+        $this->artisan('assetsecure:expiring-alerts')->assertExitCode(0);
 
         Log::shouldHaveReceived('warning')->atLeast()->once();
     }

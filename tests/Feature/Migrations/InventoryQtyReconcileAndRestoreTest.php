@@ -47,7 +47,7 @@ class InventoryQtyReconcileAndRestoreTest extends TestCase
     }
 
     /**
-     * Insert a legacy create action_log entry the way pre-trait Snipe-IT
+     * Insert a legacy create action_log entry the way pre-trait AssetSecure
      * used to: `create` type with a fixed quantity that does not reflect
      * the parent row's real on-hand count. Bypass Eloquent to avoid the
      * observer writing its own more-modern entry on top.

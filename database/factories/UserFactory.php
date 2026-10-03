@@ -174,11 +174,11 @@ class UserFactory extends Factory
     {
         return $this->state(function () {
             return [
-                'first_name' => 'Snipe E.',
-                'last_name' => 'Head',
-                'username' => 'snipe',
+                'first_name' => 'Demo',
+                'last_name' => 'Admin',
+                'username' => 'demoadmin',
                 'avatar' => '2.jpg',
-                'email' => 'snipe@snipe.net',
+                'email' => 'admin@example.com',
                 'permissions' => '{"superuser":"1"}',
             ];
         });
@@ -190,9 +190,9 @@ class UserFactory extends Factory
             return [
                 'first_name' => 'Alison',
                 'last_name' => 'Gianotto',
-                'username' => 'agianotto@grokability.com',
+                'username' => 'admin@example.com',
                 'avatar' => '2.jpg',
-                'email' => 'agianotto@grokability.com',
+                'email' => 'admin@example.com',
                 'permissions' => '{"superuser":"1"}',
             ];
         });
@@ -701,7 +701,7 @@ class UserFactory extends Factory
             'first_name' => 'Asset',
             'last_name' => 'Manager',
             'username' => 'assetmgr',
-            'email' => 'assetmgr@demo.snipeitapp.com',
+            'email' => 'assetmgr@example.com',
             'permissions' => json_encode([
                 'assets.view' => '1',
                 'assets.create' => '1',
@@ -725,7 +725,7 @@ class UserFactory extends Factory
             'first_name' => 'License',
             'last_name' => 'Manager',
             'username' => 'licensemgr',
-            'email' => 'licensemgr@demo.snipeitapp.com',
+            'email' => 'assetmgr@example.com',
             'permissions' => json_encode([
                 'licenses.view' => '1',
                 'licenses.create' => '1',
@@ -745,7 +745,7 @@ class UserFactory extends Factory
             'first_name' => 'Accessory',
             'last_name' => 'Manager',
             'username' => 'accessorymgr',
-            'email' => 'accessorymgr@demo.snipeitapp.com',
+            'email' => 'assetmgr@example.com',
             'permissions' => json_encode([
                 'accessories.view' => '1',
                 'accessories.create' => '1',
@@ -764,7 +764,7 @@ class UserFactory extends Factory
             'first_name' => 'Consumable',
             'last_name' => 'Manager',
             'username' => 'consumablemgr',
-            'email' => 'consumablemgr@demo.snipeitapp.com',
+            'email' => 'assetmgr@example.com',
             'permissions' => json_encode([
                 'consumables.view' => '1',
                 'consumables.create' => '1',
@@ -783,7 +783,7 @@ class UserFactory extends Factory
             'first_name' => 'Component',
             'last_name' => 'Manager',
             'username' => 'componentmgr',
-            'email' => 'componentmgr@demo.snipeitapp.com',
+            'email' => 'assetmgr@example.com',
             'permissions' => json_encode([
                 'components.view' => '1',
                 'components.create' => '1',
@@ -802,7 +802,7 @@ class UserFactory extends Factory
             'first_name' => 'User',
             'last_name' => 'Manager',
             'username' => 'usermgr',
-            'email' => 'usermgr@demo.snipeitapp.com',
+            'email' => 'assetmgr@example.com',
             'permissions' => json_encode([
                 'users.view' => '1',
                 'users.create' => '1',

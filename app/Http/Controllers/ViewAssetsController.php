@@ -26,7 +26,7 @@ use Illuminate\Support\Facades\Log;
 
 /**
  * This controller handles all actions related to the ability for users
- * to view their own assets in the Snipe-IT Asset Management application.
+ * to view their own assets in the AssetSecure Asset Management application.
  *
  * @version    v1.0
  */

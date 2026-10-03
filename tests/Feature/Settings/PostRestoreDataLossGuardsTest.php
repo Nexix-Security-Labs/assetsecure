@@ -18,7 +18,7 @@ use Tests\TestCase;
  *
  * 1. The archive is validated with ZipArchive::open() BEFORE db:wipe runs.
  *    A malformed zip therefore leaves the current database untouched.
- * 2. A pre-restore backup is taken BEFORE db:wipe runs. If snipeit:backup
+ * 2. A pre-restore backup is taken BEFORE db:wipe runs. If assetsecure:backup
  *    fails, restore aborts before touching the database.
  */
 class PostRestoreDataLossGuardsTest extends TestCase
@@ -55,7 +55,7 @@ class PostRestoreDataLossGuardsTest extends TestCase
             ->assertSessionHas('error');
 
         Artisan::shouldNotHaveReceived('call', function ($command) {
-            return in_array($command, ['db:wipe', 'snipeit:restore', 'migrate'], true);
+            return in_array($command, ['db:wipe', 'assetsecure:restore', 'migrate'], true);
         });
     }
 

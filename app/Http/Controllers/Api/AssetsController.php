@@ -44,11 +44,10 @@ use Illuminate\Support\Str;
 
 /**
  * This class controls all actions related to assets for
- * the Snipe-IT Asset Management application.
+ * the AssetSecure Asset Management application.
  *
  * @version    v1.0
  *
- * @author [A. Gianotto] [<snipe@snipe.net>]
  */
 class AssetsController extends Controller
 {
@@ -57,7 +56,6 @@ class AssetsController extends Controller
     /**
      * Returns JSON listing of all assets
      *
-     * @author [A. Gianotto] [<snipe@snipe.net>]
      *
      * @param  int  $assetId
      *
@@ -81,7 +79,7 @@ class AssetsController extends Controller
          * gracefully to just use the AssetTransformer by default, which shouldn't break anything.
          *
          * It was either this mess, or repeating ALL of the searching and sorting and filtering code,
-         * which would have been far worse of a mess. *sad face*  - snipe (Sept 1, 2021)
+         * which would have been far worse of a mess. *sad face*
          */
         if (Route::currentRouteName() == 'api.depreciation-report.index') {
             $filter_non_deprecable_assets = true;
@@ -540,7 +538,6 @@ class AssetsController extends Controller
      *
      * @since [v4.2.1]
      *
-     * @author [A. Gianotto] [<snipe@snipe.net>]
      */
     public function showByTag(Request $request, $tag): JsonResponse|array
     {
@@ -573,7 +570,6 @@ class AssetsController extends Controller
     /**
      * Returns JSON with information about an asset (by serial) for detail view.
      *
-     * @author [A. Gianotto] [<snipe@snipe.net>]
      *
      * @param  string  $serial
      *
@@ -619,7 +615,6 @@ class AssetsController extends Controller
     /**
      * Returns JSON with information about an asset for detail view.
      *
-     * @author [A. Gianotto] [<snipe@snipe.net>]
      *
      * @param  int  $assetId
      *
@@ -653,7 +648,6 @@ class AssetsController extends Controller
     /**
      * Gets a paginated collection for the select2 menus
      *
-     * @author [A. Gianotto] [<snipe@snipe.net>]
      *
      * @since [v4.0.16]
      * @see SelectlistTransformer
@@ -681,7 +675,6 @@ class AssetsController extends Controller
         // Superusers MUST bypass this filter — they manage across companies and need to see every
         // asset on checkout dropdowns. Scoping superusers to the item's company breaks the umbrella-
         // corp / service-provider workflow where one admin checks items out across sub-companies.
-        // See: https://github.com/snipe/snipe-it/issues/ (v8.6.3 regression report)
         if ((Setting::getSettings()->full_multiple_companies_support == '1')
             && $request->filled('companyId')
             && ! auth()->user()->isSuperUser()) {
@@ -756,7 +749,6 @@ class AssetsController extends Controller
     /**
      * Accepts a POST request to create a new asset
      *
-     * @author [A. Gianotto] [<snipe@snipe.net>]
      *
      * @param  ImageUploadRequest  $request
      *
@@ -891,7 +883,6 @@ class AssetsController extends Controller
      * Response shape is the legacy `{status, messages, payload}` body every
      * integration already knows.
      *
-     * @author [A. Gianotto] [<snipe@snipe.net>]
      *
      * @since [v4.0]
      */
@@ -1271,7 +1262,6 @@ class AssetsController extends Controller
     /**
      * Delete a given asset (mark as deleted).
      *
-     * @author [A. Gianotto] [<snipe@snipe.net>]
      *
      * @param  int  $assetId
      *
@@ -1306,7 +1296,6 @@ class AssetsController extends Controller
     /**
      * Restore a soft-deleted asset.
      *
-     * @author [A. Gianotto] [<snipe@snipe.net>]
      *
      * @param  int  $assetId
      *
@@ -1355,7 +1344,6 @@ class AssetsController extends Controller
     /**
      * Checkout an asset
      *
-     * @author [A. Gianotto] [<snipe@snipe.net>]
      *
      * @param  int  $assetId
      *
@@ -1471,7 +1459,6 @@ class AssetsController extends Controller
     /**
      * Checkin an asset
      *
-     * @author [A. Gianotto] [<snipe@snipe.net>]
      *
      * @param  int  $assetId
      *
@@ -1628,7 +1615,6 @@ class AssetsController extends Controller
     /**
      * Mark an asset as audited
      *
-     * @author [A. Gianotto] [<snipe@snipe.net>]
      *
      * @param  int  $id
      *
@@ -1942,7 +1928,6 @@ class AssetsController extends Controller
     /**
      * Returns JSON listing of all requestable assets
      *
-     * @author [A. Gianotto] [<snipe@snipe.net>]
      *
      * @since [v4.0]
      */

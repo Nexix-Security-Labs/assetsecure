@@ -31,7 +31,7 @@ use Tests\TestCase;
  *
  * Rules 3-6 gate on scope_locations_fmcs = 1 because opting into
  * location scoping under FMCS is what enables tenant isolation for the
- * locations table. Without it, Snipe-IT treats locations as global
+ * locations table. Without it, AssetSecure treats locations as global
  * config records shared across every tenant.
  */
 class LocationsFmcsScopingTest extends TestCase

@@ -37,7 +37,7 @@ class WorkspaceOnePushTest extends TestCase
         $instance = SyncAdapterInstance::where('slug', 'workspace_one')->firstOrFail();
         SyncAdapterConfig::put($instance->id, 'direction.asset_tag', 'push');
 
-        $asset = Asset::factory()->create(['asset_tag' => 'SNIPE-WS1-1234']);
+        $asset = Asset::factory()->create(['asset_tag' => 'AS-WS1-1234']);
         AssetExternalSource::create([
             'asset_id' => $asset->id,
             'source' => $adapter->name(),
@@ -60,7 +60,7 @@ class WorkspaceOnePushTest extends TestCase
         Http::assertSent(function ($request) {
             return $request->method() === 'PUT'
                 && str_contains($request->url(), '/api/mdm/devices/ws1-uuid-42')
-                && ($request->data()['AssetNumber'] ?? null) === 'SNIPE-WS1-1234';
+                && ($request->data()['AssetNumber'] ?? null) === 'AS-WS1-1234';
         });
     }
 

@@ -611,7 +611,6 @@ class ItemImporter extends Importer
     /**
      * Fetch an existing manager
      *
-     * @author A. Gianotto
      *
      * @since 4.6.5
      *

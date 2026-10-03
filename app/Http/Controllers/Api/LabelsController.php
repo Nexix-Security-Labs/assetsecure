@@ -15,7 +15,6 @@ class LabelsController extends Controller
     /**
      * Returns JSON listing of all labels.
      *
-     * @author Grant Le Roux <grant.leroux+snipe-it@gmail.com>
      */
     public function index(Request $request): JsonResponse|array
     {
@@ -47,7 +46,6 @@ class LabelsController extends Controller
     /**
      * Returns JSON with information about a label for detail view.
      *
-     * @author Grant Le Roux <grant.leroux+snipe-it@gmail.com>
      */
     public function show(string $labelName): JsonResponse|array
     {

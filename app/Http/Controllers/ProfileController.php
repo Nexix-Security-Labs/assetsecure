@@ -21,7 +21,7 @@ use Symfony\Component\HttpFoundation\BinaryFileResponse;
 
 /**
  * This controller handles all actions related to User Profiles for
- * the Snipe-IT Asset Management application.
+ * the AssetSecure Asset Management application.
  *
  * @version    v1.0
  */
@@ -30,7 +30,6 @@ class ProfileController extends Controller
     /**
      * Returns a view with the user's profile form for editing
      *
-     * @author [A. Gianotto] [<snipe@snipe.net>]
      *
      * @since [v1.0]
      */
@@ -45,7 +44,6 @@ class ProfileController extends Controller
     /**
      * Validates and stores the user's update data.
      *
-     * @author [A. Gianotto] [<snipe@snipe.net>]
      *
      * @since [v1.0]
      */
@@ -99,7 +97,6 @@ class ProfileController extends Controller
      * We created a controller method for this because closures aren't allowed
      * in the routes file if you want to be able to cache the routes.
      *
-     * @author [A. Gianotto] [<snipe@snipe.net>]
      *
      * @since [v4.0]
      */
@@ -154,7 +151,7 @@ class ProfileController extends Controller
             }
 
             // This checks to make sure that the user's password isn't the same as their username,
-            // email address, first name or last name (see https://github.com/grokability/snipe-it/issues/8661)
+            // email address, first name or last name
             // While this is handled via SaveUserRequest form request in other places, we have to do this manually
             // here because we don't have the username, etc form fields available in the profile password change
             // form.
@@ -196,7 +193,6 @@ class ProfileController extends Controller
      * This URL is triggered via jquery in
      * resources/views/layouts/default.blade.php
      *
-     * @author [A. Gianotto] [<snipe@snipe.net>]
      *
      * @since [v4.0]
      */
@@ -212,7 +208,6 @@ class ProfileController extends Controller
     /**
      * Print inventory
      *
-     * @author A. Gianotto
      *
      * @since [v6.0.12]
      */
@@ -244,7 +239,6 @@ class ProfileController extends Controller
     /**
      * Emails user a list of assigned assets
      *
-     * @author A. Gianotto
      *
      * @since [v6.0.12]
      */

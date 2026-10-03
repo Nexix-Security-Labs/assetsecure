@@ -24,7 +24,7 @@ class CreateAdmin extends Command
      * @property Carbon|null $created_at
      * @property mixed $created_by
      */
-    protected $signature = 'snipeit:create-admin {--first_name=} {--last_name=}  {--email=}  {--username=}  {--password=} {show_in_list?} {autoassign_licenses?}';
+    protected $signature = 'assetsecure:create-admin {--first_name=} {--last_name=}  {--email=}  {--username=}  {--password=} {show_in_list?} {autoassign_licenses?}';
 
     /**
      * The console command description.

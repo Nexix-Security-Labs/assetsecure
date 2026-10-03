@@ -88,7 +88,6 @@ class LocationImporter extends ItemImporter
      *
      * @todo Investigate how this should interact with Importer::createLocationIfNotExists
      *
-     * @author A. Gianotto
      *
      * @since 6.1.0
      */

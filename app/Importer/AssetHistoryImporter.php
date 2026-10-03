@@ -215,7 +215,7 @@ class AssetHistoryImporter extends Importer
                 // location-specific reports. Without this a location
                 // checkout would flip assigned_to but leave location_id
                 // pinned to whatever it was before, producing an
-                // inconsistent state Snipe-IT itself never emits.
+                // inconsistent state AssetSecure itself never emits.
                 if ($target instanceof Location) {
                     $asset->location_id = $target->id;
                 }

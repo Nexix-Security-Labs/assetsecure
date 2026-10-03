@@ -307,7 +307,6 @@ class SnipeModel extends Model
      *
      * @since  [v3.0]
      *
-     * @author [A. Gianotto] [<snipe@snipe.net>]
      */
     public function adminuser()
     {

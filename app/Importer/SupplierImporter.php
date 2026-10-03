@@ -57,7 +57,6 @@ class SupplierImporter extends ItemImporter
      *
      * @todo Investigate how this should interact with Importer::createSupplierIfNotExists
      *
-     * @author A. Gianotto
      *
      * @since 6.1.0
      */

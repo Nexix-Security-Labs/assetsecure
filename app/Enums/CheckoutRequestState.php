@@ -11,7 +11,7 @@ namespace App\Enums;
  *              into every checkout controller.
  *   canceled   Explicit cancel by the requester or an admin.
  *
- * Approval is deliberately not included here. Snipe-IT ships without
+ * Approval is deliberately not included here. AssetSecure ships without
  * an approval step in this pass. Requests move straight from
  * pending to fulfilled or canceled. If admin approval gets added later,
  * `approved` slots between pending and fulfilled.

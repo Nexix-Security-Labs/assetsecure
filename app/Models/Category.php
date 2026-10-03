@@ -140,7 +140,6 @@ class Category extends SnipeModel
     /**
      * Establishes the category -> accessories relationship
      *
-     * @author [A. Gianotto] [<snipe@snipe.net>]
      *
      * @since  [v2.0]
      *
@@ -154,7 +153,6 @@ class Category extends SnipeModel
     /**
      * Establishes the category -> licenses relationship
      *
-     * @author [A. Gianotto] [<snipe@snipe.net>]
      *
      * @since  [v4.3]
      *
@@ -168,7 +166,6 @@ class Category extends SnipeModel
     /**
      * Establishes the category -> consumables relationship
      *
-     * @author [A. Gianotto] [<snipe@snipe.net>]
      *
      * @since  [v3.0]
      *
@@ -182,7 +179,6 @@ class Category extends SnipeModel
     /**
      * Establishes the category -> consumables relationship
      *
-     * @author [A. Gianotto] [<snipe@snipe.net>]
      *
      * @since  [v3.0]
      *
@@ -199,7 +195,6 @@ class Category extends SnipeModel
      *
      * It should only be used in a single category context.
      *
-     * @author [A. Gianotto] [<snipe@snipe.net>]
      *
      * @since  [v2.0]
      *
@@ -238,7 +233,6 @@ class Category extends SnipeModel
     /**
      * Establishes the category -> assets relationship
      *
-     * @author [A. Gianotto] [<snipe@snipe.net>]
      *
      * @since  [v2.0]
      *
@@ -257,7 +251,6 @@ class Category extends SnipeModel
      * should give us more flexibility if we need to return actually archived assets
      * by their category.
      *
-     * @author [A. Gianotto] [<snipe@snipe.net>]
      *
      * @since  [v6.1.0]
      * @see    Asset::scopeAssetsForShow()
@@ -272,7 +265,6 @@ class Category extends SnipeModel
     /**
      * Establishes the category -> models relationship
      *
-     * @author [A. Gianotto] [<snipe@snipe.net>]
      *
      * @since  [v2.0]
      *
@@ -287,7 +279,6 @@ class Category extends SnipeModel
      * Checks for a category-specific EULA, and if that doesn't exist,
      * checks for a settings level EULA
      *
-     * @author [A. Gianotto] [<snipe@snipe.net>]
      *
      * @since  [v2.0]
      *

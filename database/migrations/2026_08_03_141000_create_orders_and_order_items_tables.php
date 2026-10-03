@@ -109,7 +109,7 @@ return new class extends Migration
         // Order deduped across staggered receipts under one order_number
         // carries multiple lines, and the log entry has to reach the
         // exact line for its event, not just the shared Order header.
-        // Plain bigint + index, no DB-level FK constraint per Snipe-IT
+        // Plain bigint + index, no DB-level FK constraint per AssetSecure
         // convention (schema shifts often enough that constraints cause
         // churn).
         Schema::table('action_logs', function (Blueprint $table) {

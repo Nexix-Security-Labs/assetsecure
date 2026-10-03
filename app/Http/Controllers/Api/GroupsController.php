@@ -16,7 +16,6 @@ class GroupsController extends Controller
     /**
      * Display a listing of the resource.
      *
-     * @author [A. Gianotto] [<snipe@snipe.net>]
      *
      * @since [v4.0]
      */
@@ -70,7 +69,6 @@ class GroupsController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @author [A. Gianotto] [<snipe@snipe.net>]
      *
      * @since [v4.0]
      */
@@ -100,7 +98,6 @@ class GroupsController extends Controller
     /**
      * Display the specified resource.
      *
-     * @author [A. Gianotto] [<snipe@snipe.net>]
      *
      * @since [v4.0]
      *
@@ -117,7 +114,6 @@ class GroupsController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @author [A. Gianotto] [<snipe@snipe.net>]
      *
      * @since [v4.0]
      *
@@ -151,7 +147,6 @@ class GroupsController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @author [A. Gianotto] [<snipe@snipe.net>]
      *
      * @since [v4.0]
      *

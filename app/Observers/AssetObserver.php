@@ -311,7 +311,6 @@ class AssetObserver
      * is used in this observer, it doesn't actually exist yet and the migration will break unless we
      * use saveQuietly() in the migration which skips this observer.
      *
-     * @see https://github.com/grokability/snipe-it/issues/13723#issuecomment-1761315938
      */
     public function saving(Asset $asset)
     {

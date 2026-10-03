@@ -5,7 +5,7 @@
   become_user: root
   become_method: sudo
   vars:
-    app_path: "/var/www/snipeit"
+    app_path: "/var/www/assetsecure"
     fqdn: "localhost"
   tasks:
     - name: Update and upgrade existing apt packages
@@ -103,10 +103,10 @@
       become: true         
       notify:
         - restart mysql
-    - name: Create snipeit database
+    - name: Create assetsecure database
       become: true
       mysql_db:
-        name: snipeit
+        name: assetsecure
         state: present
         login_unix_socket: /var/run/mysqld/mysqld.sock
     #  
@@ -155,12 +155,12 @@
       become: true
       template:
         src: apachevirtualhost.conf.j2
-        dest: "/etc/apache2/sites-available/snipeit.conf"
+        dest: "/etc/apache2/sites-available/assetsecure.conf"
     - name: Enable VirtualHost
       become: true
-      command: a2ensite snipeit
+      command: a2ensite assetsecure
       args:
-        creates: /etc/apache2/sites-enabled/snipeit.conf
+        creates: /etc/apache2/sites-enabled/assetsecure.conf
       notify:
         - restart apache2
     - name: Map apache dir to local folder
@@ -194,7 +194,7 @@
         line: "{{ item.line }}"
       with_items:
         - { regexp: '^DB_HOST=', line: 'DB_HOST=127.0.0.1'}
-        - { regexp: '^DB_DATABASE=', line: 'DB_DATABASE=snipeit' }
+        - { regexp: '^DB_DATABASE=', line: 'DB_DATABASE=assetsecure' }
         - { regexp: '^DB_USERNAME=', line: 'DB_USERNAME=vagrant' }
         - { regexp: '^DB_PASSWORD=', line: 'DB_PASSWORD=vagrant' }
         - { regexp: '^APP_URL=', line: "APP_URL=http://{{ fqdn }}" }
@@ -210,7 +210,7 @@
     - name: Create scheduler cron job
       become: true
       cron:
-        name: "Snipe-IT Artisan Scheduler"
+        name: "AssetSecure Artisan Scheduler"
         job: "/usr/bin/php {{ app_path }}/artisan schedule:run"
   handlers:
     - name: restart apache2

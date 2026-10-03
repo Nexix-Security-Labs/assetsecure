@@ -209,7 +209,7 @@ class CheckoutRequestsTransformer
         // other requestable types (models, accessories, etc.) skip
         // both fields rather than emit misleading nulls. The show URL
         // comes from the model's presenter->viewUrl(), which every
-        // requestable class already ships as part of Snipe-IT's
+        // requestable class already ships as part of AssetSecure's
         // standard presenter convention.
         $isAsset = $item instanceof Asset;
 

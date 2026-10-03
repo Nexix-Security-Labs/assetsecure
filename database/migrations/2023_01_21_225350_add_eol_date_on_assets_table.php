@@ -22,7 +22,7 @@ class AddEolDateOnAssetsTable extends Migration
                 $table->date('asset_eol_date')->after('purchase_date')->nullable()->default(null);
             }
 
-            // This is a back in time migration to fix restores from very old versions of Snipe-IT where
+            // This is a back in time migration to fix restores from very old versions of AssetSecure where
             // companies were not soft-deletable.
             Schema::table('companies', function (Blueprint $table) {
                 if (! Schema::hasColumn('companies', 'deleted_at')) {

@@ -80,7 +80,6 @@ class Group extends SnipeModel
     /**
      * Establishes the groups -> users relationship
      *
-     * @author A. Gianotto <snipe@snipe.net>
      *
      * @since  [v1.0]
      *
@@ -100,7 +99,6 @@ class Group extends SnipeModel
     /**
      * Decode JSON permissions into array
      *
-     * @author A. Gianotto <snipe@snipe.net>
      *
      * @since  [v1.0]
      *

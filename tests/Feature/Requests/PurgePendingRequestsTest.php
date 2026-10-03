@@ -18,7 +18,7 @@ use Tests\TestCase;
  * hard-delete wipes them.
  *
  * Two hooks cover the two entry points:
- *   - snipeit:purge iterates raw query-builder DELETEs (bypasses
+ *   - assetsecure:purge iterates raw query-builder DELETEs (bypasses
  *     Eloquent events), so Purge::$childTables has its own explicit
  *     cascade entry.
  *   - Direct forceDelete() bypasses the purge command; the trait's
@@ -168,7 +168,7 @@ class PurgePendingRequestsTest extends TestCase
             'requestable_type' => License::class,
         ]);
 
-        $this->artisan('snipeit:purge', ['--force' => 'true'])->assertExitCode(0);
+        $this->artisan('assetsecure:purge', ['--force' => 'true'])->assertExitCode(0);
 
         $this->assertDatabaseMissing('checkout_requests', ['id' => $trashedAssetRequest->id]);
         $this->assertDatabaseMissing('checkout_requests', ['id' => $trashedAccessoryRequest->id]);

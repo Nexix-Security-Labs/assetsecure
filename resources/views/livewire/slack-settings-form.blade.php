@@ -122,7 +122,7 @@
                                     <label for="webhook_botname">{{ trans('admin/settings/general.webhook_botname',['app' => $webhook_name ]) }}</label>
                                 </div>
                                 <div class="col-md-9">
-                                        <input type="text" wire:model.change.live="webhook_botname" class='form-control' placeholder="Snipe-Bot" {{ old('webhook_botname', $webhook_botname)}}{{ Helper::isDemoMode() ? ' disabled' : ''}}>
+                                        <input type="text" wire:model.change.live="webhook_botname" class='form-control' placeholder="AssetSecure Bot" {{ old('webhook_botname', $webhook_botname)}}{{ Helper::isDemoMode() ? ' disabled' : ''}}>
                                     <x-form.error name="webhook_botname" />
                                 </div><!--col-md-10-->
                             </div>

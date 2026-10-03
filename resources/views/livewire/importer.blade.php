@@ -1023,7 +1023,7 @@
                 $wire.startProcessing(withBackup);
 
                 // Fake backup progress. Real progress isn't available -
-                // the sync artisan snipeit:backup call emits no percentage
+                // the sync artisan assetsecure:backup call emits no percentage
                 // hook - so tick the bar toward 90% on an asymptotic
                 // curve so it visibly moves without ever claiming to be
                 // done. The .done()/.fail() for slice 0 snaps it to 100%

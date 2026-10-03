@@ -1,7 +1,9 @@
 # Compose file for production.
 
 volumes:
-  db_data:
+  # "db" keeps the volume name used by earlier AssetSecure releases, so an
+  # existing database is reused on upgrade.
+  db:
   storage:
 
 services:
@@ -17,17 +19,19 @@ services:
     ports:
       - "${APP_PORT:-8069}:80"
     depends_on:
-      db:
+      mariadb:
         condition: service_healthy
         restart: true
     env_file:
       - .env
 
-  db:
-    image: mariadb:11.4.7
+  mariadb:
+    # Set MARIADB_VERSION in .env to the version your existing data was created with.
+    # Never point an existing data volume at an older MariaDB major/minor version.
+    image: mariadb:${MARIADB_VERSION:-11.4.7}
     restart: unless-stopped
     volumes:
-      - db_data:/var/lib/mysql
+      - db:/var/lib/mysql
     environment:
       MYSQL_DATABASE: ${DB_DATABASE}
       MYSQL_USER: ${DB_USERNAME}

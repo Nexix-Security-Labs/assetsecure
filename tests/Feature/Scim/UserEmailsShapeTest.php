@@ -55,7 +55,7 @@ class UserEmailsShapeTest extends TestCase
 
     public function test_emails_shape_is_consistent_across_users_in_list_response(): void
     {
-        // Direct reproduction of the ListResponse Snipe pasted from the
+        // Direct reproduction of the ListResponse pasted from the
         // scim log: multiple users, `emails` on each should be an
         // array. Regression guard against a future one-off doRead
         // returning a bare object when a caller passes an unusual

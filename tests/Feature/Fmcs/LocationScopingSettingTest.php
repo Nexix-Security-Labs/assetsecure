@@ -16,7 +16,7 @@ use Tests\TestCase;
  *
  * Root cause: Company::scopeCompanyablesDirectly() was applying the
  * CompanyableScope to the locations table unconditionally under FMCS,
- * regardless of the scope_locations_fmcs setting. Snipe-IT already
+ * regardless of the scope_locations_fmcs setting. AssetSecure already
  * treats scope_locations_fmcs as the opt-in switch for location
  * tenant-scoping elsewhere (CompanyableTrait::canCheckoutTo(),
  * LocationsController write paths, the location select2 endpoint's

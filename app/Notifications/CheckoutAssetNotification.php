@@ -87,7 +87,7 @@ class CheckoutAssetNotification extends Notification implements ShouldQueue
         $admin = $this->admin;
         $item = $this->item;
         $note = $this->note;
-        $botname = ($settings->webhook_botname) ?: 'Snipe-Bot';
+        $botname = ($settings->webhook_botname) ?: 'AssetSecure Bot';
         $channel = ($settings->webhook_channel) ? $settings->webhook_channel : '';
 
         $fields = [

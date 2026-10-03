@@ -36,7 +36,7 @@ class AssetsForAssetModelTest extends TestCase
 
     public function test_error_returned_if_asset_model_does_not_exist()
     {
-        // Snipe-IT's exception handler returns 200 + status "error" for
+        // AssetSecure's exception handler returns 200 + status "error" for
         // ModelNotFoundException on API requests, matching what the
         // sibling AssetModel endpoints already do (see
         // RestoreAssetModelTest::test_error_returned_if_asset_model_does_not_exist).

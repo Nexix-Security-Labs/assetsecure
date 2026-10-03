@@ -14,7 +14,7 @@ class PurgeEulaPDFs extends Command
      *
      * @var string
      */
-    protected $signature = 'snipeit:purge-eula-pdfs  
+    protected $signature = 'assetsecure:purge-eula-pdfs  
                             {--older-than-days= : The number of days we should delete before }
                             {--company-id= : Only purge acceptances for users in this company}
                             {--only-deleted-users : Only purge acceptances for deleted users, including soft-deleted or missing users}
@@ -38,7 +38,7 @@ class PurgeEulaPDFs extends Command
         $before = $this->option('older-than-days');
 
         if (($before == '') || (! is_numeric($before))) {
-            return $this->error('ERROR: You must pass a valid number for --older-than-days (example: snipeit:purge-eula-pdfs --older-than-days=365.)');
+            return $this->error('ERROR: You must pass a valid number for --older-than-days (example: assetsecure:purge-eula-pdfs --older-than-days=365.)');
         }
 
         $interval_date = Carbon::now()->subDays($before);

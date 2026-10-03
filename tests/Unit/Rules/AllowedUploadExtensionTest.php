@@ -144,7 +144,7 @@ class AllowedUploadExtensionTest extends TestCase
         ));
     }
 
-    // Shebang scripts stay allowed. Snipe-IT does not execute uploads and
+    // Shebang scripts stay allowed. AssetSecure does not execute uploads and
     // legitimate script snippets end up in .txt support-ticket attachments
     // often enough that rejecting them is user-hostile.
     #[Test]

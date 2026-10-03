@@ -30,7 +30,7 @@ use Illuminate\Console\Command;
  */
 class ReconcileCalendarEvents extends Command
 {
-    protected $signature = 'snipeit:reconcile-calendar-events
+    protected $signature = 'assetsecure:reconcile-calendar-events
                             {--source= : Fully-qualified class name of a single source to reconcile, if you don\'t want to walk everything}
                             {--dry-run : Report the counts of what would change without writing}';
 

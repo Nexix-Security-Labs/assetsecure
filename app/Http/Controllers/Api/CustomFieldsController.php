@@ -16,7 +16,6 @@ class CustomFieldsController extends Controller
     /**
      * Reorder the custom fields within a fieldset
      *
-     * @author [Brady Wetherington] [<uberbrady@gmail.com>]
      *
      * @param  int  $id
      *
@@ -180,7 +179,6 @@ class CustomFieldsController extends Controller
     /**
      * Delete a custom field.
      *
-     * @author [Brady Wetherington] [<uberbrady@gmail.com>]
      *
      * @since [v1.8]
      */

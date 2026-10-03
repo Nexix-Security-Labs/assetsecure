@@ -12,7 +12,7 @@ class ValidateAssets extends Command
      *
      * @var string
      */
-    protected $signature = 'snipeit:validate-assets {--all : Display the valid assets in your table output as well} ';
+    protected $signature = 'assetsecure:validate-assets {--all : Display the valid assets in your table output as well} ';
 
     /**
      * The console command description.

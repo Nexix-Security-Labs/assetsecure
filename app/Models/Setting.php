@@ -209,7 +209,6 @@ class Setting extends Model
      *
      * Important: Do not remove the e() escaping here, as we output raw in the blade.
      *
-     * @author A. Gianotto <snipe@snipe.net>
      *
      * @return Attribute<string, mixed>
      */

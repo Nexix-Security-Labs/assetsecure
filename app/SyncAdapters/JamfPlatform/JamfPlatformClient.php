@@ -89,7 +89,7 @@ class JamfPlatformClient
      * device-grouping concept (configuration profile bundle applied to
      * a set of devices, historically the core primitive of Jamf Now).
      * Used by the adapter's fetchGroups() so admins can map Blueprints
-     * to Snipe-IT companies.
+     * to AssetSecure companies.
      *
      * @return array<int, array<string, mixed>>
      */

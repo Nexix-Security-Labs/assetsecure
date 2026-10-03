@@ -34,7 +34,6 @@ class AccessoriesController extends Controller
     /**
      * Display a listing of the resource.
      *
-     * @author [A. Gianotto] [<snipe@snipe.net>]
      *
      * @since [v4.0]
      *
@@ -194,7 +193,6 @@ class AccessoriesController extends Controller
      * @param  ImageUploadRequest  $request
      * @return JsonResponse
      *
-     * @author [A. Gianotto] [<snipe@snipe.net>]
      *
      * @since [v4.0]
      */
@@ -227,7 +225,6 @@ class AccessoriesController extends Controller
      * @param  int  $id
      * @return array
      *
-     * @author [A. Gianotto] [<snipe@snipe.net>]
      *
      * @since [v4.0]
      */
@@ -245,7 +242,6 @@ class AccessoriesController extends Controller
      * @param  int  $id
      * @return array
      *
-     * @author [A. Gianotto] [<snipe@snipe.net>]
      *
      * @since [v4.0]
      */
@@ -260,7 +256,6 @@ class AccessoriesController extends Controller
     /**
      * Get the list of checkouts for a specific accessory
      *
-     * @author [A. Gianotto] [<snipe@snipe.net>]
      *
      * @since [v4.0]
      *
@@ -296,7 +291,6 @@ class AccessoriesController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @author [A. Gianotto] [<snipe@snipe.net>]
      *
      * @since [v4.0]
      *
@@ -376,7 +370,6 @@ class AccessoriesController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @author [A. Gianotto] [<snipe@snipe.net>]
      *
      * @since [v4.0]
      *
@@ -407,7 +400,6 @@ class AccessoriesController extends Controller
      * @param  int  $accessoryId
      * @return JsonResponse
      *
-     * @author [A. Gianotto] [<snipe@snipe.net>]
      */
     public function checkout(AccessoryCheckoutRequest $request, Accessory $accessory)
     {
@@ -490,7 +482,6 @@ class AccessoriesController extends Controller
      *
      * @uses Accessory::checkin_email() to determine if an email can and should be sent
      *
-     * @author [A. Gianotto] [<snipe@snipe.net>]
      *
      * @internal param int $accessoryId
      */

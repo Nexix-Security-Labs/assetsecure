@@ -76,7 +76,7 @@ return [
         'file_delete_error' => 'Không thể xóa tệp',
         'file_missing' => 'Tệp đã chọn bị thiếu',
         'file_already_deleted' => 'The file selected was already deleted',
-        'file_missing_on_disk' => 'The file for this import is no longer on disk. It may have been deleted outside of Snipe-IT. Delete this entry and re-upload the file to try again.',
+        'file_missing_on_disk' => 'The file for this import is no longer on disk. It may have been deleted outside of AssetSecure. Delete this entry and re-upload the file to try again.',
         'file_empty' => 'This file has no data rows. Nothing can be imported from it.',
         'already_processing' => 'This import is currently being processed by another user. Please wait for it to finish before trying again.',
         'header_row_missing' => 'This file does not have a recognized header row. Delete this entry and re-upload the file to try again.',

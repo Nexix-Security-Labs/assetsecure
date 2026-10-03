@@ -15,7 +15,7 @@ use Illuminate\Support\Facades\Log;
 /**
  * User-defined pull-only HTTP adapter. The admin points it at any
  * JSON HTTP API, picks an auth shape (bearer / basic / api-key /
- * none), enters a records-array dot-path plus a per-Snipe-IT-field
+ * none), enters a records-array dot-path plus a per-AssetSecure-field
  * dot-path, and optionally declares extra fields as a JSON blob. The
  * generic pull() walks the response, extracts values by dot-path,
  * and yields normalized records the framework can save.
@@ -31,11 +31,11 @@ class CustomHttpAdapter extends SyncAdapter implements PushableAdapter
     private const PAGINATION_MAX_PAGES = 1000;
 
     /**
-     * Snipe-IT MappingTargets::FIELDS entries whose canonical source
+     * AssetSecure MappingTargets::FIELDS entries whose canonical source
      * is a real user-editable column on the Asset (and its Model).
      * These are the fields we can meaningfully write back to a
      * vendor. Network and telemetry fields (mac, ip, os, os_version,
-     * last_seen) are vendor-authoritative in Snipe-IT, so
+     * last_seen) are vendor-authoritative in AssetSecure, so
      * they aren't in the push set.
      */
     private const PUSHABLE_STANDARD_FIELDS = ['hostname', 'serial', 'asset_tag', 'model'];
@@ -101,7 +101,7 @@ class CustomHttpAdapter extends SyncAdapter implements PushableAdapter
 
     public static function docsUrl(): ?string
     {
-        return 'https://snipe-it.readme.io/docs/sync-adapters#custom-http-adapter';
+        return 'https://github.com/Nexix-Security-Labs/assetsecure/wiki/sync-adapters#custom-http-adapter';
     }
 
     public function settingsSchema(): array
@@ -448,7 +448,7 @@ class CustomHttpAdapter extends SyncAdapter implements PushableAdapter
     }
 
     /**
-     * Push Snipe-IT-authoritative field values to the admin's HTTP
+     * Push AssetSecure-authoritative field values to the admin's HTTP
      * endpoint. Payload is built by placing each push-directed
      * field's value at its configured dot-path via Arr::set, so the
      * same admin-defined field_* dot-paths that drove pull() also
@@ -993,7 +993,7 @@ class CustomHttpAdapter extends SyncAdapter implements PushableAdapter
         }
 
         // Decode HTML entities before storing. Some APIs
-        // (Snipe-IT's own /api/v1/hardware is one of them) run their
+        // (AssetSecure's own /api/v1/hardware is one of them) run their
         // JSON string values through htmlspecialchars() in the
         // transformer, so a model name like `MacBook Pro 13"` shows
         // up on the wire as `MacBook Pro 13&quot;`. Without decoding
@@ -1053,7 +1053,7 @@ class CustomHttpAdapter extends SyncAdapter implements PushableAdapter
             // Standard fields and current custom/native destinations
             // pass the baseline check. Admin-added custom:/native:
             // entries whose target has since been deleted from
-            // Snipe-IT still deserialize so extraFields() can surface
+            // AssetSecure still deserialize so extraFields() can surface
             // the orphan and the admin can clean up.
             if (array_key_exists($key, $baseline)
                 || str_starts_with($key, 'custom:')

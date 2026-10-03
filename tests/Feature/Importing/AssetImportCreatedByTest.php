@@ -141,7 +141,7 @@ class AssetImportCreatedByTest extends TestCase
     #[Test]
     public function auto_created_checkout_target_user_records_created_by(): void
     {
-        // Snipe-IT auto-creates the target user when an asset import row
+        // AssetSecure auto-creates the target user when an asset import row
         // references a username that doesn't exist yet. Before the fix,
         // that new user landed with created_by = null, matching the same
         // omission on the asset itself.

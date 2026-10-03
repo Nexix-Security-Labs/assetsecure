@@ -114,7 +114,6 @@ class Supplier extends SnipeModel
      * We do this to eager load the "count" of seats from the controller.
      * Otherwise calling "count()" on each model results in n+1.
      *
-     * @author A. Gianotto <snipe@snipe.net>
      *
      * @since  [v4.0]
      *
@@ -128,7 +127,6 @@ class Supplier extends SnipeModel
     /**
      * Establishes the supplier -> assets relationship
      *
-     * @author A. Gianotto <snipe@snipe.net>
      *
      * @since  [v1.0]
      *
@@ -172,7 +170,6 @@ class Supplier extends SnipeModel
     /**
      * Establishes the supplier -> admin user relationship
      *
-     * @author A. Gianotto <snipe@snipe.net>
      *
      * @return Relation
      */
@@ -184,7 +181,6 @@ class Supplier extends SnipeModel
     /**
      * Establishes the supplier -> asset maintenances relationship
      *
-     * @author A. Gianotto <snipe@snipe.net>
      *
      * @since  [v1.0]
      */
@@ -196,7 +192,6 @@ class Supplier extends SnipeModel
     /**
      * Return the number of assets by supplier
      *
-     * @author A. Gianotto <snipe@snipe.net>
      *
      * @since  [v1.0]
      *
@@ -214,7 +209,6 @@ class Supplier extends SnipeModel
     /**
      * Establishes the supplier -> license relationship
      *
-     * @author A. Gianotto <snipe@snipe.net>
      *
      * @since  [v1.0]
      *
@@ -228,7 +222,6 @@ class Supplier extends SnipeModel
     /**
      * Return the number of licenses by supplier
      *
-     * @author A. Gianotto <snipe@snipe.net>
      *
      * @since  [v1.0]
      *
@@ -244,7 +237,6 @@ class Supplier extends SnipeModel
      *
      * @todo this should be handled via validation, no?
      *
-     * @author A. Gianotto <snipe@snipe.net>
      *
      * @since  [v3.0]
      *

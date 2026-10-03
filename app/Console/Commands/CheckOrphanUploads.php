@@ -42,7 +42,7 @@ use function Laravel\Prompts\table;
  */
 class CheckOrphanUploads extends Command
 {
-    protected $signature = 'snipeit:check-orphan-uploads
+    protected $signature = 'assetsecure:check-orphan-uploads
         {--summary : Show only totals, not the full per-file listing}
         {--json : Emit machine-readable JSON instead of tables}
         {--csv= : Write missing rows to a CSV at this path (empty = no CSV)}

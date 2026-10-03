@@ -586,7 +586,7 @@ class CustomHttpAdapterTest extends TestCase
 
     public function test_html_escaped_string_values_are_decoded_on_ingest()
     {
-        // Some APIs (Snipe-IT's own /api/v1/hardware is one) run
+        // Some APIs (AssetSecure's own /api/v1/hardware is one) run
         // string values through htmlspecialchars(), so a model name
         // like `MacBook Pro 13"` shows up on the wire as
         // `MacBook Pro 13&quot;`. Decoding here keeps us from
@@ -705,7 +705,7 @@ class CustomHttpAdapterTest extends TestCase
         SyncAdapterConfig::put($instance->id, 'direction.asset_tag', 'push');
         SyncAdapterConfig::put($instance->id, 'direction.hostname', 'push');
 
-        $asset = Asset::factory()->create(['asset_tag' => 'SNIPE-42', 'name' => 'wksn-42']);
+        $asset = Asset::factory()->create(['asset_tag' => 'AS-42', 'name' => 'wksn-42']);
         AssetExternalSource::create([
             'asset_id' => $asset->id,
             'source' => $adapter->name(),
@@ -721,7 +721,7 @@ class CustomHttpAdapterTest extends TestCase
 
             return $request->method() === 'PATCH'
                 && str_contains($request->url(), '/api/v1/devices/ext-42')
-                && ($body['asset']['tag'] ?? null) === 'SNIPE-42'
+                && ($body['asset']['tag'] ?? null) === 'AS-42'
                 && ($body['name'] ?? null) === 'wksn-42';
         });
     }
@@ -825,7 +825,7 @@ class CustomHttpAdapterTest extends TestCase
         $adapter = $this->configuredAdapter([
             'push_path' => '/devices/{external_id}',
             'push_notes_target' => 'metadata.notes',
-            'push_notes_template' => 'Snipe tag: {asset_tag}',
+            'push_notes_template' => 'Asset tag: {asset_tag}',
         ]);
         SyncAdapterConfig::put(SyncAdapterInstance::where('slug', $adapter->name())->firstOrFail()->id, 'direction.asset_tag', 'push');
 
@@ -843,7 +843,7 @@ class CustomHttpAdapterTest extends TestCase
         Http::assertSent(function ($request) {
             $body = $request->data();
 
-            return ($body['metadata']['notes'] ?? null) === 'Snipe tag: NOTES-1';
+            return ($body['metadata']['notes'] ?? null) === 'Asset tag: NOTES-1';
         });
     }
 

@@ -30,7 +30,7 @@ class SendUpcomingAuditReportTest extends TestCase
 
         Log::spy();
 
-        $this->artisan('snipeit:upcoming-audits')->assertExitCode(0);
+        $this->artisan('assetsecure:upcoming-audits')->assertExitCode(0);
 
         Log::shouldHaveReceived('warning')->atLeast()->once();
     }

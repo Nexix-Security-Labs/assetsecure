@@ -18,7 +18,7 @@ use Illuminate\Support\Arr;
  * returned by that call. The token's expiry_minutes at login time
  * controls how long the paste stays valid.
  *
- * Push (Snipe-IT -> Landscape) is not wired. Landscape's v2 API
+ * Push (AssetSecure -> Landscape) is not wired. Landscape's v2 API
  * only exposes specialized action endpoints on a computer (restart,
  * archive, sanitize, delete). It has no PATCH endpoint for the
  * writable metadata fields the admin UI can edit (comment, title,

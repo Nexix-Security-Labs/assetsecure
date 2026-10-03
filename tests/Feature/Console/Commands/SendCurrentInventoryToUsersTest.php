@@ -23,7 +23,7 @@ class SendCurrentInventoryToUsersTest extends TestCase
 
         Log::spy();
 
-        $this->artisan('snipeit:user-inventory')->assertExitCode(0);
+        $this->artisan('assetsecure:user-inventory')->assertExitCode(0);
 
         Log::shouldHaveReceived('warning')->atLeast()->once();
     }

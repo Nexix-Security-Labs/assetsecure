@@ -149,7 +149,7 @@
         </x-form.legend>
 
     {{-- Default category for AssetModels auto-created from this
-         adapter. Vendors don't send Snipe-IT's category concept but
+         adapter. Vendors don't send AssetSecure's category concept but
          every AssetModel needs one. --}}
     <x-input.category-select
         :name="$slug . '_default_category_id'"
@@ -161,7 +161,7 @@
 
     {{-- Default status label for auto-created assets. Required so
          admins have to consciously pick a workflow bucket for
-         discovered devices instead of Snipe-IT defaulting to
+         discovered devices instead of AssetSecure defaulting to
          something surprising. --}}
     <x-form.row
         :label="trans('admin/settings/sync_adapters.default_status')"
@@ -216,7 +216,7 @@
 
     {{-- User assignment via sync. Strategy 'none' disables the
          lookup entirely. When set, the vendor's user email or
-         username on each record is matched against Snipe-IT users
+         username on each record is matched against AssetSecure users
          and the asset checks out to the matched user. --}}
     <x-form.row
         :label="trans('admin/settings/sync_adapters.user_match_strategy')"
@@ -289,7 +289,7 @@
     {{-- Push dry-run only shows for adapters that actually support
          push. Turning it on makes push() log the payload instead of
          sending, so admins can verify their config end-to-end against
-         a real Snipe-IT dataset without any real vendor side effect.
+         a real AssetSecure dataset without any real vendor side effect.
          The composed-notes template + target field live further down
          in their own fieldset under the vendor-specific mapping. --}}
     @if ($adapter instanceof \App\SyncAdapters\PushableAdapter && $adapter->canPush())
@@ -484,7 +484,7 @@
     @endif
 
     {{-- Composed notes fieldset. Renders a multi-field notes blob
-         from Snipe-IT (asset_tag + status + assigned user + custom
+         from AssetSecure (asset_tag + status + assigned user + custom
          fields, etc.) into a single vendor field. Blank template
          means "don't push notes." Target defaults to the adapter's
          suggested field (Kandji notes, Jamf general.notes, Intune

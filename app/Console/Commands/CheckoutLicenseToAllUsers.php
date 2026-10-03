@@ -13,7 +13,7 @@ class CheckoutLicenseToAllUsers extends Command
      *
      * @var string
      */
-    protected $signature = 'snipeit:checkout-to-all {--license_id=} {--notify}';
+    protected $signature = 'assetsecure:checkout-to-all {--license_id=} {--notify}';
 
     /**
      * The console command description.

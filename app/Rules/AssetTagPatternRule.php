@@ -14,7 +14,7 @@ use Illuminate\Contracts\Validation\ValidationRule;
  * subsequent record collides.
  *
  * Empty / null values are allowed. The pattern is optional, and its
- * absence falls back to Snipe-IT's auto-increment or a
+ * absence falls back to AssetSecure's auto-increment or a
  * source-slug + external-id composite.
  */
 class AssetTagPatternRule implements ValidationRule

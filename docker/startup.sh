@@ -50,7 +50,7 @@ then
   exit
 fi
 
-if [ -f /var/lib/snipeit/ssl/snipeit-ssl.crt -a -f /var/lib/snipeit/ssl/snipeit-ssl.key ]
+if [ -f /var/lib/assetsecure/ssl/assetsecure-ssl.crt -a -f /var/lib/assetsecure/ssl/assetsecure-ssl.key ]
 then
   a2enmod ssl
 else
@@ -59,7 +59,7 @@ fi
 
 # create data directories
 # Note: Keep in sync with expected directories by the app
-# https://github.com/grokability/snipe-it/blob/master/app/Console/Commands/RestoreFromBackup.php#L232
+# https://github.com/Nexix-Security-Labs/assetsecure/blob/master/app/Console/Commands/RestoreFromBackup.php#L232
 for dir in \
   'data/private_uploads' \
   'data/private_uploads/assets' \
@@ -90,12 +90,12 @@ for dir in \
   'dumps' \
   'keys'
 do
-  [ ! -d "/var/lib/snipeit/$dir" ] && mkdir -p "/var/lib/snipeit/$dir"
+  [ ! -d "/var/lib/assetsecure/$dir" ] && mkdir -p "/var/lib/assetsecure/$dir"
 done
 
-chown -R docker:root /var/lib/snipeit/data/*
-chown -R docker:root /var/lib/snipeit/dumps
-chown -R docker:root /var/lib/snipeit/keys
+chown -R docker:root /var/lib/assetsecure/data/*
+chown -R docker:root /var/lib/assetsecure/dumps
+chown -R docker:root /var/lib/assetsecure/keys
 chown -R docker:root /var/www/html/storage/framework/cache
 
 # Fix php settings

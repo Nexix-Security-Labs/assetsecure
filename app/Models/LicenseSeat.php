@@ -72,7 +72,6 @@ class LicenseSeat extends SnipeModel implements ICompanyableChild
     /**
      * Determine whether the user should be required to accept the license
      *
-     * @author A. Gianotto <snipe@snipe.net>
      *
      * @since  [v4.0]
      *
@@ -115,7 +114,6 @@ class LicenseSeat extends SnipeModel implements ICompanyableChild
     /**
      * Establishes the seat -> license relationship
      *
-     * @author A. Gianotto <snipe@snipe.net>
      *
      * @since  [v1.0]
      *
@@ -129,7 +127,6 @@ class LicenseSeat extends SnipeModel implements ICompanyableChild
     /**
      * Establishes the seat -> assignee relationship
      *
-     * @author A. Gianotto <snipe@snipe.net>
      *
      * @since  [v1.0]
      *
@@ -143,7 +140,6 @@ class LicenseSeat extends SnipeModel implements ICompanyableChild
     /**
      * Establishes the seat -> asset relationship
      *
-     * @author A. Gianotto <snipe@snipe.net>
      *
      * @since  [v4.0]
      *
@@ -158,7 +154,6 @@ class LicenseSeat extends SnipeModel implements ICompanyableChild
      * Determines the assigned seat's location based on user
      * or asset its assigned to
      *
-     * @author A. Gianotto <snipe@snipe.net>
      *
      * @since  [v4.0]
      *
@@ -178,7 +173,6 @@ class LicenseSeat extends SnipeModel implements ICompanyableChild
     /**
      * Get the list of checkouts for this License
      *
-     * @author [A. Gianotto] [<snipe@snipe.net>]
      *
      * @since  [v2.0]
      *
@@ -194,7 +188,6 @@ class LicenseSeat extends SnipeModel implements ICompanyableChild
     /**
      * Establishes the license -> action logs relationship
      *
-     * @author [A. Gianotto] [<snipe@snipe.net>]
      *
      * @since  [v3.0]
      *

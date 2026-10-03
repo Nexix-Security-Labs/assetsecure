@@ -16,7 +16,6 @@ class AccessoryCheckinController extends Controller
     /**
      * Check the accessory back into inventory
      *
-     * @author [A. Gianotto] [<snipe@snipe.net>]
      *
      * @param  int|null  $accessoryCheckoutId
      * @param  string|null  $backto
@@ -49,7 +48,6 @@ class AccessoryCheckinController extends Controller
      *
      * @uses Accessory::checkin_email() to determine if an email can and should be sent
      *
-     * @author [A. Gianotto] [<snipe@snipe.net>]
      *
      * @param  null  $accessoryCheckoutId
      * @param  string  $backto

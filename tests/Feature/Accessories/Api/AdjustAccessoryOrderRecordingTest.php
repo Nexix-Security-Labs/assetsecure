@@ -113,7 +113,7 @@ class AdjustAccessoryOrderRecordingTest extends TestCase
 
     public function test_same_order_number_on_different_purchase_dates_creates_distinct_orders()
     {
-        // Snipe-IT has no partial-receipt concept. Every Order is a
+        // AssetSecure has no partial-receipt concept. Every Order is a
         // completed receipt-in-hand, so the same order_number appearing
         // with two different purchase_dates represents two distinct
         // events and each gets its own Order row.

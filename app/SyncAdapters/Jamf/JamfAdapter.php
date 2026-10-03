@@ -13,7 +13,7 @@ use Illuminate\Support\Arr;
  * Jamf Pro adapter. Pulls computer inventory via the Jamf Pro API and
  * normalizes it into HostInventoryRecord objects. Uses a Jamf-generated
  * Personal Access Token as a bearer credential. Also pushes
- * Snipe-IT-authoritative fields (asset_tag today) back to Jamf via
+ * AssetSecure-authoritative fields (asset_tag today) back to Jamf via
  * the /api/v1/computers-inventory-detail/{id} PATCH endpoint.
  */
 class JamfAdapter extends SyncAdapter implements PushableAdapter
@@ -157,7 +157,7 @@ class JamfAdapter extends SyncAdapter implements PushableAdapter
     }
 
     /**
-     * Push Snipe-IT-authoritative fields to Jamf Pro via the newer
+     * Push AssetSecure-authoritative fields to Jamf Pro via the newer
      * JSON detail endpoint. The payload uses Jamf's nested-object
      * shape (assetTag lives inside userAndLocation, not at the top
      * level), so sourceFieldToJamfPath() returns dotted paths that

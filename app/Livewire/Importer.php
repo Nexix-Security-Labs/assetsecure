@@ -6,7 +6,7 @@ use App\Models\Accessory;
 use App\Models\Asset;
 use App\Models\AssetModel;
 use App\Models\Category;
-// Snipe-IT's Component model name clashes with Livewire\Component - alias it.
+// AssetSecure's Component model name clashes with Livewire\Component - alias it.
 use App\Models\Component as ComponentModel;
 use App\Models\Consumable;
 use App\Models\CustomField;

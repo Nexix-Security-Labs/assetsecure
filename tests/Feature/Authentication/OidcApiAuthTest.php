@@ -24,7 +24,7 @@ class OidcApiAuthTest extends TestCase
 {
     private string $issuer = 'https://issuer.test/v2.0';
 
-    private string $audience = 'api://snipe-test';
+    private string $audience = 'api://assetsecure-test';
 
     private string $kid = 'test-key-1';
 
@@ -34,7 +34,7 @@ class OidcApiAuthTest extends TestCase
     {
         parent::setUp();
 
-        // Snipe redirects unauthenticated requests to the setup wizard (302)
+        // AssetSecure redirects unauthenticated requests to the setup wizard (302)
         // until at least one user exists -- create one so we get real 401s.
         User::factory()->create();
 

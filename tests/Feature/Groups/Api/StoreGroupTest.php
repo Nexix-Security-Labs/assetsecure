@@ -69,7 +69,7 @@ class StoreGroupTest extends TestCase
                 'name' => 'My Awesome Group',
                 'permissions' => [
                     'admin' => '1',
-                    'snipe_is_awesome' => '1',
+                    'not_a_real_permission' => '1',
                 ],
             ])
             ->assertOk();
@@ -77,7 +77,7 @@ class StoreGroupTest extends TestCase
         $group = Group::where('name', 'My Awesome Group')->first();
         $this->assertNotNull($group);
         $this->assertEquals('1', $group->decodePermissions()['admin']);
-        $this->assertNotContains('snipe_is_awesome', $group->decodePermissions());
+        $this->assertNotContains('not_a_real_permission', $group->decodePermissions());
 
     }
 }

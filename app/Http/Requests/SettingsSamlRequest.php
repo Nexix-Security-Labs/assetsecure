@@ -103,8 +103,8 @@ class SettingsSamlRequest extends FormRequest
                     'countryName' => 'US',
                     'stateOrProvinceName' => 'N/A',
                     'localityName' => 'N/A',
-                    'organizationName' => 'Snipe-IT',
-                    'commonName' => 'Snipe-IT',
+                    'organizationName' => 'AssetSecure',
+                    'commonName' => 'AssetSecure',
                 ];
 
                 $pkey = openssl_pkey_new([

@@ -20,7 +20,7 @@ class CleanUpActionLogs extends Command
      *
      * @var string
      */
-    protected $signature = 'snipeit:clean-up-action-logs 
+    protected $signature = 'assetsecure:clean-up-action-logs 
                             {--delete : This option will delete the action_logs in question, instead of counting them}
                             {--force : Delete the action_logs without having to confirm in terminal}
                             {--to-sql : Don\'t execute any queries, just output what those queries would be}';

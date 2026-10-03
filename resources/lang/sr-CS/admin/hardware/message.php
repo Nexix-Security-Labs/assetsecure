@@ -76,7 +76,7 @@ return [
         'file_delete_error' => 'Fajl nime moguće izbrisati',
         'file_missing' => 'Nedostaje izabrana datoteka',
         'file_already_deleted' => 'Izabrana datoteka je već obrisana',
-        'file_missing_on_disk' => 'Datoteka za uvaj uvoz više nije na disku. Možda je obrisana izvan Snipe-IT. Obrišite ovaj unos i otpremite datoteku ponovo da bi ste ponovo pokušali.',
+        'file_missing_on_disk' => 'Datoteka za uvaj uvoz više nije na disku. Možda je obrisana izvan AssetSecure. Obrišite ovaj unos i otpremite datoteku ponovo da bi ste ponovo pokušali.',
         'file_empty' => 'Ova datoteka nema redove podataka. Ništa ne može biti uvezeo iz nje.',
         'already_processing' => 'Ovaj uvoz se trenutno obrađuje od strane drugog korisnika. Molim vas sačekajte završetak pre ponovnog pokušaja.',
         'header_row_missing' => 'Ova datoteka nema prepoznat red naslova. Obrišite ovaj unos i otpremite datoteku ponovo da bi ste ponovo pokušali.',

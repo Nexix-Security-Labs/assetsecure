@@ -18,7 +18,7 @@ use Illuminate\Support\Facades\Schema;
  * migrations in the same batch: the snapshot captures the pre-
  * reconciliation qty that a human admin had been maintaining, not the
  * ledger-derived value. Historical action_logs were incomplete on
- * early Snipe-IT versions, so the ledger sum can drift from the value
+ * early AssetSecure versions, so the ledger sum can drift from the value
  * humans had been directly editing on the parent row.
  *
  * legacy_qty is intentionally not surfaced in the API, presenters,

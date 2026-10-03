@@ -18,7 +18,7 @@ class LdapSync extends Command
      *
      * @var string
      */
-    protected $signature = 'snipeit:ldap-sync {--location=} {--location_id=*} {--base_dn=} {--filter=} {--delete} {--summary} {--json_summary}';
+    protected $signature = 'assetsecure:ldap-sync {--location=} {--location_id=*} {--base_dn=} {--filter=} {--delete} {--summary} {--json_summary}';
 
     /**
      * The console command description.
@@ -225,7 +225,7 @@ class LdapSync extends Command
 
         }
 
-        // Assign the mapped LDAP attributes for each user to the Snipe-IT user fields
+        // Assign the mapped LDAP attributes for each user to the AssetSecure user fields
         for ($i = 0; $i < $results['count']; $i++) {
             // parseAndMapLdapAttributes is the shared parser used by the
             // first-login create path too, so the two flows can't drift

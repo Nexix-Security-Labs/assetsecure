@@ -9,7 +9,7 @@ use App\Models\CheckoutAcceptance;
 use App\Models\CheckoutRequest;
 // Aliased as SnipeComponent to sidestep the Livewire\Component
 // collision below. Project convention: reach for SnipeComponent when
-// a Livewire class needs the Snipe-IT Component model, never plain
+// a Livewire class needs the AssetSecure Component model, never plain
 // `Component` in that context.
 use App\Models\Component as SnipeComponent;
 use App\Models\Consumable;

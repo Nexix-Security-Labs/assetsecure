@@ -13,14 +13,13 @@ use Illuminate\Support\Facades\Validator;
 
 /**
  * This controller handles all actions related to Custom Asset Fields for
- * the Snipe-IT Asset Management application.
+ * the AssetSecure Asset Management application.
  *
  * @todo Improve documentation here.
  * @todo Check for raw DB queries and try to convert them to query builder statements
  *
  * @version    v2.0
  *
- * @author [Brady Wetherington] [<uberbrady@gmail.com>]
  */
 class CustomFieldsetsController extends Controller
 {
@@ -33,7 +32,6 @@ class CustomFieldsetsController extends Controller
     /**
      * Validates and stores a new custom field.
      *
-     * @author [Brady Wetherington] [<uberbrady@gmail.com>]
      *
      * @param  int  $id
      *
@@ -71,7 +69,6 @@ class CustomFieldsetsController extends Controller
     /**
      * Returns a view with a form for creating a new custom fieldset.
      *
-     * @author [Brady Wetherington] [<uberbrady@gmail.com>]
      *
      * @since [v1.8]
      */
@@ -85,7 +82,6 @@ class CustomFieldsetsController extends Controller
     /**
      * Validates and stores a new custom fieldset.
      *
-     * @author [Brady Wetherington] [<uberbrady@gmail.com>]
      *
      * @since [v1.8]
      *
@@ -125,7 +121,6 @@ class CustomFieldsetsController extends Controller
     /**
      * Presents edit form for fieldset
      *
-     * @author [A. Gianotto] [<snipe@snipe.net>]
      *
      * @param  int  $id
      *
@@ -141,7 +136,6 @@ class CustomFieldsetsController extends Controller
     /**
      * Saves updated fieldset data
      *
-     * @author [A. Gianotto] [<snipe@snipe.net>]
      *
      * @param  int  $id
      *
@@ -164,7 +158,6 @@ class CustomFieldsetsController extends Controller
     /**
      * Validates a custom fieldset and then deletes if it has no models associated.
      *
-     * @author [Brady Wetherington] [<uberbrady@gmail.com>]
      *
      * @param  int  $id
      *
@@ -193,7 +186,6 @@ class CustomFieldsetsController extends Controller
     /**
      * Associate the custom field with a custom fieldset.
      *
-     * @author [Brady Wetherington] [<uberbrady@gmail.com>]
      *
      * @since [v1.8]
      */
@@ -221,7 +213,6 @@ class CustomFieldsetsController extends Controller
     /**
      * Set the field in a fieldset to required
      *
-     * @author [A. Gianotto] [<snipe@snipe.net>]
      *
      * @since [v5.0]
      */
@@ -240,7 +231,6 @@ class CustomFieldsetsController extends Controller
     /**
      * Set the field in a fieldset to optional
      *
-     * @author [A. Gianotto] [<snipe@snipe.net>]
      *
      * @since [v5.0]
      */

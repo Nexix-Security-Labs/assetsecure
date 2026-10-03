@@ -14,7 +14,7 @@ class FixMismatchedAssetsAndLogs extends Command
      *
      * @var string
      */
-    protected $signature = 'snipeit:fix-assets-and-logs {--dryrun : Run the sync process but don\'t update the database}';
+    protected $signature = 'assetsecure:fix-assets-and-logs {--dryrun : Run the sync process but don\'t update the database}';
 
     /**
      * The console command description.

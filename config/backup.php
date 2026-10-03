@@ -103,7 +103,7 @@ return [
             /*
              * The filename prefix used for the backup zip file.
              */
-            'filename_prefix' => 'snipe-it-',
+            'filename_prefix' => 'assetsecure-',
 
             /*
              * The disk names on which the backups will be stored.
@@ -258,7 +258,7 @@ return [
     | Backup execution time limit
     |--------------------------------------------------------------------------
     | Seconds passed to ini_set('max_execution_time') at the top of the
-    | snipeit:backup console command so a large-database dump doesn't get
+    | assetsecure:backup console command so a large-database dump doesn't get
     | killed by PHP's shorter default. Default 600 (10 minutes).
     */
 

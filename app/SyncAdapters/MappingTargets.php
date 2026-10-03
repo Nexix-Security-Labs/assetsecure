@@ -9,7 +9,7 @@ use App\Models\CustomField;
  * be mapped to. Every adapter reads the same normalized shape (hostname,
  * serial, model, mac, ip, os, os_version, last_seen) and hands it to
  * SyncAdapter. per-instance overrides let admins redirect each
- * field to a different Snipe-IT destination (native column, side table,
+ * field to a different AssetSecure destination (native column, side table,
  * custom field, or skip).
  *
  * Target encoding is `<type>:<id>` so the value stays compact and
@@ -53,7 +53,7 @@ class MappingTargets
             'os' => 'external:os',
             'os_version' => 'external:os_version',
             'last_seen' => 'external:last_seen',
-            // Vendor-side asset tag mapping to Snipe-IT's asset_tag
+            // Vendor-side asset tag mapping to AssetSecure's asset_tag
             // column is the useful default. writeNative()'s
             // "only overwrite when vendor sent a non-empty tag" guard
             // means admin-curated tags survive vendor payloads that
@@ -120,7 +120,7 @@ class MappingTargets
      * `$adminDefined` narrows the target pool to skip + custom-only
      * for tenant-defined vendor extras (Kaseya VSA 10 custom fields,
      * ServiceNow variables, etc). Those hold arbitrary admin-labeled
-     * key/value data and never make sense as a Snipe-IT native
+     * key/value data and never make sense as a AssetSecure native
      * column, so we don't show the native branch at all. Adapter-
      * declared extras (fleet_labels, kandji_blueprint_id) still get
      * native:asset_tag / native:notes as options because a real

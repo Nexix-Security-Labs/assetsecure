@@ -22,7 +22,6 @@ class LicenseCheckinController extends Controller
     /**
      * Makes the form view to check a license seat back into inventory.
      *
-     * @author [A. Gianotto] [<snipe@snipe.net>]
      *
      * @since [v1.0]
      *
@@ -48,7 +47,6 @@ class LicenseCheckinController extends Controller
     /**
      * Validates and stores the license checkin action.
      *
-     * @author [A. Gianotto] [<snipe@snipe.net>]
      *
      * @see LicenseCheckinController::create() method that provides the form view
      * @since [v1.0]
@@ -127,7 +125,6 @@ class LicenseCheckinController extends Controller
     /**
      * Bulk checkin all license seats
      *
-     * @author [A. Gianotto] [<snipe@snipe.net>]
      *
      * @see LicenseCheckinController::create() method that provides the form view
      * @since [v6.1.1]

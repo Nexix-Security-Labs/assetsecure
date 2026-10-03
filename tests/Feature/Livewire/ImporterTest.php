@@ -17,7 +17,7 @@ class ImporterTest extends TestCase
      * Write a minimal CSV file at the imports path an Import record points
      * to, so selectFile()'s file-existence guard passes. The guard was added
      * to block the wizard when a demo-seeded Import references a file that
-     * was deleted outside Snipe-IT (e.g. by git clean). Tests that seed
+     * was deleted outside AssetSecure (e.g. by git clean). Tests that seed
      * factory Imports without a real file need to plant one here to exercise
      * the code path beyond the guard.
      */

@@ -146,7 +146,6 @@ class SettingsController extends Controller
     /**
      * Test the email configuration
      *
-     * @author [A. Gianotto] [<snipe@snipe.net>]
      *
      * @since [v3.0]
      */
@@ -180,7 +179,6 @@ class SettingsController extends Controller
     /**
      * Delete server-cached barcodes
      *
-     * @author [A. Gianotto] [<snipe@snipe.net>]
      *
      * @since [v5.0.0]
      */
@@ -215,7 +213,6 @@ class SettingsController extends Controller
     /**
      * Get a list of login attempts
      *
-     * @author [A. Gianotto] [<snipe@snipe.net>]
      *
      * @since [v5.0.0]
      */
@@ -237,7 +234,6 @@ class SettingsController extends Controller
     /**
      * Lists backup files
      *
-     * @author [A. Gianotto]
      */
     public function listBackups(): array
     {
@@ -280,7 +276,6 @@ class SettingsController extends Controller
      * We use response()->download() here instead of Storage::download() because Storage::download()
      * exhausts memory on larger files.
      *
-     * @author [A. Gianotto]
      */
     public function downloadBackup($file): JsonResponse|BinaryFileResponse
     {
@@ -305,7 +300,6 @@ class SettingsController extends Controller
     /**
      * Determines and downloads the latest backup
      *
-     * @author [A. Gianotto]
      *
      * @since [v6.3.1]
      */

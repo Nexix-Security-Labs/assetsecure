@@ -21,7 +21,7 @@
 
 {{-- FullCalendar bundles its own layout CSS via its ES modules, so
      no separate link tag is required. Any theme-specific overrides
-     Snipe-IT wants to layer on top belong in overrides.less under a
+     AssetSecure wants to layer on top belong in overrides.less under a
      .fc scope. --}}
 @section('moar_scripts')
     <script src="{{ url(mix('js/dist/snipeit-calendar.js')) }}" nonce="{{ csrf_token() }}"></script>

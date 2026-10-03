@@ -21,7 +21,7 @@ class AddImageToAssets extends Migration
          * popping up in 2023, likely due to different laravel or PHP versions. This migration will run again on
          * more updated systems, since the name of the migration has changed and therefore will look "new" to the
          * migrations table/migration system, which is why we need to check if the
-         * field already exists. Thanks, I hate it. - snipe
+         * field already exists. Thanks, I hate it.
          */
         Schema::table('assets', function (Blueprint $table) {
             if (! Schema::hasColumn('assets', 'image')) {

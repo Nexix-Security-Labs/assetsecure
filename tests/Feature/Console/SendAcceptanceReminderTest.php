@@ -26,7 +26,7 @@ class SendAcceptanceReminderTest extends TestCase
             'assigned_to_id' => $userB->id,
         ]);
 
-        $this->artisan('snipeit:acceptance-reminder')->assertExitCode(0);
+        $this->artisan('assetsecure:acceptance-reminder')->assertExitCode(0);
 
         Mail::assertSent(UnacceptedAssetReminderMail::class, function ($mail) {
             return $mail->hasTo('userA@test.com');
@@ -51,7 +51,7 @@ class SendAcceptanceReminderTest extends TestCase
         $rows = [
             [$userA->id, $userA->display_name],
         ];
-        $this->artisan('snipeit:acceptance-reminder')
+        $this->artisan('assetsecure:acceptance-reminder')
             ->expectsOutput('The following users do not have an email address:')
             ->expectsTable($headers, $rows)
             ->assertExitCode(0);
@@ -70,7 +70,7 @@ class SendAcceptanceReminderTest extends TestCase
 
         Log::spy();
 
-        $this->artisan('snipeit:acceptance-reminder')->assertExitCode(0);
+        $this->artisan('assetsecure:acceptance-reminder')->assertExitCode(0);
 
         Log::shouldHaveReceived('warning')->atLeast()->once();
     }

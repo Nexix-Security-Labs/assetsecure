@@ -12,7 +12,7 @@ class ReEncodeCustomFieldNames extends Command
      *
      * @var string
      */
-    protected $signature = 'snipeit:regenerate-fieldnames';
+    protected $signature = 'assetsecure:regenerate-fieldnames';
 
     /**
      * The console command description.

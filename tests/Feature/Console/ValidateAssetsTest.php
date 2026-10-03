@@ -15,7 +15,7 @@ class ValidateAssetsTest extends TestCase
     {
         [$validAsset, $invalidAsset] = $this->seedValidAndInvalidAssets();
 
-        Artisan::call('snipeit:validate-assets');
+        Artisan::call('assetsecure:validate-assets');
         $output = Artisan::output();
 
         $this->assertStringContainsString('Run this command with the --all option to see the full list in the console.', $output);
@@ -31,7 +31,7 @@ class ValidateAssetsTest extends TestCase
     {
         [$validAsset, $invalidAsset] = $this->seedValidAndInvalidAssets();
 
-        Artisan::call('snipeit:validate-assets', ['--all' => true]);
+        Artisan::call('assetsecure:validate-assets', ['--all' => true]);
         $output = Artisan::output();
 
         $this->assertStringContainsString($invalidAsset->asset_tag, $output);

@@ -23,7 +23,7 @@ class SendAcceptanceReminder extends Command
      *
      * @var string
      */
-    protected $signature = 'snipeit:acceptance-reminder';
+    protected $signature = 'assetsecure:acceptance-reminder';
 
     /**
      * The console command description.

@@ -77,7 +77,7 @@ class CheckinAssetLocationScopingTest extends TestCase
     private function seedCheckedOutAsset(Location $location): Asset
     {
         // Use the assignedToUser() factory state so the resulting asset
-        // matches the shape Snipe-IT normally produces for a checked-out
+        // matches the shape AssetSecure normally produces for a checked-out
         // asset (assigned_to + assigned_type + last_checkout in sync)
         // rather than a hand-rolled combination. rtd_location_id is
         // still forced to the fixture location so the check-in form

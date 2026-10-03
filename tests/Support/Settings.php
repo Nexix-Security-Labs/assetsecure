@@ -119,7 +119,7 @@ class Settings
     {
         return $this->update([
             'webhook_selected' => 'slack',
-            'webhook_botname' => 'SnipeBot5000',
+            'webhook_botname' => 'AssetBot5000',
             'webhook_endpoint' => 'https://hooks.slack.com/services/NZ59/Q446/672N',
             'webhook_channel' => '#it',
         ]);
@@ -137,7 +137,7 @@ class Settings
     {
         return $this->update([
             'webhook_selected' => 'google',
-            'webhook_botname' => 'SnipeBot5000',
+            'webhook_botname' => 'AssetBot5000',
             'webhook_endpoint' => 'https://chat.googleapis.com/v1/spaces/AAAATQckuT4/messages?key=AIzaSyDdI0hCZtE6vySjMm-WEfRq3CPzqKqqsHI&token=bZDaFDK4lO78HhHmC8BEWI6aAKkgqX2gFv2gHVAc8',
         ]);
     }

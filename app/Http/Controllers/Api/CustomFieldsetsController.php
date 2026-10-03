@@ -13,14 +13,13 @@ use Illuminate\Http\Request;
 
 /**
  * This controller handles all actions related to Custom Asset Fieldsets for
- * the Snipe-IT Asset Management application.
+ * the AssetSecure Asset Management application.
  *
  * @todo Improve documentation here.
  * @todo Check for raw DB queries and try to convert them to query builder statements
  *
  * @version    v2.0
  *
- * @author [Brady Wetherington] [<uberbrady@gmail.com>]
  * @author [Josh Gibson]
  */
 class CustomFieldsetsController extends Controller
@@ -28,7 +27,6 @@ class CustomFieldsetsController extends Controller
     /**
      * Shows the given fieldset and its fields
      *
-     * @author [A. Gianotto] [<snipe@snipe.net>]
      * @author [Josh Gibson]
      *
      * @param  int  $id
@@ -46,7 +44,6 @@ class CustomFieldsetsController extends Controller
     /**
      * Shows the given fieldset and its fields
      *
-     * @author [A. Gianotto] [<snipe@snipe.net>]
      * @author [Josh Gibson]
      *
      * @param  int  $id
@@ -66,7 +63,6 @@ class CustomFieldsetsController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @author [A. Gianotto] [<snipe@snipe.net>]
      *
      * @since [v4.0]
      *
@@ -88,7 +84,6 @@ class CustomFieldsetsController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @author [A. Gianotto] [<snipe@snipe.net>]
      *
      * @since [v4.0]
      */
@@ -120,7 +115,6 @@ class CustomFieldsetsController extends Controller
     /**
      * Delete a custom fieldset.
      *
-     * @author [A. Gianotto] [<snipe@snipe.net>]
      *
      * @since [v4.0]
      */

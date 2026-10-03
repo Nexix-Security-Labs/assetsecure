@@ -210,7 +210,7 @@ class ActivityReportTest extends TestCase
     public function test_activity_report_rejects_types_not_in_form_request_allowlist()
     {
         // FilterRequest already rejects arbitrary class names, but
-        // Snipe-IT returns validation failures as HTTP 200 with body
+        // AssetSecure returns validation failures as HTTP 200 with body
         // status=error (project convention). Pinning that shape so a
         // refactor that changes either FilterRequest or the response
         // envelope shows up in tests before it ships.

@@ -22,9 +22,9 @@ use Illuminate\Database\Migrations\Migration;
  * checkout history would otherwise grind through every historical
  * row during upgrade to populate a calendar view most users only use
  * for recent and upcoming events. Admins who want the full backlog
- * run snipeit:reconcile-calendar-events after the upgrade completes.
+ * run assetsecure:reconcile-calendar-events after the upgrade completes.
  *
- * Duplicates snipeit:reconcile-calendar-events's sync logic on
+ * Duplicates assetsecure:reconcile-calendar-events's sync logic on
  * purpose - the command is meant to be re-runnable on demand later,
  * this migration is the one-time seed at deploy time. Kept small
  * enough that no shared helper class is needed between them.

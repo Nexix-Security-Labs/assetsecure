@@ -1,12 +1,12 @@
 # Screenshotter
 
-A Playwright-driven walkthrough of the Snipe-IT UI that produces PNG screenshots for docs, marketing, or reference use. The script logs in, navigates through canonical pages and interactions, and writes screenshots to an out-of-repo directory (`.screenshotter/screenshots/` by default, gitignored). What you do with the resulting PNGs is up to you.
+A Playwright-driven walkthrough of the AssetSecure UI that produces PNG screenshots for docs, marketing, or reference use. The script logs in, navigates through canonical pages and interactions, and writes screenshots to an out-of-repo directory (`.screenshotter/screenshots/` by default, gitignored). What you do with the resulting PNGs is up to you.
 
 ## Requirements
 
 - Node 18+ (uses `node:util.parseArgs`).
 - Playwright and Chromium. Both are already installed as dev dependencies for this repo, so `npm install` is enough to have them available.
-- A running Snipe-IT install to point at. Herd or `php artisan serve` both work. Default target is `https://snipe-it.test`.
+- A running AssetSecure install to point at. Herd or `php artisan serve` both work. Default target is `https://assetsecure.test`.
 - Credentials for a superuser on that install. Default is `admin` / `password`, which is what the demo seeder creates.
 
 ## Data caution (read this)
@@ -17,7 +17,7 @@ Once a screenshot exists on your disk it is one drag-and-drop away from GitHub, 
 
 ## Usage
 
-Point it at any Snipe-IT install and it will screenshot whatever is there. In practice you want a freshly seeded demo install (see the caution above) so the shots are reproducible and safe to publish.
+Point it at any AssetSecure install and it will screenshot whatever is there. In practice you want a freshly seeded demo install (see the caution above) so the shots are reproducible and safe to publish.
 
 ```bash
 # Recommended: reseed first so the shots reflect canonical demo data
@@ -31,7 +31,7 @@ npm run screenshotter
 At startup the script prints its config so you can see what mode you're in, and at the end it prints how long the run took:
 
 ```
-Base URL:  https://snipe-it.test
+Base URL:  https://assetsecure.test
 Login as:  admin
 Output:    .screenshotter/screenshots
 Viewport:  1840x900
@@ -52,10 +52,10 @@ Full runs wipe the walkthrough shots at the start of every run so stale images n
 ## All environment overrides
 
 ```bash
-BASE_URL=https://staging.example.com    # default: https://snipe-it.test
-USERNAME=snipe                          # default: admin
+BASE_URL=https://staging.example.com    # default: https://assetsecure.test
+USERNAME=demoadmin                          # default: admin
 PASSWORD=secret                         # default: password
-OUT=/tmp/snipe-shots                    # default: .screenshotter/screenshots
+OUT=/tmp/asset-shots                    # default: .screenshotter/screenshots
 HEADLESS=false                          # default: true; false to watch it run
 VIEWPORT_WIDTH=1920 VIEWPORT_HEIGHT=1080 # default: 1840x900
 FRAME=false                             # default: true
@@ -76,7 +76,7 @@ The walkthrough posts each edit form after screenshotting it (to capture the pos
 - Any observer/notification/webhook wired to an update event fires as if a real edit happened. On a demo install this is usually fine, but if the install has outbound webhooks pointed at a real endpoint (Slack, an internal service, etc.) those fire too.
 - No data is intentionally changed (the forms are submitted with the values already on the page), but "unchanged" is not the same as "no side effects."
 
-Before submitting, the script forces the form's `redirect_option=index` hidden field so the post-save destination is always the section's index page. This gives a stable "success callout on the index" shot regardless of what Snipe-IT's default `redirect_option` handling would have picked based on session state.
+Before submitting, the script forces the form's `redirect_option=index` hidden field so the post-save destination is always the section's index page. This gives a stable "success callout on the index" shot regardless of what AssetSecure's default `redirect_option` handling would have picked based on session state.
 
 For a demo-seeded local install this is expected and fine. For anything else, do not run the full walkthrough (see the data caution above), or disable the submit step:
 
@@ -89,7 +89,7 @@ With `SUBMIT_FORMS=false` the walkthrough is read-only: no form posts, no `actio
 
 ## Dev-tool overlays are blocked at the network level
 
-Debugbar, Telescope, and Clockwork all get their asset requests aborted via Playwright network interception. Their JS never loads, so their overlays cannot render, so no debug panel ever appears in a shot. This is stronger than CSS hiding, which was the previous approach and broke on Snipe-IT error pages where debugbar rendered visible JSON collector panels through selectors we couldn't reach.
+Debugbar, Telescope, and Clockwork all get their asset requests aborted via Playwright network interception. Their JS never loads, so their overlays cannot render, so no debug panel ever appears in a shot. This is stronger than CSS hiding, which was the previous approach and broke on AssetSecure error pages where debugbar rendered visible JSON collector panels through selectors we couldn't reach.
 
 If you add another dev tool that injects a page-level overlay, add its asset path to the `context.route(...)` block near the top of the script.
 
@@ -128,7 +128,7 @@ Skipped silently on pages without any tabs. The already-active tab is skipped to
 
 ## Light and dark mode
 
-`COLOR_SCHEME=light` (default) or `COLOR_SCHEME=dark`. Uses Playwright's `colorScheme` context option which sets `prefers-color-scheme` at the browser level. Snipe-IT users whose theme preference is "system" render in the requested scheme automatically, without needing to toggle anything in the UI.
+`COLOR_SCHEME=light` (default) or `COLOR_SCHEME=dark`. Uses Playwright's `colorScheme` context option which sets `prefers-color-scheme` at the browser level. AssetSecure users whose theme preference is "system" render in the requested scheme automatically, without needing to toggle anything in the UI.
 
 ```bash
 COLOR_SCHEME=dark npm run screenshotter
@@ -151,7 +151,7 @@ FRAME=false npm run screenshotter
 
 Framing is done entirely locally via an inline HTML template plus a Playwright screenshot of the composed result. No external services are called, no image content leaves your machine.
 
-The frame's address bar shows the URL path of the shot (e.g. `/hardware/1/edit`) as a rounded pill centered in the chrome. Only the path is rendered, not the full URL. This keeps things clean regardless of what your local testing host is (`snipe-it.test`, an ngrok tunnel, etc.) and avoids leaking your local hostname into published images.
+The frame's address bar shows the URL path of the shot (e.g. `/hardware/1/edit`) as a rounded pill centered in the chrome. Only the path is rendered, not the full URL. This keeps things clean regardless of what your local testing host is (`assetsecure.test`, an ngrok tunnel, etc.) and avoids leaking your local hostname into published images.
 
 ## Ad-hoc single-shot mode
 
@@ -180,7 +180,7 @@ Ad-hoc shots land in `.screenshotter/screenshots/adhoc/{username}-{name}-{timest
 Arguments:
 
 - `--one <path>` (required) URL path to shoot, with or without a leading slash.
-- `--as <username>` (default: `USERNAME` env, which defaults to `admin`) user to log in as. Any seeded user works: `admin`, `snipe`, `assetmgr`, `licensemgr`, `accessorymgr`, `consumablemgr`, `componentmgr`, `usermgr`, etc.
+- `--as <username>` (default: `USERNAME` env, which defaults to `admin`) user to log in as. Any seeded user works: `admin`, `demoadmin`, `assetmgr`, `licensemgr`, `accessorymgr`, `consumablemgr`, `componentmgr`, `usermgr`, etc.
 - `--name <slug>` (default: URL path with `/` replaced by `__`) filename slug. The timestamp is appended automatically.
 - `--tab <label>` case-insensitive substring match against the visible Bootstrap tab labels on the target page. `--tab licenses` matches "Licenses" or "Licenses (5)" alike. If nothing matches, the run aborts with a list of available tabs so you can pick a valid one.
 

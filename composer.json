@@ -1,6 +1,6 @@
 {
-  "name": "grokability/snipe-it",
-  "description": "Open source asset management system built on Laravel.",
+  "name": "nexix-security-labs/assetsecure",
+  "description": "AssetSecure - IT asset management software by Nexix Security Labs, built on Laravel.",
   "keywords": [
     "assets",
     "asset-management",

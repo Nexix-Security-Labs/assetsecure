@@ -19,7 +19,7 @@ class SendExpirationAlerts extends Command
      *
      * @var string
      */
-    protected $signature = 'snipeit:expiring-alerts {--expired-licenses}';
+    protected $signature = 'assetsecure:expiring-alerts {--expired-licenses}';
 
     /**
      * The console command description.

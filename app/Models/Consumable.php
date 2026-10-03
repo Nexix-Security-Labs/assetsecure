@@ -168,7 +168,6 @@ class Consumable extends SnipeModel
     /**
      * Establishes the component -> assignments relationship
      *
-     * @author [A. Gianotto] [<snipe@snipe.net>]
      *
      * @since  [v3.0]
      *
@@ -195,7 +194,6 @@ class Consumable extends SnipeModel
     /**
      * Establishes the component -> company relationship
      *
-     * @author [A. Gianotto] [<snipe@snipe.net>]
      *
      * @since  [v3.0]
      *
@@ -209,7 +207,6 @@ class Consumable extends SnipeModel
     /**
      * Establishes the component -> manufacturer relationship
      *
-     * @author [A. Gianotto] [<snipe@snipe.net>]
      *
      * @since  [v3.0]
      *
@@ -223,7 +220,6 @@ class Consumable extends SnipeModel
     /**
      * Establishes the component -> location relationship
      *
-     * @author [A. Gianotto] [<snipe@snipe.net>]
      *
      * @since  [v3.0]
      *
@@ -237,7 +233,6 @@ class Consumable extends SnipeModel
     /**
      * Establishes the component -> category relationship
      *
-     * @author [A. Gianotto] [<snipe@snipe.net>]
      *
      * @since  [v3.0]
      *
@@ -251,7 +246,6 @@ class Consumable extends SnipeModel
     /**
      * Establishes the component -> action logs relationship
      *
-     * @author [A. Gianotto] [<snipe@snipe.net>]
      *
      * @since  [v3.0]
      *
@@ -265,7 +259,6 @@ class Consumable extends SnipeModel
     /**
      * Gets the full image url for the consumable
      *
-     * @author [A. Gianotto] [<snipe@snipe.net>]
      *
      * @since  [v3.0]
      *
@@ -288,7 +281,6 @@ class Consumable extends SnipeModel
     /**
      * Establishes the component -> users relationship
      *
-     * @author [A. Gianotto] [<snipe@snipe.net>]
      *
      * @since  [v3.0]
      */
@@ -300,7 +292,6 @@ class Consumable extends SnipeModel
     /**
      * Establishes the item -> supplier relationship
      *
-     * @author [A. Gianotto] [<snipe@snipe.net>]
      *
      * @since  [v6.1.1]
      *
@@ -322,7 +313,6 @@ class Consumable extends SnipeModel
      * Determine whether to send a checkin/checkout email based on
      * asset model category
      *
-     * @author [A. Gianotto] [<snipe@snipe.net>]
      *
      * @since  [v4.0]
      *
@@ -336,7 +326,6 @@ class Consumable extends SnipeModel
     /**
      * Determine whether this asset requires acceptance by the assigned user
      *
-     * @author [A. Gianotto] [<snipe@snipe.net>]
      *
      * @since  [v4.0]
      *
@@ -350,7 +339,6 @@ class Consumable extends SnipeModel
     /**
      * Check how many items within a consumable are checked out
      *
-     * @author [A. Gianotto] [<snipe@snipe.net>]
      *
      * @since  [v5.0]
      *
@@ -374,7 +362,6 @@ class Consumable extends SnipeModel
     /**
      * Checks the number of available consumables
      *
-     * @author [A. Gianotto] [<snipe@snipe.net>]
      *
      * @since  [v4.0]
      *
@@ -392,7 +379,6 @@ class Consumable extends SnipeModel
     /**
      * Get the list of checkouts for this consumable
      *
-     * @author [A. Gianotto] [<snipe@snipe.net>]
      *
      * @since  [v2.0]
      *
@@ -418,7 +404,6 @@ class Consumable extends SnipeModel
      *
      * This simply checks that there is a value for quantity, and if there isn't, set it to 0.
      *
-     * @author A. Gianotto <snipe@snipe.net>
      *
      * @since  v6.3.4
      *
@@ -532,7 +517,7 @@ class Consumable extends SnipeModel
      *
      * PostgreSQL note: references a SELECT-list alias inside a compound
      * ORDER BY expression, which PostgreSQL rejects per SQL standard.
-     * Snipe-IT officially supports MySQL/MariaDB and tests on SQLite
+     * AssetSecure officially supports MySQL/MariaDB and tests on SQLite
      * (both allow this); moving to PostgreSQL would require inlining
      * the subquery or wrapping the query in an outer SELECT.
      */

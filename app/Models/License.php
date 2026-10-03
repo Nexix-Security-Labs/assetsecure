@@ -149,7 +149,6 @@ class License extends Depreciable
     /**
      * Update seat counts when the license is updated
      *
-     * @author A. Gianotto <snipe@snipe.net>
      *
      * @since  [v3.0]
      */
@@ -271,7 +270,6 @@ class License extends Depreciable
     /**
      * Balance seat counts
      *
-     * @author A. Gianotto <snipe@snipe.net>
      *
      * @since  [v3.0]
      *
@@ -351,7 +349,6 @@ class License extends Depreciable
     /**
      * Sets the attribute for whether or not the license is maintained
      *
-     * @author A. Gianotto <snipe@snipe.net>
      *
      * @since  [v1.0]
      *
@@ -365,7 +362,6 @@ class License extends Depreciable
     /**
      * Sets the reassignable attribute
      *
-     * @author A. Gianotto <snipe@snipe.net>
      *
      * @since  [v1.0]
      *
@@ -379,7 +375,6 @@ class License extends Depreciable
     /**
      * Sets expiration date attribute
      *
-     * @author A. Gianotto <snipe@snipe.net>
      *
      * @since  [v1.0]
      *
@@ -398,7 +393,6 @@ class License extends Depreciable
     /**
      * Sets termination date attribute
      *
-     * @author A. Gianotto <snipe@snipe.net>
      *
      * @since  [v2.0]
      *
@@ -460,7 +454,6 @@ class License extends Depreciable
     /**
      * Establishes the license -> company relationship
      *
-     * @author A. Gianotto <snipe@snipe.net>
      *
      * @since  [v2.0]
      *
@@ -474,7 +467,6 @@ class License extends Depreciable
     /**
      * Establishes the license -> category relationship
      *
-     * @author A. Gianotto <snipe@snipe.net>
      *
      * @since  [v4.4.0]
      *
@@ -488,7 +480,6 @@ class License extends Depreciable
     /**
      * Establishes the license -> manufacturer relationship
      *
-     * @author A. Gianotto <snipe@snipe.net>
      *
      * @since  [v2.0]
      *
@@ -507,7 +498,6 @@ class License extends Depreciable
     /**
      * Determine whether the user should be emailed on checkin/checkout
      *
-     * @author A. Gianotto <snipe@snipe.net>
      *
      * @since  [v2.0]
      *
@@ -545,7 +535,6 @@ class License extends Depreciable
     /**
      * Determine whether the user should be required to accept the license
      *
-     * @author A. Gianotto <snipe@snipe.net>
      *
      * @since  [v4.0]
      *
@@ -563,7 +552,6 @@ class License extends Depreciable
     /**
      * Establishes the license -> assigned user relationship
      *
-     * @author A. Gianotto <snipe@snipe.net>
      *
      * @since  [v2.0]
      *
@@ -577,7 +565,6 @@ class License extends Depreciable
     /**
      * Establishes the license -> action logs relationship
      *
-     * @author A. Gianotto <snipe@snipe.net>
      *
      * @since  [v2.0]
      *
@@ -595,7 +582,6 @@ class License extends Depreciable
      *
      * @todo this can probably be refactored at some point. We don't need counting methods.
      *
-     * @author A. Gianotto <snipe@snipe.net>
      *
      * @since  [v2.0]
      *
@@ -612,7 +598,6 @@ class License extends Depreciable
      *
      * @todo this can also probably be refactored at some point.
      *
-     * @author A. Gianotto <snipe@snipe.net>
      *
      * @since  [v2.0]
      *
@@ -631,7 +616,6 @@ class License extends Depreciable
      * We do this to eager load the "count" of seats from the controller.
      * Otherwise calling "count()" on each model results in n+1 sadness.
      *
-     * @author A. Gianotto <snipe@snipe.net>
      *
      * @since  [v2.0]
      *
@@ -645,7 +629,6 @@ class License extends Depreciable
     /**
      * Sets the license seat count attribute
      *
-     * @author A. Gianotto <snipe@snipe.net>
      *
      * @since  [v2.0]
      *
@@ -663,7 +646,6 @@ class License extends Depreciable
     /**
      * Returns the number of total available seats across all licenses
      *
-     * @author A. Gianotto <snipe@snipe.net>
      *
      * @since  [v2.0]
      *
@@ -679,7 +661,6 @@ class License extends Depreciable
     /**
      * Returns the available seats remaining
      *
-     * @author A. Gianotto <snipe@snipe.net>
      *
      * @since  [v2.0]
      *
@@ -689,7 +670,6 @@ class License extends Depreciable
     /**
      * Returns the number of total available seats for this license
      *
-     * @author A. Gianotto <snipe@snipe.net>
      *
      * @since  [v2.0]
      *
@@ -711,7 +691,6 @@ class License extends Depreciable
      *
      * @since  [v2.0]
      *
-     * @author A. Gianotto <snipe@snipe.net>
      */
     public function numRemaining()
     {
@@ -726,7 +705,6 @@ class License extends Depreciable
     /**
      * Sets the available seats attribute
      *
-     * @author A. Gianotto <snipe@snipe.net>
      *
      * @since  [v3.0]
      *
@@ -744,7 +722,6 @@ class License extends Depreciable
     /**
      * Retuns the number of assigned seats for this asset
      *
-     * @author A. Gianotto <snipe@snipe.net>
      *
      * @since  [v3.0]
      *
@@ -763,7 +740,6 @@ class License extends Depreciable
     /**
      * Sets the assigned seats attribute
      *
-     * @author A. Gianotto <snipe@snipe.net>
      *
      * @since  [v1.0]
      *
@@ -800,7 +776,6 @@ class License extends Depreciable
     /**
      * Calculates the number of remaining seats
      *
-     * @author A. Gianotto <snipe@snipe.net>
      *
      * @since  [v1.0]
      */
@@ -817,7 +792,6 @@ class License extends Depreciable
     /**
      * Returns the total number of seats for this license
      *
-     * @author A. Gianotto <snipe@snipe.net>
      *
      * @since  [v1.0]
      *
@@ -835,7 +809,6 @@ class License extends Depreciable
     /**
      * Establishes the license -> seats relationship
      *
-     * @author A. Gianotto <snipe@snipe.net>
      *
      * @since  [v1.0]
      *
@@ -849,7 +822,6 @@ class License extends Depreciable
     /**
      * Establishes the license -> supplier relationship
      *
-     * @author A. Gianotto <snipe@snipe.net>
      *
      * @since  [v1.0]
      *
@@ -864,7 +836,6 @@ class License extends Depreciable
      * Gets the next available free seat - used by
      * the API to populate next_seat
      *
-     * @author A. Gianotto <snipe@snipe.net>
      *
      * @since  [v3.0]
      *
@@ -887,7 +858,6 @@ class License extends Depreciable
     /**
      * Establishes the license -> free seats relationship
      *
-     * @author A. Gianotto <snipe@snipe.net>
      *
      * @since  [v1.0]
      *
@@ -939,7 +909,6 @@ class License extends Depreciable
     /**
      * Expiried/terminated licenses scope
      *
-     * @author A. Gianotto <snipe@snipe.net>
      *
      * @since  [v1.0]
      *
@@ -966,7 +935,6 @@ class License extends Depreciable
      * 3) There is an expiration date set and the termination date has not passed
      * 4) The license termination date is null or has not passed
      *
-     * @author A. Gianotto <snipe@snipe.net>
      *
      * @since  [v1.0]
      *
@@ -1056,7 +1024,7 @@ class License extends Depreciable
      *
      * PostgreSQL note: references a SELECT-list alias inside a compound
      * ORDER BY expression, which PostgreSQL rejects per SQL standard.
-     * Snipe-IT officially supports MySQL/MariaDB and tests on SQLite
+     * AssetSecure officially supports MySQL/MariaDB and tests on SQLite
      * (both allow this); moving to PostgreSQL would require inlining
      * the subquery or wrapping the query in an outer SELECT.
      */

@@ -11,7 +11,7 @@ class AssetTagPatternRuleTest extends TestCase
 {
     public function test_pattern_with_external_id_placeholder_passes()
     {
-        $this->assertTrue($this->validate('SNIPEYHEAD-{external_id}'));
+        $this->assertTrue($this->validate('ASSETSECURE-{external_id}'));
     }
 
     public function test_pattern_with_serial_placeholder_passes()
@@ -48,8 +48,8 @@ class AssetTagPatternRuleTest extends TestCase
     {
         // The exact case that bit real users: a "prefix + dash"
         // pattern with no placeholder. Every record renders to
-        // "SNIPEYHEAD-" and only the first saves.
-        $this->assertFalse($this->validate('SNIPEYHEAD-'));
+        // "ASSETSECURE-" and only the first saves.
+        $this->assertFalse($this->validate('ASSETSECURE-'));
     }
 
     public function test_unrelated_curly_braces_do_not_count_as_placeholders()

@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Log;
  * Mosyle adapter. Pulls device inventory from a Mosyle tenant (either
  * Manager or Business) via the Mosyle API and normalizes it into
  * HostInventoryRecord objects. The configured base URL determines
- * which product the adapter targets. Also pushes Snipe-IT-
+ * which product the adapter targets. Also pushes AssetSecure-
  * authoritative asset_tag back via Mosyle's serial-number-scoped
  * set_asset_tag operation.
  */
@@ -156,7 +156,7 @@ class MosyleAdapter extends SyncAdapter implements PushableAdapter
     }
 
     /**
-     * Push Snipe-IT asset_tag back to Mosyle. Mosyle's write API is
+     * Push AssetSecure asset_tag back to Mosyle. Mosyle's write API is
      * a single POST endpoint dispatched by an `operation` field.
      * `set_asset_tag_by_serial_number` targets the device by serial
      * (Mosyle also accepts UDID, but serial is what we cached from

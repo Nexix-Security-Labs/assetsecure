@@ -9,7 +9,7 @@ return [
     'api_base_url' => 'Ձեր API-ի հիմնական URL հասցեն գտնվում է այստեղ՝',
     'api_base_url_endpoint' => '&lt;endpoint&gt;',
     'api_token_expiration_time' => 'API տոկենների ժամկետի ավարտը՝',
-    'api_reference' => 'Խնդրում ենք այցելել <a href="https://snipe-it.readme.io/reference" target="_blank">API reference</a>՝ կոնկրետ API endpoint-ները և լրացուցիչ API փաստաթղթերը գտնելու համար։',
+    'api_reference' => 'Խնդրում ենք այցելել <a href="https://github.com/Nexix-Security-Labs/assetsecure/wiki" target="_blank">API reference</a>՝ կոնկրետ API endpoint-ները և լրացուցիչ API փաստաթղթերը գտնելու համար։',
     'profile_updated' => 'Հաշիվը հաջողությամբ թարմացվեց',
     'no_tokens' => 'Դուք չեք կարող ստեղծել որևէ անձնական տոկեն։',
     'enable_sounds' => 'Միացնել ձայնային էֆեկտ',

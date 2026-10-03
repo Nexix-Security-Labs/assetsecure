@@ -443,7 +443,7 @@
                 </div>
                 <div class="col-md-4">
                     <code>{{ url('/api/v1') }}{!! trans('account/general.api_base_url_endpoint') !!}</code>
-                    <a href="https://snipe-it.readme.io/reference/api-overview" target="_blank" data-tooltip="true" title="{{ trans('general.documentation') }}"><x-icon type="external-link" /></a>
+                    <a href="https://github.com/Nexix-Security-Labs/assetsecure/wiki/api-overview" target="_blank" data-tooltip="true" title="{{ trans('general.documentation') }}"><x-icon type="external-link" /></a>
 
                 </div>
 
@@ -452,7 +452,7 @@
                 </div>
                 <div class="col-md-4">
                     <code>{{ config('app.url') }}/scim/v2/</code>
-                    <a href="https://snipe-it.readme.io/docs/scim" target="_blank" data-tooltip="true" title="{{ trans('general.documentation') }}"><x-icon type="external-link" /></a>
+                    <a href="https://github.com/Nexix-Security-Labs/assetsecure/wiki/scim" target="_blank" data-tooltip="true" title="{{ trans('general.documentation') }}"><x-icon type="external-link" /></a>
 
                 </div>
             </div>

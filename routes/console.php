@@ -18,7 +18,7 @@ Artisan::command('inspire', function () {
     $this->comment(Inspiring::quote());
 })->purpose('Display an inspiring quote');
 
-Artisan::command('snipeit:travisci-install', function () {
+Artisan::command('assetsecure:travisci-install', function () {
     if (! Setting::setupCompleted()) {
         $settings = new Setting();
         $settings->site_name = 'test-ci';

@@ -2,7 +2,7 @@
 
 return [
     'title' => 'Synkroniseringsadaptrar',
-    'help' => 'Synkronisera enhetsinventering från externa system till Snipe-IT.',
+    'help' => 'Synkronisera enhetsinventering från externa system till AssetSecure.',
     'base_url' => 'Bas-URL',
     'base_url_help' => 'Basadressen till din :type-instans.',
     'pull_now' => 'Hämta nu',
@@ -18,7 +18,7 @@ return [
     'sync_failed_network' => 'nätverksfel',
     'last_synced_label' => 'Senast synkroniserad',
     'never_synced' => 'Aldrig',
-    'large_fleet_note' => 'För stora enhetsbestånd bör du schemalägga dessa terminalkommandon i stället för att klicka på knapparna ovan: :pull_command för att hämta inventeringsdata och :push_command för att skicka Snipe-IT-värden tillbaka till leverantören.',
+    'large_fleet_note' => 'För stora enhetsbestånd bör du schemalägga dessa terminalkommandon i stället för att klicka på knapparna ovan: :pull_command för att hämta inventeringsdata och :push_command för att skicka AssetSecure-värden tillbaka till leverantören.',
     'large_fleet_note_pull_only' => 'För stora enhetsbestånd bör du schemalägga terminalkommandot :pull_command i stället för att klicka på Hämta nu.',
     'not_found' => 'Adaptern ”:slug” finns inte. Den kan ha tagits bort eller så är adressen inaktuell.',
     'instance_created' => 'Adaptern har lagts till. Fyll i adressen och inloggningsuppgifterna nedan, markera sedan ”Aktiv” och spara för att aktivera synkronisering.',
@@ -26,10 +26,10 @@ return [
 
     'help_tab_label' => 'Hjälp för adaptrar',
     'experimental_banner_title' => 'Här krävs försiktighet',
-    'experimental_banner_body' => 'Synkroniseringsadaptrar är experimentella. De kan skapa och uppdatera många Snipe-IT-tillgångar samtidigt utifrån data som hämtas från leverantören. Ta en ny säkerhetskopia innan du aktiverar en adapter och före varje större konfigurationsändring.',
+    'experimental_banner_body' => 'Synkroniseringsadaptrar är experimentella. De kan skapa och uppdatera många AssetSecure-tillgångar samtidigt utifrån data som hämtas från leverantören. Ta en ny säkerhetskopia innan du aktiverar en adapter och före varje större konfigurationsändring.',
     'empty_state_title' => 'Komma i gång med synkroniseringsadaptrar',
-    'empty_state_intro' => 'Synkroniseringsadaptrar kopplar Snipe-IT till de MDM-, RMM- och klienthanteringsverktyg du redan använder, så att enheter och deras tilldelade användare förs in automatiskt i stället för att registreras för hand.',
-    'empty_state_supported_intro' => 'Snipe-IT har för närvarande inbyggt stöd för :count adaptertyper:',
+    'empty_state_intro' => 'Synkroniseringsadaptrar kopplar AssetSecure till de MDM-, RMM- och klienthanteringsverktyg du redan använder, så att enheter och deras tilldelade användare förs in automatiskt i stället för att registreras för hand.',
+    'empty_state_supported_intro' => 'AssetSecure har för närvarande inbyggt stöd för :count adaptertyper:',
     'catalog_caption' => 'Synkroniseringsadaptrar som stöds. Klicka på +-knappen på en rad för att börja konfigurera en instans av den typen.',
     'catalog_add_aria' => 'Lägg till :label-adapter',
     'catalog_add_tooltip' => 'Lägg till ny',
@@ -43,9 +43,9 @@ return [
     'add_label_help' => 'Visas på fliken. Välj något du känner igen, till exempel ”Produktionsenheter” eller ”Testenheter”.',
     'add_company_label' => 'Företag',
     'company_scope_label' => 'Företag',
-    'company_scope_help' => 'När ett företag väljs här tilldelas alla tillgångar som synkroniseras via adaptern automatiskt det företaget i Snipe-IT och omfattas av dess behörighetsavgränsning. Lämna tomt för att synkronisera tillgångar till den gemensamma gruppen utan företag. Detta är skilt från menyn ”Filtrera efter företag” högst upp på sidan, som endast styr visningen och inte ändrar någon adapters synkronisering.',
+    'company_scope_help' => 'När ett företag väljs här tilldelas alla tillgångar som synkroniseras via adaptern automatiskt det företaget i AssetSecure och omfattas av dess behörighetsavgränsning. Lämna tomt för att synkronisera tillgångar till den gemensamma gruppen utan företag. Detta är skilt från menyn ”Filtrera efter företag” högst upp på sidan, som endast styr visningen och inte ändrar någon adapters synkronisering.',
     'empty_state_company_title' => 'Företagsavgränsning',
-    'empty_state_company_intro' => 'Varje adapter kan avgränsas till ett enda Snipe-IT-företag. När detta anges tilldelas alla tillgångar som adaptern skapar eller uppdaterar automatiskt det företaget. Olika klientorganisationer hålls därmed åtskilda även när synkroniseringen använder samma leverantörskonto. Om företaget lämnas tomt hamnar adapterns synkroniserade tillgångar i den gemensamma gruppen utan företag.',
+    'empty_state_company_intro' => 'Varje adapter kan avgränsas till ett enda AssetSecure-företag. När detta anges tilldelas alla tillgångar som adaptern skapar eller uppdaterar automatiskt det företaget. Olika klientorganisationer hålls därmed åtskilda även när synkroniseringen använder samma leverantörskonto. Om företaget lämnas tomt hamnar adapterns synkroniserade tillgångar i den gemensamma gruppen utan företag.',
     'empty_state_company_clone_note' => 'För att återanvända samma adress, inloggningsuppgifter och fältmappning mellan företag konfigurerar du en adapter och använder sedan ”Klona den här adaptern” längst ned för att skapa en kopia för varje ytterligare företag.',
     'delete_button' => 'Ta bort den här adaptern',
     'delete_confirm_count' => '{0}Ta bort den här adaptern? Inga tillgångar har synkroniserats från den här källan ännu, så dina befintliga tillgångar påverkas inte.|{1}Ta bort den här adaptern? 1 tidigare synkroniserad tillgång behåller sin historik men slutar uppdateras från den här källan.|[2,*]Ta bort den här adaptern? :count tidigare synkroniserade tillgångar behåller sin historik men slutar uppdateras från den här källan.',
@@ -103,14 +103,14 @@ return [
     'log_heartbeats_label' => 'Logga varje synkronisering, även livsteckenssignaler',
     'log_heartbeats_help' => 'Som standard skrivs synkroniseringar som endast uppdaterar tidsstämpeln för senast sedd inte till tillgångshistoriken, för att undvika onödiga poster. Aktivera detta för att registrera varje synkronisering som en historikpost.',
     'asset_tag_pattern' => 'Mönster för tillgångstagg',
-    'asset_tag_pattern_help' => 'Används endast för nya tillgångar som skapas av den här adaptern. Platshållare som stöds: <code>{serial}</code>, <code>{external_id}</code>, <code>{hostname}</code>, <code>{model}</code>, <code>{source}</code>. Lämna tomt för att använda Snipe-IT:s inställning för automatisk numrering. Om även automatisk numrering är avstängd används <code>{source}-{external_id}</code> som tillgångstagg. Tillgångar som redan har synkroniserats behåller sin befintliga tagg.',
+    'asset_tag_pattern_help' => 'Används endast för nya tillgångar som skapas av den här adaptern. Platshållare som stöds: <code>{serial}</code>, <code>{external_id}</code>, <code>{hostname}</code>, <code>{model}</code>, <code>{source}</code>. Lämna tomt för att använda AssetSecure:s inställning för automatisk numrering. Om även automatisk numrering är avstängd används <code>{source}-{external_id}</code> som tillgångstagg. Tillgångar som redan har synkroniserats behåller sin befintliga tagg.',
     'defaults_section_title' => 'Standardvärden för tillgångar och användarmatchning',
-    'defaults_section_intro' => 'Hur Snipe-IT ska hantera nya tillgångar och användartilldelningar från den här adaptern.',
+    'defaults_section_intro' => 'Hur AssetSecure ska hantera nya tillgångar och användartilldelningar från den här adaptern.',
     'default_category' => 'Modellkategori',
-    'default_category_help' => 'När en enhet från adaptern rapporterar en hårdvarumodell som ännu inte finns i Snipe-IT skapas en ny tillgångsmodell i den här kategorin. Lämna tomt för att använda kategorin ”Discovered Hardware”.',
+    'default_category_help' => 'När en enhet från adaptern rapporterar en hårdvarumodell som ännu inte finns i AssetSecure skapas en ny tillgångsmodell i den här kategorin. Lämna tomt för att använda kategorin ”Discovered Hardware”.',
     'default_status' => 'Förvald statusetikett',
-    'default_status_help' => 'När en enhet från adaptern skapas i Snipe-IT för första gången får den den här statusetiketten. Lämna tomt för att använda den första statusetiketten som är markerad som distribuerbar, eller den första statusetiketten om ingen är distribuerbar.',
-    'user_match_strategy' => 'Tilldela till Snipe-IT-användare',
+    'default_status_help' => 'När en enhet från adaptern skapas i AssetSecure för första gången får den den här statusetiketten. Lämna tomt för att använda den första statusetiketten som är markerad som distribuerbar, eller den första statusetiketten om ingen är distribuerbar.',
+    'user_match_strategy' => 'Tilldela till AssetSecure-användare',
     'user_match_strategy_help' => 'När en matchning hittas checkas tillgången ut till användaren. Saknade eller omatchade användare hoppas över och skrivs som varningar till <code>storage/logs/sync-adapters.log</code>. Befintliga tilldelningar rensas aldrig av data som saknar användarfältet.',
     'user_match_none' => 'Tilldela inte användare',
     'user_match_username_then_email' => 'Matcha efter användarnamn, annars e-postadress',
@@ -120,13 +120,13 @@ return [
     'checkin_on_null_user_label' => 'Checka in tillgångar när leverantören inte rapporterar någon tilldelad användare',
     'checkin_on_null_user_help' => 'När leverantören slutar rapportera en tilldelad användare för en enhet checkas tillgången in från den som hade den. Funktionen är avstängd som standard eftersom en enda missad synkroniseringsomgång, till exempel när enheten är offline eller fältet är tomt vid nyregistrering, annars skulle ta bort tilldelningen. Aktivera endast om du litar på att leverantörens användarrapportering är konsekvent vid varje synkronisering.',
     'adopt_by_serial_label' => 'Matcha leverantörens värdar mot befintliga tillgångar efter serienummer',
-    'adopt_by_serial_help' => 'Hjälp vid migrering från ett eget synkroniseringsskript som redan har fyllt tillgångstabellen eller från manuellt registrerade enheter. När detta är aktiverat letar adaptern först efter en befintlig Snipe-IT-tillgång med samma serienummer och kopplar dem. Stäng av efter den första migreringen om nya leverantörstillgångar alltid ska skapa nya tillgångsposter.',
+    'adopt_by_serial_help' => 'Hjälp vid migrering från ett eget synkroniseringsskript som redan har fyllt tillgångstabellen eller från manuellt registrerade enheter. När detta är aktiverat letar adaptern först efter en befintlig AssetSecure-tillgång med samma serienummer och kopplar dem. Stäng av efter den första migreringen om nya leverantörstillgångar alltid ska skapa nya tillgångsposter.',
 
     // Push dry-run + composite notes push
     'push_dry_run_label' => 'Provkör sändning (logga data utan att skicka)',
     'push_dry_run_help' => 'När detta är aktiverat skapar Skicka nu alla datapaket och skriver dem till synkroniseringsloggen utan att anropa leverantörens API. Det är användbart för att kontrollera riktning och mappning hela vägen innan du börjar skicka verkliga data.',
     'push_notes_section_title' => 'Sammansatt fält',
-    'push_notes_section_intro' => 'Ett valfritt sammansatt fält där du kan kombinera flera egenskaper från en tillgång i Snipe-IT och skicka dem till ett kompatibelt fält hos leverantören. Detta är användbart för leverantörer som inte stöder flera fält eller anpassade egenskaper men har ett enda anteckningsfält.',
+    'push_notes_section_intro' => 'Ett valfritt sammansatt fält där du kan kombinera flera egenskaper från en tillgång i AssetSecure och skicka dem till ett kompatibelt fält hos leverantören. Detta är användbart för leverantörer som inte stöder flera fält eller anpassade egenskaper men har ett enda anteckningsfält.',
     'push_notes_target_label' => 'Leverantörsfält',
     'push_notes_target_help' => 'Leverantörsfält som de sammansatta anteckningarna skrivs till. Lämna tomt för att använda adapterns standardfält, som visas som platshållare. Ange namnet på ett anpassat attribut eller fält om anteckningarna ska skickas till ett särskilt fält hos leverantören i stället för standardkolumnen för anteckningar.',
     'push_notes_target_placeholder_none' => 'Inget standardvärde (ange ett mål)',
@@ -134,8 +134,8 @@ return [
     'push_notes_template_help' => 'Mall i Blade-stil som renderas för varje tillgång och skickas till leverantörsfältet ovan. Lämna tomt för att inte skicka anteckningar. Platshållare: <code>{asset_tag}</code>, <code>{name}</code>, <code>{serial}</code>, <code>{model}</code>, <code>{manufacturer}</code>, <code>{category}</code>, <code>{status}</code>, <code>{status_type}</code>, <code>{assigned_to}</code>, <code>{assigned_to_email}</code>, <code>{assigned_to_username}</code>, <code>{location}</code>, <code>{company}</code>, <code>{supplier}</code>, <code>{last_checkout}</code>, <code>{last_checkin}</code>, <code>{expected_checkin}</code>, <code>{notes}</code>, <code>{order_number}</code>, <code>{purchase_date}</code>, <code>{purchase_cost}</code>, <code>{warranty_months}</code>, <code>{warranty_expires}</code>. Anpassade fält: <code>{custom.Field Name}</code>, där <code>Field Name</code> är det exakta fältnamnet som visas i administrationen för anpassade fält (skiftlägeskänsligt), INTE den interna <code>db_column</code>. Okända eller tomma platshållare blir tomma.',
 
     // Group scoping
-    'group_mapping_title' => 'Mappning från :label till Snipe-IT-företag',
-    'group_mapping_intro' => 'Mappa varje :label från leverantören till ett Snipe-IT-företag. Synkroniserade enheter läggs till i det mappade företaget. Om en grupp saknar mappning används adapterns egen företagsinställning. Klicka på Uppdatera för att hämta den aktuella listan från leverantören.',
+    'group_mapping_title' => 'Mappning från :label till AssetSecure-företag',
+    'group_mapping_intro' => 'Mappa varje :label från leverantören till ett AssetSecure-företag. Synkroniserade enheter läggs till i det mappade företaget. Om en grupp saknar mappning används adapterns egen företagsinställning. Klicka på Uppdatera för att hämta den aktuella listan från leverantören.',
     'group_mapping_empty' => 'Ingen :label-lista har lästs in ännu. Klicka på Uppdatera för att hämta den aktuella listan från leverantören.',
     'refresh_groups' => 'Uppdatera :label-listan',
     'refresh_groups_ok' => 'Hämtade :count :label från leverantören.',
@@ -220,8 +220,8 @@ return [
     'custom_api_key_value_help' => 'Värdet som skickas i huvudet som konfigurerats ovan.',
     'custom_pull_path_help' => 'Sökväg som läggs till efter basadressen vid hämtning, till exempel <code>/api/v1/devices</code>. Lämna tomt för att anropa själva basadressen.',
     'custom_records_path_help' => 'Punktseparerad sökväg till posternas array i JSON-svaret, till exempel <code>data.devices</code> eller <code>results</code>. Lämna tomt om svaret redan är en array på rotnivån.',
-    'custom_source_id_path_help' => 'Obligatoriskt. Punktseparerad sökväg inom en post som pekar på leverantörens beständiga unika ID för posten, till exempel <code>id</code>, <code>uuid</code> eller <code>serial_number</code>. Snipe-IT använder värdet för att matcha poster mellan synkroniseringar, så att senare hämtningar uppdaterar samma tillgång i stället för att skapa dubbletter.',
-    'custom_pagination_style_help' => 'Hur adaptern hämtar resultat efter leverantörens första sida. <code>None</code> skickar ett enda anrop och stannar. <code>Offset + Limit</code> anropar samma slutpunkt igen med parametrarna <code>?limit=X&offset=Y</code>. <code>Page Number + Limit</code> använder <code>?limit=X&page=N</code> (Snipe-IT:s API och API:er i Laravel-stil). <code>Next URL</code> följer en absolut adress som returneras i varje svar.',
+    'custom_source_id_path_help' => 'Obligatoriskt. Punktseparerad sökväg inom en post som pekar på leverantörens beständiga unika ID för posten, till exempel <code>id</code>, <code>uuid</code> eller <code>serial_number</code>. AssetSecure använder värdet för att matcha poster mellan synkroniseringar, så att senare hämtningar uppdaterar samma tillgång i stället för att skapa dubbletter.',
+    'custom_pagination_style_help' => 'Hur adaptern hämtar resultat efter leverantörens första sida. <code>None</code> skickar ett enda anrop och stannar. <code>Offset + Limit</code> anropar samma slutpunkt igen med parametrarna <code>?limit=X&offset=Y</code>. <code>Page Number + Limit</code> använder <code>?limit=X&page=N</code> (AssetSecure:s API och API:er i Laravel-stil). <code>Next URL</code> följer en absolut adress som returneras i varje svar.',
     'custom_pagination_page_size_help' => 'Antal poster som begärs per sida. Standardvärdet är <code>500</code>.',
     'custom_pagination_limit_param_help' => 'Namnet på frågeparametern som anger sidstorleken, till exempel <code>limit</code>, <code>per_page</code> eller <code>page_size</code>.',
     'custom_pagination_offset_param_help' => 'Namnet på frågeparametern som anger startförskjutningen, till exempel <code>offset</code>, <code>start</code> eller <code>skip</code>.',
@@ -229,8 +229,8 @@ return [
     'custom_pagination_page_start_help' => 'Numret för den första sidan. Standardvärdet är <code>1</code>. Ange <code>0</code> för API:er som numrerar sidor från noll.',
     'custom_pagination_next_path_help' => 'Punktseparerad sökväg i svarskroppen som pekar på nästa sidas absoluta adress, till exempel <code>links.next</code> eller <code>meta.next_page_url</code>. Sidindelningen avslutas när sökvägen ger ett tomt eller saknat värde.',
     'custom_field_paths_label' => 'Sökvägar i leverantörens svar',
-    'custom_field_paths_help' => 'Mappa varje målfält i Snipe-IT, ett standardfält, anpassat fält eller en inbyggd kolumn, till den punktseparerade sökväg där värdet finns i en post i leverantörens JSON-svar. Välj ett mål, ange sökvägen (till exempel <code>hardware.serial</code>), välj riktning (hämta, skicka eller båda) och klicka på Lägg till.',
-    'field_map_column_field' => 'Snipe-IT-fält',
+    'custom_field_paths_help' => 'Mappa varje målfält i AssetSecure, ett standardfält, anpassat fält eller en inbyggd kolumn, till den punktseparerade sökväg där värdet finns i en post i leverantörens JSON-svar. Välj ett mål, ange sökvägen (till exempel <code>hardware.serial</code>), välj riktning (hämta, skicka eller båda) och klicka på Lägg till.',
+    'field_map_column_field' => 'AssetSecure-fält',
     'field_map_column_path' => 'Punktseparerad leverantörssökväg',
     'field_map_column_direction' => 'Riktning',
     'field_map_empty' => 'Inga fält har mappats ännu.',
@@ -253,11 +253,11 @@ return [
 
     // Extras / mapping section wrappers
     'extra_fields_section_title' => ':type-specifika fält',
-    'extra_fields_section_intro' => 'Ytterligare leverantörsfält som saknar motsvarande fält i Snipe-IT. Lägg till en rad för varje leverantörsfält som ska synkroniseras och välj vilket fält det mappas till. Booleska värden kan mappas till anpassade kryssrutefält och textvärden till anpassade textfält.',
+    'extra_fields_section_intro' => 'Ytterligare leverantörsfält som saknar motsvarande fält i AssetSecure. Lägg till en rad för varje leverantörsfält som ska synkroniseras och välj vilket fält det mappas till. Booleska värden kan mappas till anpassade kryssrutefält och textvärden till anpassade textfält.',
 
     // Mapping-picker widget (extras section repeater)
     'mapping_picker_col_field' => 'Leverantörsfält',
-    'mapping_picker_col_target' => 'Snipe-IT-mål',
+    'mapping_picker_col_target' => 'AssetSecure-mål',
     'mapping_picker_col_direction' => 'Riktning',
     'mapping_picker_empty' => 'Inga leverantörsfält har mappats ännu. Välj ett fält nedan för att lägga till ett.',
     'mapping_picker_pick_extra' => 'Välj ett leverantörsfält',
@@ -381,7 +381,7 @@ return [
     // captured by the "Refresh custom fields" button. Rendered in the
     // extras mapping table for each Kaseya custom field the tenant
     // has defined, so admins recognize them as coming from Kaseya
-    // rather than any built-in Snipe-IT extra.
+    // rather than any built-in AssetSecure extra.
     'kaseya_vsa10_custom_field_label' => 'Kaseya: :name',
 
     // ABM adapter-specific labels + option strings.

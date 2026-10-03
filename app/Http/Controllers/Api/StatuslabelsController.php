@@ -22,7 +22,6 @@ class StatuslabelsController extends Controller
     /**
      * Display a listing of the resource.
      *
-     * @author [A. Gianotto] [<snipe@snipe.net>]
      *
      * @since [v4.0]
      */
@@ -89,7 +88,6 @@ class StatuslabelsController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @author [A. Gianotto] [<snipe@snipe.net>]
      *
      * @since [v4.0]
      */
@@ -132,7 +130,6 @@ class StatuslabelsController extends Controller
     /**
      * Display the specified resource.
      *
-     * @author [A. Gianotto] [<snipe@snipe.net>]
      *
      * @since [v4.0]
      *
@@ -152,7 +149,6 @@ class StatuslabelsController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @author [A. Gianotto] [<snipe@snipe.net>]
      *
      * @since [v4.0]
      *
@@ -197,7 +193,6 @@ class StatuslabelsController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @author [A. Gianotto] [<snipe@snipe.net>]
      *
      * @since [v4.0]
      *
@@ -222,7 +217,6 @@ class StatuslabelsController extends Controller
     /**
      * Show a count of assets by status label for pie chart
      *
-     * @author [A. Gianotto] [<snipe@snipe.net>]
      *
      * @since [v3.0]
      */
@@ -256,7 +250,6 @@ class StatuslabelsController extends Controller
     /**
      * Show a count of assets by meta status type for pie chart
      *
-     * @author [A. Gianotto] [<snipe@snipe.net>]
      *
      * @since [v6.0.11]
      */
@@ -289,7 +282,6 @@ class StatuslabelsController extends Controller
     /**
      * Display the specified resource.
      *
-     * @author [A. Gianotto] [<snipe@snipe.net>]
      *
      * @since [v4.0]
      *
@@ -327,7 +319,6 @@ class StatuslabelsController extends Controller
      * and whether we show a warning that the asset will be checked in if it's already
      * assigned but the status is changed to one that isn't pending or deployable
      *
-     * @author [A. Gianotto] [<snipe@snipe.net>]
      *
      * @since [v4.0]
      */
@@ -345,7 +336,6 @@ class StatuslabelsController extends Controller
     /**
      * Gets a paginated collection for the select2 menus
      *
-     * @author [A. Gianotto] [<snipe@snipe.net>]
      *
      * @since [v6.1.1]
      * @see SelectlistTransformer

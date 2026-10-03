@@ -20,7 +20,7 @@ class MergeUsersTest extends TestCase
         Asset::factory()->count(3)->assignedToUser($user1)->create();
         Asset::factory()->count(3)->assignedToUser($user_to_merge_into)->create();
 
-        $this->artisan('snipeit:merge-users')->assertExitCode(0);
+        $this->artisan('assetsecure:merge-users')->assertExitCode(0);
 
         $this->assertEquals(6, $user_to_merge_into->refresh()->assets->count());
         $this->assertEquals(0, $user1->refresh()->assets->count());
@@ -37,7 +37,7 @@ class MergeUsersTest extends TestCase
 
         $this->assertEquals(3, $user_to_merge_into->refresh()->licenses->count());
 
-        $this->artisan('snipeit:merge-users')->assertExitCode(0);
+        $this->artisan('assetsecure:merge-users')->assertExitCode(0);
 
         $this->assertEquals(6, $user_to_merge_into->refresh()->licenses->count());
         $this->assertEquals(0, $user1->refresh()->licenses->count());
@@ -54,7 +54,7 @@ class MergeUsersTest extends TestCase
 
         $this->assertEquals(3, $user_to_merge_into->refresh()->accessories->count());
 
-        $this->artisan('snipeit:merge-users')->assertExitCode(0);
+        $this->artisan('assetsecure:merge-users')->assertExitCode(0);
 
         $this->assertEquals(6, $user_to_merge_into->refresh()->accessories->count());
         $this->assertEquals(0, $user1->refresh()->accessories->count());
@@ -71,7 +71,7 @@ class MergeUsersTest extends TestCase
 
         $this->assertEquals(3, $user_to_merge_into->refresh()->consumables->count());
 
-        $this->artisan('snipeit:merge-users')->assertExitCode(0);
+        $this->artisan('assetsecure:merge-users')->assertExitCode(0);
 
         $this->assertEquals(6, $user_to_merge_into->refresh()->consumables->count());
         $this->assertEquals(0, $user1->refresh()->consumables->count());
@@ -88,7 +88,7 @@ class MergeUsersTest extends TestCase
 
         $this->assertEquals(3, $user_to_merge_into->refresh()->uploads->count());
 
-        $this->artisan('snipeit:merge-users')->assertExitCode(0);
+        $this->artisan('assetsecure:merge-users')->assertExitCode(0);
 
         $this->assertEquals(6, $user_to_merge_into->refresh()->uploads->count());
         $this->assertEquals(0, $user1->refresh()->uploads->count());
@@ -105,7 +105,7 @@ class MergeUsersTest extends TestCase
 
         $this->assertEquals(3, $user_to_merge_into->refresh()->acceptances->count());
 
-        $this->artisan('snipeit:merge-users')->assertExitCode(0);
+        $this->artisan('assetsecure:merge-users')->assertExitCode(0);
 
         $this->assertEquals(6, $user_to_merge_into->refresh()->acceptances->count());
         $this->assertEquals(0, $user1->refresh()->acceptances->count());
@@ -122,7 +122,7 @@ class MergeUsersTest extends TestCase
 
         $this->assertEquals(3, $user_to_merge_into->refresh()->userlog->count());
 
-        $this->artisan('snipeit:merge-users')->assertExitCode(0);
+        $this->artisan('assetsecure:merge-users')->assertExitCode(0);
 
         // This needs to be more than the otherwise expected because the merge action itself is logged for the two merging users
         $this->assertEquals(7, $user_to_merge_into->refresh()->userlog->count());

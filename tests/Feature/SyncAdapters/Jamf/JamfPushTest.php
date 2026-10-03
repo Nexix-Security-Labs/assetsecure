@@ -39,7 +39,7 @@ class JamfPushTest extends TestCase
         SyncAdapterConfig::put($instance->id, 'direction.asset_tag', 'push');
 
         $asset = Asset::factory()->create([
-            'asset_tag' => 'SNIPE-JAMF-42',
+            'asset_tag' => 'AS-JAMF-42',
         ]);
         AssetExternalSource::create([
             'asset_id' => $asset->id,
@@ -56,7 +56,7 @@ class JamfPushTest extends TestCase
         Http::assertSent(function ($request) {
             return $request->method() === 'PATCH'
                 && str_contains($request->url(), '/api/v1/computers-inventory-detail/jamf-computer-id-42')
-                && ($request->data()['userAndLocation']['assetTag'] ?? null) === 'SNIPE-JAMF-42';
+                && ($request->data()['userAndLocation']['assetTag'] ?? null) === 'AS-JAMF-42';
         });
     }
 

@@ -2,7 +2,7 @@
     Multi-step LDAP settings wizard. Four steps:
       1. Connection (server URL, TLS, cert)
       2. Authenticate & Scope (bind creds + base DN + filters)
-      3. Attribute Mapping (LDAP-attr → Snipe-IT-field)
+      3. Attribute Mapping (LDAP-attr → AssetSecure-field)
       4. Sync & Defaults (enable toggle, default group, forgot-pass URL)
 
     Layout order inside the box:
@@ -38,7 +38,7 @@
          inside this wizard. Uses the theme's --box-bg + --color-fg so
          it matches whatever dark-mode palette the site is running. --}}
     <style>
-        /* Scoped to actual input elements. Snipe-IT wraps checkboxes in
+        /* Scoped to actual input elements. AssetSecure wraps checkboxes in
            `<label class="form-control">` (see checkbox-row), and applying
            the dark background/border to those labels breaks their
            inherit-from-parent styling. Explicit element targets keep
@@ -75,7 +75,7 @@
            override re-asserts red on all four sides so a field in an
            error state actually LOOKS wrong instead of just having a
            red label + inline message. Also covers light mode since
-           Snipe-IT's AdminLTE overrides use the same has-error class. */
+           AssetSecure's AdminLTE overrides use the same has-error class. */
         .ldap-wizard .has-error input.form-control,
         .ldap-wizard .has-error textarea.form-control,
         .ldap-wizard .has-error select.form-control {
@@ -797,7 +797,7 @@
                          save on step 4. Points admins at sync-scheduling
                          options. Login is live but recurring user sync
                          has to be scheduled separately since the app
-                         ships no default schedule for snipeit:ldap-sync. --}}
+                         ships no default schedule for assetsecure:ldap-sync. --}}
 
 
                     <div class="col-md-12">

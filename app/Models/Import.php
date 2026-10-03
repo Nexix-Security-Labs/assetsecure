@@ -19,7 +19,6 @@ class Import extends Model
     /**
      * Establishes the license -> admin user relationship
      *
-     * @author A. Gianotto <snipe@snipe.net>
      *
      * @since  [v2.0]
      *

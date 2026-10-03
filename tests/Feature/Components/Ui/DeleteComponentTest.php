@@ -54,7 +54,7 @@ class DeleteComponentTest extends TestCase implements TestsFullMultipleCompanies
     {
         // Soft-deleting a component preserves its image on disk so a
         // restored component still has one. The image is only removed
-        // for good by `snipeit:purge` when the row is force-deleted.
+        // for good by `assetsecure:purge` when the row is force-deleted.
         // Coverage for that permanent-removal path lives in
         // `tests/Feature/Console/Commands/PurgeTest.php`.
         Storage::fake('public');

@@ -1,4 +1,4 @@
-# Snipe-IT Architecture
+# AssetSecure Architecture
 
 ## Controllers
 

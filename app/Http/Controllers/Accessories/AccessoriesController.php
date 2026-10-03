@@ -14,7 +14,7 @@ use Illuminate\Http\RedirectResponse;
 use Illuminate\Support\Facades\Storage;
 
 /** This controller handles all actions related to Accessories for
- * the Snipe-IT Asset Management application.
+ * the AssetSecure Asset Management application.
  *
  * @version    v1.0
  */
@@ -26,7 +26,6 @@ class AccessoriesController extends Controller
      * Returns a view that invokes the ajax tables which actually contains
      * the content for the accessories listing, which is generated in getDatatable.
      *
-     * @author [A. Gianotto] [<snipe@snipe.net>]
      *
      * @see AccessoriesController::getDatatable() method that generates the JSON response
      * @since [v1.0]
@@ -41,7 +40,6 @@ class AccessoriesController extends Controller
     /**
      * Returns a view with a form to create a new Accessory.
      *
-     * @author [A. Gianotto] [<snipe@snipe.net>]
      */
     public function create(): View
     {
@@ -55,7 +53,6 @@ class AccessoriesController extends Controller
     /**
      * Validate and save new Accessory from form post
      *
-     * @author [A. Gianotto] [<snipe@snipe.net>]
      */
     public function store(ImageUploadRequest $request): RedirectResponse
     {
@@ -119,7 +116,6 @@ class AccessoriesController extends Controller
     /**
      * Return view for the Accessory update form, prepopulated with existing data
      *
-     * @author [A. Gianotto] [<snipe@snipe.net>]
      *
      * @param  int  $accessoryId
      */
@@ -178,7 +174,6 @@ class AccessoriesController extends Controller
     /**
      * Save edited Accessory from form post
      *
-     * @author [A. Gianotto] [<snipe@snipe.net>]
      *
      * @param  int  $accessoryId
      */
@@ -237,7 +232,6 @@ class AccessoriesController extends Controller
     /**
      * Delete the given accessory.
      *
-     * @author [A. Gianotto] [<snipe@snipe.net>]
      *
      * @param  int  $accessoryId
      */
@@ -248,7 +242,7 @@ class AccessoriesController extends Controller
 
         if ($accessory->isDeletable()) {
             // Note: the image file is deliberately preserved across this
-            // soft-delete. Snipe-IT's `snipeit:purge` command permanently
+            // soft-delete. AssetSecure's `assetsecure:purge` command permanently
             // removes it later when the row is force-deleted. Keeping
             // the file here means a restored soft-deleted row still has
             // its image.
@@ -264,7 +258,6 @@ class AccessoriesController extends Controller
      * Returns a view that invokes the ajax table which  contains
      * the content for the accessory detail view, which is generated in getDataView.
      *
-     * @author [A. Gianotto] [<snipe@snipe.net>]
      *
      * @param  int  $accessoryID
      *

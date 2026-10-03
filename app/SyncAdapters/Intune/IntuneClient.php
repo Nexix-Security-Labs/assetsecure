@@ -89,7 +89,7 @@ class IntuneClient
      * Push writable metadata to a managed device via Graph beta's
      * per-device endpoint. The v1.0 endpoint doesn't expose notes
      * as writable. Beta does (matches what community integrations
-     * like Brady Widener's Snipe-IT-Azure-Integration use). Fields
+     * like Brady Widener's AssetSecure-Azure-Integration use). Fields
      * the caller doesn't include stay untouched.
      *
      * @param  array<string, scalar|null>  $payload

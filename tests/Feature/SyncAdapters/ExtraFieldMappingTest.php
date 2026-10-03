@@ -178,7 +178,7 @@ class ExtraFieldMappingTest extends TestCase
     public function test_purchase_date_accepts_iso_8601_datetime()
     {
         // ABM emits orderDateTime as ISO 8601 with a time component.
-        // The write path normalizes to YYYY-MM-DD so it fits Snipe-IT's
+        // The write path normalizes to YYYY-MM-DD so it fits AssetSecure's
         // date column.
         $fleet = $this->configuredFleetInstance();
         SyncAdapterConfig::put($fleet->id, 'mapping.fleet_team', 'native:purchase_date');
@@ -250,7 +250,7 @@ class ExtraFieldMappingTest extends TestCase
         $fleet = $this->configuredFleetInstance();
 
         // Standard-field mapping: route the normalized asset_tag field
-        // to Snipe-IT's native asset_tag column. Fleet doesn't emit
+        // to AssetSecure's native asset_tag column. Fleet doesn't emit
         // asset_tag in its normalize() so we simulate a source that
         // does by using the extra->normalized path elsewhere. Here we
         // exercise the mapping wiring itself.
@@ -280,9 +280,9 @@ class ExtraFieldMappingTest extends TestCase
         $this->configuredFleetInstance();
 
         // No explicit mapping stored: default target for asset_tag is
-        // native:asset_tag so the vendor's tag flows into Snipe-IT's
+        // native:asset_tag so the vendor's tag flows into AssetSecure's
         // asset_tag column. Common case is admins want the printed
-        // sticker in Kandji / Jamf to match the Snipe-IT tag.
+        // sticker in Kandji / Jamf to match the AssetSecure tag.
         $record = new \App\SyncAdapters\HostInventoryRecord(
             sourceKey: 'fleet',
             sourceId: 'tag-test-2',

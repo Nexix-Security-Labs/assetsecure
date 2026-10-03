@@ -571,7 +571,6 @@ final class Company extends SnipeModel
      *
      * @todo - refactor that trait to handle the user's model as well.
      *
-     * @author [A. Gianotto] <snipe@snipe.net>
      *
      * @return mixed
      */
@@ -596,7 +595,7 @@ final class Company extends SnipeModel
         $companyIds = self::getCurrentUserCompanyIds();
 
         // Location scoping is opt-in even under FMCS: setting
-        // scope_locations_fmcs = 0 tells Snipe-IT that locations are meant
+        // scope_locations_fmcs = 0 tells AssetSecure that locations are meant
         // to be shared across tenants. Without this short-circuit the
         // global scope still filters locations by the caller's pivot
         // memberships, which hides null-company locations from every
@@ -638,7 +637,7 @@ final class Company extends SnipeModel
 
             // Floater mode on: a company-scoped caller also sees null-company
             // (floater) users. This mirrors the item-level floater rule
-            // documented at https://snipe-it.readme.io/docs/multi-tenancy-ish
+            // documented at https://github.com/Nexix-Security-Labs/assetsecure/wiki/multi-tenancy-ish
             // and is required so checkout dropdowns can offer floater users
             // as valid targets under the "items from any company can be
             // checked out to targets with no company assignment" policy.
@@ -767,7 +766,6 @@ final class Company extends SnipeModel
      *
      * This gets invoked by CompanyableChildScope, but I'm not sure what it does.
      *
-     * @author [A. Gianotto] <snipe@snipe.net>
      *
      * @return mixed
      */

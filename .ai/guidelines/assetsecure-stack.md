@@ -1,4 +1,4 @@
-# Snipe-IT Stack & Tooling
+# AssetSecure Stack & Tooling
 
 ## Frontend Is Laravel Mix, Not Vite
 

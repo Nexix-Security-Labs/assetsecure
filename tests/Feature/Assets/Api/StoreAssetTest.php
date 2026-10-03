@@ -666,7 +666,6 @@ class StoreAssetTest extends TestCase
         ];
     }
 
-    /** @link https://app.shortcut.com/grokability/story/29181 */
     #[DataProvider('checkoutTargets')]
     public function test_assigned_field_validation_cannot_be_array($data)
     {
@@ -740,9 +739,6 @@ class StoreAssetTest extends TestCase
         $this->assertHasTheseActionLogs($asset, ['create'/* , 'checkout' */]); // TODO - should be the two events
     }
 
-    /**
-     * @link https://app.shortcut.com/grokability/story/24475
-     */
     public function test_company_id_needs_to_be_integer()
     {
         $this->actingAsForApi(User::factory()->createAssets()->create())

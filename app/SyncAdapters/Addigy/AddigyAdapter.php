@@ -122,7 +122,7 @@ class AddigyAdapter extends SyncAdapter
             osVersion: Arr::get($device, 'os_version'),
             lastSeen: $this->parseTimestamp(Arr::get($device, 'last_online')),
             // Addigy's "asset_tag" is the operator-assigned tag from
-            // their inventory settings, distinct from the Snipe-IT one.
+            // their inventory settings, distinct from the AssetSecure one.
             assetTag: Arr::get($device, 'asset_tag'),
             assignedUserEmail: Arr::get($device, 'user_email'),
             vendorGroupId: Arr::has($device, 'policy_id') ? (string) Arr::get($device, 'policy_id') : null,

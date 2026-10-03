@@ -67,7 +67,7 @@ class JamfClient
 
     /**
      * List every Site in the Jamf Pro tenant. Used by the adapter's
-     * fetchGroups() so admins can map Sites to Snipe-IT companies.
+     * fetchGroups() so admins can map Sites to AssetSecure companies.
      * Response shape is a bare array of {id, name} objects.
      *
      * @return array<int, array<string, mixed>>

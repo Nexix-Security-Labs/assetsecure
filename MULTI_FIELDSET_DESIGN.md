@@ -78,7 +78,7 @@ primary "which fields does this model have" table.
   more "which layer owns the field membership" ambiguity.
 
 ## Open questions (unresolved when we paused)
-1. Path A or Path B: Snipe's call. B is cleaner, A ships faster.
+1. Path A or Path B: Maintainers' call. B is cleaner, A ships faster.
 2. Field ordering across attached fieldsets in Path A. Options:
    - Fieldset `order` plus within-fieldset field `order` (two-level sort).
    - Interleave everything by a single per-field order (needs a rule

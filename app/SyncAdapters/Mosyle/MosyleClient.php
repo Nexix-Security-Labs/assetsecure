@@ -71,7 +71,7 @@ class MosyleClient
     /**
      * List every Location in the Mosyle tenant. Used by the
      * adapter's fetchGroups() so admins can map Locations to
-     * Snipe-IT companies. Mosyle uses POST for reads (same shape
+     * AssetSecure companies. Mosyle uses POST for reads (same shape
      * as devices()).
      *
      * @return array<int, array<string, mixed>>

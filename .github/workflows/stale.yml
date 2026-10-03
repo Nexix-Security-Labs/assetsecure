@@ -31,7 +31,7 @@ jobs:
           close-issue-message: >
             This issue has been automatically closed because it has not had
             recent activity. If you believe this is still an issue, please confirm that
-            this issue is still happening in the most recent version of Snipe-IT and reply
+            this issue is still happening in the most recent version of AssetSecure and reply
             to this thread to re-open it.
           # There doesn't seem to be a 'reopen issue message'?
           # Since there is no 'stale-pr-message' - PR's should not be stale'd

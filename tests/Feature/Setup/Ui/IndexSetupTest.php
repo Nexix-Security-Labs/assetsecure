@@ -70,7 +70,7 @@ class IndexSetupTest extends TestCase
 
         $this->post(route('setup.user.save'),
             [
-                'site_name' => 'Snipe-IT',
+                'site_name' => 'AssetSecure',
                 'first_name' => 'First',
                 'last_name' => 'Admin',
                 'username' => 'AwesomeAdmin',

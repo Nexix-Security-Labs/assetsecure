@@ -132,7 +132,6 @@ class AssetModel extends SnipeModel
     /**
      * Establishes the model -> assets relationship
      *
-     * @author [A. Gianotto] [<snipe@snipe.net>]
      *
      * @since  [v1.0]
      *
@@ -227,7 +226,6 @@ class AssetModel extends SnipeModel
     /**
      * Establishes the model -> category relationship
      *
-     * @author [A. Gianotto] [<snipe@snipe.net>]
      *
      * @since  [v1.0]
      *
@@ -246,7 +244,6 @@ class AssetModel extends SnipeModel
     /**
      * Establishes the model -> depreciation relationship
      *
-     * @author [A. Gianotto] [<snipe@snipe.net>]
      *
      * @since  [v1.0]
      *
@@ -260,7 +257,6 @@ class AssetModel extends SnipeModel
     /**
      * Establishes the model -> manufacturer relationship
      *
-     * @author [A. Gianotto] [<snipe@snipe.net>]
      *
      * @since  [v1.0]
      *
@@ -274,7 +270,6 @@ class AssetModel extends SnipeModel
     /**
      * Establishes the model -> fieldset relationship
      *
-     * @author [A. Gianotto] [<snipe@snipe.net>]
      *
      * @since  [v2.0]
      *
@@ -309,7 +304,6 @@ class AssetModel extends SnipeModel
      *
      * @todo this should probably be moved
      *
-     * @author [A. Gianotto] [<snipe@snipe.net>]
      *
      * @since  [v2.0]
      *
@@ -327,7 +321,6 @@ class AssetModel extends SnipeModel
     /**
      * Checks if the model is deletable
      *
-     * @author A. Gianotto <snipe@snipe.net>
      *
      * @since  [v6.3.4]
      *
@@ -459,7 +452,7 @@ class AssetModel extends SnipeModel
      *
      * PostgreSQL note: this expression references SELECT-list aliases
      * inside a compound ORDER BY expression, which PostgreSQL rejects
-     * per SQL standard. Snipe-IT officially supports MySQL/MariaDB and
+     * per SQL standard. AssetSecure officially supports MySQL/MariaDB and
      * tests on SQLite (both allow this); moving to PostgreSQL would
      * require inlining the subqueries or wrapping the query in an
      * outer SELECT.

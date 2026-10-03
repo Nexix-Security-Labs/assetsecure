@@ -295,7 +295,6 @@ class Maintenance extends SnipeModel implements ICompanyableChild
     /**
      * Get the maintenance logs
      *
-     * @author [A. Gianotto] [<snipe@snipe.net>]
      *
      * @since  [v8.2.2]
      *

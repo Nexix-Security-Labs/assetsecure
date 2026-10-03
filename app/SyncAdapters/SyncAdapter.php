@@ -156,7 +156,7 @@ abstract class SyncAdapter
      * Type slug -> {label, docs_url} catalog. Powers the help pane's
      * table of supported adapters so admins can jump into either the
      * "Add adapter" modal with the type pre-selected or the docs page
-     * (vendor's own for named adapters, Snipe-IT's own for Custom
+     * (vendor's own for named adapters, AssetSecure's own for Custom
      * HTTP). docs_url is null for adapters whose vendor has no stable
      * public reference URL or gates its docs behind a login.
      *
@@ -355,7 +355,7 @@ abstract class SyncAdapter
     /**
      * Rules the controller enforces before saveConfig() runs.
      * ExternalUrl blocks loopback / RFC-1918 / cloud-metadata targets
-     * so an admin can't turn Snipe-IT into an SSRF primitive by
+     * so an admin can't turn AssetSecure into an SSRF primitive by
      * pointing at 127.0.0.1 or 169.254.169.254. Credential fields
      * stay nullable at rules-time so admins can save a URL-only
      * draft while they go fetch credentials from the vendor console.
@@ -666,7 +666,7 @@ abstract class SyncAdapter
     }
 
     /**
-     * Per-vendor-group Snipe-IT company mappings. Form emits one input
+     * Per-vendor-group AssetSecure company mappings. Form emits one input
      * per group (name = {slug}_group_mapping[{vendor_group_id}]).
      * Blank / "unassigned" values clear that group's mapping so it
      * falls back to the instance company_id at sync time.
@@ -819,7 +819,7 @@ abstract class SyncAdapter
      * Valid placeholder keys for the composed-notes push template.
      * Admins wrap these tokens in {curly-braces} inside their
      * push_notes_template to build a single-field notes blob from
-     * many Snipe-IT fields. `{custom.Field Name}` accesses any
+     * many AssetSecure fields. `{custom.Field Name}` accesses any
      * CustomField by its exact display name (case-sensitive).
      * Unknown placeholders and null values render as empty so a
      * template referencing missing fields degrades gracefully.
@@ -888,7 +888,7 @@ abstract class SyncAdapter
      * Resolve one of the standard source-field names (hostname,
      * asset_tag, serial, model, notes, etc.) to the matching value
      * on the asset. Push implementations call this when building
-     * their outgoing payload so every adapter reads Snipe-IT values
+     * their outgoing payload so every adapter reads AssetSecure values
      * the same way. Returns null for unknown source-field names,
      * for extras (vendor-specific keys the base class can't map),
      * or when the asset has no value for that field.
@@ -1266,7 +1266,7 @@ abstract class SyncAdapter
 
     /**
      * Default category id for auto-created AssetModels from this
-     * adapter. Vendors don't send Snipe-IT's category concept, but
+     * adapter. Vendors don't send AssetSecure's category concept, but
      * every AssetModel needs one. When null, SyncAdapter
      * falls back to a get-or-create "Discovered Hardware" category.
      */
@@ -1312,7 +1312,7 @@ abstract class SyncAdapter
     }
 
     /**
-     * How the sync path resolves a Snipe-IT user from the vendor's
+     * How the sync path resolves a AssetSecure user from the vendor's
      * assigned-user data. Returns one of:
      * - 'none'                 no assignment attempted (default)
      * - 'username'             match against users.username only
@@ -1363,7 +1363,7 @@ abstract class SyncAdapter
 
     /**
      * Migration aid: when on, the sync loop looks for an existing
-     * Snipe-IT asset with a matching serial before creating a new
+     * AssetSecure asset with a matching serial before creating a new
      * shell asset for a first-time sync vendor host.
      *
      */
@@ -1380,7 +1380,7 @@ abstract class SyncAdapter
     /**
      * Whether this adapter's vendor exposes a groups concept
      * (Fleet Teams, Jamf Sites, Kandji Blueprints, etc.) that
-     * admins can map to Snipe-IT companies. Default false so
+     * admins can map to AssetSecure companies. Default false so
      * adapters without group support don't render the mapping
      * section on the settings page. Adapters override to true and
      * implement fetchGroups() + populate vendorGroupId in normalize.
@@ -1439,7 +1439,7 @@ abstract class SyncAdapter
     }
 
     /**
-     * Per-instance vendor-group to Snipe-IT-company mappings, keyed
+     * Per-instance vendor-group to AssetSecure-company mappings, keyed
      * by vendor group id. Empty when the admin has not configured any
      * mappings.
      *
@@ -1462,7 +1462,7 @@ abstract class SyncAdapter
     }
 
     /**
-     * Snipe-IT company id for a vendor group id, or null when the
+     * AssetSecure company id for a vendor group id, or null when the
      * group has no mapping. Callers (SyncAdapter) fall back
      * to the instance's own company_id in that case.
      */

@@ -55,7 +55,7 @@ class AllowedUploadExtension implements ValidationRule
         // and the uninformative-sniff branch below would let it pass.
         // Native executable formats (PE, ELF, Mach-O) live here as
         // defense-in-depth. Shebang scripts (shell, python, perl) are
-        // deliberately absent because Snipe-IT does not execute uploads
+        // deliberately absent because AssetSecure does not execute uploads
         // and script snippets in .txt attachments are legitimate.
         $executableContentMimes = [
             'text/x-php',

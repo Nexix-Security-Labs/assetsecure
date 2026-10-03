@@ -95,7 +95,7 @@ class RequestAssetCancelation extends Notification implements ShouldQueue
         $item = $this->item;
         $note = $this->note;
         $qty = $this->item_quantity;
-        $botname = (Setting::getSettings()->webhook_botname) ? Setting::getSettings()->webhook_botname : 'Snipe-Bot';
+        $botname = (Setting::getSettings()->webhook_botname) ? Setting::getSettings()->webhook_botname : 'AssetSecure Bot';
         $channel = (Setting::getSettings()->webhook_channel) ? Setting::getSettings()->webhook_channel : '';
 
         $fields = [
@@ -156,7 +156,7 @@ class RequestAssetCancelation extends Notification implements ShouldQueue
             ->subject('⚠️ '.trans('general.request_canceled'))
             ->withSymfonyMessage(function (Email $message) {
                 $message->getHeaders()->addTextHeader(
-                    'X-System-Sender', 'Snipe-IT'
+                    'X-System-Sender', 'AssetSecure'
                 );
             });
 

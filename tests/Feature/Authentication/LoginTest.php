@@ -54,7 +54,7 @@ class LoginTest extends TestCase
         // and the ThrottlesLogins trait to silently no-op.
         //
         // A user has to exist for the login POST to reach the controller.
-        // With an empty users table Snipe-IT's setup middleware short-
+        // With an empty users table AssetSecure's setup middleware short-
         // circuits every POST /login to /setup, so the throttle path
         // never runs.
         User::factory()->create();

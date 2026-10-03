@@ -164,9 +164,6 @@ class AccessoryAcceptanceTest extends TestCase
         $this->assertNull($acceptance->fresh()->accepted_at);
     }
 
-    /**
-     * @link https://github.com/grokability/snipe-it/issues/17589
-     */
     public function test_all_accessory_checkout_entries_are_removed_when_user_declines_acceptance()
     {
         $assignee = User::factory()->create();

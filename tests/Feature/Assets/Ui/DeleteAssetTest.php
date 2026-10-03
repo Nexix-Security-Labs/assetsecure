@@ -103,7 +103,7 @@ class DeleteAssetTest extends TestCase
     {
         // Soft-deleting an asset preserves its image on disk so a
         // restored asset still has one. The image is only removed for
-        // good by `snipeit:purge` when the row is force-deleted.
+        // good by `assetsecure:purge` when the row is force-deleted.
         // Coverage for that permanent-removal path lives in
         // `tests/Feature/Console/Commands/PurgeTest.php`.
         Storage::fake('public');

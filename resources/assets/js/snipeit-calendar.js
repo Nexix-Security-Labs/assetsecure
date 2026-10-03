@@ -1,5 +1,5 @@
 /**
- * Snipe-IT calendar init.
+ * AssetSecure calendar init.
  *
  * Thin wrapper around FullCalendar v6 that per-entity calendar pages
  * call via a single global (window.snipeitCalendar.init). The reason
@@ -36,7 +36,7 @@ import timeGridPlugin from '@fullcalendar/timegrid';
 /**
  * Fetch events from our own /api/v1/... endpoints with the session
  * X-CSRF-TOKEN header attached, matching how every bootstrap-table
- * datatable authenticates browser calls to Snipe-IT's API. Without
+ * datatable authenticates browser calls to AssetSecure's API. Without
  * this header the /api/v1/* routes reject session-authed browser
  * requests, and the calendar renders empty even though the query
  * returns rows. Passes through FullCalendar's `start` and `end`
@@ -154,7 +154,7 @@ function buildFilterButtons(filterButtons, state, getCalendar, opts) {
     filterButtons.forEach(function (btn) {
         const buttonEl = document.createElement('button');
         buttonEl.type = 'button';
-        // .btn-theme is Snipe-IT's own themed-color button chrome
+        // .btn-theme is AssetSecure's own themed-color button chrome
         // (defined in overrides.less); .snipeit-calendar-filter-button
         // is our own hook that layers the checkmark + selected-state
         // ring on top. FullCalendar's .fc-button styles are scoped
@@ -199,10 +199,10 @@ function buildFilterButtons(filterButtons, state, getCalendar, opts) {
 }
 
 /**
- * Convert a PHP date() format string (what Snipe-IT stores in
+ * Convert a PHP date() format string (what AssetSecure stores in
  * settings.date_display_format and user overrides thereof) into a
  * FullCalendar / Cmdlet-style format string. Only handles the tokens
- * Snipe-IT actually uses in its shipped date-format options; unknown
+ * AssetSecure actually uses in its shipped date-format options; unknown
  * tokens pass through as literal characters, which is safe because
  * the Cmdlet parser treats them as verbatim text.
  *
@@ -429,7 +429,7 @@ function init(elementId, config) {
     // for days that carry too many events to fit inline. When the
     // caller passes a phpDateFormat (from the site's setting or the
     // per-user override), convert to FullCalendar's token style so
-    // the popover date reads the same as dates elsewhere in Snipe-IT.
+    // the popover date reads the same as dates elsewhere in AssetSecure.
     // Left as-is if the caller doesn't provide one - FullCalendar's
     // locale-aware default takes over.
     if (config.phpDateFormat && !options.dayPopoverFormat) {

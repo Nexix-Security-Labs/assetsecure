@@ -15,10 +15,10 @@ class SettingsSeeder extends Seeder
         Setting::truncate();
         $settings = new Setting;
         $settings->per_page = 20;
-        $settings->site_name = 'Snipe-IT Demo';
+        $settings->site_name = 'AssetSecure Demo';
         $settings->auto_increment_assets = 1;
-        $settings->logo = 'snipe-logo.png';
-        $settings->alert_email = 'service@snipe-it.io';
+        $settings->logo = 'assetsecure-logo.png';
+        $settings->alert_email = 'admin@example.com';
         $settings->header_color = null;
         $settings->label2_2d_type = 'QRCODE';
         $settings->default_currency = 'USD';
@@ -74,7 +74,7 @@ class SettingsSeeder extends Seeder
         }
 
         // Copy the logos from the img/demo directory
-        Storage::disk('local_public')->put('snipe-logo.png', file_get_contents(public_path('img/demo/snipe-logo.png')));
-        Storage::disk('local_public')->put('snipe-logo-lg.png', file_get_contents(public_path('img/demo/snipe-logo-lg.png')));
+        Storage::disk('local_public')->put('assetsecure-logo.png', file_get_contents(public_path('img/demo/assetsecure-logo.png')));
+        Storage::disk('local_public')->put('assetsecure-logo-lg.png', file_get_contents(public_path('img/demo/assetsecure-logo-lg.png')));
     }
 }

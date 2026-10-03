@@ -28,7 +28,7 @@ readonly class HostInventoryRecord
         public ?string $osVersion = null,
         public ?CarbonInterface $lastSeen = null,
         // Vendor-provided asset tag when the source has one (Kandji,
-        // Jamf School, Mosyle, Addigy). Never overwrites Snipe-IT's
+        // Jamf School, Mosyle, Addigy). Never overwrites AssetSecure's
         // asset_tag by default. Admins opt in via the mapping UI by
         // picking `native:asset_tag` as the target for this field.
         public ?string $assetTag = null,
@@ -40,7 +40,7 @@ readonly class HostInventoryRecord
         public ?string $assignedUserName = null,
         // Vendor's group identifier (Fleet Team id, Jamf Site id,
         // Kandji Blueprint id, etc). Sync path uses this to resolve
-        // the asset's Snipe-IT company via the adapter's per-group
+        // the asset's AssetSecure company via the adapter's per-group
         // company mapping. Null when the vendor doesn't group the
         // device or the adapter doesn't emit group data.
         public ?string $vendorGroupId = null,

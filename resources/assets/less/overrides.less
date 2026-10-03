@@ -764,7 +764,7 @@ h4 {
  Instead, we use CSS to add the icon into the table header, which leaves the column selector
  "title" text as-is and hides the icon.
 
- See https://github.com/grokability/snipe-it/issues/7989
+
  */
 thead th.css-accessory > .th-inner,
 thead th.css-accessory-alt > .th-inner,
@@ -1331,7 +1331,6 @@ caption.tableCaption {
   > *:first-child { margin-top: 0; }
 }
 
-// via https://github.com/grokability/snipe-it/issues/11754
 .sidebar-toggle.btn {
   border-radius: 3px;
   box-shadow: none;
@@ -2248,7 +2247,7 @@ its trigger in both modes.
    inactive-step dots (#f5f5f5) both wash out against the dark-mode
    body. Bump to the theme's mid-gray so wizard steps stay visible
    on setup, importer modal, and the LDAP settings wizard. Selector
-   uses [data-theme="dark"] — the actual attribute Snipe-IT toggles
+   uses [data-theme="dark"] — the actual attribute AssetSecure toggles
    for dark mode. Disabled variant is called out explicitly because
    .bs-wizard-step.disabled > .bs-wizard-dot is a same-specificity
    rule from AdminLTE — the extra .disabled class ensures we win. */
@@ -2327,7 +2326,7 @@ its trigger in both modes.
 // Bootstrap 3's .table-hover hardcodes #f5f5f5 in _tables.scss which
 // reads as near-white on the dark theme and hides row text against
 // the hover background. Route it through the same theme-aware custom
-// property Snipe-IT uses for its striped-table alt row color so hover
+// property AssetSecure uses for its striped-table alt row color so hover
 // flips correctly in both modes for every table across the app.
 .table-hover > tbody > tr:hover > td,
 .table-hover > tbody > tr:hover > th {
@@ -2529,7 +2528,7 @@ table rows
 .gen-sticky-left-shared(5);
 
 // Row-state overrides. Bootstrap-table adds `.selected` on click / checkbox
-// tick (see line ~2889 for the base rule), and Snipe-IT paints `.success`
+// tick (see line ~2889 for the base rule), and AssetSecure paints `.success`
 // and `.danger` rows for the audit / restore flows. Without these
 // overrides, the sticky columns keep their zebra background painted on top
 // of the row-selected color and read as unselected even when the rest of
@@ -3364,7 +3363,7 @@ dl.table-display {
 // the rest of the app uses so login and password-reset screens carry
 // the tenant's chosen theme mode instead of a permanent light-mode
 // look. Also styles the .register-* classes since AdminLTE ships them
-// paired and future Snipe-IT signup flows may use them.
+// paired and future AssetSecure signup flows may use them.
 .login-page,
 .register-page {
   background: var(--color-bg);
@@ -3698,7 +3697,7 @@ dl.table-display {
 // FullCalendar built-in toolbar buttons (today / prev / next / month /
 // week / day / list) use the shipped `.fc-button-primary` gray palette
 // out of the box, which looks unrelated to the rest of the app. Rebind
-// them to Snipe-IT's --main-theme-color palette so the whole calendar
+// them to AssetSecure's --main-theme-color palette so the whole calendar
 // header reads as part of the same UI. `.fc-button-active` for the
 // currently-selected view gets a darker fill so it stays distinct.
 // ============================================================================
@@ -3887,7 +3886,7 @@ dl.table-display {
 //
 // buildFilterButtons flips `.active` on selected filters. Bootstrap 3's
 // stock `.btn-default.active` only nudges the background a few shades
-// darker, which reads as "hovered" not "selected" and Snipe reported she
+// darker, which reads as "hovered" not "selected" and was reported as
 // couldn't tell which filters were on. Force the active state to the
 // app's primary theme color with an inset border ring and a leading
 // checkmark glyph so a viewer can spot which filters are active without

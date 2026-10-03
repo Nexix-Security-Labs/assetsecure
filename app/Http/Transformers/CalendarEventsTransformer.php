@@ -92,7 +92,7 @@ class CalendarEventsTransformer
      * Display name prefixed with the human-readable event-type label
      * so a viewer can tell why a row is on the calendar ("Audit due:
      * Laptop #7" vs. just "Laptop #7"). Presenter's name() is the
-     * canonical Snipe-IT accessor; falls through to common attribute
+     * canonical AssetSecure accessor; falls through to common attribute
      * names for models without a presenter wired up yet.
      */
     private function titleFor(Model $source, string $eventType): string

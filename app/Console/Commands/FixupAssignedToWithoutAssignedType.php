@@ -12,7 +12,7 @@ class FixupAssignedToWithoutAssignedType extends Command
      *
      * @var string
      */
-    protected $signature = 'snipeit:assigned-to-fixup
+    protected $signature = 'assetsecure:assigned-to-fixup
                             {--debug : Display debugging output}';
 
     /**

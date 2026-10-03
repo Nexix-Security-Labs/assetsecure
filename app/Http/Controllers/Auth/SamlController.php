@@ -36,7 +36,7 @@ class SamlController extends Controller
     }
 
     /**
-     * Return SAML SP metadata for Snipe-IT
+     * Return SAML SP metadata for AssetSecure
      *
      * /saml/metadata
      *
@@ -58,7 +58,7 @@ class SamlController extends Controller
 
         return response()->streamDownload(function () use ($metadata) {
             echo $metadata;
-        }, 'snipe-it-metadata.xml', ['Content-Type' => 'text/xml']);
+        }, 'assetsecure-metadata.xml', ['Content-Type' => 'text/xml']);
     }
 
     /**

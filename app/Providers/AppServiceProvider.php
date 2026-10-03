@@ -48,7 +48,6 @@ class AppServiceProvider extends ServiceProvider
     /**
      * Bootstrap application services.
      *
-     * @author [A. Gianotto] [<snipe@snipe.net>]
      *
      * @since [v3.0]
      *

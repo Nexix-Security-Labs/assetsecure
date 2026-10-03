@@ -18,7 +18,7 @@ use Tests\TestCase;
  * The fix registers overriding routes at the same URIs in
  * routes/web.php (loaded before Passport's package service provider
  * boots, so FIFO route resolution picks ours) gated with
- * authorize:superuser to match the /admin/oauth surfaces Snipe-IT
+ * authorize:superuser to match the /admin/oauth surfaces AssetSecure
  * already treats as superuser-only.
  */
 class PassportOAuthClientGateTest extends TestCase
@@ -67,7 +67,7 @@ class PassportOAuthClientGateTest extends TestCase
 
     public function test_admin_without_superuser_cannot_manage_oauth_clients(): void
     {
-        // Snipe-IT's /admin/oauth surfaces are gated on `superuser`,
+        // AssetSecure's /admin/oauth surfaces are gated on `superuser`,
         // not `admin`. Admins get 403 too, matching the intent.
         $admin = User::factory()->admin()->create();
 

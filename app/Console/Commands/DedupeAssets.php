@@ -45,7 +45,7 @@ use Illuminate\Support\Facades\DB;
  */
 class DedupeAssets extends Command
 {
-    protected $signature = 'snipeit:dedupe-assets
+    protected $signature = 'assetsecure:dedupe-assets
                             {--dry-run : Print the plan without modifying data}';
 
     protected $description = 'Merges duplicate assets by asset_tag and re-parents their action_logs to the survivor.';

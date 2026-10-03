@@ -8,7 +8,7 @@ use Tests\TestCase;
 
 /**
  * Regression: a password-only session that lands on /two-factor (exempt from
- * CheckForTwoFactor) used to pick up the Passport `snipeit_passport_token`
+ * CheckForTwoFactor) used to pick up the Passport `assetsecure_passport_token`
  * cookie and then mint a persistent personal-access-token via the API
  * group, fully bypassing the second factor. ProfileController endpoints
  * now refuse when the session hasn't cleared 2FA, and the wrapper

@@ -64,7 +64,7 @@ class JamfSchoolClient
     /**
      * List every Location in the Jamf School tenant. Locations are
      * typically schools within a district. Used by the adapter's
-     * fetchGroups() so admins can map Locations to Snipe-IT
+     * fetchGroups() so admins can map Locations to AssetSecure
      * companies.
      *
      * @return array<int, array<string, mixed>>

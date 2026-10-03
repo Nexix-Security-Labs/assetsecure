@@ -2,7 +2,7 @@
 
 return [
     'title' => 'Sync Adapters',
-    'help' => 'Sync host inventory from external systems into Snipe-IT.',
+    'help' => 'Sync host inventory from external systems into AssetSecure.',
     'base_url' => 'Base URL',
     'base_url_help' => 'The base URL of your :type instance.',
     'pull_now' => 'Pull Now',
@@ -18,7 +18,7 @@ return [
     'sync_failed_network' => 'network error',
     'last_synced_label' => 'Last Synced',
     'never_synced' => 'Never',
-    'large_fleet_note' => 'For large fleets, schedule these CLI commands instead of clicking the buttons above: :pull_command to pull inventory, :push_command to push Snipe-IT values back to the vendor.',
+    'large_fleet_note' => 'For large fleets, schedule these CLI commands instead of clicking the buttons above: :pull_command to pull inventory, :push_command to push AssetSecure values back to the vendor.',
     'large_fleet_note_pull_only' => 'For large fleets, schedule the CLI command :pull_command instead of clicking Pull Now.',
     'not_found' => 'Adapter ":slug" does not exist. It may have been deleted or the URL is out of date.',
     'instance_created' => 'Adapter added. Fill in the URL and credentials below, then check "Active" and Save to enable sync.',
@@ -26,10 +26,10 @@ return [
 
     'help_tab_label' => 'Adapter Help',
     'experimental_banner_title' => 'Here be dragons',
-    'experimental_banner_body' => 'Sync adapters are experimental. Adapter runs can create and update Snipe-IT assets in bulk based on data pulled from the vendor. Take a fresh backup before enabling any adapter and before every material configuration change.',
+    'experimental_banner_body' => 'Sync adapters are experimental. Adapter runs can create and update AssetSecure assets in bulk based on data pulled from the vendor. Take a fresh backup before enabling any adapter and before every material configuration change.',
     'empty_state_title' => 'Getting started with sync adapters',
-    'empty_state_intro' => 'Sync adapters connect Snipe-IT to the MDM, RMM, and endpoint tools you already use, so devices and their assigned users flow into Snipe-IT automatically instead of being typed in by hand.',
-    'empty_state_supported_intro' => 'Snipe-IT currently supports :count adapter types out of the box:',
+    'empty_state_intro' => 'Sync adapters connect AssetSecure to the MDM, RMM, and endpoint tools you already use, so devices and their assigned users flow into AssetSecure automatically instead of being typed in by hand.',
+    'empty_state_supported_intro' => 'AssetSecure currently supports :count adapter types out of the box:',
     'catalog_caption' => 'Supported sync adapters. Click the + button on any row to start configuring an instance of that type.',
     'catalog_add_aria' => 'Add :label adapter',
     'catalog_add_tooltip' => 'Add new',
@@ -43,9 +43,9 @@ return [
     'add_label_help' => 'Shown on the tab. Choose something you will recognize (e.g. "Production Fleet", "Staging Fleet").',
     'add_company_label' => 'Korporatii',
     'company_scope_label' => 'Korporatii',
-    'company_scope_help' => 'When a company is selected here, every asset synced from this adapter is automatically assigned to that company on the Snipe-IT side, inheriting your company-level scoping and permissions. Leave blank to sync assets into the shared no-company pool. This is separate from the "Filter by company" dropdown at the top of the page, which is a view filter only and does not change any adapter\'s sync behavior.',
+    'company_scope_help' => 'When a company is selected here, every asset synced from this adapter is automatically assigned to that company on the AssetSecure side, inheriting your company-level scoping and permissions. Leave blank to sync assets into the shared no-company pool. This is separate from the "Filter by company" dropdown at the top of the page, which is a view filter only and does not change any adapter\'s sync behavior.',
     'empty_state_company_title' => 'Company scoping',
-    'empty_state_company_intro' => 'Each adapter can be scoped to a single Snipe-IT company. When set, every asset the adapter creates or updates is automatically assigned to that company, so different tenants stay separated even when the sync runs against the same vendor account. Leaving the company blank routes an adapter\'s synced assets into the shared, no-company pool.',
+    'empty_state_company_intro' => 'Each adapter can be scoped to a single AssetSecure company. When set, every asset the adapter creates or updates is automatically assigned to that company, so different tenants stay separated even when the sync runs against the same vendor account. Leaving the company blank routes an adapter\'s synced assets into the shared, no-company pool.',
     'empty_state_company_clone_note' => 'To reuse the same URL, credentials, and field mapping across companies, configure one adapter and then use "Clone this adapter" in the footer to create a copy for each additional company.',
     'delete_button' => 'Delete this adapter',
     'delete_confirm_count' => '{0}Delete this adapter? No assets have been synced from this source yet, so nothing will change on your existing assets.|{1}Delete this adapter? 1 previously-synced asset will keep its history but stop updating from this source.|[2,*]Delete this adapter? :count previously-synced assets will keep their history but stop updating from this source.',
@@ -103,14 +103,14 @@ return [
     'log_heartbeats_label' => 'Log every sync, including heartbeats',
     'log_heartbeats_help' => 'By default, syncs that only update the last-seen timestamp are not written to the asset history to avoid heartbeat noise. Turn this on to record every sync as a history entry.',
     'asset_tag_pattern' => 'Asset tag pattern',
-    'asset_tag_pattern_help' => 'Applied only to newly-created assets from this adapter. Supported placeholders: <code>{serial}</code>, <code>{external_id}</code>, <code>{hostname}</code>, <code>{model}</code>, <code>{source}</code>. Leave blank to fall back to Snipe-IT\'s auto-increment setting. If auto-increment is also off, the asset tag defaults to <code>{source}-{external_id}</code>. Assets already synced keep their existing asset tag.',
+    'asset_tag_pattern_help' => 'Applied only to newly-created assets from this adapter. Supported placeholders: <code>{serial}</code>, <code>{external_id}</code>, <code>{hostname}</code>, <code>{model}</code>, <code>{source}</code>. Leave blank to fall back to AssetSecure\'s auto-increment setting. If auto-increment is also off, the asset tag defaults to <code>{source}-{external_id}</code>. Assets already synced keep their existing asset tag.',
     'defaults_section_title' => 'Asset defaults and user matching',
-    'defaults_section_intro' => 'How Snipe-IT should handle new assets and user assignments coming from this adapter.',
+    'defaults_section_intro' => 'How AssetSecure should handle new assets and user assignments coming from this adapter.',
     'default_category' => 'Model Category',
-    'default_category_help' => 'When a device from this adapter reports a hardware model that doesn\'t exist in Snipe-IT yet, a new asset model is created and placed in this category. Leave blank to use the "Discovered Hardware" category.',
+    'default_category_help' => 'When a device from this adapter reports a hardware model that doesn\'t exist in AssetSecure yet, a new asset model is created and placed in this category. Leave blank to use the "Discovered Hardware" category.',
     'default_status' => 'Default Status Label',
-    'default_status_help' => 'When a device from this adapter is created in Snipe-IT for the first time, its status label is set to this value. Leave blank to use the first deployable status label (or the first status label if none are marked deployable).',
-    'user_match_strategy' => 'Assign to Snipe-IT user',
+    'default_status_help' => 'When a device from this adapter is created in AssetSecure for the first time, its status label is set to this value. Leave blank to use the first deployable status label (or the first status label if none are marked deployable).',
+    'user_match_strategy' => 'Assign to AssetSecure user',
     'user_match_strategy_help' => 'When a match is found, the asset checks out to that user. Missing or unmatched users are skipped and written to <code>storage/logs/sync-adapters.log</code> as warnings. Existing assignments are never cleared by a payload that omits the user field.',
     'user_match_none' => 'Do not assign users',
     'user_match_username_then_email' => 'Match by username, fall back to email',
@@ -120,13 +120,13 @@ return [
     'checkin_on_null_user_label' => 'Check assets in when the vendor reports no assigned user',
     'checkin_on_null_user_help' => 'When the vendor stops reporting an assigned user for a device, check the asset in from whoever had it. Off by default because a single missed sync cycle (device offline, empty field on a fresh enrollment) would unassign the asset. Turn this on only if you trust your vendor\'s user reporting to be consistent every sync.',
     'adopt_by_serial_label' => 'Match vendor hosts to existing assets by serial number',
-    'adopt_by_serial_help' => 'Migration aid for customers moving from a homegrown sync script that already populated the assets table or manually entered devices. When enabled, this adapter will first check for an existing Snipe-IT asset with the same serial number and link them. Turn this off after your initial migration if you want new vendor assets to always create fresh asset rows.',
+    'adopt_by_serial_help' => 'Migration aid for customers moving from a homegrown sync script that already populated the assets table or manually entered devices. When enabled, this adapter will first check for an existing AssetSecure asset with the same serial number and link them. Turn this off after your initial migration if you want new vendor assets to always create fresh asset rows.',
 
     // Push dry-run + composite notes push
     'push_dry_run_label' => 'Dry-run push (log payloads, do not send)',
     'push_dry_run_help' => 'When on, Push Now builds every payload and writes it to the sync-adapters log without calling the vendor API. Useful for verifying your direction + mapping configuration end-to-end before flipping the switch on real data.',
     'push_notes_section_title' => 'Composite Field',
-    'push_notes_section_intro' => 'Optional composite field where you can assemble multiple attributes from an asset in Snipe-IT and push it into a compatible field on the vendor side. This is useful for vendors that do not support multiple fields or custom attributes, but do support a single notes field.',
+    'push_notes_section_intro' => 'Optional composite field where you can assemble multiple attributes from an asset in AssetSecure and push it into a compatible field on the vendor side. This is useful for vendors that do not support multiple fields or custom attributes, but do support a single notes field.',
     'push_notes_target_label' => 'Vendor field',
     'push_notes_target_help' => 'Vendor field the composed notes get written to. Leave blank to use the adapter\'s default (shown as placeholder). Set to a Custom Attribute / Custom Field name if you want the composed notes to be pushed to a specific vendor-side field instead of the default notes column.',
     'push_notes_target_placeholder_none' => 'No default (specify a target)',
@@ -134,8 +134,8 @@ return [
     'push_notes_template_help' => 'Blade-style template rendered per asset and pushed to the vendor field above. Leave blank to skip notes push. Placeholders: <code>{asset_tag}</code>, <code>{name}</code>, <code>{serial}</code>, <code>{model}</code>, <code>{manufacturer}</code>, <code>{category}</code>, <code>{status}</code>, <code>{status_type}</code>, <code>{assigned_to}</code>, <code>{assigned_to_email}</code>, <code>{assigned_to_username}</code>, <code>{location}</code>, <code>{company}</code>, <code>{supplier}</code>, <code>{last_checkout}</code>, <code>{last_checkin}</code>, <code>{expected_checkin}</code>, <code>{notes}</code>, <code>{order_number}</code>, <code>{purchase_date}</code>, <code>{purchase_cost}</code>, <code>{warranty_months}</code>, <code>{warranty_expires}</code>. Custom fields: <code>{custom.Field Name}</code>, where <code>Field Name</code> is the exact custom field name as shown in the Custom Fields admin (case-sensitive), NOT the internal <code>db_column</code>. Unknown or empty placeholders render as blank.',
 
     // Group scoping
-    'group_mapping_title' => ':label to Snipe-IT company mapping',
-    'group_mapping_intro' => 'Map each :label from the vendor to a Snipe-IT company. Synced devices are added in the mapped company. Unmapped groups fall back to this adapter\'s own company setting. Click Refresh to pull the current list from the vendor.',
+    'group_mapping_title' => ':label to AssetSecure company mapping',
+    'group_mapping_intro' => 'Map each :label from the vendor to a AssetSecure company. Synced devices are added in the mapped company. Unmapped groups fall back to this adapter\'s own company setting. Click Refresh to pull the current list from the vendor.',
     'group_mapping_empty' => 'No :label list loaded yet. Click Refresh to fetch the current list from the vendor.',
     'refresh_groups' => 'Refresh :label list',
     'refresh_groups_ok' => 'Refreshed :count :label(s) from the vendor.',
@@ -220,8 +220,8 @@ return [
     'custom_api_key_value_help' => 'The value sent in the header configured above.',
     'custom_pull_path_help' => 'Path appended to the Base URL when pulling, e.g. <code>/api/v1/devices</code>. Leave blank to hit the base URL itself.',
     'custom_records_path_help' => 'Dot-path into the JSON response where the records array lives, e.g. <code>data.devices</code> or <code>results</code>. Leave blank when the response is already an array at the root.',
-    'custom_source_id_path_help' => 'Required. Dot-path within one record pointing at the vendor\'s stable unique id for that record, e.g. <code>id</code>, <code>uuid</code>, or <code>serial_number</code>. Snipe-IT uses this value to match records across sync runs so subsequent pulls update the same asset rather than creating duplicates.',
-    'custom_pagination_style_help' => 'How the adapter walks past the vendor\'s first page of results. <code>None</code> sends a single request and stops. <code>Offset + Limit</code> re-hits the same endpoint with <code>?limit=X&offset=Y</code> params. <code>Page Number + Limit</code> re-hits with <code>?limit=X&page=N</code> (Snipe-IT API, Laravel-style APIs). <code>Next URL</code> follows an absolute URL returned in each response.',
+    'custom_source_id_path_help' => 'Required. Dot-path within one record pointing at the vendor\'s stable unique id for that record, e.g. <code>id</code>, <code>uuid</code>, or <code>serial_number</code>. AssetSecure uses this value to match records across sync runs so subsequent pulls update the same asset rather than creating duplicates.',
+    'custom_pagination_style_help' => 'How the adapter walks past the vendor\'s first page of results. <code>None</code> sends a single request and stops. <code>Offset + Limit</code> re-hits the same endpoint with <code>?limit=X&offset=Y</code> params. <code>Page Number + Limit</code> re-hits with <code>?limit=X&page=N</code> (AssetSecure API, Laravel-style APIs). <code>Next URL</code> follows an absolute URL returned in each response.',
     'custom_pagination_page_size_help' => 'Number of records requested per page. Defaults to <code>500</code>.',
     'custom_pagination_limit_param_help' => 'Name of the query parameter that carries the page size, e.g. <code>limit</code>, <code>per_page</code>, or <code>page_size</code>.',
     'custom_pagination_offset_param_help' => 'Name of the query parameter that carries the starting offset, e.g. <code>offset</code>, <code>start</code>, or <code>skip</code>.',
@@ -229,8 +229,8 @@ return [
     'custom_pagination_page_start_help' => 'The number to use for the first page. Defaults to <code>1</code>. Set to <code>0</code> for APIs that number pages from zero.',
     'custom_pagination_next_path_help' => 'Dot-path into the response body pointing at the absolute URL of the next page, e.g. <code>links.next</code> or <code>meta.next_page_url</code>. When the path resolves to blank or missing, pagination stops.',
     'custom_field_paths_label' => 'Vendor Response Paths',
-    'custom_field_paths_help' => 'Map each Snipe-IT destination (standard field, custom field, or native column) to the dot-path where its value lives inside one record of your vendor\'s JSON response. Pick a destination, enter its dot-path (e.g. <code>hardware.serial</code>), pick a direction (pull / push / both), then Add.',
-    'field_map_column_field' => 'Snipe-IT Field',
+    'custom_field_paths_help' => 'Map each AssetSecure destination (standard field, custom field, or native column) to the dot-path where its value lives inside one record of your vendor\'s JSON response. Pick a destination, enter its dot-path (e.g. <code>hardware.serial</code>), pick a direction (pull / push / both), then Add.',
+    'field_map_column_field' => 'AssetSecure Field',
     'field_map_column_path' => 'Vendor Dot-Path',
     'field_map_column_direction' => 'Direction',
     'field_map_empty' => 'No fields mapped yet.',
@@ -253,11 +253,11 @@ return [
 
     // Extras / mapping section wrappers
     'extra_fields_section_title' => ':type-specific fields',
-    'extra_fields_section_intro' => 'Additional vendor fields that don\'t have a corresponding Snipe-IT field. Add a row per vendor field you want to sync and pick wheich field it maps to. Boolean values can be mapped to checkbox-type custom fields, text fields can be mapped to text-type custom fields.',
+    'extra_fields_section_intro' => 'Additional vendor fields that don\'t have a corresponding AssetSecure field. Add a row per vendor field you want to sync and pick wheich field it maps to. Boolean values can be mapped to checkbox-type custom fields, text fields can be mapped to text-type custom fields.',
 
     // Mapping-picker widget (extras section repeater)
     'mapping_picker_col_field' => 'Vendor Field',
-    'mapping_picker_col_target' => 'Snipe-IT Target',
+    'mapping_picker_col_target' => 'AssetSecure Target',
     'mapping_picker_col_direction' => 'Direction',
     'mapping_picker_empty' => 'No vendor fields mapped yet. Pick a field below to add one.',
     'mapping_picker_pick_extra' => 'Pick a vendor field',
@@ -381,7 +381,7 @@ return [
     // captured by the "Refresh custom fields" button. Rendered in the
     // extras mapping table for each Kaseya custom field the tenant
     // has defined, so admins recognize them as coming from Kaseya
-    // rather than any built-in Snipe-IT extra.
+    // rather than any built-in AssetSecure extra.
     'kaseya_vsa10_custom_field_label' => 'Kaseya: :name',
 
     // ABM adapter-specific labels + option strings.

@@ -219,7 +219,7 @@ $config['allowed_upload_extensions'] = '.'.implode(', .', $config['allowed_uploa
 // MIME must also match one of the values below before StorageHelper::allowSafeInline
 // hands the response back inline. Anything else falls through to an attachment
 // response so an uploaded XML/HTML/XSLT can't be rendered as active content in the
-// Snipe-IT origin. Keep this list narrower than allowed_upload_extensions_array on
+// AssetSecure origin. Keep this list narrower than allowed_upload_extensions_array on
 // purpose: we accept broader file types for storage than we're willing to render.
 $config['allowed_inline_display'] = [
     'avif' => ['image/avif'],

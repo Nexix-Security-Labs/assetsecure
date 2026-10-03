@@ -18,7 +18,7 @@ use Tests\TestCase;
  * first_name / last_name / username / email / locale and skipped the
  * default permissions group, so first-login users came up short on
  * their mapped fields and unassigned to the configured Default
- * Permissions Group even though bulk `snipe-it:ldap-sync` set both.
+ * Permissions Group even though bulk `assetsecure:ldap-sync` set both.
  */
 #[PhpUnitGroup('ldap')]
 class LdapCreateUserFromLdapTest extends TestCase

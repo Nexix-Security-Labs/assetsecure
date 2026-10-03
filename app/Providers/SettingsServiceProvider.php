@@ -18,7 +18,6 @@ class SettingsServiceProvider extends ServiceProvider
     /**
      * Custom email array validation
      *
-     * @author [A. Gianotto] [<snipe@snipe.net>]
      *
      * @since [v3.0]
      *

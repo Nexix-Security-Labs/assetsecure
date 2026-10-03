@@ -1,13 +1,13 @@
-# Compose file to spin up a local Snipe-IT for development.
+# Compose file to spin up a local AssetSecure for development.
 
 version: '3'
 
 services:
-  snipeit:
+  assetsecure:
     build:
       context: .
       dockerfile: Dockerfile.alpine
-    container_name: snipeit
+    container_name: assetsecure
     ports:
       - "8000:80"
     depends_on:

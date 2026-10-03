@@ -392,7 +392,6 @@ class UpdateUserTest extends TestCase
      * This can occur if the user edit screen is open in one tab and
      * the user is deleted in another before the edit form is submitted.
      *
-     * @link https://app.shortcut.com/grokability/story/29166
      */
     public function test_attempting_to_update_deleted_user_is_handled_gracefully()
     {

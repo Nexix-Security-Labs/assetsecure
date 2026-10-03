@@ -51,7 +51,6 @@ class ManufacturerImporter extends ItemImporter
      *
      * @todo Investigate how this should interact with Importer::createManufacturerIfNotExists
      *
-     * @author A. Gianotto
      *
      * @since 6.1.0
      */

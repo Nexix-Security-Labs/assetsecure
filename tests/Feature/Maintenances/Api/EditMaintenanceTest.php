@@ -41,7 +41,7 @@ class EditMaintenanceTest extends TestCase
                 'is_warranty' => '1',
                 'image' => UploadedFile::fake()->image('test_image.png'),
                 'notes' => 'A note',
-                'url' => 'https://snipeitapp.com',
+                'url' => 'https://nexixsecuritylabs.com',
             ])
             ->assertOk();
 
@@ -60,7 +60,7 @@ class EditMaintenanceTest extends TestCase
             'start_date' => '2021-01-01 00:00:00',
             'expected_completion_date' => '2021-01-10 00:00:00',
             'notes' => 'A note',
-            'url' => 'https://snipeitapp.com',
+            'url' => 'https://nexixsecuritylabs.com',
             'image' => $maintenance->image,
         ]);
 

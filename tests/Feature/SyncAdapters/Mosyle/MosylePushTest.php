@@ -39,7 +39,7 @@ class MosylePushTest extends TestCase
         SyncAdapterConfig::put($instance->id, 'direction.asset_tag', 'push');
 
         $asset = Asset::factory()->create([
-            'asset_tag' => 'SNIPE-MOS-77',
+            'asset_tag' => 'AS-MOS-77',
             'serial' => 'MOS-SN-777',
         ]);
         AssetExternalSource::create([
@@ -62,7 +62,7 @@ class MosylePushTest extends TestCase
 
             return ($body['operation'] ?? null) === 'set_asset_tag_by_serial_number'
                 && ($body['serial_number'] ?? null) === 'MOS-SN-777'
-                && ($body['asset_tag'] ?? null) === 'SNIPE-MOS-77';
+                && ($body['asset_tag'] ?? null) === 'AS-MOS-77';
         });
     }
 
@@ -77,7 +77,7 @@ class MosylePushTest extends TestCase
         SyncAdapterConfig::put($instance->id, 'direction.asset_tag', 'push');
 
         $asset = Asset::factory()->create([
-            'asset_tag' => 'SNIPE-MOS-88',
+            'asset_tag' => 'AS-MOS-88',
             'serial' => null,
         ]);
         AssetExternalSource::create([

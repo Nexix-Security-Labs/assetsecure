@@ -38,7 +38,7 @@ class GoogleWorkspaceSettingsPageTest extends TestCase
 
         $this->actingAs(User::factory()->superuser()->create())
             ->post(route('settings.adapters.save', $instance), [
-                'google_workspace_service_account_email' => 'snipeit-sync@my-project.iam.gserviceaccount.com',
+                'google_workspace_service_account_email' => 'assetsecure-sync@my-project.iam.gserviceaccount.com',
                 'google_workspace_private_key' => "-----BEGIN PRIVATE KEY-----\nfake-key-material\n-----END PRIVATE KEY-----",
                 'google_workspace_impersonate_email' => 'admin@example.test',
                 'google_workspace_customer_id' => 'my_customer',
@@ -48,10 +48,10 @@ class GoogleWorkspaceSettingsPageTest extends TestCase
             ->assertRedirect(route('settings.adapters.index', ['adapter' => $instance->slug]));
 
         // Non-secret fields land as plain text so admins can audit
-        // which service account a Snipe-IT instance is talking to
+        // which service account a AssetSecure instance is talking to
         // without a decrypt step.
         $this->assertSame(
-            'snipeit-sync@my-project.iam.gserviceaccount.com',
+            'assetsecure-sync@my-project.iam.gserviceaccount.com',
             SyncAdapterConfig::get($instance->id, 'service_account_email'),
         );
         $this->assertSame('admin@example.test', SyncAdapterConfig::get($instance->id, 'impersonate_email'));

@@ -376,7 +376,6 @@ trait Loggable
     }
 
     /**
-     * @author A. Gianotto <snipe@snipe.net>
      *
      * @since  [v4.0]
      *

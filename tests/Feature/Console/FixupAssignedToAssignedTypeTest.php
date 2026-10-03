@@ -18,7 +18,7 @@ class FixupAssignedToAssignedTypeTest extends TestCase
         $asset->assigned_type = null; // blank out the assigned type
         $asset->save();
 
-        $this->artisan('snipeit:assigned-to-fixup --debug')->assertExitCode(0);
+        $this->artisan('assetsecure:assigned-to-fixup --debug')->assertExitCode(0);
 
         $this->assertEquals(User::class, $asset->fresh()->assigned_type);
     }
@@ -38,7 +38,7 @@ class FixupAssignedToAssignedTypeTest extends TestCase
         $asset->assigned_to = $user->id; // incorrectly mark asset as partially checked-out
         $asset->saveOrFail();
 
-        $this->artisan('snipeit:assigned-to-fixup --debug')->assertExitCode(0);
+        $this->artisan('assetsecure:assigned-to-fixup --debug')->assertExitCode(0);
 
         $this->assertNull($asset->fresh()->assigned_to);
     }

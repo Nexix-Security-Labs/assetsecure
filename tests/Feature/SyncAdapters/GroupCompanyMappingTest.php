@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Crypt;
 use Tests\TestCase;
 
 /**
- * Coverage for per-adapter vendor-group to Snipe-IT-company mapping.
+ * Coverage for per-adapter vendor-group to AssetSecure-company mapping.
  * When an adapter supports group scoping and the sync record carries
  * a vendorGroupId that has a mapping, the resulting asset lands in
  * the mapped company. Otherwise it falls back to the instance's own

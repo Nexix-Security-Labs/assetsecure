@@ -48,7 +48,6 @@ class BulkAssetsController extends Controller
      * This is something that made sense at the time, but sort of doesn't make sense now. A JS front-end to determine form
      * action would make a lot more sense here and make things a lot more clear.
      *
-     * @author [A. Gianotto] [<snipe@snipe.net>]
      *
      * @internal param int $assetId
      *
@@ -248,7 +247,6 @@ class BulkAssetsController extends Controller
     /**
      * Save bulk edits
      *
-     * @author [A. Gianotto] [<snipe@snipe.net>]
      *
      * @internal param array $assets
      *
@@ -465,7 +463,7 @@ class BulkAssetsController extends Controller
                  * 1 - location ID and RTD location ID
                  * 2 - location ID only
                  *
-                 * Note: this is kinda dumb and we should just use human-readable values IMHO. - snipe
+                 * Note: this is kinda dumb and we should just use human-readable values IMHO.
                  */
                 if ($request->filled('rtd_location_id')) {
 
@@ -615,7 +613,6 @@ class BulkAssetsController extends Controller
     /**
      * Save bulk deleted.
      *
-     * @author [A. Gianotto] [<snipe@snipe.net>]
      *
      * @internal param array $assets
      *

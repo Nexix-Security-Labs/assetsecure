@@ -40,7 +40,7 @@ class AdjustQuantityRequest extends FormRequest
             // hard-coded validation message.
             'supplier_id' => ['nullable', 'integer', 'exists:suppliers,id'],
             'purchase_date' => ['nullable', 'date_format:Y-m-d'],
-            // Per-unit cost — matches Snipe-IT's existing purchase_cost
+            // Per-unit cost — matches AssetSecure's existing purchase_cost
             // semantic. Lands on OrderItem.price. gte:0 protects against
             // negative-value posts; max mirrors the widest decimal(20,4).
             'unit_cost' => ['nullable', 'numeric', 'gte:0', 'max:9999999999999999.9999'],

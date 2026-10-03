@@ -150,7 +150,7 @@ class GoogleWorkspaceAdapterTest extends TestCase
         // a Chrome device is signed in with a personal account and the
         // domain policy is set to hide personal-account details. The
         // sync path must not try to match "UNKNOWN_USER" against a
-        // Snipe-IT user.
+        // AssetSecure user.
         $adapter = $this->configuredAdapter();
 
         Http::fake([

@@ -6,7 +6,7 @@ use Illuminate\Database\Migrations\Migration;
 class FixBadLdapServerUrlForV5 extends Migration
 {
     /**
-     * Under v4 and previous versions of Snipe-IT, we permitted users to incorrectly specify LDAP URL's in their settings, and Snipe-IT
+     * Under v4 and previous versions of AssetSecure, we permitted users to incorrectly specify LDAP URL's in their settings, and AssetSecure
      * would silently permit that.
      *
      * v5's LDAP system is not so lenient, and requires either ldap:// or ldaps:// in front of the server's URL. This migration tries

@@ -40,7 +40,7 @@ use ZipArchive;
 
 /**
  * This controller handles all actions related to Settings for
- * the Snipe-IT Asset Management application.
+ * the AssetSecure Asset Management application.
  *
  * @version    v1.0
  */
@@ -49,7 +49,6 @@ class SettingsController extends Controller
     /**
      * Return a view that shows some of the key settings.
      *
-     * @author [A. Gianotto] [<snipe@snipe.net>]
      *
      * @since [v1.0]
      */
@@ -82,7 +81,6 @@ class SettingsController extends Controller
     /**
      * Return a form to allow a super admin to update settings.
      *
-     * @author [A. Gianotto] [<snipe@snipe.net>]
      *
      * @since [v1.0]
      */
@@ -96,7 +94,6 @@ class SettingsController extends Controller
     /**
      * Return a form to allow a super admin to update settings.
      *
-     * @author [A. Gianotto] [<snipe@snipe.net>]
      *
      * @since [v1.0]
      */
@@ -216,7 +213,6 @@ class SettingsController extends Controller
     /**
      * Return a form to allow a super admin to update settings.
      *
-     * @author [A. Gianotto] [<snipe@snipe.net>]
      *
      * @since [v1.0]
      */
@@ -230,7 +226,6 @@ class SettingsController extends Controller
     /**
      * Return a form to allow a super admin to update settings.
      *
-     * @author [A. Gianotto] [<snipe@snipe.net>]
      *
      * @since [v1.0]
      */
@@ -271,7 +266,7 @@ class SettingsController extends Controller
             $setting->link_dark_color = $request->input('link_dark_color', '#5fa4cc');
             $setting->nav_link_color = $request->input('nav_link_color', '#FFFFFF');
 
-            $setting->site_name = $request->input('site_name', 'Snipe-IT');
+            $setting->site_name = $request->input('site_name', 'AssetSecure');
             $setting->custom_css = $request->input('custom_css');
 
             // Logo upload
@@ -338,7 +333,6 @@ class SettingsController extends Controller
     /**
      * Return a form to allow a super admin to update settings.
      *
-     * @author [A. Gianotto] [<snipe@snipe.net>]
      *
      * @since [v1.0]
      */
@@ -352,7 +346,6 @@ class SettingsController extends Controller
     /**
      * Return a form to allow a super admin to update settings.
      *
-     * @author [A. Gianotto] [<snipe@snipe.net>]
      *
      * @since [v1.0]
      */
@@ -407,7 +400,6 @@ class SettingsController extends Controller
     /**
      * Return a form to allow a super admin to update settings.
      *
-     * @author [A. Gianotto] [<snipe@snipe.net>]
      *
      * @since [v1.0]
      */
@@ -421,7 +413,6 @@ class SettingsController extends Controller
     /**
      * Return a form to allow a super admin to update settings.
      *
-     * @author [A. Gianotto] [<snipe@snipe.net>]
      *
      * @since [v1.0]
      */
@@ -452,7 +443,6 @@ class SettingsController extends Controller
     /**
      * Return a form to allow a super admin to update settings.
      *
-     * @author [A. Gianotto] [<snipe@snipe.net>]
      *
      * @since [v1.0]
      */
@@ -466,7 +456,6 @@ class SettingsController extends Controller
     /**
      * Return a form to allow a super admin to update settings.
      *
-     * @author [A. Gianotto] [<snipe@snipe.net>]
      *
      * @since [v1.0]
      */
@@ -521,7 +510,6 @@ class SettingsController extends Controller
     /**
      * Return a form to allow a super admin to update settings.
      *
-     * @author [A. Gianotto] [<snipe@snipe.net>]
      *
      * @since [v1.0]
      */
@@ -535,7 +523,6 @@ class SettingsController extends Controller
     /**
      * Return a form to allow a super admin to update settings.
      *
-     * @author [A. Gianotto] [<snipe@snipe.net>]
      *
      * @since [v1.0]
      */
@@ -549,7 +536,6 @@ class SettingsController extends Controller
     /**
      * Saves settings from form.
      *
-     * @author [A. Gianotto] [<snipe@snipe.net>]
      *
      * @since [v1.0]
      */
@@ -575,7 +561,6 @@ class SettingsController extends Controller
     /**
      * Return a form to allow a super admin to update settings.
      *
-     * @author [A. Gianotto] [<snipe@snipe.net>]
      *
      * @since [v4.0]
      */
@@ -592,7 +577,6 @@ class SettingsController extends Controller
     /**
      * Return a form to allow a super admin to update settings.
      *
-     * @author [A. Gianotto] [<snipe@snipe.net>]
      *
      * @since [v4.0]
      */
@@ -609,7 +593,6 @@ class SettingsController extends Controller
     /**
      * Saves settings from form.
      *
-     * @author [A. Gianotto] [<snipe@snipe.net>]
      *
      * @since [v4.0]
      */
@@ -697,7 +680,6 @@ class SettingsController extends Controller
     /**
      * Return a form to allow a super admin to update settings.
      *
-     * @author [A. Gianotto] [<snipe@snipe.net>]
      *
      * @since [v4.0]
      */
@@ -712,7 +694,6 @@ class SettingsController extends Controller
     /**
      * Saves settings from form.
      *
-     * @author [A. Gianotto] [<snipe@snipe.net>]
      *
      * @since [v4.0]
      */
@@ -836,7 +817,6 @@ class SettingsController extends Controller
     /**
      * Show Google login settings form
      *
-     * @author [A. Gianotto] [<snipe@snipe.net>]
      *
      * @since [v6.1.1]
      */
@@ -850,7 +830,6 @@ class SettingsController extends Controller
     /**
      * ShSaveow Google login settings form
      *
-     * @author [A. Gianotto] [<snipe@snipe.net>]
      *
      * @since [v6.1.1]
      */
@@ -1174,11 +1153,11 @@ class SettingsController extends Controller
     }
 
     /**
-     * Push Snipe-IT-authoritative fields to the vendor for every asset
+     * Push AssetSecure-authoritative fields to the vendor for every asset
      * already linked to this adapter instance. Only meaningful for
      * adapters that implement PushableAdapter. Iterates the instance's
      * asset_external_sources rows so we only touch assets the vendor
-     * actually knows about. A fresh Snipe-IT asset that's never been
+     * actually knows about. A fresh AssetSecure asset that's never been
      * synced from this instance gets no push (we'd have no vendor id
      * to write against). Errors on individual assets are logged and
      * counted, so a single bad asset doesn't abort the whole run.
@@ -1563,7 +1542,6 @@ class SettingsController extends Controller
     /**
      * Show the listing of backups.
      *
-     * @author [A. Gianotto] [<snipe@snipe.net>]
      *
      * @since [v1.8]
      */
@@ -1597,14 +1575,13 @@ class SettingsController extends Controller
     /**
      * Process the backup.
      *
-     * @author [A. Gianotto] [<snipe@snipe.net>]
      *
      * @since [v1.8]
      */
     public function postBackups(): RedirectResponse
     {
         if (! config('app.lock_passwords')) {
-            Artisan::call('snipeit:backup', ['--filename' => 'manual-backup-'.date('Y-m-d-H-i-s')]);
+            Artisan::call('assetsecure:backup', ['--filename' => 'manual-backup-'.date('Y-m-d-H-i-s')]);
             $output = Artisan::output();
 
             // Backup completed
@@ -1629,7 +1606,6 @@ class SettingsController extends Controller
     /**
      * Download the backup file.
      *
-     * @author [A. Gianotto] [<snipe@snipe.net>]
      *
      * @since [v1.8]
      */
@@ -1667,7 +1643,6 @@ class SettingsController extends Controller
     /**
      * Delete the backup file.
      *
-     * @author [A. Gianotto] [<snipe@snipe.net>]
      *
      * @since [v1.8]
      */
@@ -1713,7 +1688,6 @@ class SettingsController extends Controller
     /**
      * Uploads a backup file
      *
-     * @author [A. Gianotto] [<snipe@snipe.net>]
      *
      * @since [v6.0]
      */
@@ -1749,7 +1723,6 @@ class SettingsController extends Controller
     /**
      * Restore the backup file.
      *
-     * @author [A. Gianotto] [<snipe@snipe.net>]
      *
      * @since [v6.0]
      */
@@ -1776,7 +1749,7 @@ class SettingsController extends Controller
             return redirect()->route('settings.backups.index')->with('error', trans('admin/settings/message.backup.file_not_found'));
         }
 
-        // ZipArchive and snipeit:restore both need a local filesystem path.
+        // ZipArchive and assetsecure:restore both need a local filesystem path.
         // On the local driver, resolve directly to the disk's on-disk path
         // and let the restore CLI read it in place. On any remote driver
         // (s3), stream the archive down to a temp file so downstream code
@@ -1820,11 +1793,11 @@ class SettingsController extends Controller
             // and only then tried to open the archive. An invalid or corrupted
             // upload therefore destroyed the existing database and left the
             // install with an empty migrated schema, while the flow still
-            // reported success because snipeit:restore returns exit 0 on
+            // reported success because assetsecure:restore returns exit 0 on
             // internal errors (see RestoreFromBackup::handle).
             //
             // Refuse to proceed if the PHP zip extension is not loaded. The
-            // downstream snipeit:restore command needs ZipArchive too, so
+            // downstream assetsecure:restore command needs ZipArchive too, so
             // running it without ext-zip would fail after the wipe.
             if (!class_exists(ZipArchive::class)) {
                 Log::error('Restore aborted: PHP zip extension is not loaded, cannot validate archive before wiping database.');
@@ -1856,7 +1829,7 @@ class SettingsController extends Controller
                 : 'backup disk (' . $preRestoreDiskPath . ')';
 
             Log::debug('Running pre-restore backup: ' . $preRestoreBackupFilename);
-            $preBackupExit = Artisan::call('snipeit:backup', [
+            $preBackupExit = Artisan::call('assetsecure:backup', [
                 '--filename' => $requestedBackupFilename,
                 '--force' => true,
             ]);
@@ -1877,7 +1850,7 @@ class SettingsController extends Controller
 
             if ($request->input('clean')) {
                 Log::debug("Attempting 'clean' - first, guessing prefix...");
-                Artisan::call('snipeit:restore', [
+                Artisan::call('assetsecure:restore', [
                     '--sanitize-guess-prefix' => true,
                     'filename' => $absolutePath,
                 ]);
@@ -1891,11 +1864,11 @@ class SettingsController extends Controller
             Artisan::call('db:wipe', ['--force' => true]);
 
             // run the restore command
-            $restoreExit = Artisan::call('snipeit:restore', $restore_params);
+            $restoreExit = Artisan::call('assetsecure:restore', $restore_params);
             $restoreOutput = Artisan::output();
-            Log::debug('snipeit:restore output: ' . $restoreOutput);
+            Log::debug('assetsecure:restore output: ' . $restoreOutput);
 
-            // snipeit:restore returns 0 even on some internal errors, so we also
+            // assetsecure:restore returns 0 even on some internal errors, so we also
             // scan its output for its own "Could not access file" / "DB_CONNECTION
             // must be MySQL" style error strings.
             $restoreLooksFailed = $restoreExit !== 0 || str_contains(strtolower($restoreOutput), 'could not access file') || str_contains(strtolower($restoreOutput), 'db_connection must be mysql');
@@ -1933,7 +1906,7 @@ class SettingsController extends Controller
             }
 
             Log::debug('Logging all users out..');
-            Artisan::call('snipeit:global-logout', ['--force' => true]);
+            Artisan::call('assetsecure:global-logout', ['--force' => true]);
 
             DB::table('users')->update(['remember_token' => null]);
             Auth::logout();
@@ -1953,7 +1926,6 @@ class SettingsController extends Controller
     /**
      * Return a form to allow a super admin to update settings.
      *
-     * @author [A. Gianotto] [<snipe@snipe.net>]
      *
      * @since [v4.0]
      */
@@ -1972,7 +1944,6 @@ class SettingsController extends Controller
     /**
      * Purges soft-deletes.
      *
-     * @author [A. Gianotto] [<snipe@snipe.net>]
      *
      * @since [v3.0]
      */
@@ -1990,7 +1961,7 @@ class SettingsController extends Controller
                     Log::warning('User ID '.auth()->id().' initiated a PURGE!');
                     // Run a backup immediately before processing
                     Artisan::call('backup:run');
-                    Artisan::call('snipeit:purge', ['--force' => 'true', '--no-interaction' => true]);
+                    Artisan::call('assetsecure:purge', ['--force' => 'true', '--no-interaction' => true]);
                     $output = Artisan::output();
 
                     return redirect()->route('settings.index')
@@ -2018,7 +1989,6 @@ class SettingsController extends Controller
      * We created a controller method for this because closures aren't allowed
      * in the routes file if you want to be able to cache the routes.
      *
-     * @author [A. Gianotto] [<snipe@snipe.net>]
      *
      * @since [v4.0]
      */
@@ -2153,7 +2123,6 @@ class SettingsController extends Controller
     /**
      * Test the email configuration.
      *
-     * @author [A. Gianotto] [<snipe@snipe.net>]
      *
      * @since [v3.0]
      */
@@ -2178,7 +2147,6 @@ class SettingsController extends Controller
     /**
      * Get login attempts view
      *
-     * @author [A. Gianotto] [<snipe@snipe.net>]
      */
     public function getLoginAttempts(): View
     {

@@ -19,7 +19,7 @@ use Illuminate\Support\Facades\Log;
  * into its guts. While that conflates this model with the User model, I think having the appropriate logic for
  * turning LDAP people into Users ought to belong here, so it's easier on the consumer of this class.
  *
- * We're probably going to have to eventually make it so that Snipe-IT users can define multiple LDAP servers,
+ * We're probably going to have to eventually make it so that AssetSecure users can define multiple LDAP servers,
  * and having this as a more instance-oriented class will be a step in the right direction.
  ***********************************************/
 
@@ -57,7 +57,6 @@ class Ldap extends Model
     /**
      * Makes a connection to LDAP using the settings in Admin > Settings.
      *
-     * @author [A. Gianotto] [<snipe@snipe.net>]
      *
      * @since  [v3.0]
      */
@@ -181,7 +180,6 @@ class Ldap extends Model
      * Binds/authenticates the user to LDAP, and returns their attributes
      * (lowercase-keyed) on success or false when the bind or search fails.
      *
-     * @author [A. Gianotto] [<snipe@snipe.net>]
      *
      * @since  [v3.0]
      *
@@ -318,7 +316,6 @@ class Ldap extends Model
      *
      * @since  [v3.0]
      *
-     * @author [A. Gianotto] [<snipe@snipe.net>]
      */
     public static function bindAdminToLdap($connection): void
     {
@@ -369,7 +366,6 @@ class Ldap extends Model
     /**
      * Parse and map LDAP attributes based on settings
      *
-     * @author [A. Gianotto] [<snipe@snipe.net>]
      *
      * @since  [v3.0]
      *
@@ -492,16 +488,16 @@ class Ldap extends Model
      *
      * Manager is intentionally out of scope: LdapSync's manager
      * resolution needs an admin re-bind + LDAP re-query to translate
-     * the DN into a Snipe-IT user id, and that's best done in bulk.
+     * the DN into a AssetSecure user id, and that's best done in bulk.
      * ldap_import users get their manager populated on the next
-     * `snipe-it:ldap-sync` run.
+     * `assetsecure:ldap-sync` run.
      */
     public static function applyLdapAttributesToUser(User $user, array $ldapAttr): void
     {
         $map = self::attributeMap();
 
         // Always-written identity fields. These have no per-field gate
-        // because Snipe-IT considers username / first name / last name /
+        // because AssetSecure considers username / first name / last name /
         // email important for every user, if a mapping's blank the
         // LDAP payload just gives us an empty string, matching the
         // pre-fix behavior on the create path.
@@ -553,7 +549,6 @@ class Ldap extends Model
     /**
      * Create user from LDAP attributes
      *
-     * @author [A. Gianotto] [<snipe@snipe.net>]
      *
      * @since  [v3.0]
      *
@@ -605,7 +600,6 @@ class Ldap extends Model
     /**
      * Searches LDAP
      *
-     * @author [A. Gianotto] [<snipe@snipe.net>]
      *
      * @since  [v3.0]
      *

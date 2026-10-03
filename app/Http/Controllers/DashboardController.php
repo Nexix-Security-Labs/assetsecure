@@ -17,9 +17,8 @@ use Illuminate\Support\Facades\Session;
 
 /**
  * This controller handles all actions related to the Admin Dashboard
- * for the Snipe-IT Asset Management application.
+ * for the AssetSecure Asset Management application.
  *
- * @author A. Gianotto <snipe@snipe.net>
  *
  * @version v1.0
  */
@@ -29,7 +28,6 @@ class DashboardController extends Controller
      * Check authorization and display the dashboard, otherwise display
      * the user's checked-out assets.
      *
-     * @author [A. Gianotto] [<snipe@snipe.net>]
      *
      * @since [v1.0]
      */

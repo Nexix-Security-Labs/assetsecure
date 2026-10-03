@@ -15,7 +15,7 @@ use Illuminate\Support\Facades\Storage;
 use Tests\TestCase;
 
 /**
- * Broad coverage for snipeit:purge, split by resource. PurgeCompaniesTest
+ * Broad coverage for assetsecure:purge, split by resource. PurgeCompaniesTest
  * already covers Company. This file also locks in the "trashed-only,
  * non-trashed untouched" contract for the resources that carry child
  * action_log rows and other FK-linked children (asset maintenances,
@@ -46,7 +46,7 @@ class PurgeTest extends TestCase
             'updated_at' => now(),
         ]);
 
-        $this->artisan('snipeit:purge', ['--force' => 'true'])->assertExitCode(0);
+        $this->artisan('assetsecure:purge', ['--force' => 'true'])->assertExitCode(0);
 
         $this->assertDatabaseMissing('assets', ['id' => $trashed->id]);
         $this->assertDatabaseMissing('action_logs', ['id' => $trashedLog->id]);
@@ -64,7 +64,7 @@ class PurgeTest extends TestCase
         ]);
         $liveMaintenance = Maintenance::factory()->create(['asset_id' => $live->id]);
 
-        $this->artisan('snipeit:purge', ['--force' => 'true'])->assertExitCode(0);
+        $this->artisan('assetsecure:purge', ['--force' => 'true'])->assertExitCode(0);
 
         $this->assertDatabaseHas('assets', ['id' => $live->id, 'deleted_at' => null]);
         $this->assertDatabaseHas('action_logs', ['id' => $liveLog->id]);
@@ -91,7 +91,7 @@ class PurgeTest extends TestCase
             'action_type' => 'checkout',
         ]);
 
-        $this->artisan('snipeit:purge', ['--force' => 'true'])->assertExitCode(0);
+        $this->artisan('assetsecure:purge', ['--force' => 'true'])->assertExitCode(0);
 
         $this->assertDatabaseMissing('action_logs', ['id' => $assetLog->id]);
         $this->assertDatabaseHas('action_logs', ['id' => $accessoryLogWithColliding_id->id]);
@@ -106,7 +106,7 @@ class PurgeTest extends TestCase
         $this->assertDatabaseHas('license_seats', ['license_id' => $license->id]);
         $license->delete();
 
-        $this->artisan('snipeit:purge', ['--force' => 'true'])->assertExitCode(0);
+        $this->artisan('assetsecure:purge', ['--force' => 'true'])->assertExitCode(0);
 
         $this->assertDatabaseMissing('licenses', ['id' => $license->id]);
         $this->assertDatabaseMissing('license_seats', ['license_id' => $license->id]);
@@ -127,7 +127,7 @@ class PurgeTest extends TestCase
             'action_type' => 'update',
         ]);
 
-        $this->artisan('snipeit:purge', ['--force' => 'true'])->assertExitCode(0);
+        $this->artisan('assetsecure:purge', ['--force' => 'true'])->assertExitCode(0);
 
         $this->assertDatabaseMissing('users', ['id' => $user->id]);
         $this->assertDatabaseMissing('action_logs', ['id' => $userTargetLog->id]);
@@ -141,7 +141,7 @@ class PurgeTest extends TestCase
         $nonCheckoutUser = User::factory()->create(['show_in_list' => 0]);
         $nonCheckoutUser->delete();
 
-        $this->artisan('snipeit:purge', ['--force' => 'true'])->assertExitCode(0);
+        $this->artisan('assetsecure:purge', ['--force' => 'true'])->assertExitCode(0);
 
         // Row is gone-from-index (soft-deleted) but still in the table.
         $this->assertDatabaseHas('users', ['id' => $nonCheckoutUser->id]);
@@ -172,7 +172,7 @@ class PurgeTest extends TestCase
         $user->delete();
         Storage::assertExists("private_uploads/users/{$filename}");
 
-        $this->artisan('snipeit:purge', ['--force' => 'true'])->assertExitCode(0);
+        $this->artisan('assetsecure:purge', ['--force' => 'true'])->assertExitCode(0);
 
         Storage::assertMissing("private_uploads/users/{$filename}");
         $this->assertDatabaseMissing('users', ['id' => $user->id]);
@@ -195,14 +195,14 @@ class PurgeTest extends TestCase
 
         $user->delete();
 
-        $this->artisan('snipeit:purge', ['--force' => 'true', '--dry-run' => true])->assertExitCode(0);
+        $this->artisan('assetsecure:purge', ['--force' => 'true', '--dry-run' => true])->assertExitCode(0);
 
         Storage::assertExists("private_uploads/users/{$filename}");
     }
 
     public function test_purge_removes_image_files_for_soft_deleted_assets(): void
     {
-        // Image column on the parent row itself. Snipe-IT stores these
+        // Image column on the parent row itself. AssetSecure stores these
         // on the public disk under `{plural-type}/{filename}`. Removing
         // them at purge time (rather than at soft-delete) means a
         // restored soft-deleted asset still has its image intact.
@@ -212,7 +212,7 @@ class PurgeTest extends TestCase
 
         $asset->delete();
 
-        $this->artisan('snipeit:purge', ['--force' => 'true'])->assertExitCode(0);
+        $this->artisan('assetsecure:purge', ['--force' => 'true'])->assertExitCode(0);
 
         Storage::disk('public')->assertMissing('assets/asset-42.jpg');
         $this->assertDatabaseMissing('assets', ['id' => $asset->id]);
@@ -231,7 +231,7 @@ class PurgeTest extends TestCase
 
         $user->delete();
 
-        $this->artisan('snipeit:purge', ['--force' => 'true'])->assertExitCode(0);
+        $this->artisan('assetsecure:purge', ['--force' => 'true'])->assertExitCode(0);
 
         Storage::disk('public')->assertMissing('avatars/user-7.jpg');
         $this->assertDatabaseMissing('users', ['id' => $user->id]);
@@ -257,7 +257,7 @@ class PurgeTest extends TestCase
 
         $asset->delete();
 
-        $this->artisan('snipeit:purge', ['--force' => 'true'])->assertExitCode(0);
+        $this->artisan('assetsecure:purge', ['--force' => 'true'])->assertExitCode(0);
 
         Storage::assertMissing("private_uploads/eula-pdfs/{$eula}");
     }
@@ -282,7 +282,7 @@ class PurgeTest extends TestCase
 
         $asset->delete();
 
-        $this->artisan('snipeit:purge', ['--force' => 'true'])->assertExitCode(0);
+        $this->artisan('assetsecure:purge', ['--force' => 'true'])->assertExitCode(0);
 
         Storage::assertMissing("private_uploads/signatures/{$sig}");
     }
@@ -306,7 +306,7 @@ class PurgeTest extends TestCase
 
         $asset->delete();
 
-        $this->artisan('snipeit:purge', ['--force' => 'true'])->assertExitCode(0);
+        $this->artisan('assetsecure:purge', ['--force' => 'true'])->assertExitCode(0);
 
         Storage::assertMissing("private_uploads/audits/{$auditFile}");
     }
@@ -334,7 +334,7 @@ class PurgeTest extends TestCase
 
         $user->delete();
 
-        $this->artisan('snipeit:purge', ['--force' => 'true'])->assertExitCode(0);
+        $this->artisan('assetsecure:purge', ['--force' => 'true'])->assertExitCode(0);
 
         Storage::assertMissing("private_uploads/signatures/{$sig}");
     }
@@ -358,7 +358,7 @@ class PurgeTest extends TestCase
 
         $acceptance->delete();
 
-        $this->artisan('snipeit:purge', ['--force' => 'true'])->assertExitCode(0);
+        $this->artisan('assetsecure:purge', ['--force' => 'true'])->assertExitCode(0);
 
         Storage::assertMissing('private_uploads/signatures/acceptance-sig.png');
         Storage::assertMissing('private_uploads/eula-pdfs/acceptance-eula.pdf');
@@ -369,7 +369,7 @@ class PurgeTest extends TestCase
         $location = Location::factory()->create();
         $location->delete();
 
-        $this->artisan('snipeit:purge', ['--force' => 'true'])->assertExitCode(0);
+        $this->artisan('assetsecure:purge', ['--force' => 'true'])->assertExitCode(0);
 
         $this->assertDatabaseMissing('locations', ['id' => $location->id]);
     }
@@ -379,7 +379,7 @@ class PurgeTest extends TestCase
         $trashed = Asset::factory()->create();
         $trashed->delete();
 
-        $this->artisan('snipeit:purge')
+        $this->artisan('assetsecure:purge')
             ->expectsConfirmation('Continue with the purge?', 'no')
             ->assertExitCode(0);
 
@@ -392,7 +392,7 @@ class PurgeTest extends TestCase
         $trashed = Asset::factory()->create();
         $trashed->delete();
 
-        $this->artisan('snipeit:purge')
+        $this->artisan('assetsecure:purge')
             ->expectsConfirmation('Continue with the purge?', 'yes')
             ->assertExitCode(0);
 
@@ -409,7 +409,7 @@ class PurgeTest extends TestCase
             'action_type' => 'checkout',
         ]);
 
-        $this->artisan('snipeit:purge', ['--force' => 'true', '--dry-run' => true])
+        $this->artisan('assetsecure:purge', ['--force' => 'true', '--dry-run' => true])
             ->assertExitCode(0);
 
         // Everything is still in place.

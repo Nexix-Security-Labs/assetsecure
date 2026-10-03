@@ -16,24 +16,24 @@ class Kernel extends ConsoleKernel
     protected function schedule(Schedule $schedule)
     {
         if (Setting::getSettings()?->alerts_enabled === 1) {
-            $schedule->command('snipeit:inventory-alerts')->daily();
-            $schedule->command('snipeit:expiring-alerts')->daily();
-            $schedule->command('snipeit:expected-checkin')->daily();
-            $schedule->command('snipeit:upcoming-audits')->daily();
+            $schedule->command('assetsecure:inventory-alerts')->daily();
+            $schedule->command('assetsecure:expiring-alerts')->daily();
+            $schedule->command('assetsecure:expected-checkin')->daily();
+            $schedule->command('assetsecure:upcoming-audits')->daily();
         }
-        $schedule->command('snipeit:backup')->weekly();
+        $schedule->command('assetsecure:backup')->weekly();
         $schedule->command('backup:clean')->daily();
         $schedule->command('auth:clear-resets')->everyFifteenMinutes();
         $schedule->command('saml:clear_expired_nonces')->weekly();
         
-        $schedule->command('snipeit:pull-inventory')
+        $schedule->command('assetsecure:pull-inventory')
             ->daily()
             ->withoutOverlapping();
 
         // Push runs a few hours offset from the pull so the two
         // don't stack on a single Laravel scheduler tick if a slow
         // adapter's pull runs long.
-        $schedule->command('snipeit:push-inventory')
+        $schedule->command('assetsecure:push-inventory')
             ->dailyAt('03:00')
             ->withoutOverlapping();
     }

@@ -16,7 +16,7 @@ use Illuminate\Support\Facades\Schema;
  * Sources register their date columns via the trait's
  * calendarEventDefinitions() method. The observer keeps rows in
  * sync on source save / delete / restore, and the
- * snipeit:reconcile-calendar-events command sweeps date drift plus
+ * assetsecure:reconcile-calendar-events command sweeps date drift plus
  * heals any orphans on demand.
  *
  * Composite unique on (source_type, source_id, source_field) is what

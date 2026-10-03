@@ -40,7 +40,7 @@ class Purge extends Command
      *
      * @var string
      */
-    protected $signature = 'snipeit:purge
+    protected $signature = 'assetsecure:purge
         {--force=false : Skip the confirmation prompt (accepts "true").}
         {--dry-run : Report what would be purged without deleting anything.}';
 
@@ -338,7 +338,7 @@ class Purge extends Command
                     }
                 } catch (\Exception $e) {
                     Log::info(sprintf(
-                        'snipeit:purge - error deleting %s file %s for %s: %s',
+                        'assetsecure:purge - error deleting %s file %s for %s: %s',
                         $column, $filename, $modelClass, $e->getMessage()
                     ));
                 }
@@ -468,7 +468,7 @@ class Purge extends Command
                 Storage::delete($key);
             }
         } catch (\Exception $e) {
-            Log::info('snipeit:purge - error deleting '.$key.': '.$e->getMessage());
+            Log::info('assetsecure:purge - error deleting '.$key.': '.$e->getMessage());
         }
     }
 }

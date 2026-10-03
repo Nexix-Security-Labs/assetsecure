@@ -41,7 +41,7 @@ class PurgeEulaPDFTest extends TestCase
             'updated_at' => $intervalDate->copy()->subDay(),
         ]);
 
-        $this->artisan('snipeit:purge-eula-pdfs', [
+        $this->artisan('assetsecure:purge-eula-pdfs', [
             '--older-than-days' => 0,
             '--only-deleted-users' => true,
             '--force' => true,
@@ -94,7 +94,7 @@ class PurgeEulaPDFTest extends TestCase
         Storage::put('private_uploads/signatures/other-signature.png', 'fake');
         Storage::put('private_uploads/eula-pdfs/other-eula.pdf', 'fake');
 
-        $this->artisan('snipeit:purge-eula-pdfs', [
+        $this->artisan('assetsecure:purge-eula-pdfs', [
             '--older-than-days' => 0,
             '--company-id' => $targetCompany->id,
             '--force' => true,
@@ -164,7 +164,7 @@ class PurgeEulaPDFTest extends TestCase
             'updated_at' => $intervalDate->copy()->subDay(),
         ]);
 
-        $this->artisan('snipeit:purge-eula-pdfs', [
+        $this->artisan('assetsecure:purge-eula-pdfs', [
             '--older-than-days' => 0,
             '--company-id' => $targetCompany->id,
             '--only-deleted-users' => true,
@@ -206,7 +206,7 @@ class PurgeEulaPDFTest extends TestCase
             'updated_at' => now()->subDay(), // <-- stays recent
         ]);
 
-        $this->artisan('snipeit:purge-eula-pdfs', [
+        $this->artisan('assetsecure:purge-eula-pdfs', [
             '--older-than-days' => 0,
             '--only-deleted-users' => true,
             '--force' => true,

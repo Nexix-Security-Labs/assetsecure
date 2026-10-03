@@ -12,7 +12,7 @@ class TestLocationsFMCS extends Command
      *
      * @var string
      */
-    protected $signature = 'snipeit:test-locations-fmcs {--location_id=}';
+    protected $signature = 'assetsecure:test-locations-fmcs {--location_id=}';
 
     /**
      * The console command description.

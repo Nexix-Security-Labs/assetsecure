@@ -76,7 +76,7 @@ return [
         'file_delete_error' => 'Impossibile eliminare il file',
         'file_missing' => 'File selezionato mancante',
         'file_already_deleted' => 'Il file selezionato è già stato eliminato',
-        'file_missing_on_disk' => 'Il file per questa importazione non è più su disco. Potrebbe essere stato eliminato al di fuori di Snipe-IT. Elimina questa voce e ricarica il file per riprovare.',
+        'file_missing_on_disk' => 'Il file per questa importazione non è più su disco. Potrebbe essere stato eliminato al di fuori di AssetSecure. Elimina questa voce e ricarica il file per riprovare.',
         'file_empty' => 'Questo file non ha righe di dati. Niente da importare.',
         'already_processing' => 'Questa importazione è attualmente in fase di elaborazione da un altro utente. Si prega di attendere che finisca prima di riprovare.',
         'header_row_missing' => 'Questo file non ha una riga d\'intestazione riconosciuta. Elimina questa voce e ricarica il file per riprovare.',

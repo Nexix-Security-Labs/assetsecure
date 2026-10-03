@@ -11,7 +11,7 @@ use Illuminate\Http\Request;
 
 /**
  * Stateless bearer-token guard: validates an `Authorization: Bearer <jwt>`
- * against a trusted OIDC provider and resolves it to a Snipe-IT user. Returns
+ * against a trusted OIDC provider and resolves it to a AssetSecure user. Returns
  * null on any failure so the framework produces a normal 401.
  *
  * Registered as the `oidc` driver in config/auth.php and layered alongside

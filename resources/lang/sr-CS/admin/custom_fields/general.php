@@ -89,5 +89,5 @@ return [
         'date_picker' => 'Birač datuma',
         'datetime_picker' => 'Birač datumvreme',
     ],
-    'general_help_text' => 'Prilagođena polja skladište dodatne informacije koje nisu pokrivene podrazumevanim poljima imovine. <a href="https://snipe-it.readme.io/docs/custom-fields#/"><i class="fa fa-external-link"></i></a>.',
+    'general_help_text' => 'Prilagođena polja skladište dodatne informacije koje nisu pokrivene podrazumevanim poljima imovine. <a href="https://github.com/Nexix-Security-Labs/assetsecure/wiki/custom-fields#/"><i class="fa fa-external-link"></i></a>.',
 ];

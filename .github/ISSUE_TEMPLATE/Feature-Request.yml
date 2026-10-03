@@ -1,7 +1,6 @@
 name: Feature Request
 description: Request a new feature.
 title: "[Feature]: "
-projects: ["grokability/snipe-it"]
 type: feature
 body:
   - type: markdown
@@ -15,8 +14,8 @@ body:
   - type: input
     id: version
     attributes:
-      label: Snipe-IT Version
-      description: What version of Snipe-IT are you currently running? You can find the version number in the footer of any page in Snipe-IT.
+      label: AssetSecure Version
+      description: What version of AssetSecure are you currently running? You can find the version number in the footer of any page in AssetSecure.
       placeholder: ex. v8.3.1 - build 19577 (master)
     validations:
       required: true
@@ -25,14 +24,14 @@ body:
     attributes:
       label: How can we help?
       description: Let us know in detail what feature you'd like to see added. While we can't promise to implement every feature request, we do read every one and take them into consideration when planning future releases.
-      placeholder: Tell us what you'd like to see in Snipe-IT! (Be nice!)
+      placeholder: Tell us what you'd like to see in AssetSecure! (Be nice!)
     validations:
       required: true
   - type: checkboxes
     id: terms
     attributes:
       label: Code of Conduct
-      description: By submitting this issue, you agree to follow our [Code of Conduct](https://github.com/grokability/snipe-it/blob/master/CODE_OF_CONDUCT.md).
+      description: By submitting this issue, you agree to follow our [Code of Conduct](https://github.com/Nexix-Security-Labs/assetsecure/blob/master/CODE_OF_CONDUCT.md).
       options:
         - label: I agree to follow this project's Code of Conduct
           required: true

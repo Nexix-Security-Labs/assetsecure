@@ -26,7 +26,7 @@ return new class extends Migration
             $table->string('nav_link_color')->after('skin')->nullable()->default('#ffffff');
         });
 
-        // Set Snipe-IT defaults
+        // Set AssetSecure defaults
         $link_dark_color = '#89c9ed';
         $link_light_color = '#296282';
         $nav_color = '#ffffff';

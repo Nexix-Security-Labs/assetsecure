@@ -26,7 +26,7 @@ class SendExpectedCheckinAlertsTest extends TestCase
 
         Log::spy();
 
-        $this->artisan('snipeit:expected-checkin')->assertExitCode(0);
+        $this->artisan('assetsecure:expected-checkin')->assertExitCode(0);
 
         Log::shouldHaveReceived('warning')->atLeast()->once();
     }
@@ -43,7 +43,7 @@ class SendExpectedCheckinAlertsTest extends TestCase
             $mock->shouldReceive('sendNow')->andReturnNull();
         });
 
-        $this->artisan('snipeit:expected-checkin')
+        $this->artisan('assetsecure:expected-checkin')
             ->expectsOutputToContain('Sent checkin reminders to 1 users.')
             ->assertExitCode(0);
     }

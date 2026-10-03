@@ -10,9 +10,9 @@ use Throwable;
 
 class PullInventory extends Command
 {
-    protected $signature = 'snipeit:pull-inventory {adapter? : The adapter instance slug. Omit to pull every enabled instance.}';
+    protected $signature = 'assetsecure:pull-inventory {adapter? : The adapter instance slug. Omit to pull every enabled instance.}';
 
-    protected $description = 'Pull host inventory from configured sync-adapter instances and upsert as Snipe-IT assets.';
+    protected $description = 'Pull host inventory from configured sync-adapter instances and upsert as AssetSecure assets.';
 
     private const TABLE_HEADERS = ['Adapter', 'Status', 'Synced', 'Errors', 'Elapsed'];
 

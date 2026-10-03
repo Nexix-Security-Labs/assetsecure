@@ -9,7 +9,7 @@ use Symfony\Component\Mailer\Exception\TransportException;
 use Tests\TestCase;
 
 /**
- * The snipeit:inventory-alerts artisan command is the daily cron consumer of
+ * The assetsecure:inventory-alerts artisan command is the daily cron consumer of
  * Helper::checkLowInventory(). It had no test coverage before this file was
  * added — meaning a refactor to the helper (like the havingRaw / SQL-side
  * filter change) could silently break the daily email without failing a
@@ -35,7 +35,7 @@ class SendInventoryAlertsTest extends TestCase
 
         Consumable::factory()->create(['qty' => 0, 'min_amt' => 1]);
 
-        $this->artisan('snipeit:inventory-alerts')
+        $this->artisan('assetsecure:inventory-alerts')
             ->expectsOutputToContain('below minimum inventory')
             ->assertExitCode(0);
     }
@@ -50,7 +50,7 @@ class SendInventoryAlertsTest extends TestCase
 
         Consumable::factory()->create(['qty' => 10, 'min_amt' => 1]);
 
-        $this->artisan('snipeit:inventory-alerts')
+        $this->artisan('assetsecure:inventory-alerts')
             ->expectsOutputToContain('No low inventory items found')
             ->assertExitCode(0);
     }
@@ -64,7 +64,7 @@ class SendInventoryAlertsTest extends TestCase
 
         Consumable::factory()->create(['qty' => 0, 'min_amt' => 1]);
 
-        $this->artisan('snipeit:inventory-alerts')
+        $this->artisan('assetsecure:inventory-alerts')
             ->expectsOutputToContain('Alerts are disabled')
             ->assertExitCode(0);
     }
@@ -78,7 +78,7 @@ class SendInventoryAlertsTest extends TestCase
 
         Consumable::factory()->create(['qty' => 0, 'min_amt' => 1]);
 
-        $this->artisan('snipeit:inventory-alerts')
+        $this->artisan('assetsecure:inventory-alerts')
             ->expectsOutputToContain('No alert email configured')
             ->assertExitCode(0);
     }
@@ -100,7 +100,7 @@ class SendInventoryAlertsTest extends TestCase
 
         Log::spy();
 
-        $this->artisan('snipeit:inventory-alerts')->assertExitCode(0);
+        $this->artisan('assetsecure:inventory-alerts')->assertExitCode(0);
 
         Log::shouldHaveReceived('warning')->atLeast()->once();
     }

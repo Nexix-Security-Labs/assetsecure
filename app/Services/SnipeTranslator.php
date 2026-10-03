@@ -40,7 +40,7 @@ class SnipeTranslator extends Translator
             $replace['count'] = $number;
         }
 
-        // Snipe-IT uses a `-if` suffix on informal-variant locales (e.g.
+        // AssetSecure uses a `-if` suffix on informal-variant locales (e.g.
         // `de-if` for informal German alongside `de-DE` for formal).
         // Laravel's MessageSelector plural-rule table only knows base and
         // country-scoped codes (`de`, `de_DE`, etc.), so an informal locale

@@ -7,7 +7,7 @@ use Laravel\Passport\Http\Middleware\CreateFreshApiToken;
 
 /**
  * Wrapper around Laravel Passport's CreateFreshApiToken that refuses to
- * mint the `snipeit_passport_token` cookie for a session that hasn't
+ * mint the `assetsecure_passport_token` cookie for a session that hasn't
  * cleared 2FA. Without this, a password-only session that landed on
  * /two-factor (in CheckForTwoFactor::IGNORE_ROUTES) would still get the
  * cookie issued by the web middleware group, giving it session-based

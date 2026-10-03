@@ -96,7 +96,7 @@ return [
     | any other location as required by the application or its packages.
     */
 
-    'name' => env('SITE_NAME', 'Snipe-IT'),
+    'name' => env('SITE_NAME', 'AssetSecure'),
 
     /*
     |--------------------------------------------------------------------------
@@ -226,7 +226,7 @@ return [
    |--------------------------------------------------------------------------
    |
    | Normal users will never need to edit this. This option lets you run
-   | Snipe-IT within an I-Frame, which is normally disabled by default for
+   | AssetSecure within an I-Frame, which is normally disabled by default for
    | security reasons, to prevent clickjacking. It should normally be set to false.
    |
    */
@@ -245,7 +245,7 @@ return [
    | primitive against internal services or cloud metadata endpoints.
    |
    | Some operators legitimately run their own webhook receiver on the same
-   | private network as Snipe-IT (self-hosted Mattermost, Rocket.Chat, an
+   | private network as AssetSecure (self-hosted Mattermost, Rocket.Chat, an
    | internal ChatOps bot, etc.). Setting this to true re-enables outbound
    | requests to those addresses. Scheme restrictions (http/https only) are
    | still enforced. Leave this off unless you know you need it.
@@ -341,7 +341,6 @@ return [
     | unless you have a specific need for it.
     |
     | The European Commission now requires at least 3072-bit keys for new SAML certificates
-    | @link https://github.com/grokability/snipe-it/issues/17386
     */
 
     'saml_key_size' => env('SAML_KEY_SIZE', 2048),
@@ -352,7 +351,7 @@ return [
     |--------------------------------------------------------------------------
     |
     | Normal users will never need to edit this. This option lets you run a
-    | version of Snipe-IT with limited functionality to prevent demo abuse.
+    | version of AssetSecure with limited functionality to prevent demo abuse.
     |
     */
 
@@ -374,7 +373,7 @@ return [
     | Default: false. The test helpers resolve the hostname and reject any
     | URL that lands on a private / loopback / link-local / reserved range.
     |
-    | Set to true ONLY when the Snipe-IT installation is legitimately
+    | Set to true ONLY when the AssetSecure installation is legitimately
     | pointed at services on the same private network (self-hosted on-prem
     | alongside internal AD/Slack/webhooks is the typical case). Never
     | enable on hosted / multi-tenant deployments.
@@ -631,7 +630,7 @@ return [
     | Force TLS / Allow Insecure Hosts
     |--------------------------------------------------------------------------
     | force_tls: forces the URL generator to emit https:// links regardless
-    | of the incoming request scheme. Snipe-IT already forces https when
+    | of the incoming request scheme. AssetSecure already forces https when
     | APP_URL starts with https, this flag covers reverse-proxy setups where
     | APP_URL is http but is actually TLS. allow_insecure_hosts skips
     | the URL::forceRootUrl() lockdown that otherwise rejects requests whose

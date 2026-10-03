@@ -13,7 +13,7 @@
 
              Null-coalesce inline on ($alert_count ?? 0) is defensive.
              AlertMenu::render() always passes alert_count, but a Rollbar
-             report from develop.snipeitapp.com showed
+             report from a development instance showed
              "Undefined variable $alert_count" firing from a Livewire
              /livewire/update flow. Cheaper to guard the blade than to
              chase down which lifecycle path lost the data. --}}

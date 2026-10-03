@@ -21,17 +21,17 @@ use Illuminate\Support\Facades\Log;
  * That means hostname, OS version, last-seen, and MAC address are
  * null in every record: those become populated later once the device
  * enrolls in an MDM (Jamf, Kandji, Mosyle, Intune, etc). The point of
- * the ABM adapter is to pre-populate Snipe-IT with the authoritative
+ * the ABM adapter is to pre-populate AssetSecure with the authoritative
  * "we own this serial" list before an MDM enrolls it, or to pick up
  * devices the MDM never sees (spares, decommissioned, in-transit).
  *
  * Groups: ABM has Organizations/Sites concepts, but the device record
  * doesn't expose an org-scoped foreign key today. Group scoping is
- * off. If admins want per-Snipe-IT-company routing, they run one
+ * off. If admins want per-AssetSecure-company routing, they run one
  * adapter instance per company for now.
  *
  * Push: not implemented. Apple's write endpoints (device metadata,
- * MDM server assignment) are outside Snipe-IT's authoritative scope.
+ * MDM server assignment) are outside AssetSecure's authoritative scope.
  */
 class AppleBusinessManagerAdapter extends SyncAdapter
 {
@@ -54,7 +54,7 @@ class AppleBusinessManagerAdapter extends SyncAdapter
      * Per-category-selector config keys -> friendly display name.
      * Distinct from PRODUCT_FAMILIES because Mac's productFamily
      * collapses laptops and desktops into one bucket, but admins
-     * usually want to route them to different Snipe-IT categories
+     * usually want to route them to different AssetSecure categories
      * ("Laptops" vs "Desktops"), so the "Mac" family gets split
      * into two selectors driven by deviceModel prefix.
      * categoryConfigKeyForFamily() encodes the mapping in the other
@@ -151,7 +151,7 @@ class AppleBusinessManagerAdapter extends SyncAdapter
         // fixed enum, so admins can route iPads to "Tablets", Watches
         // to "Wearables", etc. Mac is split into laptop + desktop
         // because Apple lumps them together and admins usually want
-        // them in separate Snipe-IT categories. Empty selection falls
+        // them in separate AssetSecure categories. Empty selection falls
         // back to default_category_id. Label + help share one
         // :family-templated translation each so localizers translate
         // the strings once rather than seven times.

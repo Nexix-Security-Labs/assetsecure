@@ -9,7 +9,7 @@ use Illuminate\Http\Request;
 
 /**
  * This controller handles all actions related to Depreciations for
- * the Snipe-IT Asset Management application.
+ * the AssetSecure Asset Management application.
  *
  * @version    v1.0
  */
@@ -19,7 +19,6 @@ class DepreciationsController extends Controller
      * Returns a view that invokes the ajax tables which actually contains
      * the content for the depreciation listing, which is generated in getDatatable.
      *
-     * @author [A. Gianotto] [<snipe@snipe.net]
      *
      * @see DepreciationsController::getDatatable() method that generates the JSON response
      * @since [v1.0]
@@ -34,7 +33,6 @@ class DepreciationsController extends Controller
     /**
      * Returns a view that displays a form to create a new depreciation.
      *
-     * @author [A. Gianotto] [<snipe@snipe.net]
      *
      * @see DepreciationsController::postCreate()
      * @since [v1.0]
@@ -50,7 +48,6 @@ class DepreciationsController extends Controller
     /**
      * Validates and stores the new depreciation data.
      *
-     * @author [A. Gianotto] [<snipe@snipe.net]
      *
      * @see DepreciationsController::postCreate()
      * @since [v1.0]
@@ -93,7 +90,6 @@ class DepreciationsController extends Controller
     /**
      * Returns a view that displays a form to update a depreciation.
      *
-     * @author [A. Gianotto] [<snipe@snipe.net]
      *
      * @see DepreciationsController::postEdit()
      *
@@ -112,7 +108,6 @@ class DepreciationsController extends Controller
     /**
      * Validates and stores the updated depreciation data.
      *
-     * @author [A. Gianotto] [<snipe@snipe.net]
      *
      * @see DepreciationsController::getEdit()
      *
@@ -156,7 +151,6 @@ class DepreciationsController extends Controller
      *
      * This is a hard-delete. We do not currently soft-delete depreciations.
      *
-     * @author [A. Gianotto] [<snipe@snipe.net]
      *
      * @since [v1.0]
      *
@@ -185,7 +179,6 @@ class DepreciationsController extends Controller
     /**
      * Returns a view that displays a form to display depreciation listing
      *
-     * @author [A. Gianotto] [<snipe@snipe.net]
      *
      * @see DepreciationsController::postEdit()
      *

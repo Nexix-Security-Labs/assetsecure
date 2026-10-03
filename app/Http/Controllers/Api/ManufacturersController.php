@@ -24,7 +24,6 @@ class ManufacturersController extends Controller
     /**
      * Display a listing of the resource.
      *
-     * @author [A. Gianotto] [<snipe@snipe.net>]
      *
      * @since [v4.0]
      *
@@ -142,7 +141,6 @@ class ManufacturersController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @author [A. Gianotto] [<snipe@snipe.net>]
      *
      * @since [v4.0]
      */
@@ -164,7 +162,6 @@ class ManufacturersController extends Controller
     /**
      * Display the specified resource.
      *
-     * @author [A. Gianotto] [<snipe@snipe.net>]
      *
      * @since [v4.0]
      *
@@ -181,7 +178,6 @@ class ManufacturersController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @author [A. Gianotto] [<snipe@snipe.net>]
      *
      * @since [v4.0]
      *
@@ -204,7 +200,6 @@ class ManufacturersController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @author [A. Gianotto] [<snipe@snipe.net>]
      *
      * @since [v4.0]
      *
@@ -229,7 +224,6 @@ class ManufacturersController extends Controller
     /**
      * Restore a given Manufacturer (mark as un-deleted)
      *
-     * @author [A. Gianotto] [<snipe@snipe.net>]
      *
      * @since [v6.3.4]
      *
@@ -269,7 +263,6 @@ class ManufacturersController extends Controller
     /**
      * Gets a paginated collection for the select2 menus
      *
-     * @author [A. Gianotto] [<snipe@snipe.net>]
      *
      * @since [v4.0.16]
      * @see SelectlistTransformer

@@ -103,7 +103,7 @@ trait SyncsHostFromRecord
      * or creates a fresh shell asset + identity row for first-sync
      * cases. Also handles the update-sync group-reassignment case
      * where a device moved to a different vendor group that maps to
-     * a different Snipe-IT company.
+     * a different AssetSecure company.
      *
      * @return array{0: Asset, 1: bool} Tuple of the resolved asset and an "isNew" flag.
      */
@@ -122,7 +122,7 @@ trait SyncsHostFromRecord
         if ($asset !== null) {
             // Update-sync path: if the vendor moved this device to a
             // different group and the new group maps to a different
-            // Snipe-IT company, reassign. Same "vendor is
+            // AssetSecure company, reassign. Same "vendor is
             // authoritative" model as native:asset_tag for tags.
             // Admins who want to preserve manual company assignments
             // turn off group scoping for this adapter or delete the
@@ -139,7 +139,7 @@ trait SyncsHostFromRecord
         // sync script. Their existing assets have a serial populated
         // but no asset_external_sources row for this adapter. When
         // the admin has turned on "adopt existing assets by serial",
-        // look up a matching Snipe-IT asset before creating a fresh
+        // look up a matching AssetSecure asset before creating a fresh
         // shell. Establishes the identity link so subsequent syncs
         // treat this as an update, not a duplicate create.
         $adopted = self::adoptExistingAssetBySerial($record, $instance);
@@ -168,7 +168,7 @@ trait SyncsHostFromRecord
     }
 
     /**
-     * Look up an existing Snipe-IT asset with a matching serial to
+     * Look up an existing AssetSecure asset with a matching serial to
      * adopt into this adapter's external-sources link, when the
      * admin has turned on adopt_by_serial for this adapter instance.
      * Skips assets that already have an external_sources row for
@@ -220,7 +220,7 @@ trait SyncsHostFromRecord
      * asset columns, external-source columns, custom fields, or skips
      * it, based on per-instance config. Fields directed 'push' or
      * 'skip' on this instance are excluded from the pull path so the
-     * vendor's value can't overwrite a Snipe-IT-authoritative field
+     * vendor's value can't overwrite a AssetSecure-authoritative field
      * (asset_tag pushed to the vendor shouldn't get pulled back from
      * what the vendor reports). 'both' direction still pulls (naive
      * last-write-wins) so both sides converge on whichever side ran
@@ -617,7 +617,7 @@ trait SyncsHostFromRecord
     }
 
     /**
-     * Pick the Snipe-IT company id for a newly-created asset.
+     * Pick the AssetSecure company id for a newly-created asset.
      * Precedence:
      *   1. Adapter's per-group company mapping (when adapter supports
      *      group scoping AND record has a vendorGroupId AND the group
@@ -627,7 +627,7 @@ trait SyncsHostFromRecord
      *
      * Group mappings let one adapter instance sync devices from a
      * multi-tenant vendor (Kandji, Fleet, Jamf) into per-customer
-     * Snipe-IT companies without needing one adapter instance per
+     * AssetSecure companies without needing one adapter instance per
      * company. See SyncAdapter::groupMappings().
      */
     private static function resolveCompanyId(HostInventoryRecord $record, ?SyncAdapterInstance $instance): ?int
@@ -648,7 +648,7 @@ trait SyncsHostFromRecord
     /**
      * Pick the asset tag for a newly-created asset. Precedence:
      *   1. Adapter's configured pattern (with placeholders substituted).
-     *   2. Snipe-IT's global autoincrement setting.
+     *   2. AssetSecure's global autoincrement setting.
      *   3. Fallback synthetic tag (source-external_id) so save never
      *      lands with a null tag even when the other two miss.
      *
@@ -922,7 +922,7 @@ trait SyncsHostFromRecord
      * (osquery sometimes omits it, some MDMs return null for VMs),
      * return null so the caller / Asset validation ("model_id" is
      * required in Asset::$rules) refuses the save. That leaves the
-     * host out of Snipe-IT rather than piling nameless assets into
+     * host out of AssetSecure rather than piling nameless assets into
      * an "Unknown" bucket admins can't clean up later.
      *
      * Auto-created models get hung off a "Discovered Hardware"
@@ -1111,7 +1111,7 @@ trait SyncsHostFromRecord
     }
 
     /**
-     * Look up the vendor-reported user on the record against Snipe-IT
+     * Look up the vendor-reported user on the record against AssetSecure
      * users per the adapter's configured match strategy, and assign
      * the asset when the lookup succeeds. Never un-assigns: a payload
      * missing the user field leaves the existing assignment intact.
@@ -1155,7 +1155,7 @@ trait SyncsHostFromRecord
     /**
      * Build the ordered list of (field, value) attempts for the user-
      * match strategy. Cascade strategy tries username first (guaranteed
-     * unique in Snipe-IT) then email as fallback. Explicit single-field
+     * unique in AssetSecure) then email as fallback. Explicit single-field
      * strategies produce one attempt. Attempts where the vendor gave us
      * nothing to match on are filtered out so callers can distinguish
      * "vendor reported no user at all" (opt-in checkin-on-null) from
@@ -1215,7 +1215,7 @@ trait SyncsHostFromRecord
             $attempts,
         ));
         Log::channel('sync-adapters')->warning(sprintf(
-            '%s sync: no Snipe-IT user matched (strategy=%s, tried [%s]) for host %s',
+            '%s sync: no AssetSecure user matched (strategy=%s, tried [%s]) for host %s',
             $instance->slug,
             $strategy,
             $tried,

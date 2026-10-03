@@ -9,7 +9,7 @@ return [
     'api_base_url' => '您的 API 基礎 URL 位於：',
     'api_base_url_endpoint' => '/&lt;端點&gt;',
     'api_token_expiration_time' => 'API tokens 設定為在以下時間過期：',
-    'api_reference' => '請查看 <a href="https://snipe-it.readme.io/reference" target="_blank">API 參考文件</a> 來查詢特定的 API endpoint 與額外說明。',
+    'api_reference' => '請查看 <a href="https://github.com/Nexix-Security-Labs/assetsecure/wiki" target="_blank">API 參考文件</a> 來查詢特定的 API endpoint 與額外說明。',
     'profile_updated' => '帳號已成功更新',
     'no_tokens' => '您還沒有創建任何個人存取權杖。',
     'enable_sounds' => '啟用音效',

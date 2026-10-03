@@ -54,7 +54,7 @@ class BulkDeleteTest extends TestCase
         $typesLabel = 'What item types would you like to check in and delete?';
         $deleteLabel = 'How should items be deleted?';
 
-        $cmd = $this->artisan('snipeit:checkin-delete-items')
+        $cmd = $this->artisan('assetsecure:checkin-delete-items')
             // Step 1: dry run confirm
             ->expectsConfirmation('Is this a dry run?', $dryRun ? 'yes' : 'no')
             // Step 2: search() — ask() for the search term, then choice() to pick from results

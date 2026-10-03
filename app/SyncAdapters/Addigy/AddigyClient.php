@@ -55,7 +55,7 @@ class AddigyClient
 
     /**
      * List every Policy in the Addigy tenant. Used by the adapter's
-     * fetchGroups() so admins can map Policies to Snipe-IT companies.
+     * fetchGroups() so admins can map Policies to AssetSecure companies.
      * Policies are Addigy's device-grouping concept. MSPs often use
      * them as customer proxies.
      *

@@ -16,7 +16,7 @@ use Tests\TestCase;
 /**
  * Coverage for the ABM adapter's per-productFamily category routing.
  * ABM knows each device's family (Mac, iPhone, iPad, AppleTV, Watch,
- * Vision) so admins can drop each family into its own Snipe-IT
+ * Vision) so admins can drop each family into its own AssetSecure
  * category instead of collapsing everything into the instance's
  * default_category_id. Unset families fall back to the default.
  */

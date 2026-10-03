@@ -14,7 +14,7 @@ class SyncAssetLocations extends Command
      *
      * @var string
      */
-    protected $signature = 'snipeit:sync-asset-locations {--output= : info|warn|error|all} ';
+    protected $signature = 'assetsecure:sync-asset-locations {--output= : info|warn|error|all} ';
 
     /**
      * The console command description.

@@ -236,7 +236,7 @@ class KaseyaVsa10AdapterTest extends TestCase
     }
 
     /**
-     * Minimal asset row with just enough fields for a shell Snipe-IT
+     * Minimal asset row with just enough fields for a shell AssetSecure
      * asset save (Manufacturer + Model in the System category, and a
      * BIOS serial). Full field coverage is exercised in
      * test_normalized_record_extracts_hardware_and_os_from_asset_info_categories.

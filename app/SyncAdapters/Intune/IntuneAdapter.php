@@ -25,7 +25,7 @@ use Illuminate\Support\Facades\Log;
  * label so a single URL config drives both.
  *
  * Non-secret credentials (tenant + client id) stay plain-text at rest
- * so admins can audit which Azure app registration a Snipe-IT instance
+ * so admins can audit which Azure app registration a AssetSecure instance
  * is talking to without a decrypt step. Only client_secret is encrypted.
  */
 class IntuneAdapter extends SyncAdapter implements PushableAdapter

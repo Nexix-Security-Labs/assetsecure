@@ -51,7 +51,7 @@ class ImportAssetHistoryTest extends TestCase
     public function test_process_endpoint_allowed_in_demo_mode_for_superadmin(): void
     {
         // Superadmins bypass the demo-mode gate on process() so the
-        // seeded sample CSVs (populated by snipeit:demo-settings) can
+        // seeded sample CSVs (populated by assetsecure:demo-settings) can
         // actually be run against the demo DB. Without a real CSV on
         // disk the import will error out below the gate, so this test
         // just proves the gate itself lets the superadmin through
@@ -267,7 +267,7 @@ class ImportAssetHistoryTest extends TestCase
     public function test_asset_history_import_checks_out_to_location_when_target_type_is_location(): void
     {
         // Ensures the resulting state is
-        // the same shape Snipe-IT itself would produce via a UI checkout.
+        // the same shape AssetSecure itself would produce via a UI checkout.
         $actor = User::factory()->canImport()->create();
         $location = Location::factory()->create(['name' => 'Fundo Chao']);
         $asset = Asset::factory()->create([

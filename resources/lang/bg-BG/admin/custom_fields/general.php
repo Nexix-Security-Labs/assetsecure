@@ -89,5 +89,5 @@ return [
         'date_picker' => 'Date Picker',
         'datetime_picker' => 'Datetime Picker',
     ],
-    'general_help_text' => 'Потребителски полета съхраняват допълнителна инфомация, която не се покрива от полетата по подразбиране за артикула. <a href="https://snipe-it.readme.io/docs/custom-fields#/"><i class="fa fa-external-link"></i></a>.',
+    'general_help_text' => 'Потребителски полета съхраняват допълнителна инфомация, която не се покрива от полетата по подразбиране за артикула. <a href="https://github.com/Nexix-Security-Labs/assetsecure/wiki/custom-fields#/"><i class="fa fa-external-link"></i></a>.',
 ];

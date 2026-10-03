@@ -17,7 +17,7 @@ use Illuminate\Support\Facades\DB;
 
 class CheckinAndDeleteItems extends Command
 {
-    protected $signature = 'snipeit:checkin-delete-all
+    protected $signature = 'assetsecure:checkin-delete-all
         {--company-id= : Only process items belonging to this company ID}
         {--admin-id= : ID of the user credited for the checkins (defaults to first superadmin)}
         {--no-notifications : Suppress email and webhook notifications}

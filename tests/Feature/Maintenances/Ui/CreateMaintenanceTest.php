@@ -50,7 +50,7 @@ class CreateMaintenanceTest extends TestCase
                 'image' => UploadedFile::fake()->image('test_image.png'),
                 'file' => [UploadedFile::fake()->create('maintenance.pdf', 64, 'application/pdf')],
                 'notes' => 'A note',
-                'url' => 'https://snipeitapp.com',
+                'url' => 'https://nexixsecuritylabs.com',
             ])
             ->assertSessionHasNoErrors()
             ->assertRedirect(route('maintenances.index'));
@@ -82,7 +82,7 @@ class CreateMaintenanceTest extends TestCase
             'start_date' => '2021-01-01 00:00:00',
             'expected_completion_date' => '2021-01-10 00:00:00',
             'notes' => 'A note',
-            'url' => 'https://snipeitapp.com',
+            'url' => 'https://nexixsecuritylabs.com',
             'cost' => '100.00',
             'image' => $maintenance->image,
             'created_by' => $actor->id,
@@ -188,7 +188,7 @@ class CreateMaintenanceTest extends TestCase
     public function test_creating_without_completed_at_leaves_maintenance_active()
     {
         // Sanity guard: the default create flow (no completed_at) must
-        // not accidentally stamp anything. Snipe called this out — a
+        // not accidentally stamp anything. This was called out — a
         // datetimepicker that defaults to now() would silently mark
         // freshly-created maintenances complete.
         $actor = User::factory()->superuser()->create();

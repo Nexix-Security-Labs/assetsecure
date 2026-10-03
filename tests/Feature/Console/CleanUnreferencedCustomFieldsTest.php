@@ -33,7 +33,7 @@ class CleanUnreferencedCustomFieldsTest extends TestCase
         $asset->{$orphanedColumn} = 'ORPHANED-VALUE';
         $asset->save();
 
-        $this->artisan('snipeit:clean-custom-fields', ['--force' => true])->assertExitCode(0);
+        $this->artisan('assetsecure:clean-custom-fields', ['--force' => true])->assertExitCode(0);
 
         $asset->refresh();
         $this->assertSame('KEEP-ME', $asset->{$inFieldsetColumn},
@@ -53,7 +53,7 @@ class CleanUnreferencedCustomFieldsTest extends TestCase
         $asset->{$column} = 'SHOULD-BE-BLANKED';
         $asset->save();
 
-        $this->artisan('snipeit:clean-custom-fields', ['--force' => true])->assertExitCode(0);
+        $this->artisan('assetsecure:clean-custom-fields', ['--force' => true])->assertExitCode(0);
 
         $asset->refresh();
         $this->assertNull($asset->{$column},

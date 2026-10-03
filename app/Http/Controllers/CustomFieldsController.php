@@ -9,21 +9,19 @@ use Illuminate\Http\RedirectResponse;
 
 /**
  * This controller handles all actions related to Custom Asset Fields for
- * the Snipe-IT Asset Management application.
+ * the AssetSecure Asset Management application.
  *
  * @todo Improve documentation here.
  * @todo Check for raw DB queries and try to convert them to query builder statements
  *
  * @version    v2.0
  *
- * @author [Brady Wetherington] [<uberbrady@gmail.com>]
  */
 class CustomFieldsController extends Controller
 {
     /**
      * Returns a view with a listing of custom fields.
      *
-     * @author [Brady Wetherington] [<uberbrady@gmail.com>]
      *
      * @since [v1.8]
      */
@@ -43,7 +41,6 @@ class CustomFieldsController extends Controller
      *
      * @see CustomFieldsController::storeField()
      *
-     * @author [A. Gianotto] [<snipe@snipe.net>]
      *
      * @since [v5.1.5]
      */
@@ -55,7 +52,6 @@ class CustomFieldsController extends Controller
     /**
      * Detach a custom field from a fieldset.
      *
-     * @author [A. Gianotto] [<snipe@snipe.net>]
      *
      * @since [v3.0]
      */
@@ -85,7 +81,6 @@ class CustomFieldsController extends Controller
     /**
      * Delete a custom field.
      *
-     * @author [Brady Wetherington] [<uberbrady@gmail.com>]
      *
      * @since [v1.8]
      */

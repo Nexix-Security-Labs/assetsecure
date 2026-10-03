@@ -22,7 +22,6 @@ class ComponentCheckinController extends Controller
     /**
      * Returns a view that allows the checkin of a component from an asset.
      *
-     * @author [A. Gianotto] [<snipe@snipe.net>]
      *
      * @see ComponentCheckinController::store() method that stores the data.
      * @since [v4.1.4]
@@ -60,7 +59,6 @@ class ComponentCheckinController extends Controller
     /**
      * Validate and store checkin data.
      *
-     * @author [A. Gianotto] [<snipe@snipe.net>]
      *
      * @see ComponentCheckinController::create() method that returns the form.
      * @since [v4.1.4]

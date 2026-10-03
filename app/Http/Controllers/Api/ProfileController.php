@@ -43,7 +43,6 @@ class ProfileController extends Controller
     /**
      * Display a listing of requested assets.
      *
-     * @author [A. Gianotto] [<snipe@snipe.net>]
      *
      * @since [v4.3.0]
      */
@@ -115,7 +114,6 @@ class ProfileController extends Controller
     /**
      * Delete an API token
      *
-     * @author [A. Gianotto] [<snipe@snipe.net>]
      *
      * @since [v6.0.5]
      */
@@ -153,7 +151,6 @@ class ProfileController extends Controller
     /**
      * Delete an API token
      *
-     * @author [A. Gianotto] [<snipe@snipe.net>]
      *
      * @since [v6.0.5]
      */
@@ -196,7 +193,7 @@ class ProfileController extends Controller
      * answer a bearer-only client. Passport does not ship a
      * bearer-self-revoke endpoint because RFC 7009 revocation uses
      * client credentials rather than bearer auth, so this
-     * "log me out of this session" affordance is a Snipe-IT addition.
+     * "log me out of this session" affordance is a AssetSecure addition.
      */
     public function logout(RefreshTokenRepository $refreshTokens): Response
     {
@@ -218,7 +215,6 @@ class ProfileController extends Controller
     /**
      * Show user's API tokens
      *
-     * @author [A. Gianotto] [<snipe@snipe.net>]
      *
      * @since [v6.0.5]
      */
@@ -250,7 +246,6 @@ class ProfileController extends Controller
      *
      *@since [v8.1.16]
      *
-     * @author [Godfrey Martinez] [<gmartinez@grokability.com>]
      */
     public function eulas(ProfileTransformer $transformer, Request $request)
     {

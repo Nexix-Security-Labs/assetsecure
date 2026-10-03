@@ -67,7 +67,7 @@ class MaintenanceFactory extends Factory
         return [
             // Set location_id to rtd_location_id on the generated asset so
             // seeded maintenance rows point at assets with a real location,
-            // matching what snipeit:sync-asset-locations would have set.
+            // matching what assetsecure:sync-asset-locations would have set.
             //
             // Use item_id + item_type (the polymorphic FK) rather than the
             // legacy asset_id so callers can override the target with their

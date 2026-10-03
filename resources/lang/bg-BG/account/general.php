@@ -9,7 +9,7 @@ return [
     'api_base_url' => 'Вашият API основен URL се намира на:',
     'api_base_url_endpoint' => '/&lt;endpoint&gt;',
     'api_token_expiration_time' => 'API ключа ще изтиче на:',
-    'api_reference' => 'Моля, проверете <a href="https://snipe-it.readme.io/reference" target="_blank">справката за API</a>, за да намерите конкретни API крайни точки и допълнителна API документация.',
+    'api_reference' => 'Моля, проверете <a href="https://github.com/Nexix-Security-Labs/assetsecure/wiki" target="_blank">справката за API</a>, за да намерите конкретни API крайни точки и допълнителна API документация.',
     'profile_updated' => 'Акаунтът е актуализиран успешно',
     'no_tokens' => 'Нямате създадени никакви персонални ключове за достъп.',
     'enable_sounds' => 'Включване на звукови ефекти',

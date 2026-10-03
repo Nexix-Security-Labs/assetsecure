@@ -11,7 +11,7 @@ use Illuminate\Http\Request;
 
 /**
  * This controller handles all actions related to Status Labels for
- * the Snipe-IT Asset Management application.
+ * the AssetSecure Asset Management application.
  *
  * @version    v1.0
  */

@@ -22,7 +22,7 @@ use Illuminate\Support\Facades\Log;
  * doesn't split the two the way Microsoft Graph does).
  *
  * client_id is non-secret per OAuth 2.0 convention and stored plain
- * text so admins can audit which OAuth application a Snipe-IT instance
+ * text so admins can audit which OAuth application a AssetSecure instance
  * is talking to. client_secret is encrypted at rest.
  *
  * Push story: NinjaOne has no first-class asset_tag field, but the
@@ -173,7 +173,7 @@ class NinjaOneAdapter extends SyncAdapter implements PushableAdapter
     }
 
     /**
-     * Push Snipe-IT asset_tag to a NinjaOne custom field. NinjaOne
+     * Push AssetSecure asset_tag to a NinjaOne custom field. NinjaOne
      * doesn't expose a top-level asset_tag column, so the admin must
      * pre-create a custom field in the NinjaOne dashboard and put its
      * name in the "Asset Tag Custom Field Name" schema slot. If the

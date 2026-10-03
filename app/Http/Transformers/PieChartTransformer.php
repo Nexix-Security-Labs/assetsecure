@@ -15,7 +15,6 @@ use Illuminate\Http\Response;
  *
  * @since [v6.0.11]
  *
- * @author [A. Gianotto] [<snipe@snipe.net>]
  */
 class PieChartTransformer
 {

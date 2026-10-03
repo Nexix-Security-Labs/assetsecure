@@ -381,7 +381,7 @@ return [
     // captured by the "Refresh custom fields" button. Rendered in the
     // extras mapping table for each Kaseya custom field the tenant
     // has defined, so admins recognize them as coming from Kaseya
-    // rather than any built-in Snipe-IT extra.
+    // rather than any built-in AssetSecure extra.
     'kaseya_vsa10_custom_field_label' => 'crwdns16961:0crwdne16961:0',
 
     // ABM adapter-specific labels + option strings.

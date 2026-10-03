@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Log;
  * Omnissa Workspace ONE adapter (formerly VMware Workspace ONE UEM,
  * originally AirWatch). Pulls managed devices from the REST device
  * search endpoint via OAuth 2.0 client credentials. Also pushes
- * Snipe-IT asset_tag back via WS1's AssetNumber field on the
+ * AssetSecure asset_tag back via WS1's AssetNumber field on the
  * device-update endpoint.
  *
  * Modern Workspace ONE tenants use OAuth 2.0 client credentials
@@ -187,7 +187,7 @@ class WorkspaceOneAdapter extends SyncAdapter implements PushableAdapter
     }
 
     /**
-     * Push Snipe-IT asset_tag to WS1's AssetNumber field via the
+     * Push AssetSecure asset_tag to WS1's AssetNumber field via the
      * device-update endpoint. Keys the device by UUID (WS1's stable
      * identifier across enrollment renames), which we cached as
      * external_id during pull.

@@ -76,7 +76,7 @@ return [
         'file_delete_error' => 'Die Datei konnte nicht gelöscht werden',
         'file_missing' => 'Die ausgewählte Datei fehlt',
         'file_already_deleted' => 'Die ausgewählte Datei wurde bereits gelöscht',
-        'file_missing_on_disk' => 'Die Datei für diesen Import ist nicht mehr auf der Festplatte. Sie wurde möglicherweise außerhalb von Snipe-IT gelöscht. Diesen Eintrag löschen und die Datei erneut hochladen, um es erneut zu versuchen.',
+        'file_missing_on_disk' => 'Die Datei für diesen Import ist nicht mehr auf der Festplatte. Sie wurde möglicherweise außerhalb von AssetSecure gelöscht. Diesen Eintrag löschen und die Datei erneut hochladen, um es erneut zu versuchen.',
         'file_empty' => 'Diese Datei hat keine Datenzeilen. Nichts kann daraus importiert werden.',
         'already_processing' => 'Dieser Import wird gerade von einem anderen Benutzer bearbeitet. Bitte warten Sie, bis er beendet ist, bevor Sie es erneut versuchen.',
         'header_row_missing' => 'Diese Datei hat keine erkannte Header-Zeile. Löschen Sie diesen Eintrag und laden Sie die Datei erneut hoch, um es erneut zu versuchen.',

@@ -11,8 +11,8 @@ use Illuminate\Support\Arr;
  * Fleet adapter. Pulls host inventory from a Fleet (FleetDM) instance
  * and normalizes it into HostInventoryRecord objects.
  *
- * Push (Snipe-IT -> Fleet) is not implemented because Fleet has no
- * first-class per-host writable metadata field that maps to Snipe-IT
+ * Push (AssetSecure -> Fleet) is not implemented because Fleet has no
+ * first-class per-host writable metadata field that maps to AssetSecure
  * concepts like asset_tag or notes. Fleet labels are group membership
  * (targeting devices for policies / reports / software), not a
  * per-host key-value store, so encoding an asset_tag as a label was a

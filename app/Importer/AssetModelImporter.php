@@ -70,7 +70,6 @@ class AssetModelImporter extends ItemImporter
      *
      * @todo Investigate how this should interact with Importer::createModelIfNotExists
      *
-     * @author A. Gianotto
      *
      * @since 6.1.0
      */
@@ -155,7 +154,6 @@ class AssetModelImporter extends ItemImporter
      * We only do a fetch vs create here since Depreciations have additional fields required
      * and cannot be created without them (months, for example.))
      *
-     * @author A. Gianotto
      *
      * @since 7.1.3
      *
@@ -179,7 +177,6 @@ class AssetModelImporter extends ItemImporter
     /**
      * Fetch an existing fieldset, or create new if it doesn't exist
      *
-     * @author A. Gianotto
      *
      * @since 7.1.3
      *

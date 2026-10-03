@@ -16,7 +16,7 @@ use Tests\TestCase;
 /**
  * End-to-end coverage for Google Workspace (ChromeOS) push. Google
  * Admin exposes annotatedAssetId (asset tag) and notes (composed) as
- * the two writable fields Snipe-IT populates. Both PATCH against the
+ * the two writable fields AssetSecure populates. Both PATCH against the
  * same Chrome device endpoint. Tests verify the PATCH lands with the
  * right shape, dry-run behaves, and the composed-notes template is
  * spliced onto the payload.
@@ -46,7 +46,7 @@ class GoogleWorkspacePushTest extends TestCase
 
     public function test_composed_notes_template_patches_google_chrome_device(): void
     {
-        $adapter = $this->configuredAdapter(template: 'Owned by Snipe-IT: {asset_tag}');
+        $adapter = $this->configuredAdapter(template: 'Owned by AssetSecure: {asset_tag}');
         $asset = Asset::factory()->create(['asset_tag' => 'ACME-042']);
         AssetExternalSource::create([
             'asset_id' => $asset->id,
@@ -76,7 +76,7 @@ class GoogleWorkspacePushTest extends TestCase
             }
             $notes = $request->data()['notes'] ?? '';
 
-            return str_contains($notes, 'Owned by Snipe-IT: ACME-042');
+            return str_contains($notes, 'Owned by AssetSecure: ACME-042');
         });
     }
 
@@ -223,7 +223,7 @@ class GoogleWorkspacePushTest extends TestCase
 
     public function test_annotated_user_push_sends_null_when_asset_is_unassigned(): void
     {
-        // A checkin on the Snipe-IT side should clear Google's
+        // A checkin on the AssetSecure side should clear Google's
         // annotatedUser so both systems reflect that nobody currently
         // owns the device. Google's PATCH semantics treat a null value
         // as a clear, so we let it through unmodified.

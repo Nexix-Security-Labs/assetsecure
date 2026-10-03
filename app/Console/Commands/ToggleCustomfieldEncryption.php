@@ -14,7 +14,7 @@ class ToggleCustomfieldEncryption extends Command
      *
      * @var string
      */
-    protected $signature = 'snipeit:customfield-encryption
+    protected $signature = 'assetsecure:customfield-encryption
                              {fieldname : the db_column_name of the field}';
 
     /**

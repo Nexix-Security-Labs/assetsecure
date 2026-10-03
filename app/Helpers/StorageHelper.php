@@ -82,7 +82,7 @@ class StorageHelper
 
     /**
      * Escape every cell in a CSV string using the same backtick prefix
-     * that Snipe-IT's own CSV exporters use. Preserves row / column
+     * that AssetSecure's own CSV exporters use. Preserves row / column
      * shape and does nothing to genuinely-safe content — cells that
      * don't start with `=`, `+`, `-`, `@`, tab, or carriage-return pass
      * through unchanged.
@@ -150,7 +150,6 @@ class StorageHelper
      * This determines the file types that should be allowed inline and checks their fileinfo extension
      * to determine that they are safe to display inline.
      *
-     * @author <A. Gianotto> [<snipe@snipe.net]>
      *
      * @since  v7.0.14
      *
@@ -224,7 +223,7 @@ class StorageHelper
         // getimagesize() that sniff the file type via the extension
         // before reading bytes.
         $extension = pathinfo($filename, PATHINFO_EXTENSION);
-        $tmp = tempnam(sys_get_temp_dir(), 'snipeit-readable-');
+        $tmp = tempnam(sys_get_temp_dir(), 'assetsecure-readable-');
         if ($tmp === false) {
             return null;
         }

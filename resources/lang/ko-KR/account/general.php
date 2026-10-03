@@ -9,7 +9,7 @@ return [
     'api_base_url' => 'API 기본 URL 위치:',
     'api_base_url_endpoint' => '/&lt;endpoint&gt;',
     'api_token_expiration_time' => 'API 토큰 만료 시간:',
-    'api_reference' => '특정 API 엔드포인트와 추가 API 문서는 <a href="https://snipe-it.readme.io/reference" target="_blank">API 레퍼런스</a>를 확인하세요.',
+    'api_reference' => '특정 API 엔드포인트와 추가 API 문서는 <a href="https://github.com/Nexix-Security-Labs/assetsecure/wiki" target="_blank">API 레퍼런스</a>를 확인하세요.',
     'profile_updated' => '계정이 성공적으로 업데이트됨',
     'no_tokens' => '생성된 개인 액세스 토큰이 없습니다.',
     'enable_sounds' => '사운드 효과 사용',

@@ -12,9 +12,6 @@ use function Livewire\invade;
 
 class LabelTest extends TestCase
 {
-    /**
-     * @link https://app.shortcut.com/grokability/story/29302
-     */
     public function test_handles_location_not_being_set_on_asset_gracefully()
     {
         $this->settings->set([

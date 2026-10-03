@@ -121,7 +121,7 @@ class WorkspaceOneClient
                     [
                         'Name' => $attributeName,
                         'Value' => $value,
-                        'Application' => 'com.snipeit.sync',
+                        'Application' => 'com.assetsecure.sync',
                     ],
                 ],
             ])

@@ -48,7 +48,7 @@ class BulkAccessoriesController extends Controller
             }
 
             // Note: the image file is deliberately preserved across this
-            // soft-delete. Snipe-IT's `snipeit:purge` command permanently
+            // soft-delete. AssetSecure's `assetsecure:purge` command permanently
             // removes it later when the row is force-deleted. Keeping
             // the file here means a restored soft-deleted row still has
             // its image.

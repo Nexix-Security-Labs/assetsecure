@@ -598,7 +598,6 @@
         // waiting on that ready state, but close() fires anyway, tears
         // down the popup, and the queued print is silently canceled.
         //
-        // See https://github.com/grokability/snipe-it/issues/19443
         //
         // Deferring newWin.close() by 500ms gives Safari enough time
         // to either finish loading the images or latch the print
@@ -957,7 +956,7 @@
                 },
                 onLoadError: function (status, jqXHR) {
                     // Fires on any real transport-level failure (500, 502, 504, network
-                    // error, 419 CSRF expiry, 401 unauthenticated, etc). Snipe's API
+                    // error, 419 CSRF expiry, 401 unauthenticated, etc). AssetSecure's API
                     // convention is to return {status: "error"} at HTTP 200 for
                     // validation/business errors, so anything reaching this callback
                     // is a genuine "the request itself failed" case that would
@@ -1124,7 +1123,7 @@
             //
             // Two interacting quirks make this non-trivial:
             //
-            // 1. Snipe's override of applyAdvancedSearch (this file, line ~220)
+            // 1. AssetSecure's override of applyAdvancedSearch (this file, line ~220)
             //    is a no-op for sidePagination='server' beyond setting state
             //    and rendering pills — it never refetches, and never fires the
             //    `column-advanced-search` event. So a `on('column-advanced-search')`
@@ -1138,7 +1137,7 @@
             //
             // Fix: patch two methods on this specific plugin instance.
             //
-            //   - applyAdvancedSearch: after Snipe's version runs, force a
+            //   - applyAdvancedSearch: after AssetSecure's version runs, force a
             //     refetch + fire the event on server-side. That triggers the
             //     addrbar → updateHistoryState path, which we've also patched.
             //
@@ -2835,7 +2834,7 @@
         // Sourced from the transformer via IconHelper so the icon
         // stays consistent with the rest of the app's per-type
         // iconography. Sits INSIDE the anchor to match how the
-        // rest of Snipe-IT renders icon+text links.
+        // rest of AssetSecure renders icon+text links.
         var icon = row.requestable.icon
             ? '<i class="' + row.requestable.icon + ' fa-fw" aria-hidden="true" title="' + (row.requestable.type || '') + '"></i> '
             : '';

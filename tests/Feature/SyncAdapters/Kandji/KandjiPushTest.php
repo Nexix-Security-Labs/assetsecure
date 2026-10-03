@@ -52,7 +52,7 @@ class KandjiPushTest extends TestCase
         }
 
         $asset = \App\Models\Asset::where('name', 'test-host')->firstOrFail();
-        $asset->asset_tag = 'SNIPE-EDIT-1234';
+        $asset->asset_tag = 'AS-EDIT-1234';
         $asset->save();
 
         // Fresh fake for the push PATCH.
@@ -65,7 +65,7 @@ class KandjiPushTest extends TestCase
         Http::assertSent(function ($request) {
             return $request->method() === 'PATCH'
                 && str_contains($request->url(), '/api/v1/devices/kandji-uuid-1')
-                && $request['asset_tag'] === 'SNIPE-EDIT-1234';
+                && $request['asset_tag'] === 'AS-EDIT-1234';
         });
     }
 

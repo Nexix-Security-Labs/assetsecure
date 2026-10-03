@@ -55,7 +55,7 @@ return [
 ',
     'barcode_settings' => 'تنظیمات بارکد',
     'color_preferences' => 'Color & Theme Settings',
-    'color_settings_help' => 'These settings will be used throughout Snipe-IT.  Users are able to override the link colors by editing their account preferences to meet their individual readability requirements.',
+    'color_settings_help' => 'These settings will be used throughout AssetSecure.  Users are able to override the link colors by editing their account preferences to meet their individual readability requirements.',
     'color_reset' => 'Reset to Default',
     'confirm_purge' => 'تایید پاکسازی',
     'confirm_purge_help' => 'متن "DELETE" را در کادر زیر وارد کنید تا رکوردهای حذف شده خود را پاک کنید. این عمل قابل واگرد نیست و همه موارد و کاربران حذف شده را برای همیشه حذف می کند. (برای حفظ امنیت، ابتدا باید یک نسخه پشتیبان تهیه کنید.)
@@ -111,9 +111,9 @@ return [
     'link_dark_color' => 'Link Color for Dark Mode',
     'nav_link_color' => 'Header Nav Link Color',
     'nav_link_color_help' => 'Select a color for the links in your top level navigation. This color should be high enough contrast against your header color to be easily readable.',
-    'link_dark_color_help' => 'Select a color that will provide enough contrast for people that use Snipe-IT in dark mode.',
+    'link_dark_color_help' => 'Select a color that will provide enough contrast for people that use AssetSecure in dark mode.',
     'link_light_color' => 'Link Color for Light Mode',
-    'link_light_color_help' => 'Select a color that will provide enough contrast for people that use Snipe-IT in light mode.',
+    'link_light_color_help' => 'Select a color that will provide enough contrast for people that use AssetSecure in light mode.',
     'info' => 'این تنظیمات به شما اجازه سفارشی کردن جنبه های خاصی از نصب و راه اندازی خود را می دهد.',
     'label_logo_size' => 'آرم های مربعی بهترین ظاهر را دارند - در سمت راست بالای هر برچسب دارایی نمایش داده می شوند.
 ',
@@ -233,7 +233,7 @@ return [
 ',
     'ldap_login_sync_help' => 'This only tests that LDAP can sync and that your fields are mapped correctly. If your LDAP Authentication query is not correct, users may still not be able to login. YOU MUST SAVE YOUR UPDATED LDAP SETTINGS FIRST.',
     'ldap_manager' => 'Manager Field',
-    'ldap_mapping_help' => 'If your fields are not syncing correctly, try using the <strong>lower-case version</strong> of the field names. Display Name (<code>displayName</code>) in your LDAP/AD should be mapped here as <code>displayname</code>, <code>givenName</code> should be <code>givenname</code>, <code>sAMAccountName</code> as <code>samaccountname</code>, etc. <a href="https://snipe-it.readme.io/docs/ldap-sync-login#field-mapping-for-syncing"><i class="fa fa-external-link"></i></a>',
+    'ldap_mapping_help' => 'If your fields are not syncing correctly, try using the <strong>lower-case version</strong> of the field names. Display Name (<code>displayName</code>) in your LDAP/AD should be mapped here as <code>displayname</code>, <code>givenName</code> should be <code>givenname</code>, <code>sAMAccountName</code> as <code>samaccountname</code>, etc. <a href="https://github.com/Nexix-Security-Labs/assetsecure/wiki/ldap-sync-login#field-mapping-for-syncing"><i class="fa fa-external-link"></i></a>',
     'save_ldap_first' => 'You must save your LDAP settings before testing. Save your settings on this page and then reload to test LDAP login and/or sync.',
     'ldap_server' => 'سرویس دهنده LDAP',
     'ldap_server_help' => 'This should start with ldap:// (for unencrypted) or ldaps:// (for TLS or SSL)',
@@ -254,13 +254,13 @@ return [
     'ldap_pw_sync_help' => 'Uncheck this box if you do not wish to keep LDAP passwords cached as local hashed passwords. Disabling this means that your users may not be able to login if your LDAP server is unreachable for some reason.',
     'ldap_username_field' => 'فیلد نام کاربری',
     'ldap_display_name' => 'Display Name Field',
-    'ldap_display_name_help' => 'If you have a separate displayName field in your LDAP/AD, map it here and it will be used for displaying users within Snipe-IT.',
+    'ldap_display_name_help' => 'If you have a separate displayName field in your LDAP/AD, map it here and it will be used for displaying users within AssetSecure.',
     'ldap_lname_field' => 'Last Name Field',
     'ldap_fname_field' => 'First Name Field',
     'ldap_auth_filter_query' => 'تأیید اعتبار  پرس و جوLDAP',
     'ldap_version' => 'نسخهٔ LDAP',
     'ldap_active_flag' => 'Active Flag',
-    'ldap_activated_flag_help' => 'This value is used to determine whether a synced user can login to Snipe-IT. <strong>It does not affect the ability to check items in or out to them</strong>, and should be the <strong>attribute name</strong> within your AD/LDAP, <strong>not the value</strong>. <br><br>If this field is set to a field name that does not exist in your AD/LDAP, or the value in the AD/LDAP field is set to <code>0</code> or <code>false</code>, <strong>user login will be disabled</strong>. If the value in the AD/LDAP field is set to <code>1</code> or <code>true</code> or <em>any other text</em> means the user can log in. When the field is blank in your AD, we respect the <code>userAccountControl</code> attribute, which usually allows non-suspended users to log in.',
+    'ldap_activated_flag_help' => 'This value is used to determine whether a synced user can login to AssetSecure. <strong>It does not affect the ability to check items in or out to them</strong>, and should be the <strong>attribute name</strong> within your AD/LDAP, <strong>not the value</strong>. <br><br>If this field is set to a field name that does not exist in your AD/LDAP, or the value in the AD/LDAP field is set to <code>0</code> or <code>false</code>, <strong>user login will be disabled</strong>. If the value in the AD/LDAP field is set to <code>1</code> or <code>true</code> or <em>any other text</em> means the user can log in. When the field is blank in your AD, we respect the <code>userAccountControl</code> attribute, which usually allows non-suspended users to log in.',
     'ldap_invert_active_flag' => 'Invert Active Flag',
     'ldap_invert_active_flag_help' => 'If enabled: when the value returned by LDAP Active Flag is <code>0</code> or <code>false</code> the user account will be active.',
     'ldap_emp_num' => 'Employee Number Field',
@@ -277,7 +277,7 @@ return [
     'license' => 'مجوز نرم افزار
 ',
     'load_remote' => 'Load Remote Avatars',
-    'load_remote_help_text' => 'Uncheck this box if your install cannot load scripts from the outside internet. This will prevent Snipe-IT from trying load avatars from Gravatar or other outside sources.',
+    'load_remote_help_text' => 'Uncheck this box if your install cannot load scripts from the outside internet. This will prevent AssetSecure from trying load avatars from Gravatar or other outside sources.',
     'login' => 'تلاش برای ورود
 ',
     'login_attempt' => 'تلاش برای ورود
@@ -311,7 +311,7 @@ return [
 ',
     'login_remote_user_custom_logout_url_text' => 'URL خروج سفارشی
 ',
-    'login_remote_user_custom_logout_url_help' => 'اگر یک URL در اینجا ارائه شود، پس از خروج کاربر از Snipe-IT، کاربران به این URL هدایت می شوند. این برای بستن صحیح جلسات کاربر ارائه دهنده احراز هویت شما مفید است.
+    'login_remote_user_custom_logout_url_help' => 'اگر یک URL در اینجا ارائه شود، پس از خروج کاربر از AssetSecure، کاربران به این URL هدایت می شوند. این برای بستن صحیح جلسات کاربر ارائه دهنده احراز هویت شما مفید است.
 ',
     'login_remote_user_header_name_text' => 'هدر نام کاربری سفارشی
 ',
@@ -417,7 +417,7 @@ return [
     'show_assigned_assets_help' => 'دارایی هایی را که به سایر دارایی ها اختصاص داده شده اند در View User -> Assets، View User -> Info -> Print All Assigned و در Account -> View Assigned Assets نمایش دهید.
 ',
     'show_images_in_email' => 'استفاده از عکس در ایمیل ها',
-    'show_images_in_email_help' => 'اگر نصب Snipe-IT شما پشت VPN یا شبکه بسته است و کاربران خارج از شبکه نمی توانند تصاویر ارائه شده از این نصب را در ایمیل های خود بارگیری کنند، علامت این کادر را بردارید.
+    'show_images_in_email_help' => 'اگر نصب AssetSecure شما پشت VPN یا شبکه بسته است و کاربران خارج از شبکه نمی توانند تصاویر ارائه شده از این نصب را در ایمیل های خود بارگیری کنند، علامت این کادر را بردارید.
 ',
     'site_name' => 'نام سایت',
     'integrations' => 'Integrations',
@@ -438,14 +438,14 @@ return [
     'webhook_test_help' => 'Test whether your :app integration is configured correctly. YOU MUST SAVE YOUR UPDATED :app SETTINGS FIRST.',
     'shortcuts_enabled' => 'Enable Shortcuts',
     'shortcuts_help_text' => '<strong>Windows</strong>: Alt + Access key, <strong>Mac</strong>: Control + Option + Access key',
-    'snipe_version' => 'نسخه Snipe_IT',
+    'snipe_version' => 'نسخه AssetSecure',
     'support_footer' => 'پشتیبانی از پیوندهای پاورقی
 ',
-    'support_footer_help' => 'مشخص کنید چه کسی پیوندهای اطلاعات پشتیبانی Snipe-IT و راهنمای کاربران را ببیند
+    'support_footer_help' => 'مشخص کنید چه کسی پیوندهای اطلاعات پشتیبانی AssetSecure و راهنمای کاربران را ببیند
 ',
     'version_footer' => 'نسخه در پاورقی
 ',
-    'version_footer_help' => 'مشخص کنید چه کسی نسخه و شماره ساخت Snipe-IT را ببیند.
+    'version_footer_help' => 'مشخص کنید چه کسی نسخه و شماره ساخت AssetSecure را ببیند.
 ',
     'system' => 'اطلاعات سیستم',
     'update' => 'به‌ روزرسانی تنظیمات',
@@ -479,8 +479,8 @@ return [
     'inches' => 'اینچ',
     'width_w' => 'عرض',
     'height_h' => 'ارتفاع',
-    'show_url_in_emails' => 'پیوند به Snipe-IT در ایمیل',
-    'show_url_in_emails_help_text' => 'اگر نمیخواهید پیوند به نصب Snipe-IT خود را در زیرپوشهای ایمیل خود پیگیری کنید، این کادر را بردارید. مفید است اگر اکثر کاربران شما هرگز وارد نشده باشند.',
+    'show_url_in_emails' => 'پیوند به AssetSecure در ایمیل',
+    'show_url_in_emails_help_text' => 'اگر نمیخواهید پیوند به نصب AssetSecure خود را در زیرپوشهای ایمیل خود پیگیری کنید، این کادر را بردارید. مفید است اگر اکثر کاربران شما هرگز وارد نشده باشند.',
     'text_pt' => 'بالای صفحه',
     'thumbnail_max_h' => 'حداکثر ریز عکسها',
     'thumbnail_max_h_help' => 'حداکثر ارتفاع در پیکسل هایی که کوچک می شوند ممکن است در نمای لیست نمایش داده شود. حداقل 25، حداکثر 500.',
@@ -556,7 +556,7 @@ return [
 ',
     'barcodes_help_overview' => 'بارکد &amp; تنظیمات QR
 ',
-    'barcodes_help' => 'با این کار سعی می شود بارکدهای کش شده را حذف کنید. این معمولاً فقط در صورتی استفاده می شود که تنظیمات بارکد شما تغییر کرده باشد، یا اگر URL Snipe-IT شما تغییر کرده باشد. در صورت دسترسی بعدی، بارکدها دوباره تولید خواهند شد.
+    'barcodes_help' => 'با این کار سعی می شود بارکدهای کش شده را حذف کنید. این معمولاً فقط در صورتی استفاده می شود که تنظیمات بارکد شما تغییر کرده باشد، یا اگر URL AssetSecure شما تغییر کرده باشد. در صورت دسترسی بعدی، بارکدها دوباره تولید خواهند شد.
 ',
     'barcodes_spinner' => 'تلاش برای حذف فایل ها...
 ',
@@ -641,7 +641,7 @@ return [
     'label2_2d_prefix' => '2D Barcode Prefix',
     'label2_2d_prefix_help' => 'This text will be prepended to the 2D Barcode Target value selected below when the 2D code is scanned. This can be used to prepend an external URL or any other value that you might need.',
     'label2_2d_target' => '2D Barcode Content',
-    'label2_2d_target_help' => 'The data that will be contained in the 2D barcode. This can link to the asset directly in Snipe-IT or can be one of the non-linked field values. If you use the prefix above, it will be prepended to this value.',
+    'label2_2d_target_help' => 'The data that will be contained in the 2D barcode. This can link to the asset directly in AssetSecure or can be one of the non-linked field values. If you use the prefix above, it will be prepended to this value.',
     'select_template' => 'انتخاب قالب',
     'label2_fields' => 'Field Definitions',
     'label2_fields_help' => 'Fields can be added, removed, and reordered in the left column. For each field, multiple options for Label and DataSource can be added, removed, and reordered in the right column. Field changes made here will be reflected immediately in the preview below but must be saved for them to apply to new labels.',
@@ -649,7 +649,7 @@ return [
     'purge_barcodes' => 'Purge Barcodes',
     'help_asterisk_bold' => 'Text entered as <code>**text**</code> will be displayed as bold',
     'help_blank_to_use' => 'Leave blank to use the value from <code>:setting_name</code>',
-    'help_default_will_use' => 'Note that the value of the barcodes must comply with the respective barcode spec in order to be successfully generated. Please see <a href="https://snipe-it.readme.io/docs/barcodes">the documentation <i class="fa fa-external-link"></i></a> for more details. ',
+    'help_default_will_use' => 'Note that the value of the barcodes must comply with the respective barcode spec in order to be successfully generated. Please see <a href="https://github.com/Nexix-Security-Labs/assetsecure/wiki/barcodes">the documentation <i class="fa fa-external-link"></i></a> for more details. ',
     'asset_id' => 'Asset ID',
     'data' => 'Data',
     'default' => 'Default',

@@ -19,7 +19,7 @@ use Illuminate\Support\Facades\Http;
  * inventory nested under an AssetInfo array of category blocks
  * (System, BIOS, Operating System, etc.). /devices returns a coarser
  * summary without hardware info, so /assets is the right choice for a
- * Snipe-IT inventory adapter.
+ * AssetSecure inventory adapter.
  *
  * Pagination follows OData conventions: $top and $skip. VSA emits a
  * NextQueryLink cursor when a result set exceeds 5,000 items. This
@@ -90,7 +90,7 @@ class KaseyaVsa10Client
      * scopes custom fields to entity types via a Contexts array, so
      * we OData-filter to only those whose Contexts include "Device"
      * to keep the mapping UI free of org-only / site-only fields
-     * admins can't map to a per-device Snipe-IT column anyway. The
+     * admins can't map to a per-device AssetSecure column anyway. The
      * ExpirationDate filter drops archived fields.
      *
      * @return iterable<int, array<string, mixed>>

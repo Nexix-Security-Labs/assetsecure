@@ -369,7 +369,7 @@ class BrandingSettingsTest extends TestCase
         // Storage::disk('public')->assertMissing($original_file);
     }
 
-    public function test_snipe_default_avatar_can_be_deleted()
+    public function test_seeded_default_avatar_can_be_deleted()
     {
 
         $setting = Setting::getSettings()->first();

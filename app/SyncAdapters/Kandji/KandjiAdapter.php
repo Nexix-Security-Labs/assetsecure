@@ -13,7 +13,7 @@ use Illuminate\Support\Facades\Log;
 /**
  * Kandji adapter. Pulls device inventory from a Kandji tenant via the
  * Kandji Enterprise API and normalizes it into HostInventoryRecord
- * objects. Also pushes Snipe-IT-authoritative fields back to Kandji
+ * objects. Also pushes AssetSecure-authoritative fields back to Kandji
  * (asset_tag today) when the admin marks the mapping row as 'push'.
  */
 class KandjiAdapter extends SyncAdapter implements PushableAdapter
@@ -156,7 +156,7 @@ class KandjiAdapter extends SyncAdapter implements PushableAdapter
     /**
      * Kandji devices carry a single freeform `notes` field that
      * admins commonly repurpose for composed asset info from
-     * Snipe-IT. When the admin has set a push_notes_template we
+     * AssetSecure. When the admin has set a push_notes_template we
      * render it via composeNotesForPush() and PATCH the notes field
      * alongside any other push-directed fields.
      */
@@ -166,7 +166,7 @@ class KandjiAdapter extends SyncAdapter implements PushableAdapter
     }
 
     /**
-     * Push Snipe-IT-authoritative fields to Kandji. Delegates to the
+     * Push AssetSecure-authoritative fields to Kandji. Delegates to the
      * base template, which runs the prologue guards, splices composed
      * notes, handles the dry-run branch, and writes the success log
      * line. Kandji provides the vendor-shape payload and the vendor

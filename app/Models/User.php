@@ -538,7 +538,6 @@ class User extends SnipeModel implements AuthenticatableContract, AuthorizableCo
      * Parses the user and group permission masks to see if the user
      * is authorized to do the thing
      *
-     * @author A. Gianotto <snipe@snipe.net>
      *
      * @since  [v1.0]
      *
@@ -556,7 +555,6 @@ class User extends SnipeModel implements AuthenticatableContract, AuthorizableCo
     /**
      * Checks if the user is a SuperUser
      *
-     * @author A. Gianotto <snipe@snipe.net>
      *
      * @since  [v1.0]
      *
@@ -597,7 +595,6 @@ class User extends SnipeModel implements AuthenticatableContract, AuthorizableCo
     /**
      * Checks if the user is an admin
      *
-     * @author A. Gianotto <snipe@snipe.net>
      *
      * @since  [v8.1.18]
      *
@@ -640,7 +637,6 @@ class User extends SnipeModel implements AuthenticatableContract, AuthorizableCo
     /**
      * Checks if the user can edit their own profile
      *
-     * @author A. Gianotto <snipe@snipe.net>
      *
      * @since  [v6.3.4]
      */
@@ -658,7 +654,6 @@ class User extends SnipeModel implements AuthenticatableContract, AuthorizableCo
     /**
      * Checks if the user is deletable
      *
-     * @author A. Gianotto <snipe@snipe.net>
      *
      * @since  [v6.3.4]
      *
@@ -698,7 +693,7 @@ class User extends SnipeModel implements AuthenticatableContract, AuthorizableCo
      * user has no assigned assets / accessories / licenses / consumables
      * and isn't managing any users or locations. Split out from
      * isDeletable() so scripts running outside a request context,
-     * Artisan `snipeit:ldap-sync --delete` flow in particular, can share
+     * Artisan `assetsecure:ldap-sync --delete` flow in particular, can share
      * the exact same rule without needing an authenticated Gate user to
      * satisfy the delete-permission check.
      */
@@ -715,7 +710,6 @@ class User extends SnipeModel implements AuthenticatableContract, AuthorizableCo
     /**
      * Establishes the user -> company relationship
      *
-     * @author A. Gianotto <snipe@snipe.net>
      *
      * @since  [v2.0]
      *
@@ -1092,7 +1086,6 @@ class User extends SnipeModel implements AuthenticatableContract, AuthorizableCo
     /**
      * Establishes the user -> department relationship
      *
-     * @author A. Gianotto <snipe@snipe.net>
      *
      * @since  [v4.0]
      *
@@ -1106,7 +1099,6 @@ class User extends SnipeModel implements AuthenticatableContract, AuthorizableCo
     /**
      * Checks activated status
      *
-     * @author A. Gianotto <snipe@snipe.net>
      *
      * @since  [v1.0]
      *
@@ -1120,7 +1112,6 @@ class User extends SnipeModel implements AuthenticatableContract, AuthorizableCo
     /**
      * Returns the full name attribute
      *
-     * @author A. Gianotto <snipe@snipe.net>
      *
      * @since  [v2.0]
      *
@@ -1206,7 +1197,6 @@ class User extends SnipeModel implements AuthenticatableContract, AuthorizableCo
     /**
      * Establishes the user -> assets relationship
      *
-     * @author A. Gianotto <snipe@snipe.net>
      *
      * @since  [v1.0]
      *
@@ -1223,7 +1213,6 @@ class User extends SnipeModel implements AuthenticatableContract, AuthorizableCo
      * This would only be used to return maintenances that this user
      * created.
      *
-     * @author A. Gianotto <snipe@snipe.net>
      *
      * @since  [v4.0]
      *
@@ -1251,7 +1240,6 @@ class User extends SnipeModel implements AuthenticatableContract, AuthorizableCo
     /**
      * Establishes the user -> accessories relationship
      *
-     * @author A. Gianotto <snipe@snipe.net>
      *
      * @since  [v2.0]
      *
@@ -1267,7 +1255,6 @@ class User extends SnipeModel implements AuthenticatableContract, AuthorizableCo
     /**
      * Establishes the user -> consumables relationship
      *
-     * @author A. Gianotto <snipe@snipe.net>
      *
      * @since  [v3.0]
      *
@@ -1281,7 +1268,6 @@ class User extends SnipeModel implements AuthenticatableContract, AuthorizableCo
     /**
      * Establishes the user -> license seats relationship
      *
-     * @author A. Gianotto <snipe@snipe.net>
      *
      * @since  [v1.0]
      *
@@ -1335,7 +1321,6 @@ class User extends SnipeModel implements AuthenticatableContract, AuthorizableCo
     /**
      * Establishes the user -> actionlogs relationship
      *
-     * @author A. Gianotto <snipe@snipe.net>
      *
      * @since  [v1.0]
      *
@@ -1353,7 +1338,6 @@ class User extends SnipeModel implements AuthenticatableContract, AuthorizableCo
      *
      * @todo - this should be removed once we're sure we've switched it to location()
      *
-     * @author A. Gianotto <snipe@snipe.net>
      *
      * @since  [v4.0]
      *
@@ -1367,7 +1351,6 @@ class User extends SnipeModel implements AuthenticatableContract, AuthorizableCo
     /**
      * Establishes the user -> location relationship
      *
-     * @author A. Gianotto <snipe@snipe.net>
      *
      * @since  [v3.0]
      *
@@ -1381,7 +1364,6 @@ class User extends SnipeModel implements AuthenticatableContract, AuthorizableCo
     /**
      * Establishes the user -> manager relationship
      *
-     * @author A. Gianotto <snipe@snipe.net>
      *
      * @since  [v4.0]
      *
@@ -1395,7 +1377,6 @@ class User extends SnipeModel implements AuthenticatableContract, AuthorizableCo
     /**
      * Establishes the user -> managed users relationship
      *
-     * @author A. Gianotto <snipe@snipe.net>
      *
      * @since  [v6.4.1]
      *
@@ -1409,7 +1390,6 @@ class User extends SnipeModel implements AuthenticatableContract, AuthorizableCo
     /**
      * Establishes the user -> managed locations relationship
      *
-     * @author A. Gianotto <snipe@snipe.net>
      *
      * @since  [v4.0]
      *
@@ -1423,7 +1403,6 @@ class User extends SnipeModel implements AuthenticatableContract, AuthorizableCo
     /**
      * Establishes the user -> groups relationship
      *
-     * @author A. Gianotto <snipe@snipe.net>
      *
      * @since  [v1.0]
      *
@@ -1437,7 +1416,6 @@ class User extends SnipeModel implements AuthenticatableContract, AuthorizableCo
     /**
      * Establishes the user -> assets relationship
      *
-     * @author A. Gianotto <snipe@snipe.net>
      *
      * @since  [v4.0]
      *
@@ -1451,7 +1429,6 @@ class User extends SnipeModel implements AuthenticatableContract, AuthorizableCo
     /**
      * Establishes the user -> acceptances relationship
      *
-     * @author A. Gianotto <snipe@snipe.net>
      *
      * @since  [v7.0.7]
      *
@@ -1488,7 +1465,6 @@ class User extends SnipeModel implements AuthenticatableContract, AuthorizableCo
      *
      * @since  [v8.1.16]
      *
-     * @author [Godfrey Martinez] [<gmartinez@grokability.com>]
      */
     public function eulas()
     {
@@ -1505,7 +1481,6 @@ class User extends SnipeModel implements AuthenticatableContract, AuthorizableCo
     /**
      * Establishes the user -> requested assets relationship
      *
-     * @author A. Gianotto <snipe@snipe.net>
      *
      * @since  [v2.0]
      *
@@ -1523,7 +1498,6 @@ class User extends SnipeModel implements AuthenticatableContract, AuthorizableCo
      * - SCIM
      * - CSV import where no password was provided
      *
-     * @author A. Gianotto <snipe@snipe.net>
      *
      * @since  [v6.2.0]
      *
@@ -1544,7 +1518,6 @@ class User extends SnipeModel implements AuthenticatableContract, AuthorizableCo
     /**
      * Query builder scope to return NOT-deleted users
      *
-     * @author A. Gianotto <snipe@snipe.net>
      *
      * @since  [v2.0]
      *
@@ -1559,7 +1532,6 @@ class User extends SnipeModel implements AuthenticatableContract, AuthorizableCo
     /**
      * Query builder scope to return users by email or username
      *
-     * @author A. Gianotto <snipe@snipe.net>
      *
      * @since  [v2.0]
      *
@@ -1578,7 +1550,6 @@ class User extends SnipeModel implements AuthenticatableContract, AuthorizableCo
     /**
      * Generate email from full name
      *
-     * @author A. Gianotto <snipe@snipe.net>
      *
      * @since  [v2.0]
      *
@@ -1671,7 +1642,6 @@ class User extends SnipeModel implements AuthenticatableContract, AuthorizableCo
      * 1 = 2FA optional
      * 2 = 2FA universally required
      *
-     * @author [A. Gianotto] [<snipe@snipe.net>]
      *
      * @since  [v4.0]
      *
@@ -1701,7 +1671,6 @@ class User extends SnipeModel implements AuthenticatableContract, AuthorizableCo
      * 1 = 2FA optional
      * 2 = 2FA universally required
      *
-     * @author [A. Gianotto] [<snipe@snipe.net>]
      *
      * @since  [v4.6.14]
      *
@@ -1726,7 +1695,6 @@ class User extends SnipeModel implements AuthenticatableContract, AuthorizableCo
     /**
      * Get the admin user who created this user
      *
-     * @author [A. Gianotto] [<snipe@snipe.net>]
      *
      * @since  [v6.0.5]
      *
@@ -1740,7 +1708,6 @@ class User extends SnipeModel implements AuthenticatableContract, AuthorizableCo
     /**
      * Decode JSON permissions into array
      *
-     * @author A. Gianotto <snipe@snipe.net>
      *
      * @since  [v1.0]
      *

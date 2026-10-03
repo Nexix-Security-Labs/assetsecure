@@ -15,7 +15,7 @@ use Illuminate\Support\Facades\Artisan;
 
 /**
  * This controller handles all actions related to Manufacturers for
- * the Snipe-IT Asset Management application.
+ * the AssetSecure Asset Management application.
  *
  * @version    v1.0
  */
@@ -25,7 +25,6 @@ class ManufacturersController extends Controller
      * Returns a view that invokes the ajax tables which actually contains
      * the content for the manufacturers listing, which is generated in getDatatable.
      *
-     * @author [A. Gianotto] [<snipe@snipe.net>]
      *
      * @see Api\ManufacturersController::index() method that generates the JSON response
      * @since [v1.0]
@@ -42,7 +41,6 @@ class ManufacturersController extends Controller
      * Returns a view that invokes the ajax tables which actually contains
      * the content for the manufacturers listing, which is generated in getDatatable.
      *
-     * @author [A. Gianotto] [<snipe@snipe.net>]
      *
      * @see Api\ManufacturersController::index() method that generates the JSON response
      * @since [v1.0]
@@ -65,7 +63,6 @@ class ManufacturersController extends Controller
     /**
      * Returns a view that displays a form to create a new manufacturer.
      *
-     * @author [A. Gianotto] [<snipe@snipe.net>]
      *
      * @see ManufacturersController::store()
      * @since [v1.0]
@@ -80,7 +77,6 @@ class ManufacturersController extends Controller
     /**
      * Validates and stores the data for a new manufacturer.
      *
-     * @author [A. Gianotto] [<snipe@snipe.net>]
      *
      * @see ManufacturersController::create()
      * @since [v1.0]
@@ -110,7 +106,6 @@ class ManufacturersController extends Controller
     /**
      * Returns a view that displays a form to edit a manufacturer.
      *
-     * @author [A. Gianotto] [<snipe@snipe.net>]
      *
      * @see ManufacturersController::update()
      *
@@ -128,7 +123,6 @@ class ManufacturersController extends Controller
     /**
      * Validates and stores the updated manufacturer data.
      *
-     * @author [A. Gianotto] [<snipe@snipe.net>]
      *
      * @see ManufacturersController::getEdit()
      *
@@ -167,7 +161,6 @@ class ManufacturersController extends Controller
     /**
      * Deletes a manufacturer.
      *
-     * @author [A. Gianotto] [<snipe@snipe.net>]
      *
      * @param  int  $manufacturerId
      *
@@ -194,7 +187,6 @@ class ManufacturersController extends Controller
      * the content for the manufacturers detail listing, which is generated via API.
      * This data contains a listing of all assets that belong to that manufacturer.
      *
-     * @author [A. Gianotto] [<snipe@snipe.net>]
      *
      * @param  int  $manufacturerId
      *
@@ -210,7 +202,6 @@ class ManufacturersController extends Controller
     /**
      * Restore a given Manufacturer (mark as un-deleted)
      *
-     * @author [A. Gianotto] [<snipe@snipe.net>]
      *
      * @since [v4.1.15]
      *

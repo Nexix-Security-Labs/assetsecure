@@ -72,7 +72,7 @@ class AdjustAccessoryQuantityApiTest extends TestCase
 
     public function test_note_is_required()
     {
-        // Snipe-IT convention: FormRequest validation errors on API
+        // AssetSecure convention: FormRequest validation errors on API
         // endpoints return 200 with a status:error body via
         // formatStandardApiResponse (Exceptions\Handler shapes this
         // globally). Below-in-use is different — that one is a

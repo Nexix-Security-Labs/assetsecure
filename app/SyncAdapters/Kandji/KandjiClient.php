@@ -61,7 +61,7 @@ class KandjiClient
     /**
      * List every Blueprint in the Kandji tenant. Used by the
      * adapter's fetchGroups() so admins can map Blueprints to
-     * Snipe-IT companies. Endpoint returns a paginated list. Walk
+     * AssetSecure companies. Endpoint returns a paginated list. Walk
      * all pages up to the vendor cap.
      *
      * @return array<int, array<string, mixed>>

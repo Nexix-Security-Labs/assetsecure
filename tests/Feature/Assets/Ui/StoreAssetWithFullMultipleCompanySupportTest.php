@@ -70,9 +70,6 @@ class StoreAssetWithFullMultipleCompanySupportTest extends TestCase
         $this->assertEquals($company->id, $asset->company_id, 'Asset should be assigned to the submitted company, not null.');
     }
 
-    /**
-     * @link https://github.com/grokability/snipe-it/issues/18798
-     */
     public function test_allows_creating_asset_with_scoped_location()
     {
         $this->settings->enableScopedLocationsWithFullMultipleCompanySupport();

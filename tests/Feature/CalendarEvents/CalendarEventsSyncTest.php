@@ -175,7 +175,7 @@ class CalendarEventsSyncTest extends TestCase
             ->where('id', $maintenance->id)
             ->update(['start_date' => $driftedStart]);
 
-        $this->artisan('snipeit:reconcile-calendar-events')
+        $this->artisan('assetsecure:reconcile-calendar-events')
             ->assertSuccessful();
 
         $event = CalendarEvent::where('source_type', Maintenance::class)
@@ -257,7 +257,7 @@ class CalendarEventsSyncTest extends TestCase
             'source_id' => $maintenance->id,
         ]);
 
-        $this->artisan('snipeit:reconcile-calendar-events')
+        $this->artisan('assetsecure:reconcile-calendar-events')
             ->assertSuccessful();
 
         $this->assertDatabaseMissing('calendar_events', [

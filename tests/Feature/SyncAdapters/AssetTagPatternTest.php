@@ -102,7 +102,7 @@ class AssetTagPatternTest extends TestCase
             hardwareModel: 'MacBook Pro',
         ));
 
-        // With no pattern and no Snipe-IT autoincrement setting active
+        // With no pattern and no AssetSecure autoincrement setting active
         // in this test, the fallback synthetic tag ({source}-{sourceId})
         // wins.
         $this->assertDatabaseHas('assets', [

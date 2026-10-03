@@ -16,7 +16,7 @@ class CleanUnreferencedCustomFields extends Command
      *
      * @var string
      */
-    protected $signature = 'snipeit:clean-custom-fields
+    protected $signature = 'assetsecure:clean-custom-fields
     {--force : Run immediately without requiring confirmation}';
 
     /**

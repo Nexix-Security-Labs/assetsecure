@@ -28,7 +28,7 @@ use Illuminate\Support\Facades\Storage;
  *     Returns raw PNG bytes.
  *
  * Storage: images land under public/uploads/models/ via the public
- * disk (Snipe-IT aliases the public disk to local_public which
+ * disk (AssetSecure aliases the public disk to local_public which
  * roots at public/uploads/, so this is the same location where
  * admin-uploaded model images already live and where
  * AssetModel::getImageUrl reads from). Filenames are keyed by a

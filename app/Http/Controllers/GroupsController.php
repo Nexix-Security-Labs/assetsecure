@@ -12,7 +12,7 @@ use Illuminate\Http\Request;
 
 /**
  * This controller handles all actions related to User Groups for
- * the Snipe-IT Asset Management application.
+ * the AssetSecure Asset Management application.
  *
  * @version    v1.0
  */
@@ -22,7 +22,6 @@ class GroupsController extends Controller
      * Returns a view that invokes the ajax tables which actually contains
      * the content for the user group listing, which is generated in getDatatable.
      *
-     * @author [A. Gianotto] [<snipe@snipe.net]
      *
      * @see GroupsController::getDatatable() method that generates the JSON response
      * @since [v1.0]
@@ -35,7 +34,6 @@ class GroupsController extends Controller
     /**
      * Returns a view that displays a form to create a new User Group.
      *
-     * @author [A. Gianotto] [<snipe@snipe.net]
      *
      * @see GroupsController::postCreate()
      * @since [v1.0]
@@ -70,7 +68,6 @@ class GroupsController extends Controller
     /**
      * Validates and stores the new User Group data.
      *
-     * @author [A. Gianotto] [<snipe@snipe.net]
      *
      * @see GroupsController::getCreate()
      * @since [v1.0]
@@ -105,7 +102,6 @@ class GroupsController extends Controller
     /**
      * Returns a view that presents a form to edit a User Group.
      *
-     * @author [A. Gianotto] [<snipe@snipe.net]
      *
      * @see GroupsController::postEdit()
      *
@@ -155,7 +151,6 @@ class GroupsController extends Controller
     /**
      * Validates and stores the updated User Group data.
      *
-     * @author [A. Gianotto] [<snipe@snipe.net]
      *
      * @see GroupsController::getEdit()
      *
@@ -197,7 +192,6 @@ class GroupsController extends Controller
     /**
      * Validates and deletes the User Group.
      *
-     * @author [A. Gianotto] [<snipe@snipe.net]
      *
      * @see GroupsController::getEdit()
      *
@@ -229,7 +223,6 @@ class GroupsController extends Controller
      * Returns a view that invokes the ajax tables which actually contains
      * the content for the group detail page.
      *
-     * @author [A. Gianotto] [<snipe@snipe.net>]
      *
      * @param  $id
      *

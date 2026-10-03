@@ -21,7 +21,7 @@ trait Requestable
      * history around so an admin can still see who was asking for it,
      * and a subsequent restore keeps the requests intact.
      *
-     * The scheduled `snipeit:purge` command runs raw query-builder
+     * The scheduled `assetsecure:purge` command runs raw query-builder
      * DELETEs against the models table, which bypasses Eloquent events,
      * so it does its own explicit cascade against `checkout_requests`
      * (see Purge::$childTables). This trait hook covers the direct

@@ -15,7 +15,7 @@ use Illuminate\Support\Facades\Log;
  * from the Google Admin SDK Directory API and normalizes it into
  * HostInventoryRecord objects. Also pushes annotatedAssetId and
  * composed notes back to Google Admin so ChromeOS devices stay
- * aligned with Snipe-IT ownership.
+ * aligned with AssetSecure ownership.
  *
  * Auth model: service account with domain-wide delegation. The admin
  * creates a service account in Google Cloud Console, downloads a JSON
@@ -25,10 +25,10 @@ use Illuminate\Support\Facades\Log;
  * on every call. The impersonation email must belong to a super
  * admin (or a delegated admin with Chrome device permissions).
  *
- * Group scoping: Google organizational units (OUs) map to Snipe-IT
+ * Group scoping: Google organizational units (OUs) map to AssetSecure
  * companies. Every Chrome device carries an `orgUnitPath` (e.g.
  * "/Sales/USA" or "/Engineering"), and the adapter uses that path as
- * the vendorGroupId so admins can route devices to Snipe-IT companies
+ * the vendorGroupId so admins can route devices to AssetSecure companies
  * by OU. The vendor group refresh endpoint calls Admin SDK's
  * /customer/{cid}/orgunits and lists every OU under the root.
  *
@@ -68,7 +68,7 @@ class GoogleWorkspaceAdapter extends SyncAdapter implements PushableAdapter
                 'key' => 'service_account_email',
                 'label' => trans('admin/settings/sync_adapters.google_workspace_label_service_account_email'),
                 'help' => trans('admin/settings/sync_adapters.google_workspace_service_account_email_help'),
-                'placeholder' => 'snipeit-sync@your-project.iam.gserviceaccount.com',
+                'placeholder' => 'assetsecure-sync@your-project.iam.gserviceaccount.com',
             ],
             [
                 'key' => 'private_key',
@@ -167,7 +167,7 @@ class GoogleWorkspaceAdapter extends SyncAdapter implements PushableAdapter
      *
      * hostname preference order: annotatedAssetId (admin-assigned
      * label if any), then the marketing model plus a serial suffix so
-     * every device gets a distinct-looking hostname in Snipe-IT even
+     * every device gets a distinct-looking hostname in AssetSecure even
      * when the admin has not typed an asset ID on the vendor side.
      * Never falls back to just the serial because that reads as
      * duplicate serial data in the UI.
@@ -285,7 +285,7 @@ class GoogleWorkspaceAdapter extends SyncAdapter implements PushableAdapter
     }
 
     /**
-     * Push Snipe-IT-owned fields back to Google Admin. Today the
+     * Push AssetSecure-owned fields back to Google Admin. Today the
      * writable set is: annotatedAssetId (from asset_tag when mapped
      * push), annotatedLocation (from asset location if mapped push),
      * annotatedUser (from assigned user email if mapped push), and
@@ -332,7 +332,7 @@ class GoogleWorkspaceAdapter extends SyncAdapter implements PushableAdapter
     }
 
     /**
-     * Map push-directed Snipe-IT fields onto Google Admin write keys.
+     * Map push-directed AssetSecure fields onto Google Admin write keys.
      * Only the fields the admin has flagged push (or both) in the
      * direction UI appear here. This is the base payload before
      * composed notes are spliced in.
@@ -361,14 +361,14 @@ class GoogleWorkspaceAdapter extends SyncAdapter implements PushableAdapter
     }
 
     /**
-     * Snipe-IT source field -> Google Admin write key. Fields not in
+     * AssetSecure source field -> Google Admin write key. Fields not in
      * this map do not have a Google-side counterpart and are skipped
      * on push even if the admin flagged them push-direction.
      *
      * `google_workspace_annotated_user` is one of the vendor-specific
      * extras exposed via extraFields(). Admins flag direction=push on
      * it in the mapping UI so Google's annotatedUser field mirrors
-     * whoever the asset is currently checked out to on the Snipe-IT
+     * whoever the asset is currently checked out to on the AssetSecure
      * side. Value resolution happens in assetValueForSourceField()
      * below, which reads asset->assignedTo->email at push time.
      */
@@ -382,7 +382,7 @@ class GoogleWorkspaceAdapter extends SyncAdapter implements PushableAdapter
     }
 
     /**
-     * Resolve Snipe-IT source-field values for push. Standard fields
+     * Resolve AssetSecure source-field values for push. Standard fields
      * (asset_tag, hostname, serial, etc.) fall through to the parent
      * implementation. The vendor-specific extras this adapter can
      * push get resolved here.

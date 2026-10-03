@@ -11,7 +11,7 @@ return new class extends Migration
     public function up(): void
     {
         //
-        //Artisan::call('snipeit:clean-checkout-acceptances');
+        //Artisan::call('assetsecure:clean-checkout-acceptances');
 	// Commenting this out to prevent crashing due to a missing deleted_at clause
     }
 

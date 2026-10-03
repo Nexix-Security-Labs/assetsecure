@@ -17,7 +17,7 @@ use Tests\TestCase;
 
 /**
  * Coverage for the sync-driven user assignment feature. Adapters
- * with a user_match_strategy configured look up Snipe-IT users from
+ * with a user_match_strategy configured look up AssetSecure users from
  * the vendor's assigned-user field and check the asset out to the
  * match. Missing or unresolved users get skipped and logged.
  * Existing assignments are never cleared by a payload that omits the

@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\DB;
  * fired CheckoutableCheckedOut without a $quantity argument. Bulk
  * checkouts wrote N accessories_checkout pivot rows correctly but
  * one action_logs row with quantity=1, so history tables under-
- * reported checkout qty on every bulk event. Snipe-IT installs
+ * reported checkout qty on every bulk event. AssetSecure installs
  * upgraded from a version predating those commits carry the
  * mis-recorded rows and inventory reconciliations run off history
  * come out short.

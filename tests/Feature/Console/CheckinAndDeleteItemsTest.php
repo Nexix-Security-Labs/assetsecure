@@ -26,7 +26,7 @@ class CheckinAndDeleteItemsTest extends TestCase
 
         $this->assertNotNull($asset->assigned_to);
 
-        $this->artisan('snipeit:checkin-delete-all', ['--type' => 'assets', '--force' => true])
+        $this->artisan('assetsecure:checkin-delete-all', ['--type' => 'assets', '--force' => true])
             ->assertExitCode(0);
 
         $this->assertSoftDeleted($asset);
@@ -39,7 +39,7 @@ class CheckinAndDeleteItemsTest extends TestCase
 
         $this->assertNull($asset->assigned_to);
 
-        $this->artisan('snipeit:checkin-delete-all', ['--type' => 'assets', '--force' => true])
+        $this->artisan('assetsecure:checkin-delete-all', ['--type' => 'assets', '--force' => true])
             ->assertExitCode(0);
 
         $this->assertSoftDeleted($asset);
@@ -50,7 +50,7 @@ class CheckinAndDeleteItemsTest extends TestCase
         $user = User::factory()->create();
         $asset = Asset::factory()->assignedToUser($user)->create();
 
-        $this->artisan('snipeit:checkin-delete-all', ['--type' => 'assets', '--force' => true, '--no-notifications' => true])
+        $this->artisan('assetsecure:checkin-delete-all', ['--type' => 'assets', '--force' => true, '--no-notifications' => true])
             ->assertExitCode(0);
 
         $this->assertHasTheseActionLogs($asset, ['create', 'checkin from', 'delete']);
@@ -63,7 +63,7 @@ class CheckinAndDeleteItemsTest extends TestCase
         User::factory()->superuser()->create();
         $asset = Asset::factory()->assignedToUser()->create();
 
-        $this->artisan('snipeit:checkin-delete-all', ['--type' => 'assets', '--force' => true])
+        $this->artisan('assetsecure:checkin-delete-all', ['--type' => 'assets', '--force' => true])
             ->assertExitCode(0);
 
         Event::assertDispatched(CheckoutableCheckedIn::class, function ($event) use ($asset) {
@@ -78,7 +78,7 @@ class CheckinAndDeleteItemsTest extends TestCase
         $admin = User::factory()->superuser()->create();
         $asset = Asset::factory()->assignedToUser()->create();
 
-        $this->artisan('snipeit:checkin-delete-all', ['--type' => 'assets', '--force' => true, '--admin-id' => $admin->id])
+        $this->artisan('assetsecure:checkin-delete-all', ['--type' => 'assets', '--force' => true, '--admin-id' => $admin->id])
             ->assertExitCode(0);
 
         Event::assertDispatched(CheckoutableCheckedIn::class, function ($event) use ($admin) {
@@ -88,7 +88,7 @@ class CheckinAndDeleteItemsTest extends TestCase
 
     public function test_invalid_admin_id_returns_exit_code_1()
     {
-        $this->artisan('snipeit:checkin-delete-all', ['--type' => 'assets', '--force' => true, '--admin-id' => 999999])
+        $this->artisan('assetsecure:checkin-delete-all', ['--type' => 'assets', '--force' => true, '--admin-id' => 999999])
             ->assertExitCode(1);
     }
 
@@ -98,7 +98,7 @@ class CheckinAndDeleteItemsTest extends TestCase
 
         $asset = Asset::factory()->assignedToUser()->create();
 
-        $this->artisan('snipeit:checkin-delete-all', ['--type' => 'assets', '--force' => true, '--no-notifications' => true])
+        $this->artisan('assetsecure:checkin-delete-all', ['--type' => 'assets', '--force' => true, '--no-notifications' => true])
             ->assertExitCode(0);
 
         Event::assertNotDispatched(CheckoutableCheckedIn::class);
@@ -111,7 +111,7 @@ class CheckinAndDeleteItemsTest extends TestCase
         $assetA = Asset::factory()->for($companyA)->assignedToUser()->create();
         $assetB = Asset::factory()->for($companyB)->assignedToUser()->create();
 
-        $this->artisan('snipeit:checkin-delete-all', [
+        $this->artisan('assetsecure:checkin-delete-all', [
             '--type' => 'assets',
             '--company-id' => $companyA->id,
             '--force' => true,
@@ -128,7 +128,7 @@ class CheckinAndDeleteItemsTest extends TestCase
         $asset = Asset::factory()->assignedToUser($user)->create();
         $seat = LicenseSeat::factory()->create(['asset_id' => $asset->id, 'assigned_to' => $user->id]);
 
-        $this->artisan('snipeit:checkin-delete-all', ['--type' => 'assets', '--force' => true, '--no-notifications' => true])
+        $this->artisan('assetsecure:checkin-delete-all', ['--type' => 'assets', '--force' => true, '--no-notifications' => true])
             ->assertExitCode(0);
 
         $this->assertNull($seat->fresh()->assigned_to);
@@ -145,7 +145,7 @@ class CheckinAndDeleteItemsTest extends TestCase
 
         $this->assertNotNull($seat->assigned_to);
 
-        $this->artisan('snipeit:checkin-delete-all', ['--type' => 'licenses', '--force' => true, '--no-notifications' => true])
+        $this->artisan('assetsecure:checkin-delete-all', ['--type' => 'licenses', '--force' => true, '--no-notifications' => true])
             ->assertExitCode(0);
 
         $this->assertSoftDeleted($license);
@@ -157,7 +157,7 @@ class CheckinAndDeleteItemsTest extends TestCase
     {
         $license = License::factory()->create();
 
-        $this->artisan('snipeit:checkin-delete-all', ['--type' => 'licenses', '--force' => true, '--no-notifications' => true])
+        $this->artisan('assetsecure:checkin-delete-all', ['--type' => 'licenses', '--force' => true, '--no-notifications' => true])
             ->assertExitCode(0);
 
         $this->assertSoftDeleted($license);
@@ -170,7 +170,7 @@ class CheckinAndDeleteItemsTest extends TestCase
         $licenseA = License::factory()->for($companyA)->create();
         $licenseB = License::factory()->for($companyB)->create();
 
-        $this->artisan('snipeit:checkin-delete-all', [
+        $this->artisan('assetsecure:checkin-delete-all', [
             '--type' => 'licenses',
             '--company-id' => $companyA->id,
             '--force' => true,
@@ -191,7 +191,7 @@ class CheckinAndDeleteItemsTest extends TestCase
 
         $this->assertEquals(1, $accessory->checkouts->count());
 
-        $this->artisan('snipeit:checkin-delete-all', ['--type' => 'accessories', '--force' => true, '--no-notifications' => true])
+        $this->artisan('assetsecure:checkin-delete-all', ['--type' => 'accessories', '--force' => true, '--no-notifications' => true])
             ->assertExitCode(0);
 
         $this->assertSoftDeleted($accessory);
@@ -205,7 +205,7 @@ class CheckinAndDeleteItemsTest extends TestCase
         $accessoryA = Accessory::factory()->for($companyA)->checkedOutToUser()->create();
         $accessoryB = Accessory::factory()->for($companyB)->checkedOutToUser()->create();
 
-        $this->artisan('snipeit:checkin-delete-all', [
+        $this->artisan('assetsecure:checkin-delete-all', [
             '--type' => 'accessories',
             '--company-id' => $companyA->id,
             '--force' => true,
@@ -226,7 +226,7 @@ class CheckinAndDeleteItemsTest extends TestCase
 
         $this->assertDatabaseHas('components_assets', ['component_id' => $component->id]);
 
-        $this->artisan('snipeit:checkin-delete-all', ['--type' => 'components', '--force' => true, '--no-notifications' => true])
+        $this->artisan('assetsecure:checkin-delete-all', ['--type' => 'components', '--force' => true, '--no-notifications' => true])
             ->assertExitCode(0);
 
         $this->assertSoftDeleted($component);
@@ -240,7 +240,7 @@ class CheckinAndDeleteItemsTest extends TestCase
         $componentA = Component::factory()->for($companyA)->checkedOutToAsset()->create();
         $componentB = Component::factory()->for($companyB)->checkedOutToAsset()->create();
 
-        $this->artisan('snipeit:checkin-delete-all', [
+        $this->artisan('assetsecure:checkin-delete-all', [
             '--type' => 'components',
             '--company-id' => $companyA->id,
             '--force' => true,
@@ -260,7 +260,7 @@ class CheckinAndDeleteItemsTest extends TestCase
         $asset = Asset::factory()->assignedToUser()->create();
         $accessory = Accessory::factory()->checkedOutToUser()->create();
 
-        $this->artisan('snipeit:checkin-delete-all', ['--type' => 'assets', '--force' => true, '--no-notifications' => true])
+        $this->artisan('assetsecure:checkin-delete-all', ['--type' => 'assets', '--force' => true, '--no-notifications' => true])
             ->assertExitCode(0);
 
         $this->assertSoftDeleted($asset);
@@ -269,7 +269,7 @@ class CheckinAndDeleteItemsTest extends TestCase
 
     public function test_invalid_type_returns_exit_code_1()
     {
-        $this->artisan('snipeit:checkin-delete-all', ['--type' => 'invalid', '--force' => true])
+        $this->artisan('assetsecure:checkin-delete-all', ['--type' => 'invalid', '--force' => true])
             ->assertExitCode(1);
     }
 
@@ -277,7 +277,7 @@ class CheckinAndDeleteItemsTest extends TestCase
     {
         Asset::factory()->create();
 
-        $this->artisan('snipeit:checkin-delete-all', ['--type' => 'assets'])
+        $this->artisan('assetsecure:checkin-delete-all', ['--type' => 'assets'])
             ->expectsConfirmation('This will check in and soft-delete all [assets] for [all companies]. Continue?', 'no')
             ->assertExitCode(0);
 
@@ -288,7 +288,7 @@ class CheckinAndDeleteItemsTest extends TestCase
     {
         $asset = Asset::factory()->create();
 
-        $this->artisan('snipeit:checkin-delete-all', ['--type' => 'assets', '--force' => true, '--no-notifications' => true])
+        $this->artisan('assetsecure:checkin-delete-all', ['--type' => 'assets', '--force' => true, '--no-notifications' => true])
             ->assertExitCode(0);
 
         $this->assertSoftDeleted($asset);
@@ -299,7 +299,7 @@ class CheckinAndDeleteItemsTest extends TestCase
         $user = User::factory()->create();
         $asset = Asset::factory()->assignedToUser($user)->create();
 
-        $this->artisan('snipeit:checkin-delete-all', ['--type' => 'assets', '--dry-run' => true])
+        $this->artisan('assetsecure:checkin-delete-all', ['--type' => 'assets', '--dry-run' => true])
             ->assertExitCode(0);
 
         $this->assertNotSoftDeleted($asset);
@@ -311,7 +311,7 @@ class CheckinAndDeleteItemsTest extends TestCase
         Asset::factory()->create();
 
         // Would hang waiting for input if confirmation were shown
-        $this->artisan('snipeit:checkin-delete-all', ['--type' => 'assets', '--dry-run' => true])
+        $this->artisan('assetsecure:checkin-delete-all', ['--type' => 'assets', '--dry-run' => true])
             ->assertExitCode(0);
     }
 
@@ -319,7 +319,7 @@ class CheckinAndDeleteItemsTest extends TestCase
     {
         $asset = Asset::factory()->assignedToUser()->create();
 
-        $this->artisan('snipeit:checkin-delete-all', ['--type' => 'assets', '--dry-run' => true])
+        $this->artisan('assetsecure:checkin-delete-all', ['--type' => 'assets', '--dry-run' => true])
             ->expectsOutputToContain('DRY RUN')
             ->expectsOutputToContain('Would check in asset')
             ->expectsOutputToContain('Would delete asset')
@@ -331,7 +331,7 @@ class CheckinAndDeleteItemsTest extends TestCase
     {
         $asset = Asset::factory()->assignedToUser()->create();
 
-        $this->artisan('snipeit:checkin-delete-all', [
+        $this->artisan('assetsecure:checkin-delete-all', [
             '--type' => 'assets',
             '--force' => true,
             '--no-notifications' => true,

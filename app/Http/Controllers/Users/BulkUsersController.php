@@ -34,7 +34,6 @@ class BulkUsersController extends Controller
     /**
      * Returns a view that confirms the user's a bulk action will be applied to.
      *
-     * @author [A. Gianotto] [<snipe@snipe.net>]
      *
      * @since [v1.7]
      *
@@ -147,7 +146,6 @@ class BulkUsersController extends Controller
     /**
      * Save bulk-edited users
      *
-     * @author [A. Gianotto] [<snipe@snipe.net>]
      *
      * @since [v1.0]
      *
@@ -390,7 +388,6 @@ class BulkUsersController extends Controller
     /**
      * Soft-delete bulk users
      *
-     * @author [A. Gianotto] [<snipe@snipe.net>]
      *
      * @since [v1.0]
      *
@@ -568,7 +565,6 @@ class BulkUsersController extends Controller
     /**
      * Save bulk-edited users
      *
-     * @author [A. Gianotto] [<snipe@snipe.net>]
      *
      * @since [v1.0]
      *

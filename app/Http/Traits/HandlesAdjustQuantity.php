@@ -106,7 +106,7 @@ trait HandlesAdjustQuantity
 
     /**
      * Full API controller flow. Runs the shared work and wraps the
-     * outcome in the standard Snipe-IT JSON envelope. 422 on validation
+     * outcome in the standard AssetSecure JSON envelope. 422 on validation
      * / floor errors, 200 with the refreshed model on success.
      */
     protected function adjustQuantityAsJson(AdjustQuantityRequest $request, Model $model): JsonResponse
@@ -177,7 +177,7 @@ trait HandlesAdjustQuantity
         // on. A blank order_number is a distinct transaction each time
         // (own timestamp, supplier, cost, currency), not a bucket to
         // pool anonymous acquisitions into. purchase_date is part of
-        // the dedup key because Snipe-IT has no partial-receipt concept,
+        // the dedup key because AssetSecure has no partial-receipt concept,
         // every Order is a completed receipt-in-hand, so "same
         // order_number on a different receipt date" is a distinct
         // event, not a staggered delivery of one order. created_by is

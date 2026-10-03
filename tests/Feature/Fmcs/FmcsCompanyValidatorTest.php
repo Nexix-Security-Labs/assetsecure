@@ -11,7 +11,7 @@ use Tests\TestCase;
  * Regression coverage for GitHub issue #19192, part 1 of 4.
  *
  * Exercises the fmcs_company validator in isolation across the settings
- * and actor context matrix. Per Snipe's FMCS adversarial-tests memory,
+ * and actor context matrix. Per the FMCS adversarial-test notes,
  * cover strict and floater and non-FMCS with superuser and non-superuser
  * actors, plus the CLI (no-auth) posture and the pseudo-company carve-out
  * for uncompanied actors in strict mode.

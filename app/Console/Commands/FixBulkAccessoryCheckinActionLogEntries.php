@@ -14,7 +14,7 @@ class FixBulkAccessoryCheckinActionLogEntries extends Command
      *
      * @var string
      */
-    protected $signature = 'snipeit:fix-bulk-accessory-action-log-entries {--dry-run : Run the sync process but don\'t update the database} {--skip-backup : Skip pre-execution backup}';
+    protected $signature = 'assetsecure:fix-bulk-accessory-action-log-entries {--dry-run : Run the sync process but don\'t update the database} {--skip-backup : Skip pre-execution backup}';
 
     /**
      * The console command description.
@@ -75,7 +75,7 @@ class FixBulkAccessoryCheckinActionLogEntries extends Command
 
         if (! $this->dryrun && ! $this->skipBackup) {
             $this->info('Backing up the database before making changes...');
-            $this->call('snipeit:backup');
+            $this->call('assetsecure:backup');
         }
 
         if ($this->dryrun) {

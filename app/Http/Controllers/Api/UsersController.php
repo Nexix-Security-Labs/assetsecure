@@ -37,7 +37,6 @@ class UsersController extends Controller
     /**
      * Display a listing of the resource.
      *
-     * @author [A. Gianotto] [<snipe@snipe.net>]
      *
      * @since [v4.0]
      */
@@ -388,7 +387,6 @@ class UsersController extends Controller
     /**
      * Gets a paginated collection for the select2 menus
      *
-     * @author [A. Gianotto] [<snipe@snipe.net>]
      *
      * @since [v4.0.16]
      * @see SelectlistTransformer
@@ -419,7 +417,6 @@ class UsersController extends Controller
         // Superusers MUST bypass this filter — they manage across companies and need to see every
         // user on checkout dropdowns. Scoping superusers to the item's company breaks the umbrella-
         // corp / service-provider workflow where one admin checks items out to users in any sub-company.
-        // See: https://github.com/snipe/snipe-it/issues/ (v8.6.3 regression report)
         if ((Setting::getSettings()->full_multiple_companies_support == '1')
             && $request->filled('companyId')
             && ! auth()->user()->isSuperUser()) {
@@ -467,7 +464,6 @@ class UsersController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @author [A. Gianotto] [<snipe@snipe.net>]
      *
      * @since [v4.0]
      *
@@ -577,7 +573,6 @@ class UsersController extends Controller
     /**
      * Display the specified resource.
      *
-     * @author [A. Gianotto] [<snipe@snipe.net>]
      *
      * @param  int  $id
      */
@@ -598,7 +593,6 @@ class UsersController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @author [A. Gianotto] [<snipe@snipe.net>]
      *
      * @since [v4.0]
      *
@@ -614,7 +608,7 @@ class UsersController extends Controller
         /**
          * This is a janky hack to prevent people from changing admin demo user data on the public demo.
          * The $ids 1 and 2 are special since they are seeded as superadmins in the demo seeder.
-         *  Thanks, jerks. You are why we can't have nice things. - snipe
+         *  Thanks, jerks. You are why we can't have nice things.
          */
         if ((($user->id == 1) || ($user->id == 2)) && (config('app.lock_passwords'))) {
             return response()->json(Helper::formatStandardApiResponse('error', null, 'Permission denied. You cannot update user information via API on the demo.'));
@@ -762,7 +756,6 @@ class UsersController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @author [A. Gianotto] [<snipe@snipe.net>]
      *
      * @since [v4.0]
      *
@@ -807,7 +800,6 @@ class UsersController extends Controller
     /**
      * Return JSON containing a list of assets assigned to a user.
      *
-     * @author [A. Gianotto] [<snipe@snipe.net>]
      *
      * @since [v3.0]
      *
@@ -882,7 +874,6 @@ class UsersController extends Controller
      * Return JSON containing a paginated list of consumable checkouts
      * assigned to a user. One row per consumables_users pivot entry.
      *
-     * @author [A. Gianotto] [<snipe@snipe.net>]
      *
      * @since [v3.0]
      */
@@ -927,7 +918,6 @@ class UsersController extends Controller
      * Return JSON containing a paginated list of accessory checkouts
      * assigned to a user. One row per accessories_checkout pivot entry.
      *
-     * @author [A. Gianotto] [<snipe@snipe.net>]
      *
      * @since [v4.6.14]
      */
@@ -972,7 +962,6 @@ class UsersController extends Controller
      * Return JSON containing a paginated list of license seat
      * assignments for a user. One row per license_seats pivot entry.
      *
-     * @author [N. Mathar] [<snipe@snipe.net>]
      *
      * @since [v5.0]
      */
@@ -1039,7 +1028,6 @@ class UsersController extends Controller
      *
      *@since [v8.1.16]
      *
-     * @author [Godfrey Martinez] [<gmartinez@grokability.com>]
      */
     public function eulas(Request $request, User $user, ActionlogsTransformer $transformer)
     {
@@ -1094,7 +1082,6 @@ class UsersController extends Controller
     /**
      * Run the LDAP sync command to import users from LDAP via API.
      *
-     * @author A. Gianotto <snipe@snipe.net>
      *
      * @since 8.2.2
      *
@@ -1111,7 +1098,7 @@ class UsersController extends Controller
         }
         // Call Artisan LDAP import command.
 
-        Artisan::call('snipeit:ldap-sync', ['--location_id' => $request->input('location_id'), '--json_summary' => true]);
+        Artisan::call('assetsecure:ldap-sync', ['--location_id' => $request->input('location_id'), '--json_summary' => true]);
 
         // Collect and parse JSON summary.
         $ldap_results_json = Artisan::output();

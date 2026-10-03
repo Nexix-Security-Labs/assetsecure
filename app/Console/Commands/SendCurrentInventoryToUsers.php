@@ -15,7 +15,7 @@ class SendCurrentInventoryToUsers extends Command
      *
      * @var string
      */
-    protected $signature = 'snipeit:user-inventory';
+    protected $signature = 'assetsecure:user-inventory';
 
     /**
      * The console command description.

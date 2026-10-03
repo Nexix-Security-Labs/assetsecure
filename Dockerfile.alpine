@@ -62,14 +62,14 @@ RUN chown -R apache:apache /var/www/html
 
 RUN \
 	rm -r "/var/www/html/storage/private_uploads" \
-	&& mkdir -p "/var/lib/snipeit/data/private_uploads" && ln -fs "/var/lib/snipeit/data/private_uploads" "/var/www/html/storage/private_uploads" \
+	&& mkdir -p "/var/lib/assetsecure/data/private_uploads" && ln -fs "/var/lib/assetsecure/data/private_uploads" "/var/www/html/storage/private_uploads" \
     && rm -rf "/var/www/html/public/uploads" \
-    && mkdir -p "/var/lib/snipeit/data/uploads" && ln -fs "/var/lib/snipeit/data/uploads" "/var/www/html/public/uploads" \
-    && mkdir -p "/var/lib/snipeit/dumps" && rm -r "/var/www/html/storage/app/backups" && ln -fs "/var/lib/snipeit/dumps" "/var/www/html/storage/app/backups" \
-    && mkdir -p "/var/lib/snipeit/keys" && ln -fs "/var/lib/snipeit/keys/oauth-private.key" "/var/www/html/storage/oauth-private.key" \
-    && ln -fs "/var/lib/snipeit/keys/oauth-public.key" "/var/www/html/storage/oauth-public.key" \
+    && mkdir -p "/var/lib/assetsecure/data/uploads" && ln -fs "/var/lib/assetsecure/data/uploads" "/var/www/html/public/uploads" \
+    && mkdir -p "/var/lib/assetsecure/dumps" && rm -r "/var/www/html/storage/app/backups" && ln -fs "/var/lib/assetsecure/dumps" "/var/www/html/storage/app/backups" \
+    && mkdir -p "/var/lib/assetsecure/keys" && ln -fs "/var/lib/assetsecure/keys/oauth-private.key" "/var/www/html/storage/oauth-private.key" \
+    && ln -fs "/var/lib/assetsecure/keys/oauth-public.key" "/var/www/html/storage/oauth-public.key" \
     && chown -hR apache "/var/www/html/storage/" \
-    && chown -R apache "/var/lib/snipeit"
+    && chown -R apache "/var/lib/assetsecure"
 
 # Install composer
 COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
@@ -81,7 +81,7 @@ RUN COMPOSER_CACHE_DIR=/dev/null composer install --working-dir=/var/www/html
 
 USER root
 
-VOLUME ["/var/lib/snipeit"]
+VOLUME ["/var/lib/assetsecure"]
 
 # Startup script
 COPY docker/startup_alpine.sh /startup.sh

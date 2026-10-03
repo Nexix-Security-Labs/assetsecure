@@ -18,7 +18,7 @@ use Illuminate\Support\Facades\Log;
  * or a stray small value, and the migration blindly wrote it. Rows
  * with existing checkouts got dragged below the in-use count and
  * rendered as "-N Remaining" in the UI (issue observed on the
- * grokability.com production instance post-upgrade).
+ * production instance post-upgrade).
  *
  * This migration is a floor-restorer. For every accessory / consumable
  * / component where the current `qty` is below the count of units
