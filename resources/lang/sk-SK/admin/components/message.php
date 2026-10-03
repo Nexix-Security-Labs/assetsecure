@@ -1,37 +1,37 @@
 <?php
 
-return array(
+return [
 
-    'does_not_exist' => 'Component does not exist.',
+    'does_not_exist' => 'Komponent neexistuje.',
 
-    'create' => array(
-        'error'   => 'Component was not created, please try again.',
-        'success' => 'Component created successfully.'
-    ),
+    'create' => [
+        'error' => 'Komponent sa nepodarilo pridať, skúste znovu.',
+        'success' => 'Komponent bol úspešne pridaný.',
+    ],
 
-    'update' => array(
-        'error'   => 'Component was not updated, please try again',
-        'success' => 'Component updated successfully.'
-    ),
+    'update' => [
+        'error' => 'Komponent sa nepodarilo upraviť, skúste znovu',
+        'success' => 'Komponent bol úspešne upravený.',
+    ],
 
-    'delete' => array(
-        'confirm'   => 'Are you sure you wish to delete this component?',
-        'error'   => 'There was an issue deleting the component. Please try again.',
-        'success' => 'The component was deleted successfully.'
-    ),
+    'delete' => [
+        'confirm' => 'Ste si istý, že chcete zmazať tento komponent?',
+        'error' => 'Nastal problém pri mazani komponentu. Prosím skúste znovu.',
+        'success' => 'Komponent bol úspešne zmazaný.',
+        'error_qty' => 'Niektoré komponenty tohto typu sú stále odovzdané. Prosím prevezmite ich a skúste to znova.',
+    ],
 
-     'checkout' => array(
-        'error'   		=> 'Component was not checked out, please try again',
-        'success' 		=> 'Component checked out successfully.',
+    'checkout' => [
+        'error' => 'Komponent nebol priradený, prosím skúste znovu',
+        'success' => 'Komponent bol úspešne priradený.',
         'user_does_not_exist' => 'Tento užívateľ nie je platný. Prosím skúste znovu.',
-        'unavailable'      => 'Not enough components remaining: :remaining remaining, :requested requested ',
-    ),
+        'unavailable' => 'Nedostatok komponentov: :remaining skladom, :requested vyžiadaných ',
+    ],
 
-    'checkin' => array(
-        'error'   		=> 'Component was not checked in, please try again',
-        'success' 		=> 'Component checked in successfully.',
-        'user_does_not_exist' => 'Tento užívateľ nie je platný. Prosím skúste znovu.'
-    )
+    'checkin' => [
+        'error' => 'Komponent nebol prevzatý, skúste znovu',
+        'success' => 'Komponent bol úspešne prevzatý.',
+        'user_does_not_exist' => 'Tento užívateľ nie je platný. Prosím skúste znovu.',
+    ],
 
-
-);
+];

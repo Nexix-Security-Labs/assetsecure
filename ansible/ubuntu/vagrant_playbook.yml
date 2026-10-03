@@ -5,7 +5,7 @@
   become_user: root
   become_method: sudo
   vars:
-    app_path: "/var/www/assetsecure"
+    app_path: "/var/www/snipeit"
     fqdn: "localhost"
   tasks:
     - name: Update and upgrade existing apt packages
@@ -103,10 +103,10 @@
       become: true         
       notify:
         - restart mysql
-    - name: Create assetsecure database
+    - name: Create snipeit database
       become: true
       mysql_db:
-        name: assetsecure
+        name: snipeit
         state: present
         login_unix_socket: /var/run/mysqld/mysqld.sock
     #  
@@ -194,7 +194,7 @@
         line: "{{ item.line }}"
       with_items:
         - { regexp: '^DB_HOST=', line: 'DB_HOST=127.0.0.1'}
-        - { regexp: '^DB_DATABASE=', line: 'DB_DATABASE=assetsecure' }
+        - { regexp: '^DB_DATABASE=', line: 'DB_DATABASE=snipeit' }
         - { regexp: '^DB_USERNAME=', line: 'DB_USERNAME=vagrant' }
         - { regexp: '^DB_PASSWORD=', line: 'DB_PASSWORD=vagrant' }
         - { regexp: '^APP_URL=', line: "APP_URL=http://{{ fqdn }}" }

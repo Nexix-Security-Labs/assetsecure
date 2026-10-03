@@ -1,5 +1,5 @@
 <?php
 
-return array(
-    'title'      				=> 'Consumable Name',
-);
+return [
+    'title' => 'Názov spotrebného materiálu',
+];

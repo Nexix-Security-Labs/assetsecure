@@ -1,37 +1,37 @@
 <?php
 
-return array(
+return [
 
-    'does_not_exist' => 'Component does not exist.',
+    'does_not_exist' => 'Qeyb ahaan majirto.',
 
-    'create' => array(
-        'error'   => 'Component was not created, please try again.',
-        'success' => 'Component created successfully.'
-    ),
+    'create' => [
+        'error' => 'Qayb lama abuurin, fadlan isku day mar kale.',
+        'success' => 'Qayb ahaan waa lagu guuleystay in la sameeyo.',
+    ],
 
-    'update' => array(
-        'error'   => 'Component was not updated, please try again',
-        'success' => 'Component updated successfully.'
-    ),
+    'update' => [
+        'error' => 'Qaybaha lama cusboonaysiin, fadlan isku day mar kale',
+        'success' => 'Qeyb ahaan waa lagu guuleystay in la cusbooneysiiyo.',
+    ],
 
-    'delete' => array(
-        'confirm'   => 'Are you sure you wish to delete this component?',
-        'error'   => 'There was an issue deleting the component. Please try again.',
-        'success' => 'The component was deleted successfully.'
-    ),
+    'delete' => [
+        'confirm' => 'Ma hubtaa inaad rabto inaad tirtirto qaybtan?',
+        'error' => 'Waxaa jirtay arrin tir-tireysay qaybta. Fadlan isku day mar kale.',
+        'success' => 'Qaybta waa lagu guuleystay in la tir-tiro.',
+        'error_qty' => 'Some components of this type are still checked out. Please check them in and try again.',
+    ],
 
-     'checkout' => array(
-        'error'   		=> 'Component was not checked out, please try again',
-        'success' 		=> 'Component checked out successfully.',
-        'user_does_not_exist' => 'That user is invalid. Please try again.',
-        'unavailable'      => 'Not enough components remaining: :remaining remaining, :requested requested ',
-    ),
+    'checkout' => [
+        'error' => 'Qaybaha lama hubin, fadlan isku day mar kale',
+        'success' => 'Qaybta waa lagu guuleystay in la hubiyo.',
+        'user_does_not_exist' => 'Isticmaalahaasi ma ahan mid jira. Fadlan isku day mar kale.',
+        'unavailable' => 'Qaybo aan ku filnayn ayaa hadhsan: :remaining hadhay, :requested waa la codsaday ',
+    ],
 
-    'checkin' => array(
-        'error'   		=> 'Component was not checked in, please try again',
-        'success' 		=> 'Component checked in successfully.',
-        'user_does_not_exist' => 'That user is invalid. Please try again.'
-    )
+    'checkin' => [
+        'error' => 'Qaybaha lama hubin, fadlan isku day mar kale',
+        'success' => 'Qaybta waa lagu guuleystay in la hubiyo.',
+        'user_does_not_exist' => 'Isticmaalahaasi ma ahan mid jira. Fadlan isku day mar kale.',
+    ],
 
-
-);
+];

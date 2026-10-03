@@ -1,11 +1,11 @@
 <?php
 
-return array(
+return [
 
-    'id'                        => 'ID',
-    'name'                      => 'Department Name',
-    'manager'                   => 'Manažér',
-    'location'                  => 'Lokalita',
-    'create'                    => 'Create Department',
-    'update'                    => 'Update Department',
-    );
+    'id' => 'ID',
+    'name' => 'Názov oddelenia',
+    'manager' => 'Manažér',
+    'location' => 'Lokalita',
+    'create' => 'Pridať oddelenie',
+    'update' => 'Upraviť oddelenie',
+];

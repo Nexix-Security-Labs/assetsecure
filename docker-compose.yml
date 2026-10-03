@@ -1,50 +1,41 @@
-version: '3'
+# Compose file for production.
+
+volumes:
+  db_data:
+  storage:
 
 services:
   assetsecure:
     build:
       context: .
       dockerfile: Dockerfile
+    image: assetsecure:${APP_VERSION:-latest}
     container_name: assetsecure
-    ports:
-    - "8069:80"
+    restart: unless-stopped
     volumes:
-    - ./storage/logs:/var/www/html/storage/logs
+      - storage:/var/lib/assetsecure
+    ports:
+      - "${APP_PORT:-8069}:80"
     depends_on:
-    - mariadb
-    - redis
+      db:
+        condition: service_healthy
+        restart: true
     env_file:
-    - .env.docker
-    networks:
-    - assetsecure-backend
+      - .env
 
-  mariadb:
-    image: mariadb:latest
+  db:
+    image: mariadb:11.4.7
+    restart: unless-stopped
     volumes:
-    - db:/var/lib/mysql
-    env_file:
-    - .env.docker
-    networks:
-    - assetsecure-backend
-    ports:
-      - "3306:3306"
-
-  redis:
-    image: redis:latest
-    networks:
-    - assetsecure-backend
-
-  mailhog:
-    image: mailhog/mailhog:latest
-    ports:
-    # - 1025:1025
-    - "8025:8025"
-    networks:
-    - assetsecure-backend
-
-
-volumes:
-  db: {}
-
-networks:
-  assetsecure-backend: {}
+      - db_data:/var/lib/mysql
+    environment:
+      MYSQL_DATABASE: ${DB_DATABASE}
+      MYSQL_USER: ${DB_USERNAME}
+      MYSQL_PASSWORD: ${DB_PASSWORD}
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+    healthcheck:
+      # https://mariadb.com/kb/en/using-healthcheck-sh/#compose-file-example
+      test: ["CMD", "healthcheck.sh", "--connect", "--innodb_initialized"]
+      interval: 5s
+      timeout: 1s
+      retries: 5

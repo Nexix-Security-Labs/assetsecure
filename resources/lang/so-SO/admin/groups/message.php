@@ -1,22 +1,23 @@
 <?php
 
-return array(
+return [
 
-    'group_exists'        => 'Group already exists!',
-    'group_not_found'     => 'Group ID :id does not exist.',
-    'group_name_required' => 'The name field is required',
+    'group_exists' => 'Koox ayaa horay u jirtay!',
+    'group_not_found' => 'Aqoonsiga kooxda :id ma jiro.',
+    'group_name_required' => 'Goobta magaca ayaa loo baahan yahay',
+    'assoc_users' => 'Waaxdan hadda waxay ku xidhan tahay ugu yaraan hal isticmaale lamana tirtiri karo. Fadlan cusboonaysii isticmaalayaashaada si aanay u tixraacin waaxdan oo isku day mar kale. ',
 
-    'success' => array(
-        'create' => 'Group was successfully created.',
-        'update' => 'Group was successfully updated.',
-        'delete' => 'Group was successfully deleted.',
-    ),
+    'success' => [
+        'create' => 'Kooxdani waa lagu guuleystay in la abuuro.',
+        'update' => 'Kooxdani waa lagu guuleystay in la abuuro.',
+        'delete' => 'Kooxdani waa lagu guuleystay in la abuuro.',
+    ],
 
-    'delete' => array(
-        'confirm'   => 'Are you sure you wish to delete this group?',
-        'create' => 'There was an issue creating the group. Please try again.',
-        'update' => 'There was an issue updating the group. Please try again.',
-        'delete' => 'There was an issue deleting the group. Please try again.',
-    ),
+    'delete' => [
+        'confirm' => 'Ma hubtaa inaad doonayso inaad tirtirto kooxdan?',
+        'create' => 'Cillad ayaa ka jirta abuuridda kooxdan. Fadlan kuceli markale.',
+        'update' => 'Cillad ayaa ka jirta abuuridda kooxdan. Fadlan isku day markale.',
+        'delete' => 'Cillad ayaa ka jirta abuuridda kooxdan. Fadlan isku day markale.',
+    ],
 
-);
+];

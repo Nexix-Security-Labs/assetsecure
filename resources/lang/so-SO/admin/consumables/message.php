@@ -1,37 +1,37 @@
 <?php
 
-return array(
+return [
 
-    'does_not_exist' => 'Consumable does not exist.',
+    'invalid_category_type' => 'The category must be a consumable category.',
+    'does_not_exist' => 'Wax la isticmaali karo ma jiro.',
 
-    'create' => array(
-        'error'   => 'Consumable was not created, please try again.',
-        'success' => 'Consumable created successfully.'
-    ),
+    'create' => [
+        'error' => 'La isticmaali karo lama abuurin, fadlan isku day mar kale.',
+        'success' => 'Isticmaalka waa lagu guuleystay in la abuuro.',
+    ],
 
-    'update' => array(
-        'error'   => 'Consumable was not updated, please try again',
-        'success' => 'Consumable updated successfully.'
-    ),
+    'update' => [
+        'error' => 'Isticmaalka lama cusboonaysiin, fadlan isku day mar kale',
+        'success' => 'Isticmaalka waa lagu guuleystay in la cusbooneysiiyo.',
+    ],
 
-    'delete' => array(
-        'confirm'   => 'Are you sure you wish to delete this consumable?',
-        'error'   => 'There was an issue deleting the consumable. Please try again.',
-        'success' => 'The consumable was deleted successfully.'
-    ),
+    'delete' => [
+        'confirm' => 'Ma hubtaa inaad rabto inaad tirtirto alaabtan?',
+        'error' => 'Waxaa jirtay arin tireysay isticmaalka alaabta. Fadlan isku day mar kale.',
+        'success' => 'Isticmaalka waa lagu guuleystay in la tir-tiro.',
+    ],
 
-     'checkout' => array(
-        'error'   		=> 'Consumable was not checked out, please try again',
-        'success' 		=> 'Consumable checked out successfully.',
-        'user_does_not_exist' => 'That user is invalid. Please try again.',
-         'unavailable'      => 'There are not enough consumables for this checkout. Please check the quantity left. ',
-    ),
+    'checkout' => [
+        'error' => 'Isticmaalka lama hubin, fadlan isku day mar kale',
+        'success' => 'Isticmaalka waa lagu guuleystay in la hubiyo.',
+        'user_does_not_exist' => 'Isticmaalahaasi ma ahan mid jira. Fadlan isku day mar kale.',
+        'unavailable' => 'Ma jiraan alaabooyin ku filan hubintan. Fadlan hubi tirada hadhay ',
+    ],
 
-    'checkin' => array(
-        'error'   		=> 'Consumable was not checked in, please try again',
-        'success' 		=> 'Consumable checked in successfully.',
-        'user_does_not_exist' => 'That user is invalid. Please try again.'
-    )
+    'checkin' => [
+        'error' => 'Isticmaalka lama hubin, fadlan isku day mar kale',
+        'success' => 'Isticmaalka waa lagu guuleystay in la hubiyo.',
+        'user_does_not_exist' => 'Isticmaalahaasi ma ahan mida jira. Fadlan isku day mar kale.',
+    ],
 
-
-);
+];

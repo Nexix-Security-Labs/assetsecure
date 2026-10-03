@@ -1,37 +1,37 @@
 <?php
 
-return array(
+return [
 
-    'does_not_exist' => 'Consumable does not exist.',
+    'invalid_category_type' => 'Kategória musí byť kategóriou spotrebného materiálu.',
+    'does_not_exist' => 'Spotrebný materiál neexistuje.',
 
-    'create' => array(
-        'error'   => 'Consumable was not created, please try again.',
-        'success' => 'Consumable created successfully.'
-    ),
+    'create' => [
+        'error' => 'Spotrebný materiál nebol pridaný, prosím skúste znovu.',
+        'success' => 'Spotrebný materiál bol úspešne pridaný.',
+    ],
 
-    'update' => array(
-        'error'   => 'Consumable was not updated, please try again',
-        'success' => 'Consumable updated successfully.'
-    ),
+    'update' => [
+        'error' => 'Spotrebný materiál nebol upravený, prosím skúste znovu',
+        'success' => 'Spotrebný materiál bol úspešne upravený.',
+    ],
 
-    'delete' => array(
-        'confirm'   => 'Are you sure you wish to delete this consumable?',
-        'error'   => 'There was an issue deleting the consumable. Please try again.',
-        'success' => 'The consumable was deleted successfully.'
-    ),
+    'delete' => [
+        'confirm' => 'Ste si istý, že chcete zmazať tento spotrebný materiál?',
+        'error' => 'Pri mazaní spotrebného materiálu nastal problém. Skúste prosím znovu.',
+        'success' => 'Spotrebný materiál bol úspešne zmazaný.',
+    ],
 
-     'checkout' => array(
-        'error'   		=> 'Consumable was not checked out, please try again',
-        'success' 		=> 'Consumable checked out successfully.',
+    'checkout' => [
+        'error' => 'Spotrebný materiál nebol priradený, prosím skúsiť znovu',
+        'success' => 'Spotrebný materiál bol úspešne priradený.',
         'user_does_not_exist' => 'Tento užívateľ nie je platný. Prosím skúste znovu.',
-         'unavailable'      => 'There are not enough consumables for this checkout. Please check the quantity left. ',
-    ),
+        'unavailable' => 'Nedostatok spotrebného materiálu pre priradenie. Prosím skontrolujte zostávajúce množstvo. ',
+    ],
 
-    'checkin' => array(
-        'error'   		=> 'Consumable was not checked in, please try again',
-        'success' 		=> 'Consumable checked in successfully.',
-        'user_does_not_exist' => 'Tento užívateľ nie je platný. Prosím skúste znovu.'
-    )
+    'checkin' => [
+        'error' => 'Spotrebný materiál nebol prevzatý, prosím skúste znovu',
+        'success' => 'Spotrebný materiál bol prevzatý úspešne.',
+        'user_does_not_exist' => 'Tento užívateľ nie je platný. Prosím skúste znovu.',
+    ],
 
-
-);
+];

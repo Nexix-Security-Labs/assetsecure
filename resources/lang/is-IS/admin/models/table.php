@@ -1,17 +1,16 @@
 <?php
 
-return array(
+return [
 
-    'create'				=> 'Create Asset Model',
-    'created_at' 			=> 'Created at',
-    'eol'	 				=> 'Lok línu',
-    'modelnumber'   		=> 'Tegundar Nr.',
-    'name'      			=> 'Asset Model Name',
-    'numassets' 			=> 'Eignir',
-    'title'					=> 'Tegundir',
-    'update'				=> 'Update Asset Model',
-    'view'					=> 'View Asset Model',
-    'update'				=> 'Update Asset Model',
-    'clone'				=> 'Clone Model',
-    'edit'				=> 'Edit Model',
-);
+    'create' => 'Búa til eignategund',
+    'created_at' => 'Stofnað',
+    'eol' => 'Lok línu',
+    'modelnumber' => 'Tegundar Nr.',
+    'name' => 'Nafn eignategundar',
+    'numassets' => 'Eignir',
+    'title' => 'Tegundir',
+    'update' => 'Uppfæra eignategund',
+    'view' => 'Skoða eignategund',
+    'clone' => 'Klóna tegund',
+    'edit' => 'Breyta tegund',
+];

@@ -8,6 +8,6 @@ if [ "$(id -u)" != "0" ]; then
     fi
 fi
 
-wget https://raw.githubusercontent.com/Nexix-Security-Labs/assetsecure/master/assetsecure.sh
-chmod 744 assetsecure.sh
-./assetsecure.sh 2>&1 | tee -a /var/log/assetsecure-install.log
+wget https://raw.githubusercontent.com/grokability/snipe-it/master/snipeit.sh
+chmod 744 snipeit.sh
+./snipeit.sh 2>&1 | tee -a /var/log/snipeit-install.log
