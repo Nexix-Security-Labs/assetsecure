@@ -193,7 +193,6 @@ class AccessoriesController extends Controller
      * @param  ImageUploadRequest  $request
      * @return JsonResponse
      *
-     *
      * @since [v4.0]
      */
     public function store(StoreAccessoryRequest $request)
@@ -225,7 +224,6 @@ class AccessoriesController extends Controller
      * @param  int  $id
      * @return array
      *
-     *
      * @since [v4.0]
      */
     public function show($id)
@@ -241,7 +239,6 @@ class AccessoriesController extends Controller
      *
      * @param  int  $id
      * @return array
-     *
      *
      * @since [v4.0]
      */
@@ -260,7 +257,7 @@ class AccessoriesController extends Controller
      * @since [v4.0]
      *
      * @param  int  $id
-     * @return | array
+     * @return array
      */
     public function checkedout(Request $request, $id)
     {
@@ -399,7 +396,6 @@ class AccessoriesController extends Controller
      *
      * @param  int  $accessoryId
      * @return JsonResponse
-     *
      */
     public function checkout(AccessoryCheckoutRequest $request, Accessory $accessory)
     {
@@ -481,7 +477,6 @@ class AccessoriesController extends Controller
      * @return JsonResponse
      *
      * @uses Accessory::checkin_email() to determine if an email can and should be sent
-     *
      *
      * @internal param int $accessoryId
      */

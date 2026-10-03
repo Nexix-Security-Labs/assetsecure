@@ -1021,12 +1021,6 @@ parameters:
 			path: app/Http/Controllers/Api/AccessoriesController.php
 
 		-
-			message: '#^PHPDoc tag @return has invalid value \(\| array\)\: Unexpected token "\|", expected type at offset 192 on line 9$#'
-			identifier: phpDoc.parseError
-			count: 1
-			path: app/Http/Controllers/Api/AccessoriesController.php
-
-		-
 			message: '#^Access to an undefined property App\\Models\\AssetModel\:\:\$use_image\.$#'
 			identifier: property.notFound
 			count: 1

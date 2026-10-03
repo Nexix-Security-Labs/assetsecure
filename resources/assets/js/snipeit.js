@@ -349,12 +349,15 @@ $(function () {
         var headericon = $context.attr('data-icon');
         var title = $context.attr('data-title');
 
+        // Only allow same-origin or http(s) form targets, never javascript: or data: URLs
+        var formAction = safeFormAction(href);
+
         // deleteForm is the ID of the modal form itself
-        $('#deleteForm').attr('action', href);
+        $('#deleteForm').attr('action', formAction);
         $dataConfirmModal.find('.modal-header-icon').addClass(headericon);
-        $dataConfirmModal.find('.modal-title').text('').text(title).prepend('<i class="fa ' + headericon + '"></i> ');
+        $dataConfirmModal.find('.modal-title').text('').text(title).prepend(' ').prepend($('<i>').addClass('fa ' + (headericon || '')));
         $dataConfirmModal.find('.modal-body').text('').text(message);
-        $dataConfirmModal.attr('action', href);
+        $dataConfirmModal.attr('action', formAction);
 
         // Fire the modal
         $dataConfirmModal.modal({
@@ -1112,6 +1115,23 @@ function htmlEntities(str) {
     
 })(jQuery);
 
+/**
+ * Returns the given URL if it is relative or uses http(s), otherwise an empty string.
+ * Keeps javascript:/data: URLs from data attributes out of form actions.
+ */
+function safeFormAction(url) {
+    if (typeof url !== 'string' || url === '') {
+        return '';
+    }
+    var parsed;
+    try {
+        parsed = new URL(url, window.location.href);
+    } catch (e) {
+        return '';
+    }
+    return (parsed.protocol === 'http:' || parsed.protocol === 'https:') ? parsed.href : '';
+}
+
 $(document).ready(function () {
     // Password-reveal eye. data-toggle is a jQuery selector — usually one
     // input id, but a multi-selector like "#password, #password_confirm"
@@ -1122,7 +1142,8 @@ $(document).ready(function () {
     // eye state doesn't visually drift between the two addons.
     $(document).on('click', '.toggle-password', function () {
         var toggleTarget = $(this).attr('data-toggle');
-        var $inputs = $(toggleTarget);
+        // find() always treats the string as a selector, never as HTML
+        var $inputs = $(document).find(toggleTarget);
         var reveal = $inputs.first().attr('type') === 'password';
         $inputs.attr('type', reveal ? 'text' : 'password');
         var $eyes = $('.toggle-password[data-toggle="' + toggleTarget + '"]');
