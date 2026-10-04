@@ -1,54 +1,69 @@
 <?php
 
-return array(
+return [
 
-    'does_not_exist' => 'License does not exist or you do not have permission to view it.',
-    'user_does_not_exist' => 'User does not exist.',
-    'asset_does_not_exist' 	=> 'The asset you are trying to associate with this license does not exist.',
-    'owner_doesnt_match_asset' => 'The asset you are trying to associate with this license is owned by somene other than the person selected in the assigned to dropdown.',
-    'assoc_users'	 => 'This license is currently checked out to a user and cannot be deleted. Please check the license in first, and then try deleting again. ',
-    'select_asset_or_person' => 'You must select an asset or a user, but not both.',
-    'not_found' => 'License not found',
-    'seats_available' => ':seat_count seats available',
+    'does_not_exist' => 'Licencia neexistuje alebo nemáte oprávnenie na jej zobrazenie.',
+    'user_does_not_exist' => 'Používateľ neexistuje alebo nemáte oprávnenie na jeho zobrazenie.',
+    'asset_does_not_exist' => 'Majetok, ktorý sa pokúšate spojiť s touto licenciou, neexistuje.',
+    'owner_doesnt_match_asset' => 'Majetok, ktorý sa snažíte spojiť s touto licenciou je vlastné niekým iným ako zvolenou osobou.',
+    'assoc_users' => 'Táto licencia je aktuálne priradená používateľovi a preto nemôže byť zmazaná. Prosím odoberte najprv licenciou používateľovi a následne skúste zmazať znovu. ',
+    'select_asset_or_person' => 'Musíte vybrať majetok alebo používatelia, ale nie oboje.',
+    'not_found' => 'Licencia nebol nájdená',
+    'seats_available' => ':seat_count miest k dispozícií',
 
+    'create' => [
+        'error' => 'Licencia nebola pridaná, prosím skúste znovu.',
+        'success' => 'Licencia bol úspešne pridaná.',
+    ],
 
-    'create' => array(
-        'error'   => 'License was not created, please try again.',
-        'success' => 'License created successfully.'
-    ),
-
-    'deletefile' => array(
-        'error'   => 'Súbor nebol odstránený. Prosím skúste znovu.',
+    'deletefile' => [
+        'error' => 'Súbor nebol odstránený. Prosím skúste znovu.',
         'success' => 'Súbor bol úspešne odstránený.',
-    ),
+    ],
 
-    'upload' => array(
-        'error'   => 'Súbor(y) sa nepodarilo nahrať. Skúste prosím znovu.',
+    'upload' => [
+        'error' => 'Súbor(y) sa nepodarilo nahrať. Skúste prosím znovu.',
         'success' => 'Súbor(y) boli úspešne nahraté.',
         'nofiles' => 'Nevybrali ste žiadne súbory na nahranie alebo sa pokúšate nahrať príliž veľký súbor',
         'invalidfiles' => 'Jeden alebo viacero súborov je príliš veľkých alebo nie su podporované. Podporované typy súborov sú png, gif, jpg, jpeg, doc, docx, pdf, txt, zip, rar, rtf, xml, and lic.',
-    ),
+    ],
 
-    'update' => array(
-        'error'   => 'Licencia nebola aktualizovaná, skúste prosím znovu',
-        'success' => 'Licencia bola úspešne aktualizovaná.'
-    ),
+    'update' => [
+        'error' => 'Licencia nebola aktualizovaná, skúste prosím znovu',
+        'success' => 'Licencia bola úspešne aktualizovaná.',
+    ],
 
-    'delete' => array(
-        'confirm'   => 'Ste si istý, že chcete odstrániť túto licenciu?',
-        'error'   => 'Pri odstraňovaní licencie nastala chyba. Skúste prosím znovu.',
-        'success' => 'Licencia bola úspešne odstránená.'
-    ),
+    'delete' => [
+        'confirm' => 'Ste si istý, že chcete odstrániť túto licenciu?',
+        'error' => 'Pri odstraňovaní licencie nastala chyba. Skúste prosím znovu.',
+        'success' => 'Licencia bola úspešne odstránená.',
+        'bulk_success' => 'The selected licenses were deleted successfully.',
+        'partial_success' => 'License deleted successfully. See additional information below. | :count licenses were deleted successfully. See additional information below.',
+        'bulk_checkout_warning' => ':license_name has seats that are currently checked out and cannot be deleted. Please check in all seats before deleting.',
+    ],
 
-    'checkout' => array(
-        'error'   => 'Pri priraďovaní licencie nastala chyba. Skúste prosím znovu.',
-        'success' => 'Licencia bola úspešne priradená',
-        'not_enough_seats' => 'Not enough license seats available for checkout',
-    ),
+    'delete_with_checkin' => [
+        'bulk_success' => ':count licenses were deleted successfully after checking in :seats seats.',
+        'partial_success' => ':count licenses were deleted successfully after checking in :seats seats. See additional information below.',
+    ],
 
-    'checkin' => array(
-        'error'   => 'Pri odoberaní licencie nastala chyba. Skúste prosím znovu.',
-        'success' => 'Licencia bola úspešne odobratá'
-    ),
+    'checkout' => [
+        'error' => 'Pri odovzdaní licencie nastala chyba. Skúste prosím znovu.',
+        'success' => 'Licencia bola úspešne odovzdaná',
+        'not_enough_seats' => 'Nedostatok licenčných miest pre odovzdanie',
+        'mismatch' => 'Poskytnutý licenčný slot sa nezhoduje s licenciou',
+        'unavailable' => 'Tento slot nie je dostupné pre odovzdanie.',
+        'license_is_inactive' => 'Platnosť tejto licencie vypršala alebo bola ukončená.',
+    ],
 
-);
+    'checkin' => [
+        'error' => 'Pri prevzatí licencie nastala chyba. Skúste prosím znovu.',
+        'not_reassignable' => 'Sídlo bolo použité',
+        'success' => 'Licencia bola úspešne prevzatá',
+    ],
+
+    'import' => [
+        'no_free_seats' => 'License ":license" has no free seats. ":target" was not assigned to a seat.',
+    ],
+
+];

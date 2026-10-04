@@ -117,7 +117,7 @@ return [
     |
     */
 
-    'cookie' => env('COOKIE_NAME', 'snipeitv6_session'),
+    'cookie' => env('COOKIE_NAME', 'assetsecure_session'),
 
     /*
     |--------------------------------------------------------------------------
@@ -172,6 +172,18 @@ return [
     | More info: https://bootstrap-table.com/docs/extensions/cookie/#cookiestorage
     */
 
-    'bs_table_storage' => env('BS_TABLE_STORAGE', 'cookieStorage'),
+    'bs_table_storage' => env('BS_TABLE_STORAGE', 'localStorage'),
+
+    /*
+    |--------------------------------------------------------------------------
+    | Bootstrap Table Enable Deeplinking
+    |--------------------------------------------------------------------------
+    |
+    | Use deeplinks to directly link to search results, sorting, and pagination
+    |
+    | More info: https://github.com/generals-space/bootstrap-table-addrbar/blob/master/readme(EN).md
+    */
+
+    'bs_table_addrbar' => env('BS_TABLE_DEEPLINK', true),
 
 ];

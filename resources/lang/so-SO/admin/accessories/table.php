@@ -1,11 +1,9 @@
 <?php
 
-return array(
-	'dl_csv'      				=> 'Download CSV',
-	'eula_text'      			=> 'EULA',
-    'id'      					=> 'ID',
-    'require_acceptance'      	=> 'Acceptance',
-    'title'      				=> 'Accessory Name',
-
-
-);
+return [
+    'dl_csv' => 'Soo deji CSV',
+    'eula_text' => 'EULA',
+    'id' => 'Aqoonsi',
+    'require_acceptance' => 'Ogolaanshaha',
+    'title' => 'Magaca dheeriga ah',
+];

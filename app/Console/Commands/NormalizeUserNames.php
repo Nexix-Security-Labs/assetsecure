@@ -2,8 +2,8 @@
 
 namespace App\Console\Commands;
 
-use Illuminate\Console\Command;
 use App\Models\User;
+use Illuminate\Console\Command;
 
 class NormalizeUserNames extends Command
 {
@@ -12,7 +12,7 @@ class NormalizeUserNames extends Command
      *
      * @var string
      */
-    protected $signature = 'snipeit:normalize-names';
+    protected $signature = 'assetsecure:normalize-names';
 
     /**
      * The console command description.
@@ -40,13 +40,13 @@ class NormalizeUserNames extends Command
     {
 
         $users = User::get();
-            $this->info($users->count() . ' users');
+        $this->info($users->count().' users');
 
-            foreach ($users as $user) {
-                $user->first_name = ucwords(strtolower($user->first_name));
-                $user->last_name = ucwords(strtolower($user->last_name));
-                $user->email = strtolower($user->email);
-                $user->save();
+        foreach ($users as $user) {
+            $user->first_name = ucwords(strtolower($user->first_name));
+            $user->last_name = ucwords(strtolower($user->last_name));
+            $user->email = strtolower($user->email);
+            $user->save();
         }
     }
 }

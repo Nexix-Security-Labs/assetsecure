@@ -1,7 +1,24 @@
 @php
 //set array up before loop so it doesn't get wiped at every iteration
     $fields = [];
+    $anyModelHasCustomFields = 0;
 @endphp
+
+@foreach($models as $model)
+    @if (($model) && ($model->fieldset ? $model->fieldset->count() > 0 : false))
+        @php
+            $anyModelHasCustomFields++;
+        @endphp
+    @endif
+@endforeach
+
+@if ($anyModelHasCustomFields > 0)
+    <fieldset name="custom-fields"">
+        <x-form.legend>
+            {{ trans('admin/custom_fields/general.custom_fields') }}
+        </x-form.legend>
+@endif
+
 @foreach($models as $model)
 @if (($model) && ($model->fieldset))
     @foreach($model->fieldset->fields AS $field)
@@ -24,35 +41,81 @@
           @if ($field->element!='text')
               <!-- Listbox -->
               @if ($field->element=='listbox')
-                  {{ Form::select($field->db_column_name(), $field->formatFieldValuesAsArray(),
-                  Request::old($field->db_column_name(),(isset($item) ? Helper::gracefulDecrypt($field, htmlspecialchars($item->{$field->db_column_name()}, ENT_QUOTES)) : $field->defaultValue($model->id))), ['class'=>'format select2 form-control']) }}
+                  <x-input.select
+                      :name="$field->db_column_name()"
+                      :options="$field->formatFieldValuesAsArray()"
+                      :selected="old($field->db_column_name(), (isset($item) ? Helper::gracefulDecrypt($field, $item->{$field->db_column_name()}) : ''))"
+                      :include-empty="true"
+                      class="format form-control"
+                  />
 
               @elseif ($field->element=='textarea')
                 @if($field->is_unique)
                     <input type="text" class="form-control" disabled value="{{ trans('/admin/hardware/form.bulk_update_custom_field_unique') }}">
                 @endif
-                @if(!$field->is_unique) 
-                    <textarea class="col-md-6 form-control" id="{{ $field->db_column_name() }}" name="{{ $field->db_column_name() }}">{{ Request::old($field->db_column_name(),(isset($item) ? Helper::gracefulDecrypt($field, $item->{$field->db_column_name()}) : $field->defaultValue($model->id))) }}</textarea>
-                @endif 
+                @if(!$field->is_unique)
+                    <textarea class="col-md-6 form-control" id="{{ $field->db_column_name() }}" name="{{ $field->db_column_name() }}">{{ old($field->db_column_name(), (isset($item) ? Helper::gracefulDecrypt($field, $item->{$field->db_column_name()}) : '')) }}</textarea>
+                @endif
               @elseif ($field->element=='checkbox')
                     <!-- Checkboxes -->
-                  @foreach ($field->formatFieldValuesAsArray() as $key => $value)
-                      <label class="form-control">
-                          <input type="checkbox" value="{{ $value }}" name="{{ $field->db_column_name() }}[]" {{  isset($item) ? (in_array($value, array_map('trim', explode(',', $item->{$field->db_column_name()}))) ? ' checked="checked"' : '') : (Request::old($field->db_column_name()) != '' ? ' checked="checked"' : (in_array($key, array_map('trim', explode(',', $field->defaultValue($model->id)))) ? ' checked="checked"' : '')) }}>
-                          {{ $value }}
-                      </label>
+              @php
+                  $fieldName = $field->db_column_name();
+                  $oldValues = old($fieldName);
+                  $currentValues = isset($item) ? array_map('trim', explode(',', $item->{$fieldName})) : '';
 
-                  @endforeach
-            @elseif ($field->element=='radio')
-            @foreach ($field->formatFieldValuesAsArray() as $value)
+                  $selectedValues = is_array($oldValues) ? $oldValues : [];
+              @endphp
 
+              @foreach ($field->formatFieldValuesAsArray() as $key => $value)
                   <label class="form-control">
-                      <input type="radio" value="{{ $value }}" name="{{ $field->db_column_name() }}" {{ isset($item) ? ($item->{$field->db_column_name()} == $value ? ' checked="checked"' : '') : (Request::old($field->db_column_name()) != '' ? ' checked="checked"' : (in_array($value, explode(', ', $field->defaultValue($model->id))) ? ' checked="checked"' : '')) }}>
+                      <input type="checkbox"
+                             name="{{ $fieldName }}[]"
+                             value="{{ $key }}"
+                              {{ in_array($key, $selectedValues) ? 'checked' : '' }}>
                       {{ $value }}
                   </label>
+              @endforeach
+            @elseif ($field->element=='radio')
+                  @php
+                      $fieldName = $field->db_column_name();
+                      $oldValue = old($fieldName);
+                      $current = isset($item) ? trim($item->{$fieldName}) : '';
 
-            @endforeach
+                      $selectedValue = $oldValue !== null ? $oldValue : $current;
+                  @endphp
+                  @foreach ($field->formatFieldValuesAsArray() as $key => $value)
+                      <label class="form-control">
+                          <input type="radio"
+                                 name="{{ $fieldName }}"
+                                 value="{{ $key }}"
+                                  {{ $selectedValue == $key ? 'checked' : '' }}>
+                          {{ $value }}
+                      </label>
+                  @endforeach
+                <button type="button"
+                        class="btn btn-default btn-xs clear-radio"
+                        data-target-name="{{ $field->db_column_name() }}">
+                    {{ trans('/admin/hardware/general.clear') }}
+                </button>
 
+            @elseif ($field->element=='date_picker')
+                <div class="input-group col-md-5" style="padding-left: 0px;">
+                    <x-input.datepicker
+                        id="{{ $field->db_column_name() }}"
+                        name="{{ $field->db_column_name() }}"
+                        :value="old($field->db_column_name(), isset($item) ? Helper::gracefulDecrypt($field, $item->{$field->db_column_name()}) : '')"
+                    />
+                </div>
+
+            @elseif ($field->element=='datetime_picker')
+                <div class="input-group col-md-6" style="padding-left: 0px;">
+                    <x-input.datetimepicker
+                        id="{{ $field->db_column_name() }}"
+                        name="{{ $field->db_column_name() }}"
+                        :value="old($field->db_column_name(), isset($item) ? Helper::gracefulDecrypt($field, $item->{$field->db_column_name()}) : '')"
+                        :default_now="false"
+                    />
+                </div>
             @endif
 
             @else
@@ -61,11 +124,28 @@
             @if ($field->format=='DATE')
 
             <div class="input-group col-md-5" style="padding-left: 0px;">
-                <div class="input-group date" data-provide="datepicker" data-date-format="yyyy-mm-dd" data-autoclose="true" data-date-clear-btn="true">
-                    <input type="text" class="form-control" placeholder="{{ trans('general.select_date') }}" name="{{ $field->db_column_name() }}" id="{{ $field->db_column_name() }}" readonly value="{{ old($field->db_column_name(),(isset($item) ? Helper::gracefulDecrypt($field, $item->{$field->db_column_name()}) : $field->defaultValue($model->id))) }}"  style="background-color:inherit">
-                    <span class="input-group-addon"><i class="fas fa-calendar" aria-hidden="true"></i></span>
-                </div>
+                <x-input.datepicker
+                    id="{{ $field->db_column_name() }}"
+                    name="{{ $field->db_column_name() }}"
+                    :value="old($field->db_column_name(), isset($item) ? Helper::gracefulDecrypt($field, $item->{$field->db_column_name()}) : '')"
+                />
             </div>
+
+
+                @elseif ($field->format=='DATETIME')
+
+                    {{-- Outer wrapper with inline padding-left: 0 to match
+                         the DATE case above; conflicting duplicate CSS
+                         rules for .input-group[class*="col-"] otherwise
+                         re-apply the 15px grid padding. --}}
+                  <div class="input-group col-md-6" style="padding-left: 0px;">
+                        <x-input.datetimepicker
+                            id="{{ $field->db_column_name() }}"
+                            name="{{ $field->db_column_name() }}"
+                            :value="old($field->db_column_name(), isset($item) ? Helper::gracefulDecrypt($field, $item->{$field->db_column_name()}) : '')"
+                            :default_now="false"
+                        />
+                    </div>
 
 
                 @else
@@ -73,10 +153,16 @@
                     @if (($field->field_encrypted=='0') || (Gate::allows('admin')))
                         @if ($field->is_unique) 
                                 <input type="text" class="form-control" disabled value="{{trans('/admin/hardware/form.bulk_update_custom_field_unique')}}">
-                            @endif  
-                        @if(!$field->is_unique) 
-                                <input type="text" value="{{ Request::old($field->db_column_name(),(isset($item) ? Helper::gracefulDecrypt($field, $item->{$field->db_column_name()}) : $field->defaultValue($model->id))) }}" id="{{ $field->db_column_name() }}" class="form-control" name="{{ $field->db_column_name() }}" placeholder="Enter {{ strtolower($field->format) }} text">
-                        @endif 
+                            @endif
+                            @if(!$field->is_unique)
+                                <input type="text"
+                                       value="{{ old($field->db_column_name(),(isset($item) ? Helper::gracefulDecrypt($field, $item->{$field->db_column_name()}) : '')) }}"
+                                       id="{{ $field->db_column_name() }}"
+                                       class="form-control{{ strtoupper($field->format) === 'MAC' ? ' mac-address-input' : '' }}"
+                                       name="{{ $field->db_column_name() }}"
+                                       @if (strtoupper($field->format) === 'MAC') inputmode="text" autocomplete="off" @endif
+                                       placeholder="{{ strtoupper($field->format) === 'MAC' ? 'AA:BB:CC:DD:EE:FF' : 'Enter '.strtolower($field->format).' text' }}">
+                        @endif
                             @else
                                 <input type="text" value="{{ strtoupper(trans('admin/custom_fields/general.encrypted')) }}" class="form-control disabled" disabled>
                     @endif
@@ -85,13 +171,19 @@
 
           @endif
 
+          <p class="help-block">
+              <x-icon type="warning" class="text-info" /> {{ trans('admin/hardware/form.bulk_update_model_prefix') }}:
+              @foreach ($field->assetModels()->pluck('name')->intersect($modelNames) as $modelName)
+                  <span class="label label-default">
+                {{ $modelName }}
+            </span>&nbsp;
+              @endforeach
+          </p>
+
         @if ($field->help_text!='')
             <p class="help-block">{{ $field->help_text }}</p>
         @endif
 
-        <p>{{ trans('admin/hardware/form.bulk_update_model_prefix') }}: 
-                    {{$field->assetModels()->pluck('name')->intersect($modelNames)->implode(', ')}} 
-            </p>     
 
               
               
@@ -100,7 +192,7 @@
           $errormessage=$errors->first($field->db_column_name());
           if ($errormessage) {
               $errormessage=preg_replace('/ snipeit /', '', $errormessage);
-              print('<span class="alert-msg" aria-hidden="true"><i class="fas fa-times" aria-hidden="true"></i> '.$errormessage.'</span>');
+              print('<span class="alert-msg" role="alert" aria-live="assertive">'.$errormessage.'</span>');
           }
             ?>
       </div>
@@ -111,8 +203,16 @@
         </div>
         @endif
 
-
+        <div class="col-md-8 col-md-offset-3" style="padding-bottom: 10px;">
+            <label class="form-control">
+                <input type="checkbox" name="{{ 'null'.$field->db_column_name() }}" value="1">
+                {{ trans_choice('general.set_to_null', count($assets),['selection_count' => count($assets)]) }}
+            </label>
+        </div>
     </div>
-  @endforeach
+    @endforeach
 @endif
- @endforeach 
+ @endforeach
+@if ($anyModelHasCustomFields > 0)
+    </fieldset>
+@endif

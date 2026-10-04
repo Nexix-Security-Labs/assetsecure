@@ -2,10 +2,10 @@
 
 return [
 
-    'id'      => 'ID',
-    'months'   => 'Mėnesiai',
-    'term'   => 'Laikotarpis',
-    'title'      => 'Pavadinimas ',
-    'depreciation_min' => 'Floor Value',
+    'id' => 'ID',
+    'months' => 'Mėnesiai',
+    'term' => 'Laikotarpis',
+    'title' => 'Pavadinimas ',
+    'depreciation_min' => 'Minimali vertė',
 
 ];

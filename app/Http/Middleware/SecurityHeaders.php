@@ -3,14 +3,15 @@
 namespace App\Http\Middleware;
 
 use Closure;
+use Illuminate\Http\Request;
 
 class SecurityHeaders
 {
     /**
      * Handle an incoming request.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \Closure  $next
+     * @param  Request  $request
+     * @param  Closure  $next
      * @return mixed
      */
 
@@ -26,9 +27,8 @@ class SecurityHeaders
         $response = $next($request);
 
         $response->headers->set('X-Content-Type-Options', 'nosniff');
-        $response->headers->set('X-XSS-Protection', '1; mode=block');
 
-        // Ugh. Feature-Policy is dumb and clumsy and mostly irrelevant for Snipe-IT,
+        // Ugh. Feature-Policy is dumb and clumsy and mostly irrelevant for AssetSecure,
         // since we don't provide any way to IFRAME anything in in the first place.
         // There is currently no easy way to default ALL THE THINGS to 'none', but
         // security audits will still ding you if you don't have this header, even
@@ -61,7 +61,7 @@ class SecurityHeaders
 
         // The .env var ALLOW_IFRAMING  defaults to false (which disallows IFRAMING)
         // if not present, but some unique cases require this to be enabled.
-        // For example, some IT depts have IFRAMED Snipe-IT into their IT portal
+        // For example, some IT depts have IFRAMED AssetSecure into their IT portal
         // for convenience so while it is normally disallowed, there is
         // an override that exists.
 
@@ -70,8 +70,8 @@ class SecurityHeaders
         }
 
         // This defaults to false to maintain backwards compatibility for
-        // people who are not running Snipe-IT over TLS (shame, shame, shame!)
-        // Seriously though, please run Snipe-IT over TLS. Let's Encrypt is free.
+        // people who are not running AssetSecure over TLS (shame, shame, shame!)
+        // Seriously though, please run AssetSecure over TLS. Let's Encrypt is free.
         // https://letsencrypt.org
 
         if (config('app.enable_hsts') === true) {
@@ -88,13 +88,13 @@ class SecurityHeaders
             $csp_policy[] = "connect-src 'self'";
             $csp_policy[] = "object-src 'none'";
             $csp_policy[] = "font-src 'self' data:";
-            $csp_policy[] = "img-src 'self' data: ".config('app.url').' '.env('PUBLIC_AWS_URL').' https://secure.gravatar.com http://gravatar.com maps.google.com maps.gstatic.com *.googleapis.com';
-	          
+            $csp_policy[] = "img-src 'self' data: ".config('app.url').' '.config('app.additional_csp_urls').' '.config('filesystems.disks.public_aws.url').' https://secure.gravatar.com http://gravatar.com maps.google.com maps.gstatic.com *.googleapis.com';
+
             if (config('filesystems.disks.public.driver') == 's3') {
-               $csp_policy[] = "img-src 'self' data:  ".config('filesystems.disks.public.url');
+                $csp_policy[] = "img-src 'self' data:  ".config('filesystems.disks.public.url');
             }
-            $csp_policy = join(';', $csp_policy);
-           
+            $csp_policy = implode(';', $csp_policy);
+
             $response->headers->set('Content-Security-Policy', $csp_policy);
         }
 

@@ -1,17 +1,18 @@
 <?php
 
-return array(
+return [
 
-    'assigned_to'   	=> 'Susieta su',
-    'checkout'   		=> 'Priimta/išduota',
-    'id'      			=> 'ID',
-    'license_email'   	=> 'Licenzijos el. paštas',
-    'license_name'   	=> 'Licenzija išduota',
-    'purchase_date'   	=> 'Pirkimo data',
-    'purchased'   		=> 'Nupirkta',
-    'seats'   			=> 'Prieigos',
-    'hardware'   		=> 'Įranga',
-    'serial'   			=> 'Serijinis numeris',
-    'title'      		=> 'Licenzija',
+    'assigned_to' => 'Priskirta',
+    'checkout' => 'Į/Iš',
+    'deleted_at' => 'Panaikinta',
+    'id' => 'ID',
+    'license_email' => 'Licencijos el. paštas',
+    'license_name' => 'Licencija išduota',
+    'purchase_date' => 'Įsigijimo data',
+    'purchased' => 'Įsigyta',
+    'seats' => 'Vietos',
+    'hardware' => 'Įranga',
+    'serial' => 'Serijinis numeris',
+    'title' => 'Licencija',
 
-);
+];

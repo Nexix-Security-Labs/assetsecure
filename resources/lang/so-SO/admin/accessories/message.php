@@ -1,39 +1,44 @@
 <?php
 
-return array(
+return [
 
-    'does_not_exist' => 'The accessory [:id] does not exist.',
-    'not_found' => 'That accessory was not found.',
-    'assoc_users'	 => 'This accessory currently has :count items checked out to users. Please check in the accessories and and try again. ',
+    'does_not_exist' => 'Mulxaqa lasoo raaciyay [:aqoonsiga] ma ahan mid jira.',
+    'not_found' => 'Qalabkaas lama helin.',
+    'assoc_users' => 'Qalabkan waxa uu hadda hayaa :count walxo la hubiyay isticmaalayaasha Fadlan iska hubi agabka oo isku day markale. ',
 
-    'create' => array(
-        'error'   => 'The accessory was not created, please try again.',
-        'success' => 'The accessory was successfully created.'
-    ),
+    'create' => [
+        'error' => 'Qalabka lama abuurin, fadlan isku day mar kale.',
+        'success' => 'Mulxaqa lasoo raaciyay waa lagu guuleystay in la sameeyo.',
+    ],
 
-    'update' => array(
-        'error'   => 'The accessory was not updated, please try again',
-        'success' => 'The accessory was updated successfully.'
-    ),
+    'update' => [
+        'error' => 'Qalabka lama cusboonaysiin, fadlan isku day mar kale',
+        'success' => 'Mulxaqa lasoo raaciyay waa lagu guuleystay in la sameeyo.',
+    ],
 
-    'delete' => array(
-        'confirm'   => 'Are you sure you wish to delete this accessory?',
-        'error'   => 'There was an issue deleting the accessory. Please try again.',
-        'success' => 'The accessory was deleted successfully.'
-    ),
+    'delete' => [
+        'confirm' => 'Ma hubtaa inaad rabto inaad tirtirto qalabkan?',
+        'error' => 'Waxaa jirtay xaalad tirtireysay mulxaqa. Fadlan isku day mar kale.',
+        'success' => 'Mulxaqa lasoo raaciyay waa lagu guuleystay in la tir-tiro.',
+        'bulk_success' => 'Accessory deleted successfully.|:count accessories were deleted successfully.',
+        'partial_success' => ':count accessory was deleted successfully, but others could not be deleted. See below for details.|:count accessories were deleted successfully, but others could not be deleted. See below for details.',
+    ],
 
-     'checkout' => array(
-        'error'   		=> 'Accessory was not checked out, please try again',
-        'success' 		=> 'Accessory checked out successfully.',
-        'unavailable'   => 'Accessory is not available for checkout. Check quantity available',
-        'user_does_not_exist' => 'That user is invalid. Please try again.'
-    ),
+    'checkout' => [
+        'error' => 'Agabka lama hubin, fadlan isku day mar kale',
+        'success' => 'Mulxaqa lasoo raaciyay waa lagu guuleystay in la hubiyo.',
+        'unavailable' => 'Agabka looma hayo hubinta Hubi tirada la heli karo',
+        'user_does_not_exist' => 'Isticmaalahaas maahan mid jira. Fadlan isku day mar kale.',
+        'checkout_qty' => [
+            'lte' => 'There is currently only one available accessory of this type, and you are trying to check out :checkout_qty. Please adjust the checkout quantity or the total stock of this accessory and try again.|There are :number_currently_remaining total available accessories, and you are trying to check out :checkout_qty. Please adjust the checkout quantity or the total stock of this accessory and try again.',
+        ],
 
-    'checkin' => array(
-        'error'   		=> 'Accessory was not checked in, please try again',
-        'success' 		=> 'Accessory checked in successfully.',
-        'user_does_not_exist' => 'That user is invalid. Please try again.'
-    )
+    ],
 
+    'checkin' => [
+        'error' => 'Agabka lama hubin, fadlan isku day mar kale',
+        'success' => 'Mulxaqa waa lagu guuleystay in la hubiyo.',
+        'user_does_not_exist' => 'Isticmaalahaasi mahan mid jira. Fadlan isku day mar kale.',
+    ],
 
-);
+];

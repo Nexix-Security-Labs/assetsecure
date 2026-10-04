@@ -41,7 +41,7 @@ AS_NAME="assetsecure"
 AS_PATH="/var/www/$AS_NAME" 
 DB_NAME="assetsecuredb"
 DB_USER="assetsecureuser"
-DB_PASS="eQ57NmQLEiJDR!tWH89a"
+DB_PASS="$(openssl rand -base64 24 | tr -dc 'A-Za-z0-9' | head -c 24)"
 
 # Print message to console at start
 echo '
@@ -123,8 +123,12 @@ echo "Installing PHP..."
 sudo apt install php php-mysql php-gd php-mbstring php-curl php-ldap php-xml php-bcmath git curl net-tools -y
 sudo apt install php php-bcmath php-bz2 php-intl php-gd php-mbstring php-mysql php-zip php-opcache php-pdo php-calendar php-ctype php-exif php-ffi php-fileinfo php-ftp php-iconv php-intl php-json php-mysqli php-phar php-posix php-readline php-shmop php-sockets php-sysvmsg php-sysvsem php-sysvshm php-tokenizer php-curl php-ldap -y
 
-# Update PHP version in composer.json
-# sudo sed -i 's/"php": ">=7.4.3 <8.2"/"php": "^8.2"/' /var/www/assetsecure/composer.json
+# AssetSecure requires PHP 8.2 or newer
+if ! php -r 'exit(version_compare(PHP_VERSION, "8.2.0", ">=") ? 0 : 1);'; then
+  echo "PHP $(php -r 'echo PHP_VERSION;') is installed, but AssetSecure requires PHP 8.2 or newer."
+  echo "Use Ubuntu 24.04+ / Debian 12+, or install PHP 8.2+ from a third-party repository, then re-run."
+  exit 1
+fi
 
 # Install Composer dependency manager
 echo "Installing Composer..."
@@ -147,7 +151,7 @@ cd $AS_NAME
 cp .env.example .env
 
 #TODO escape SED delimiter in variables
-  sed -i '1 i\#Created By Snipe-it Installer' "$AS_PATH/.env"
+  sed -i '1 i\#Created By AssetSecure Installer' "$AS_PATH/.env"
   sed -i "s|^\\(APP_TIMEZONE=\\).*|\\1Asia/Muscat|" "$AS_PATH/.env"
   sed -i "s|^\\(DB_HOST=\\).*|\\1localhost|" "$AS_PATH/.env"
   sed -i "s|^\\(DB_DATABASE=\\).*|\\1$DB_NAME|" "$AS_PATH/.env"
@@ -164,7 +168,7 @@ for chmod_dir in "$AS_PATH/storage"; do
 
 # Install PHP dependencies via Composer
 echo "Installing PHP dependencies..."
-composer install --no-dev --ignore-platform-reqs
+composer install --no-dev --prefer-dist
 
 # Generate app encryption key
 echo "Generating app key..."
@@ -193,6 +197,7 @@ a2ensite $AS_NAME.conf
 echo "Restarting Apache..."
 systemctl restart apache2
 
+# Generated database credentials are stored in $AS_PATH/.env
 # Output URL to access AssetSecure installation
 echo "AssetSecure installed! Complete setup at http://$AS_IP"
 

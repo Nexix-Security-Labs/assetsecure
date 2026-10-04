@@ -3,10 +3,8 @@
 namespace App\Console\Commands;
 
 use App\Models\License;
-use App\Models\LicenseSeat;
 use App\Models\User;
 use Illuminate\Console\Command;
-use Illuminate\Database\Eloquent\Model;
 
 class CheckoutLicenseToAllUsers extends Command
 {
@@ -15,7 +13,7 @@ class CheckoutLicenseToAllUsers extends Command
      *
      * @var string
      */
-    protected $signature = 'snipeit:checkout-to-all {--license_id=} {--notify}';
+    protected $signature = 'assetsecure:checkout-to-all {--license_id=} {--notify}';
 
     /**
      * The console command description.
@@ -75,6 +73,7 @@ class CheckoutLicenseToAllUsers extends Command
 
             if ($user->licenses->where('id', '=', $license_id)->count()) {
                 $this->info($user->username.' already has this license checked out to them. Skipping... ');
+
                 continue;
             }
 

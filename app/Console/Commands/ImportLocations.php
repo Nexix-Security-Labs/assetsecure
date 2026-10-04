@@ -13,7 +13,7 @@ class ImportLocations extends Command
      *
      * @var string
      */
-    protected $signature = 'snipeit:import-locations {filename}';
+    protected $signature = 'assetsecure:import-locations {filename}';
 
     /**
      * The console command description.
@@ -46,7 +46,7 @@ class ImportLocations extends Command
         $filename = $this->argument('filename');
         $csv = Reader::createFromPath(storage_path('private_uploads/imports/').$filename, 'r');
         $this->info('Attempting to process: '.storage_path('private_uploads/imports/').$filename);
-        $csv->setHeaderOffset(0); //because we don't want to insert the header
+        $csv->setHeaderOffset(0); // because we don't want to insert the header
         $results = $csv->getRecords();
 
         // Import parent location names first if they don't exist

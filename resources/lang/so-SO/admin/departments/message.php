@@ -1,22 +1,24 @@
 <?php
 
-return array(
+return [
 
-    'does_not_exist' => 'Department does not exist.',
-    'department_already_exists' => 'A department already exists with that name at this company location. Or choose a more specific name for this department. ',
-    'assoc_users'	 => 'This department is currently associated with at least one user and cannot be deleted. Please update your users to no longer reference this department and try again. ',
-    'create' => array(
-        'error'   => 'Department was not created, please try again.',
-        'success' => 'Department created successfully.'
-    ),
-    'update' => array(
-        'error'   => 'Department was not updated, please try again',
-        'success' => 'Department updated successfully.'
-    ),
-    'delete' => array(
-        'confirm'   	=> 'Are you sure you wish to delete this department?',
-        'error'   => 'There was an issue deleting the department. Please try again.',
-        'success' => 'The department was deleted successfully.'
-    )
+    'does_not_exist' => 'Waaxdu ma jirto.',
+    'department_already_exists' => 'Waax magacaas leh ayaa horay uga jirtay goobta shirkadda. Ama u dooro magac gaar ah waaxdan. ',
+    'assoc_users' => 'Waaxdan hadda waxay ku xidhan tahay ugu yaraan hal isticmaale lamana tirtiri karo. Fadlan cusboonaysii isticmaalayaashaada si aanay u tixraacin waaxdan oo isku day mar kale. ',
+    'create' => [
+        'error' => 'Waaxda lama abuurin, fadlan isku day mar kale.',
+        'success' => 'Waaxda si guul leh ayaa loo sameeyay.',
+    ],
+    'update' => [
+        'error' => 'Waaxda lama cusboonaysiin, fadlan isku day mar kale',
+        'success' => 'Waaxda waa lagu guuleystay in la cusbooneysiiyo.',
+    ],
+    'delete' => [
+        'confirm' => 'Ma hubtaa inaad rabto inaad tirtirto waaxdan?',
+        'error' => 'Waxaa jirtay arin tir-tireysay waaxda. Fadlan isku day mar kale.',
+        'success' => 'Waaxda waa lagu guuleystay in la tir-tiro.',
+        'bulk_success' => 'Department deleted successfully.|:count departments were deleted successfully.',
+        'partial_success' => 'Department deleted successfully. See additional information below. | :count departments were deleted successfully. See additional information below.',
+    ],
 
-);
+];
