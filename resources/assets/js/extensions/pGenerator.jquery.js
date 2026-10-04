@@ -159,7 +159,7 @@
      */
     function shuffle(o)
     {
-        for(var j, x, i = o.length; i; j = parseInt(Math.random() * i), x = o[--i], o[i] = o[j], o[j] = x);
+        for(var j, x, i = o.length; i; j = secureRandomInt(i), x = o[--i], o[i] = o[j], o[j] = x);
 
         return o;
     }
@@ -174,7 +174,27 @@
      */
     function randomFromInterval(from, to)
     {
-        return Math.floor(Math.random()*(to-from+1)+from);
+        return from + secureRandomInt(to - from + 1);
+    }
+
+    /**
+     * Get a cryptographically secure random integer in [0, max).
+     * Uses rejection sampling so every value is equally likely.
+     *
+     * @param {number} max
+     *
+     * @returns {number}
+     */
+    function secureRandomInt(max)
+    {
+        var limit = Math.floor(0x100000000 / max) * max;
+        var buffer = new Uint32Array(1);
+
+        do {
+            window.crypto.getRandomValues(buffer);
+        } while (buffer[0] >= limit);
+
+        return buffer[0] % max;
     }
 
     /**
