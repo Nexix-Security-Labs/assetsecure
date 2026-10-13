@@ -1,19 +1,20 @@
 <?php
 
-return array(
-    'about'      	=> 'About Status Labels',
-    'archived'      	=> 'Archived',
-    'create'      	=> 'Create Status Label',
-    'color'      	=> 'Chart Color',
-    'default_label' => 'Default Label',
-    'default_label_help' => 'This is used to ensure your most commonly used status labels appear at the top of the select box when creating/editing assets.',
-    'deployable'      	=> 'Deployable',
-    'info'      	=> 'Status labels are used to describe the various states your assets could be in. They may be out for repair, lost/stolen, etc. You can create new status labels for deployable, pending and archived assets.',
-    'name'      	=> 'Status Name',
-    'pending'      	=> 'Pending',
-    'status_type'   => 'Status Type',
-    'show_in_nav'   => 'Show in side nav',
-    'title'      	=> 'Status Labels',
-    'undeployable'  => 'Undeployable',
-    'update'      	=> 'Update Status Label',
-);
+return [
+    'about' => 'About Status Types',
+    'archived' => 'Kaydsan',
+    'create' => 'Samee Summada Xaaladda',
+    'color' => 'Midabka Shaxda',
+    'default_label' => 'Summada asalka ah',
+    'default_label_help' => 'Tan waxa loo isticmaalaa si loo hubiyo in summadaada heerka aadka loo isticmaalo ay ka muuqdaan xagga sare ee sanduuqa xulashada marka la abuurayo/tafatirka hantida.',
+    'deployable' => 'La geyn karo',
+    'info' => 'Status label types are used to describe the various states your assets could be in. They may be out for repair, lost/stolen, etc. You can create new status labels for your deployable, pending and archived assets according to your own workflow. For more information, <a href="https://github.com/Nexix-Security-Labs/assetsecure/wiki/overview#status-labels" target="_blank">see the documentation <i class="fa fa-external-link"></i></a>.',
+    'name' => 'Magaca heerka',
+    'pending' => 'La sugayo',
+    'status_type' => 'Nooca Xaaladda',
+    'show_in_nav' => 'Muuji dhinaca nav',
+    'status_label' => 'Status Label',
+    'title' => 'Calaamadaha heerka',
+    'undeployable' => 'Aan la hawlgelin',
+    'update' => 'Cusbooneysii Heerka Summada',
+];

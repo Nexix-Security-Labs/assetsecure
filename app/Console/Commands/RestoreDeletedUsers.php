@@ -6,9 +6,9 @@ use App\Models\Actionlog;
 use App\Models\Asset;
 use App\Models\License;
 use App\Models\User;
-use Artisan;
-use DB;
 use Illuminate\Console\Command;
+use Illuminate\Support\Facades\Artisan;
+use Illuminate\Support\Facades\DB;
 
 class RestoreDeletedUsers extends Command
 {
@@ -17,7 +17,7 @@ class RestoreDeletedUsers extends Command
      *
      * @var string
      */
-    protected $signature = 'snipeit:restore-users {--start_date=} {--end_date=}';
+    protected $signature = 'assetsecure:restore-users {--start_date=} {--end_date=}';
 
     /**
      * The console command description.
@@ -75,7 +75,7 @@ class RestoreDeletedUsers extends Command
 
                     DB::table('assets')
                         ->where('id', $user_log->item_id)
-                        ->update(['assigned_to' => $user->id, 'assigned_type'=> User::class]);
+                        ->update(['assigned_to' => $user->id, 'assigned_type' => User::class]);
 
                     $this->info('      ** Asset '.$user_log->item->id.' ('.$user_log->item->asset_tag.') restored to user '.$user->id.'');
                 } elseif ($user_log->item_type == License::class) {

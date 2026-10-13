@@ -4,8 +4,8 @@ namespace App\Console\Commands;
 
 use App\Models\Asset;
 use App\Models\Setting;
-use Artisan;
 use Illuminate\Console\Command;
+use Illuminate\Support\Facades\Artisan;
 
 class RegenerateAssetTags extends Command
 {
@@ -14,7 +14,7 @@ class RegenerateAssetTags extends Command
      *
      * @var string
      */
-    protected $signature = 'snipeit:regenerate-tags {--start=} {--output= : info|warn|error|all} ';
+    protected $signature = 'assetsecure:regenerate-tags {--start=} {--output= : info|warn|error|all} ';
 
     /**
      * The console command description.

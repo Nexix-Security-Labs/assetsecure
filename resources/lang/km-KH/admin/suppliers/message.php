@@ -1,28 +1,27 @@
 <?php
 
-return array(
+return [
 
-    'deleted' => 'Deleted supplier',
-    'does_not_exist' => 'Supplier does not exist.',
+    'deleted' => 'អ្នកផ្គត់ផ្គង់បានបង្កើតដោយជោគជ័យ។',
+    'does_not_exist' => 'អ្នកផ្គត់ផ្គង់មិនមានទេ។',
 
+    'create' => [
+        'error' => 'អ្នកផ្គត់ផ្គង់មិនត្រូវបានបង្កើតទេ សូមព្យាយាមម្តងទៀត។',
+        'success' => 'អ្នកផ្គត់ផ្គង់បានបង្កើតដោយជោគជ័យ។',
+    ],
 
-    'create' => array(
-        'error'   => 'Supplier was not created, please try again.',
-        'success' => 'Supplier created successfully.'
-    ),
+    'update' => [
+        'error' => 'អ្នកផ្គត់ផ្គង់បានបង្កើតដោយជោគជ័យ។',
+        'success' => 'អ្នកផ្គត់ផ្គង់បានបង្កើតដោយជោគជ័យ។',
+    ],
 
-    'update' => array(
-        'error'   => 'Supplier was not updated, please try again',
-        'success' => 'Supplier updated successfully.'
-    ),
+    'delete' => [
+        'confirm' => 'អ្នកផ្គត់ផ្គង់បានបង្កើតដោយជោគជ័យ។',
+        'error' => 'មានបញ្ហាក្នុងការលុបអ្នកផ្គត់ផ្គង់។ សូម​ព្យាយាម​ម្តង​ទៀត។',
+        'success' => 'អ្នកផ្គត់ផ្គង់ត្រូវបានលុបដោយជោគជ័យ។',
+        'not_found' => 'Supplier not found.',
+        'bulk_success' => 'Supplier deleted successfully.|:count suppliers were deleted successfully.',
+        'partial_success' => '.',
+    ],
 
-    'delete' => array(
-        'confirm'   => 'Are you sure you wish to delete this supplier?',
-        'error'   => 'There was an issue deleting the supplier. Please try again.',
-        'success' => 'Supplier was deleted successfully.',
-        'assoc_assets'	 => 'This supplier is currently associated with :asset_count asset(s) and cannot be deleted. Please update your assets to no longer reference this supplier and try again. ',
-        'assoc_licenses'	 => 'This supplier is currently associated with :licenses_count licences(s) and cannot be deleted. Please update your licenses to no longer reference this supplier and try again. ',
-        'assoc_maintenances'	 => 'This supplier is currently associated with :asset_maintenances_count asset maintenances(s) and cannot be deleted. Please update your asset maintenances to no longer reference this supplier and try again. ',
-    )
-
-);
+];

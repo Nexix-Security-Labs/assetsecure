@@ -1,17 +1,16 @@
 <?php
 
-return array(
+return [
 
-    'create'				=> 'Sukurti įrangos modelį',
-    'created_at' 			=> 'Sukurta',
-    'eol'	 				=> 'Nurašymo data',
-    'modelnumber'   		=> 'Modelio Nr.',
-    'name'      			=> 'Įrangos modelio pavadinimas',
-    'numassets' 			=> 'Įranga',
-    'title'					=> 'Įrangos modeliai',
-    'update'				=> 'Atnaujinti įrangos modelį',
-    'view'					=> 'Peržiūrėti įrangos modelį',
-    'update'				=> 'Atnaujinti įrangos modelį',
-    'clone'				=> 'Kopijuoti modelį',
-    'edit'				=> 'Taisyti modelį',
-);
+    'create' => 'Sukurti turto modelį',
+    'created_at' => 'Sukurta',
+    'eol' => 'Nurašymo data',
+    'modelnumber' => 'Modelio Nr.',
+    'name' => 'Turto modelio pavadinimas',
+    'numassets' => 'Turtas',
+    'title' => 'Turto modeliai',
+    'update' => 'Atnaujinti turto modelį',
+    'view' => 'Peržiūrėti turto modelį',
+    'clone' => 'Klonuoti modelį',
+    'edit' => 'Redaguoti modelį',
+];

@@ -10,7 +10,7 @@ newIssueWelcomeComment: |
 newPRWelcomeComment: |
   💖 Thanks for this pull request! 💖
 
-  We use [semantic commit messages](https://snipe-it.readme.io/docs/contributing-overview#section-pull-request-guidelines) to streamline the release process and easily generate changelogs between versions. Before your pull request can be merged, you should **update your pull request title** to start with a semantic prefix if it doesn't have one already.
+  We use [semantic commit messages](https://github.com/Nexix-Security-Labs/assetsecure/wiki/contributing-overview#section-pull-request-guidelines) to streamline the release process and easily generate changelogs between versions. Before your pull request can be merged, you should **update your pull request title** to start with a semantic prefix if it doesn't have one already.
 
   Examples of commit messages with semantic prefixes:
 

@@ -1,11 +1,11 @@
 <?php
 
-return array(
+return [
 
-    'id'                        => 'ID',
-    'name'                      => 'Departamento pavadinimas',
-    'manager'                   => 'Vadybininkas',
-    'location'                  => 'Vieta',
-    'create'                    => 'Sukurkite skyrių',
-    'update'                    => 'Atnaujinti departamentą',
-    );
+    'id' => 'ID',
+    'name' => 'Skyriaus pavadinimas',
+    'manager' => 'Vadovas',
+    'location' => 'Vieta',
+    'create' => 'Sukurti skyrių',
+    'update' => 'Atnaujinti skyrių',
+];

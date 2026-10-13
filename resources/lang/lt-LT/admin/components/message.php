@@ -1,37 +1,37 @@
 <?php
 
-return array(
+return [
 
-    'does_not_exist' => 'Komponentas \'%s\' neegzistuoja.',
+    'does_not_exist' => 'Tokio komponento nėra.',
 
-    'create' => array(
-        'error'   => 'Komponentas nebuvo sukurtas, prašome bandyti vėl.',
-        'success' => 'Komponentas sėkmingai sukurtas.'
-    ),
+    'create' => [
+        'error' => 'Komponentas nebuvo sukurtas, bandykite dar kartą.',
+        'success' => 'Komponentas sėkmingai sukurtas.',
+    ],
 
-    'update' => array(
-        'error'   => 'Komponentas nebuvo atnaujintas, bandykite dar kartą',
-        'success' => 'Komponentas sėkmingai atnaujintas.'
-    ),
+    'update' => [
+        'error' => 'Komponentas nebuvo atnaujintas, bandykite dar kartą',
+        'success' => 'Komponentas sėkmingai atnaujintas.',
+    ],
 
-    'delete' => array(
-        'confirm'   => 'Ar tikrai norite ištrinti šį komponentą?',
-        'error'   => 'Problema buvo pašalinta komponentas. Prašau, pabandykite dar kartą.',
-        'success' => 'Komponentas ištrintas sėkmingai.'
-    ),
+    'delete' => [
+        'confirm' => 'Ar tikrai norite panaikinti šį komponentą?',
+        'error' => 'Bandant panaikinti komponentą įvyko klaida. Bandykite dar kartą.',
+        'success' => 'Komponentas sėkmingai panaikintas.',
+        'error_qty' => 'Kai kurie šio tipo komponentai vis dar yra išduoti. Paimkite juos ir bandykite dar kartą.',
+    ],
 
-     'checkout' => array(
-        'error'   		=> 'Komponentas nebuvo išregistruotas, bandykite dar kartą',
-        'success' 		=> 'Komponentas sėkmingai patikrintas.',
-        'user_does_not_exist' => 'Šis naudotojas neteisingas. Prašome bandykite dar kartą.',
-        'unavailable'      => 'Nepakankamai komponentų: :remaining remaining, :requested requested ',
-    ),
+    'checkout' => [
+        'error' => 'Komponentas nebuvo išduotas, bandykite dar kartą',
+        'success' => 'Komponentas sėkmingai išduotas.',
+        'user_does_not_exist' => 'Neteisingas naudotojas. Bandykite dar kartą.',
+        'unavailable' => 'Nepakanka komponentų: yra :remaining, o prašoma :requested ',
+    ],
 
-    'checkin' => array(
-        'error'   		=> 'Komponentas nebuvo įregistruotas, bandykite dar kartą',
-        'success' 		=> 'Komponentas sėkmingai užregistruotas.',
-        'user_does_not_exist' => 'Šis naudotojas yra netinkamas. Prašau, pabandykite dar kartą.'
-    )
+    'checkin' => [
+        'error' => 'Komponentas nebuvo paimtas, bandykite dar kartą',
+        'success' => 'Komponentas sėkmingai paimtas.',
+        'user_does_not_exist' => 'Neteisingas naudotojas. Bandykite dar kartą.',
+    ],
 
-
-);
+];

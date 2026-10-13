@@ -1,6 +1,6 @@
 <?php
 
-return array(
+return [
 
     /*
     |--------------------------------------------------------------------------
@@ -13,9 +13,9 @@ return array(
     |
     */
 
-    "password" => "Kata sandi harus 6 karakter dan sama.",
-    "user"     => "Nama pengguna atau alamat email salah",
-    "token"    => 'This password reset token is invalid or expired, or does not match the username provided.',
-    'sent'	   => 'Jika alamat email anda ada di sistem kami, email pemulihan kata sandi telah dikirim.',
+    'password' => 'Kata sandi harus 6 karakter dan sama.',
+    'user' => 'Nama pengguna atau alamat email salah',
+    'token' => 'Token reset kata sandi ini tidak valid atau telah kedaluwarsa, atau tidak cocok dengan nama pengguna yang diberikan.',
+    'sent' => 'Jika alamat email anda ada di sistem kami, email pemulihan kata sandi telah dikirim.',
 
-);
+];

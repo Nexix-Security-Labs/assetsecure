@@ -1,16 +1,19 @@
 <?php
 
 return [
-    'about_asset_depreciations'  			=> 'O odpisovaní majetku',
-    'about_depreciations'  					=> 'Môžete nastaviť odpisovanie majetku, aby dochádzalo k rovnomernému odpisovaniu.',
-    'asset_depreciations'  					=> 'Odpisy majetku',
-    'create'  					            => 'Vytovirť typ odpisu',
-    'depreciation_name'  					=> 'Názov odpisovania',
-    'depreciation_min'                      => 'Floor Value of Depreciation',
-    'number_of_months'  					=> 'Počet mesiacov',
-    'update'  					            => 'Upraviť odpisovanie',
-    'depreciation_min'                      => 'Minimum Value after Depreciation',
-    'no_depreciations_warning'               => '<strong>Warning: </strong>
-                      You do not currently have any depreciations set up.
-                      Please set up at least one depreciation to view the depreciation report.',
+    'about_asset_depreciations' => 'O odpisovaní majetku',
+    'about_depreciations' => 'Odpisy majetku môžete nastaviť tak, aby sa majetok odpisoval lineárne (rovnomerne), polročne s podmienkou alebo polročne vždy.',
+    'asset_depreciations' => 'Odpisy majetku',
+    'create' => 'Vytovirť typ odpisu',
+    'depreciation_name' => 'Názov odpisovania',
+    'number_of_months' => 'Počet mesiacov',
+    'update' => 'Upraviť odpisovanie',
+    'depreciation_min' => 'Minimálna hodnota po odpísaní',
+    'no_depreciations_warning' => '<strong>Varovanie: </strong>
+                      Nenastavili ste žiadne odpisovanie.
+                      Prosím nastavte aspoň jeden typ odpisov aby sa zobrazoval prehľad odpisovania.',
+    'depreciation_method' => 'Report odpisov',
+    'linear_depreciation' => 'Lineárne (predvolené)',
+    'half_1' => 'Polročná konvencia, vždy uplatnená',
+    'half_2' => 'Polročná dohoda, uplatnená s podmienkou',
 ];

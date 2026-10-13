@@ -2,28 +2,48 @@
     <!-- EULA text -->
     <div class="form-group {{ $errors->has('eula_text') ? 'error' : '' }}">
         <label for="eula_text" class="col-md-3 control-label">{{ trans('admin/categories/general.eula_text') }}</label>
-        <div class="col-md-7">
-            {{ Form::textarea('eula_text', null, ['wire:model' => 'eulaText', 'class' => 'form-control', 'aria-label'=>'eula_text', 'disabled' => $this->eulaTextDisabled]) }}
+        <div class="col-md-8">
+            <x-input.textarea
+                name="eula_text"
+                wire:model.live.change.live="eulaText"
+                aria-label="eula_text"
+                :disabled="$this->eulaTextDisabled"
+            />
             <p class="help-block">{!! trans('admin/categories/general.eula_text_help') !!} </p>
-            <p class="help-block">{!! trans('admin/settings/general.eula_markdown') !!} </p>
-            {!! $errors->first('eula_text', '<span class="alert-msg" aria-hidden="true">:message</span>') !!}
+            <x-form.help name="eula_text" icon="markdown">
+                {{ trans('general.markdown') }}
+            </x-form.help>
+            <x-form.error name="eula_text" />
         </div>
         @if ($this->eulaTextDisabled)
-            <input type="hidden" name="eula_text" wire:model="eulaText" />
+            <input type="hidden" name="eula_text" wire:model.live="eulaText" />
         @endif
     </div>
 
     <!-- Use default checkbox -->
     <div class="form-group">
-        <div class="col-md-9 col-md-offset-3">
+        <div class="col-md-8 col-md-offset-3">
             @if ($defaultEulaText!='')
                 <label class="form-control">
-                    {{ Form::checkbox('use_default_eula', '1', null, ['wire:model' => 'useDefaultEula', 'aria-label'=>'use_default_eula']) }}
+                    <input
+                        type="checkbox"
+                        name="use_default_eula"
+                        value="1"
+                        wire:model.live="useDefaultEula"
+                        aria-label="use_default_eula"
+                    />
                     <span>{!! trans('admin/categories/general.use_default_eula') !!}</span>
                 </label>
             @else
                 <label class="form-control form-control--disabled">
-                    {{ Form::checkbox('use_default_eula', '0', null, ['wire:model' => 'useDefaultEula', 'class'=>'disabled','disabled' => 'disabled', 'aria-label'=>'use_default_eula']) }}
+                    <input
+                        type="checkbox"
+                        name="use_default_eula"
+                        value="0"
+                        wire:model.live="useDefaultEula"
+                        aria-label="use_default_eula"
+                        disabled
+                    />
                     <span>{!! trans('admin/categories/general.use_default_eula_disabled') !!}</span>
                 </label>
             @endif
@@ -32,29 +52,65 @@
 
     <!-- Require Acceptance -->
     <div class="form-group">
-        <div class="col-md-9 col-md-offset-3">
+        <div class="col-md-8 col-md-offset-3">
             <label class="form-control">
-                {{ Form::checkbox('require_acceptance', '1', null, ['wire:model' => 'requireAcceptance', 'aria-label'=>'require_acceptance']) }}
+                <input
+                    type="checkbox"
+                    name="require_acceptance"
+                    value="1"
+                    wire:model.live="requireAcceptance"
+                    aria-label="require_acceptance"
+                />
                 {{ trans('admin/categories/general.require_acceptance') }}
             </label>
+            @if ($this->isGlobalSignatureRequired)
+                <p class="help-block">
+                    <x-icon type="tip"/>
+                    {{ trans('admin/categories/general.global_signature_required_notice') }}
+                </p>
+
+            @endif
         </div>
     </div>
 
+    @if ($requireAcceptance)
+        <div class="form-group">
+            <div class="col-md-8 col-md-offset-3">
+                <label class="form-control">
+                    <input
+                        type="checkbox"
+                        name="alert_on_response"
+                        value="1"
+                        wire:model="alertOnResponse"
+                    />
+                    {{ trans('admin/categories/general.email_to_initiator') }}
+                </label>
+            </div>
+        </div>
+    @endif
+
     <!-- Email on Checkin -->
     <div class="form-group">
-        <div class="col-md-9 col-md-offset-3">
+        <div class="col-md-8 col-md-offset-3">
             <label class="form-control">
-                {{ Form::checkbox('checkin_email', '1', null, ['wire:model' => 'sendCheckInEmail', 'aria-label'=>'checkin_email', 'disabled' => $this->sendCheckInEmailDisabled]) }}
-                {{ trans('admin/categories/general.checkin_email') }}
+                <input
+                    type="checkbox"
+                    name="checkin_email"
+                    value="1"
+                    wire:model.live="sendCheckInEmail"
+                    aria-label="checkin_email"
+                />
+                @if ($this->emailWillBeSendDueToEula)
+                    {{ trans('admin/categories/general.email_to_user_upon_checkin') }}
+                @else
+                    {{ trans('admin/categories/general.email_to_user_upon_checkin_and_checkout') }}
+                @endif
             </label>
-            @if ($this->shouldDisplayEmailMessage)
-                <div class="callout callout-info">
-                    <i class="far fa-envelope"></i>
+            @if ($this->emailWillBeSendDueToEula)
+                <x-callout type="info" role="status">
+                    <i class="far fa-envelope" aria-hidden="true"></i>
                     <span>{{ $this->emailMessage }}</span>
-                </div>
-            @endif
-            @if ($this->sendCheckInEmailDisabled)
-                <input type="hidden" name="checkin_email" wire:model="sendCheckInEmail" />
+                </x-callout>
             @endif
         </div>
     </div>

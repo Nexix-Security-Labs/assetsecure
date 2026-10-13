@@ -1,63 +1,59 @@
 <?php
 
-return array(
+return [
 
-    'field' => array(
-        'invalid'   => 'That field does not exist.',
-        'already_added'   => 'Field already added',
+    'field' => [
+        'invalid' => 'Goobtaas ma jirto.',
+        'already_added' => 'Goobta mar hore ayaa lagu daray',
+        'none_selected' => 'No field selected',
 
-        'create' => array(
-            'error'   => 'Field was not created, please try again.',
-            'success' => 'Field created successfully.',
-            'assoc_success' => 'Field successfully added to fieldset.'
-        ),
+        'create' => [
+            'error' => 'Goobta lama abuurin, fadlan isku day mar kale.',
+            'success' => 'Feild-dhiga waa lagu guuleystay in la sameeyo.',
+            'assoc_success' => 'Goobta si guul leh ayaa loogu daray goobta.',
+        ],
 
-        'update' => array(
-            'error'   => 'Field was not updated, please try again',
-            'success' => 'Field updated successfully.'
-        ),
+        'update' => [
+            'error' => 'Goobta lama cusboonaysiin, fadlan isku day mar kale',
+            'success' => 'Feild-dhiga waa lagu guuleystay in la cusbooneysiiyo.',
+        ],
 
-        'delete' => array(
-            'confirm'   	=> 'Are you sure you wish to delete this field?',
-            'error'   => 'There was an issue deleting the field. Please try again.',
-            'success' => 'The field was deleted successfully.',
-            'in_use'   => 'Field is still in use.',
-        )
+        'delete' => [
+            'confirm' => 'Ma hubtaa inaad doonayso inaad tirtirto goobtan?',
+            'error' => 'Waxaa jirtay arrin tir-tireysay feild-dhiga. Fadlan isku day mar kale.',
+            'success' => 'Feild-dhiga waa lagu guuleystay in la tir-tiro.',
+            'in_use' => 'Goobta weli waa la isticmaalayaa.',
+        ],
 
-    ),
+    ],
 
-    'fieldset' => array(
+    'fieldset' => [
 
-        'does_not_exist' => 'Fieldset does not exist',
+        'does_not_exist' => 'Fieldset ma jiro',
 
-        'create' => array(
-            'error'   => 'Fieldset was not created, please try again.',
-            'success' => 'Fieldset created successfully.'
-        ),
+        'create' => [
+            'error' => 'Fieldset lama abuurin, fadlan isku day mar kale.',
+            'success' => 'Fieldset waa lagu guuleystay in la sameeyo.',
+        ],
 
-        'update' => array(
-            'error'   => 'Fieldset was not updated, please try again',
-            'success' => 'Fieldset updated successfully.'
-        ),
+        'update' => [
+            'error' => 'Fieldset lama cusboonaysiin, fadlan isku day mar kale',
+            'success' => 'Feildset waa lagu guuleystay in la cusbooneysiiyo.',
+        ],
 
-        'delete' => array(
-            'confirm'   	=> 'Are you sure you wish to delete this fieldset?',
-            'error'   => 'There was an issue deleting the fieldset. Please try again.',
-            'success' => 'The fieldset was deleted successfully.',
-            'in_use'   => 'Fieldset is still in use.',
-        )
+        'delete' => [
+            'confirm' => 'Ma hubtaa inaad rabto inaad tirtirto goobtan?',
+            'error' => 'Waxaa jirtay arrin tir-tireysay feild-dhiga. Fadlan isku day mar kale.',
+            'success' => 'Fieldset waa lagu guuleystay in la tir-tiro.',
+            'in_use' => 'Fieldset weli waa la isticmaalayaa.',
+        ],
 
-    ),
+    ],
 
-    'fieldset_default_value' => array(
+    'fieldset_default_value' => [
 
-        'error' => 'Error validating default fieldset values.',
+        'error' => 'Khalad ayaa kajira hubinta qiimaha feildset-ka.',
 
-    ),
+    ],
 
-
-
-
-
-
-);
+];

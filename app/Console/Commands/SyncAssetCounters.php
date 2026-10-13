@@ -4,6 +4,7 @@ namespace App\Console\Commands;
 
 use App\Models\Asset;
 use Illuminate\Console\Command;
+use Illuminate\Support\Facades\Log;
 
 class SyncAssetCounters extends Command
 {
@@ -12,7 +13,7 @@ class SyncAssetCounters extends Command
      *
      * @var string
      */
-    protected $signature = 'snipeit:counter-sync';
+    protected $signature = 'assetsecure:counter-sync';
 
     /**
      * The console command description.
@@ -58,20 +59,18 @@ class SyncAssetCounters extends Command
                         $asset->save();
                         $bar->advance();
 
-                        \Log::debug('Asset: '.$asset->id.' has '.$asset->checkin_counter.' checkins, '.$asset->checkout_counter.' checkouts, and '.$asset->requests_counter.' requests');
+                        Log::debug('Asset: '.$asset->id.' has '.$asset->checkin_counter.' checkins, '.$asset->checkout_counter.' checkouts, and '.$asset->requests_counter.' requests');
 
                     }
 
-            } else {
-                $this->info('No assets to sync');
-            }
-        });
-        
+                } else {
+                    $this->info('No assets to sync');
+                }
+            });
 
         $bar->finish();
         $time_elapsed_secs = microtime(true) - $start;
         $this->info("\nSync of ".$assets_count.' assets executed in '.$time_elapsed_secs.' seconds');
-
 
     }
 }

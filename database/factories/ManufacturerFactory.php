@@ -23,11 +23,13 @@ class ManufacturerFactory extends Factory
     public function definition()
     {
         return [
+            'created_by' => User::factory()->superuser(),
             'name' => $this->faker->unique()->company(),
-            'user_id' => User::factory()->superuser(),
-            'support_phone' => $this->faker->phoneNumber(),
-            'url' => $this->faker->url(),
+            'notes' => 'Created by DB seeder',
             'support_email' => $this->faker->safeEmail(),
+            'support_phone' => $this->faker->phoneNumber(),
+            'tag_color' => $this->faker->hexColor(),
+            'url' => $this->faker->url(),
         ];
     }
 
@@ -162,6 +164,51 @@ class ManufacturerFactory extends Factory
                 'url' => 'https://crucial.com',
                 'support_url' => 'https://support.crucial.com',
                 'image' => 'crucial.jpg',
+            ];
+        });
+    }
+
+    public function samsung()
+    {
+        return $this->state(function () {
+            return [
+                'name' => 'Samsung',
+                'url' => 'https://www.samsung.com',
+                'support_url' => 'https://www.samsung.com/support/',
+                'image' => 'samsung.png',
+            ];
+        });
+    }
+
+    public function google()
+    {
+        return $this->state(function () {
+            return [
+                'name' => 'Google',
+                'url' => 'https://www.google.com',
+                'image' => 'google.webp',
+            ];
+        });
+    }
+
+    public function huawei()
+    {
+        return $this->state(function () {
+            return [
+                'name' => 'Huawei',
+                'url' => 'https://consumer.huawei.com/',
+                'image' => 'huawei.webp',
+            ];
+        });
+    }
+
+    public function sony()
+    {
+        return $this->state(function () {
+            return [
+                'name' => 'Sony',
+                'url' => 'https://electronics.sony.com',
+                'image' => 'sony.png',
             ];
         });
     }

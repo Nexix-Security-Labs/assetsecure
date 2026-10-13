@@ -1,54 +1,69 @@
 <?php
 
-return array(
+return [
 
     'does_not_exist' => 'La licencia no existe o no tiene permiso para verla.',
-    'user_does_not_exist' => 'El usuario no existe.',
-    'asset_does_not_exist' 	=> 'El activo que está intentando asociar con esta licencia no existe.',
-    'owner_doesnt_match_asset' => 'El activo que está intentando asociar con esta licencia es propiedad de alguien que no sea la persona seleccionada en el desplegable asignado.',
-    'assoc_users'	 => 'Esta licencia está actualmente reservada a un usuario y no puede ser eliminada. Por favor, compruebe la licencia en primer lugar y vuelva a intentarlo. ',
+    'user_does_not_exist' => 'El usuario no existe o no tiene permiso para verlos.',
+    'asset_does_not_exist' => 'El activo que intenta asociar con esta licencia no existe.',
+    'owner_doesnt_match_asset' => 'El activo que está intentando asignar con esta licencia está asignado a un usuario diferente al de la persona seleccionada de la lista.',
+    'assoc_users' => 'Esta licencia está actualmente asignada a un usuario y no puede ser eliminada. Por favor, reciba primero la licencia y vuelva a intentarlo. ',
     'select_asset_or_person' => 'Debe seleccionar un activo o un usuario, pero no ambos.',
     'not_found' => 'Licencia no encontrada',
-    'seats_available' => ':seat_count plazas disponibles',
+    'seats_available' => ':seat_count disponibles',
 
+    'create' => [
+        'error' => 'La licencia no fue creada, por favor inténtelo de nuevo.',
+        'success' => 'Categoría creada correctamente.',
+    ],
 
-    'create' => array(
-        'error'   => 'La licencia no fue creada, por favor inténtalo de nuevo.',
-        'success' => 'Licencia creada con éxito.'
-    ),
-
-    'deletefile' => array(
-        'error'   => 'Archivo no eliminado. Vuelve a intentarlo.',
+    'deletefile' => [
+        'error' => 'Archivo no eliminado. Por favor, vuelva a intentarlo.',
         'success' => 'Archivo eliminado correctamente.',
-    ),
+    ],
 
-    'upload' => array(
-        'error'   => 'Archivo(s) no cargados. Por favor, inténtelo de nuevo.',
+    'upload' => [
+        'error' => 'Archivo(s) no cargado(s). Por favor, inténtelo de nuevo.',
         'success' => 'Archivo(s) cargados correctamente.',
-        'nofiles' => 'No has seleccionado ningún archivo para subir, o el archivo que estás intentando subir es demasiado grande',
+        'nofiles' => 'No seleccionó ningún archivo para ser cargado, o el archivo que seleccionó es demasiado grande',
         'invalidfiles' => 'Uno o más de sus archivos es demasiado grande o es un tipo de archivo que no está permitido. Los tipos de archivo permitidos son png, gif, jpg, jpeg, doc, docx, pdf, txt, zip, rar, rtf, xml y lic.',
-    ),
+    ],
 
-    'update' => array(
-        'error'   => 'La licencia no fue actualizada, por favor inténtalo de nuevo',
-        'success' => 'Licencia actualizada correctamente.'
-    ),
+    'update' => [
+        'error' => 'La licencia no fue actualizada, por favor inténtelo de nuevo',
+        'success' => 'Licencia actualizada correctamente.',
+    ],
 
-    'delete' => array(
-        'confirm'   => '¿Está seguro que desea eliminar esta licencia?',
-        'error'   => 'Hubo un problema al eliminar la licencia. Por favor, inténtalo de nuevo.',
-        'success' => 'La licencia se ha eliminado correctamente.'
-    ),
+    'delete' => [
+        'confirm' => '¿Está seguro de que desea eliminar esta licencia?',
+        'error' => 'Hubo un problema al eliminar la licencia. Por favor, inténtelo de nuevo.',
+        'success' => 'La licencia se ha eliminado correctamente.',
+        'bulk_success' => 'The selected licenses were deleted successfully.',
+        'partial_success' => 'License deleted successfully. See additional information below. | :count licenses were deleted successfully. See additional information below.',
+        'bulk_checkout_warning' => ':license_name has seats that are currently checked out and cannot be deleted. Please check in all seats before deleting.',
+    ],
 
-    'checkout' => array(
-        'error'   => 'Hubo un problema al revisar la licencia. Por favor, inténtalo de nuevo.',
-        'success' => 'La licencia fue retirada con éxito',
-        'not_enough_seats' => 'No hay suficientes asientos de licencia disponibles para la compra',
-    ),
+    'delete_with_checkin' => [
+        'bulk_success' => ':count licenses were deleted successfully after checking in :seats seats.',
+        'partial_success' => ':count licenses were deleted successfully after checking in :seats seats. See additional information below.',
+    ],
 
-    'checkin' => array(
-        'error'   => 'Se ha producido un error al comprobar la licencia. Por favor, inténtalo de nuevo.',
-        'success' => 'La licencia fue registrada con éxito'
-    ),
+    'checkout' => [
+        'error' => 'Hubo un problema asignando la licencia. Por favor, inténtelo de nuevo.',
+        'success' => 'La licencia fue asignada con éxito',
+        'not_enough_seats' => 'No hay suficientes licencias disponibles para asignar',
+        'mismatch' => 'La licencia proporcionada no coincide con la licencia seleccionada',
+        'unavailable' => 'Esta licencia no está disponible para ser asignada.',
+        'license_is_inactive' => 'Licencia caducada o cancelada.',
+    ],
 
-);
+    'checkin' => [
+        'error' => 'Hubo un problema ingresando la licencia. Por favor, inténtelo de nuevo.',
+        'not_reassignable' => 'El asiento ha sido usado.',
+        'success' => 'La licencia fue ingresada correctamente',
+    ],
+
+    'import' => [
+        'no_free_seats' => 'License ":license" has no free seats. ":target" was not assigned to a seat.',
+    ],
+
+];

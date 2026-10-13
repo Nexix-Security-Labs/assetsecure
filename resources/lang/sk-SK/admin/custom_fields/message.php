@@ -1,63 +1,59 @@
 <?php
 
-return array(
+return [
 
-    'field' => array(
-        'invalid'   => 'That field does not exist.',
-        'already_added'   => 'Field already added',
+    'field' => [
+        'invalid' => 'Toto pole neexistuje.',
+        'already_added' => 'Pole už bolo pridané',
+        'none_selected' => 'Nebolo zvolené žiadne pole',
 
-        'create' => array(
-            'error'   => 'Field was not created, please try again.',
-            'success' => 'Field created successfully.',
-            'assoc_success' => 'Field successfully added to fieldset.'
-        ),
+        'create' => [
+            'error' => 'Pole nebolo pridané, prosím skúste znovu.',
+            'success' => 'Pole bolo úspešne pridané.',
+            'assoc_success' => 'Pole bolo úspešne pridané do skupiny polí.',
+        ],
 
-        'update' => array(
-            'error'   => 'Field was not updated, please try again',
-            'success' => 'Field updated successfully.'
-        ),
+        'update' => [
+            'error' => 'Pole nebolo upravené, skúste prosím znovu',
+            'success' => 'Pole bolo úspešne upravené.',
+        ],
 
-        'delete' => array(
-            'confirm'   	=> 'Are you sure you wish to delete this field?',
-            'error'   => 'There was an issue deleting the field. Please try again.',
-            'success' => 'The field was deleted successfully.',
-            'in_use'   => 'Field is still in use.',
-        )
+        'delete' => [
+            'confirm' => 'Ste si istý, že chcete zmazať toto pole?',
+            'error' => 'Pri mazaní pola nastala chyba. Skúste prosím znovu.',
+            'success' => 'Pole bolo úspešne zmazané.',
+            'in_use' => 'Pole sa stále používa.',
+        ],
 
-    ),
+    ],
 
-    'fieldset' => array(
+    'fieldset' => [
 
-        'does_not_exist' => 'Fieldset does not exist',
+        'does_not_exist' => 'Skupina polí neexistuje',
 
-        'create' => array(
-            'error'   => 'Fieldset was not created, please try again.',
-            'success' => 'Fieldset created successfully.'
-        ),
+        'create' => [
+            'error' => 'Skupina polí nebola vytvorená, skúste prosím znovu.',
+            'success' => 'Skupina polí bola úspešne vytvorená.',
+        ],
 
-        'update' => array(
-            'error'   => 'Fieldset was not updated, please try again',
-            'success' => 'Fieldset updated successfully.'
-        ),
+        'update' => [
+            'error' => 'Skupina polí nebola upravená, skúste znovu',
+            'success' => 'Skupina polí bola úspešne upravená.',
+        ],
 
-        'delete' => array(
-            'confirm'   	=> 'Are you sure you wish to delete this fieldset?',
-            'error'   => 'There was an issue deleting the fieldset. Please try again.',
-            'success' => 'The fieldset was deleted successfully.',
-            'in_use'   => 'Fieldset is still in use.',
-        )
+        'delete' => [
+            'confirm' => 'Ste si istý, že chcete odstrániť túto skupinu polí?',
+            'error' => 'Pri mazaní skupiny polí nastala chyba. Skúste znovu.',
+            'success' => 'Skupina polí bola úspešne zmazaná.',
+            'in_use' => 'Skupina polí sa stále používa.',
+        ],
 
-    ),
+    ],
 
-    'fieldset_default_value' => array(
+    'fieldset_default_value' => [
 
         'error' => 'Chyba pri overovaní predvolených hodnôt množiny polí.',
 
-    ),
+    ],
 
-
-
-
-
-
-);
+];

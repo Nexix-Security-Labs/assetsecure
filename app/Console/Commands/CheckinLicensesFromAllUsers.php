@@ -4,9 +4,7 @@ namespace App\Console\Commands;
 
 use App\Models\License;
 use App\Models\LicenseSeat;
-use App\Models\User;
 use Illuminate\Console\Command;
-use Illuminate\Database\Eloquent\Model;
 
 class CheckinLicensesFromAllUsers extends Command
 {
@@ -15,7 +13,7 @@ class CheckinLicensesFromAllUsers extends Command
      *
      * @var string
      */
-    protected $signature = 'snipeit:checkin-from-all {--license_id=} {--notify}';
+    protected $signature = 'assetsecure:checkin-from-all {--license_id=} {--notify}';
 
     /**
      * The console command description.

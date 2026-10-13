@@ -1,63 +1,59 @@
 <?php
 
-return array(
+return [
 
-    'field' => array(
-        'invalid'   => 'Laukelis neegzistuoja.',
-        'already_added'   => 'Laukelis jau pridėtas',
+    'field' => [
+        'invalid' => 'Tokio lauko nėra.',
+        'already_added' => 'Laukas jau pridėtas',
+        'none_selected' => 'Nepasirinktas joks laukas',
 
-        'create' => array(
-            'error'   => 'Laukelis nebuvo sukurtas. Prašome bandyti dar kartą.',
-            'success' => 'Laukelis sukurtas sėkmingai.',
-            'assoc_success' => 'Laukelis sėkmingai pridėtas į laukų grupę.'
-        ),
+        'create' => [
+            'error' => 'Laukas nebuvo sukurtas, bandykite dar kartą.',
+            'success' => 'Laukas sėkmingai sukurtas.',
+            'assoc_success' => 'Laukas sėkmingai įtrauktas į laukų rinkinį.',
+        ],
 
-        'update' => array(
-            'error'   => 'Laukelis nebuvo atnaujintas, prašome bandykite dar kartą',
-            'success' => 'Laukelis atnaujintas sėkmingai.'
-        ),
+        'update' => [
+            'error' => 'Laukas nebuvo atnaujintas, bandykite dar kartą',
+            'success' => 'Laukas sėkmingai atnaujintas.',
+        ],
 
-        'delete' => array(
-            'confirm'   	=> 'Ar esate tikri jog norite pašalinti šį laukelį?',
-            'error'   => 'Nepavyko ištrinti laukelio. Prašome bandykite dar kartą.',
-            'success' => 'Laukelis buvo sėkmingas ištrintas.',
-            'in_use'   => 'Laukelis naudojamas.',
-        )
+        'delete' => [
+            'confirm' => 'Ar tikrai norite ištrinti šį lauką?',
+            'error' => 'Bandant panaikinti lauką įvyko klaida. Bandykite dar kartą.',
+            'success' => 'Laukas sėkmingai panaikintas.',
+            'in_use' => 'Laukas yra naudojamas.',
+        ],
 
-    ),
+    ],
 
-    'fieldset' => array(
+    'fieldset' => [
 
-        'does_not_exist' => 'Fieldset neegzistuoja',
+        'does_not_exist' => 'Tokio laukų rinkinio nėra',
 
-        'create' => array(
-            'error'   => 'Laukelis nebuvo sukurtas. Prašome bandyti dar kartą.',
-            'success' => 'Laukų grupė sukurta sėkmingai.'
-        ),
+        'create' => [
+            'error' => 'Laukas nebuvo sukurtas, bandykite dar kartą.',
+            'success' => 'Laukų rinkinys sėkmingai sukurtas.',
+        ],
 
-        'update' => array(
-            'error'   => 'Laukų grupė nebuvo atnaujinta. Prašome bandyti dar kartą',
-            'success' => 'Laukų grupė atnaujinta sėkmingai.'
-        ),
+        'update' => [
+            'error' => 'Laukų rinkinys nebuvo atnaujintas, bandykite dar kartą',
+            'success' => 'Laukų rinkinys sėkmingai atnaujintas.',
+        ],
 
-        'delete' => array(
-            'confirm'   	=> 'Ar esate tikri jog norite pašalinti šią lankų grupę?',
-            'error'   => 'Klaida bandant ištrinti laukų grupę. Prašome bandykite dar kartą.',
-            'success' => 'Laukų grupė ištrinta sėkmingai.',
-            'in_use'   => 'Laukų grupė vis dar naudojama.',
-        )
+        'delete' => [
+            'confirm' => 'Ar tikrai norite ištrinti šį laukų rinkinį?',
+            'error' => 'Bandant panaikinti laukų rinkinį įvyko klaida. Bandykite dar kartą.',
+            'success' => 'Laukų rinkinys sėkmingai panaikintas.',
+            'in_use' => 'Laukų rinkinys yra naudojamas.',
+        ],
 
-    ),
+    ],
 
-    'fieldset_default_value' => array(
+    'fieldset_default_value' => [
 
-        'error' => 'Klaida validuojant standartines laukų reikšmes.',
+        'error' => 'Klaida tikrinant numatytąsias laukų reikšmes.',
 
-    ),
+    ],
 
-
-
-
-
-
-);
+];
