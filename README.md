@@ -19,7 +19,9 @@ curl -O https://raw.githubusercontent.com/Nexix-Security-Labs/assetsecure/master
 sudo bash install.sh
 ```
 
-`install.sh` downloads and runs [`assetsecure.sh`](assetsecure.sh), which installs Apache, MariaDB, PHP and Composer, creates the database (with a randomly generated password stored in `.env`), and configures the virtual host. Use a distribution that ships PHP 8.2+ (Ubuntu 24.04+, Debian 12+).
+`install.sh` downloads and runs [`assetsecure.sh`](assetsecure.sh), which installs Apache, MariaDB, PHP and Composer, creates the database (with a randomly generated password stored in `.env`), runs the migrations and configures the virtual host. Use a distribution that ships PHP 8.2+ (Ubuntu 24.04+, Debian 12+).
+
+To install a specific branch or tag, run the script directly: `sudo AS_BRANCH=<branch-or-tag> ./assetsecure.sh` (default: `master`). The script is safe to re-run: it keeps the existing `.env`, database password and app key. When asked for the server IP, enter the address you will browse to (for a VM or remote server, its LAN IP, not `127.0.0.1`).
 
 **Docker:**
 
