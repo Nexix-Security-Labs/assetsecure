@@ -21,7 +21,11 @@ sudo bash install.sh
 
 `install.sh` downloads and runs [`assetsecure.sh`](assetsecure.sh), which installs Apache, MariaDB, PHP and Composer, creates the database (with a randomly generated password stored in `.env`), runs the migrations and configures the virtual host. Use a distribution that ships PHP 8.2+ (Ubuntu 24.04+, Debian 12+).
 
-To install a specific branch or tag, run the script directly: `sudo AS_BRANCH=<branch-or-tag> ./assetsecure.sh` (default: `master`). The script is safe to re-run: it keeps the existing `.env`, database password and app key. When asked for the server IP, enter the address you will browse to (for a VM or remote server, its LAN IP, not `127.0.0.1`).
+To install a specific branch or tag, run the script directly: `sudo AS_BRANCH=<branch-or-tag> ./assetsecure.sh` (default: `master`). The script is safe to re-run: it keeps the existing `.env`, database password and app key.
+
+When asked for the address, enter exactly what you will type in the browser: it becomes `APP_URL`, and AssetSecure builds every link, script and stylesheet URL from it, so pages load without styling if the two differ. The installer suggests `localhost` on WSL2 (where `127.0.0.1` is often not forwarded to Windows) and the server's IP address elsewhere. To change it later, edit `APP_URL` in `/var/www/assetsecure/.env` and run `sudo -u www-data php /var/www/assetsecure/artisan config:clear`.
+
+The code is owned by a dedicated `assetsecure` user; the web server (`www-data`) can only write to `storage/`, `bootstrap/cache/` and `public/uploads/`.
 
 **Docker:**
 
